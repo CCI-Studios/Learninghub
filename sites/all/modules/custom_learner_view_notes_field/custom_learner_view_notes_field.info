@@ -1,0 +1,6 @@
+name = Custom learner view notes field
+core = 7.x
+package = Custom learner view
+version = "7.x-1.0"
+
+files[] = includes/views_handler_notes_date.inc

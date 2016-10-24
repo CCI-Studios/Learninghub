@@ -1,0 +1,939 @@
+body 
+{
+  font-family: "myriad-pro",sans-serif;
+  color: $grey;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.layout
+{
+	max-width: 1220px;
+	margin: 0 auto;
+}
+
+.inner-layout
+{
+	max-width: 940px;
+	margin: 0 auto;
+}
+
+form span.error-msg
+{
+	display: none;
+	color: red;
+}
+
+h1
+{
+	padding-bottom: 35px;
+	line-height: 1em;
+	text-align: center;
+	text-transform: lowercase;
+}
+
+h1#page-title:before,
+#block-block-7 h1:before
+{
+	content: url(../images/gear-icon.png);
+	display: block;
+	padding-bottom: 35px;
+}
+
+#content
+{
+	max-width: 940px;
+	margin: 0 auto;
+	padding: 80px 10px;
+
+	p
+	{
+		line-height: 1.8em;
+		padding-bottom: 20px;
+	}
+
+	ul
+	{
+		padding-left: 20px;
+	}
+
+	.button
+	{
+		text-decoration: none;
+	}
+}
+
+h1,
+.block-block h2	
+{
+	font-size: 45px;
+	text-transform: lowercase;
+}
+
+h2,
+.view-courses-list-content-view .view-content > h3
+{
+	padding-bottom: 20px;
+	font-size: 45px;
+}
+
+h3,
+.view-courses-list-content-view .views-field-title span
+{
+	font-size: 28px;
+	padding-bottom: 20px;
+	display: block;
+}
+
+h4
+{
+	font-size: 22px;
+}
+
+strong
+{
+	color: $orange;
+}
+
+h1,h2,h3,h4
+{
+	color: $orange;
+	font-weight: normal;
+}
+
+#navigation > div
+{
+	@extend .layout;
+	text-align: center;
+	padding: 10px 10px 0px;
+
+	.social
+	{
+		color: transparent;
+		font-size: 0px;
+	}
+
+	li.fb,
+	li.twitter
+	{
+		display: none;
+	}
+}
+
+#fb
+{
+	background: url(../images/fb.png) no-repeat;
+	background-position: center;
+	margin-right: 10px;
+}
+
+#twitter
+{
+	background: url(../images/twitter.png) no-repeat;
+	background-position: center;
+}
+
+.social
+{
+	color: transparent;
+	font-size: 0px;
+	width: 21px;
+	height: 20px;
+	display: inline-block;	
+	vertical-align: middle;
+}
+
+.button
+{
+	background: $orange;
+	border-radius: 30px;
+	color: white!important;
+	font-size: 18px;
+	display: inline-block;
+	padding: 18px 10px;
+	min-width: 170px;
+	font-weight: bold;
+	cursor: pointer;
+	border: 0px;
+	text-align: center;
+	text-transform: lowercase;
+	line-height: 0.8em;
+	text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.button,
+.webform-submit,
+.btn,
+.form-actions .form-submit,
+.group-referral .form-submit,
+.form-submit-export,
+#edit-actions input,
+.feed-icon a,
+.field-add-more-submit,
+.view-learners-list .form-submit
+{
+	@extend .button;
+	-webkit-appearance: none;
+
+}
+
+#search-block-form 
+{	
+	padding-bottom: 17px;
+
+	.form-actions input
+	{
+		padding: 0px;
+		min-width: auto;
+		font-size: 0px;
+	}
+
+	input
+	{
+		font-size: 12px;
+	}
+}
+
+#logo,
+.region-navigation,
+#login,
+#social-block
+{
+	display: inline-block;
+	vertical-align: top;
+}
+
+a:link,
+a:active,
+a:visited
+{
+	color: $orange;
+	text-decoration: none;
+}
+
+#logo
+{
+	width: 160px;
+	float: left;
+}
+
+#navigation
+{	
+	border-bottom: 5px solid #8dd2ca;
+	box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 9;
+
+	li
+	{
+		list-style: none;
+		display: inline-block;
+	    padding: 0.2em 15px;
+	}
+
+	#menu-learninghub
+	{
+		text-transform: inherit!important;
+	}
+
+	.menu a,
+	span
+	{
+		display: block;
+		padding: 0px 0px 20px;
+		text-decoration: none;
+		font-weight: 600;
+		text-transform: lowercase;
+	}
+
+	.block
+	{
+		display: inline-block;
+	}
+
+	.region-navigation
+	{
+		 margin-top: 62px;
+	}
+	.clearfix
+	{
+		padding: 0px;
+	}
+
+}
+
+.front #navigation 
+{	
+
+	&>div
+	{
+		position: relative;
+	}
+
+	li
+	{
+		padding: 0.2em 10px;
+	}
+}
+
+#navigation,
+#login
+{
+	a,
+	span
+	{
+		color: $orange;
+		font-size: 20px;
+	}
+}
+
+
+#login
+{	
+    color: $orange;
+	a
+	{	
+		font-size: 18px;
+		padding: 0px 5px;
+		text-transform: lowercase;
+	}
+}
+
+.search-box
+{
+	font-size: 0px;
+	color: transparent;
+	border: 0px;
+	width: 20px;
+	height: 26px;
+    position: absolute;
+    right: 5px;
+    top: 2px;
+	background: url(../images/search-icon.png) no-repeat;
+	background-position: center;
+}
+
+#right-block
+{
+	float: right;
+	width: 200px;
+	padding-top: 14px;
+	text-align: right;
+
+	#search-block-form
+	{
+		position: relative;
+	}
+
+	input[type="text"]
+	{
+	    padding: 8px 18px;
+	    border: 1px solid #ccc;
+	    border-radius: 15px;
+	    width: 163px;
+	    font-size: 13px;
+	}
+
+	.form-actions input,
+	.views-submit-button input
+	{
+		@extend .search-box;
+	    min-width: inherit;
+	}
+
+	::-webkit-input-placeholder {
+	  font-size: 16px;
+	  font-style: italic;
+	  font-weight: 100;
+	}
+
+	:-moz-placeholder { /* Firefox 18- */
+	  font-size: 16px;
+	  font-style: italic;  
+	   font-weight: 100;
+	}
+
+	::-moz-placeholder {  /* Firefox 19+ */
+      font-size: 16px;
+	  font-style: italic;  
+	  font-weight: 100;
+	}
+
+	:-ms-input-placeholder {  
+	   font-size: 16px;
+	   font-style: italic;  
+	   font-weight: 100; 
+	}
+}
+
+#right-block
+{
+	width: 228px;
+
+    #login
+    {
+		padding-right: 0px;
+    }
+}
+
+.front.not-logged-in #right-block
+{
+	margin-right: 145px;
+	width: 201px;
+}
+
+.not-logged-in #right-block
+{
+	width: 201px;
+}
+
+.not-logged-in .group-admin-info
+{
+	display: none;
+}
+
+#login
+{
+	padding-right: 14px;
+	font-weight: 600;
+	float: left;
+}
+
+.front #content
+{
+	display: none;
+}
+
+#footer
+{	
+	background: #f3f3f3;
+	padding: 40px 10px;
+	text-align: center;
+	ul.menu
+	{	
+		text-align: center;
+		li
+		{
+			display: inline-block;
+		}
+		a
+		{
+			color: $grey;
+		}
+	}
+}
+
+#social-block-2
+{
+	#fb
+	{
+		background: url(../images/fb.png) no-repeat;
+	}
+
+	#twitter
+	{
+		background: url(../images/twitter.png) no-repeat;
+	}
+}
+
+#copyright
+{
+	padding-top: 30px;
+}
+
+#block-menu-menu-footer-menu
+{
+	padding-bottom: 30px;
+}
+
+#copyright,
+#site-by-cci
+{
+	font-size: 12px;
+	
+	a
+	{
+		color: $grey;
+	}
+}
+
+label+br
+{
+	display: none;
+}
+
+.page-learners-list
+{	
+	#page-title
+	{
+		text-align: center;	
+		padding-bottom: 50px;
+	}
+}
+
+
+#block-system-main-menu
+{	
+	position: relative;
+
+	.menu a,
+	.menu span
+	{	
+		position: relative;
+	}
+
+	.menu a,
+	.menu span
+	{
+		&:after
+		{	
+			display: none;
+			content: "";
+		    border-bottom: 2px solid #f0b310;
+		    position: absolute;
+		    left: 0;
+		    width: 100%;
+		    bottom: 10px;
+		}
+
+		&:hover:after
+		{
+			display: block;
+		}
+	}
+
+	li.expanded
+	{	
+		&:hover ul.menu
+		{
+			display: block;
+		}
+		ul.menu
+		{	
+			display: none;
+			top: 46px;
+			position: absolute;
+			background: white;
+			z-index: 9;
+
+			li
+			{
+				display: block;
+			}
+		}
+	}
+
+	#fb,
+	#twitter
+	{
+		display: none;
+	}
+}
+
+ul.indicators
+{	
+	text-align: center;
+	width: 100%;
+	margin: 30px 0px;
+	padding-left: 0px!important;
+
+	li
+	{
+		display: inline-block;
+		padding: 25px;
+	}
+
+	li.active
+	{
+		background-image: url(../images/gear-indicator.png);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-color: white;
+		padding: 21px 28px;
+	
+		a
+		{
+			color: $orange;
+		}
+	}
+	li
+	{
+		color:white;
+		padding: 10px 16px;
+		border-radius: 50px;
+		background-color: $orange;
+		margin: 0 20px;
+
+		a
+		{
+			color: white;
+		}
+	}
+}
+
+ .page-faq,
+ .page-what-you-need,
+ .page-learner-stories
+ {	
+ 	#page-title
+ 	{	
+ 		//text-align: left;
+ 		&:before
+ 		{
+ 			//display: none;
+ 		}
+ 	}
+ 	#header
+ 	{
+ 		height: 300px;
+ 		background-size: cover;
+ 		overflow: hidden;
+ 	}
+
+ 	#block-system-main
+ 	{
+ 		a
+ 		{
+ 			text-decoration: underline;
+ 		}
+ 	}
+ }
+
+ .page-learner,
+ .page-user
+ {
+ 	 #block-block-6
+ 	 {
+ 	 	height: 300px;
+ 	 	border-bottom:5px solid $green;
+ 	 	background-size: cover;
+ 	 }
+ }
+
+ .not-logged-in.page-user:not(.page-user-register),
+ .not-logged-in.page-learner:not(.page-learner-register),
+ #block-user-login
+ {
+ 	#page-title
+ 	{
+ 		display: none;
+ 	}
+
+ 	#content
+ 	{
+ 		max-width: inherit;
+ 		padding: 0px;
+ 	}
+
+ 	#block-block-8,
+ 	#block-system-main
+ 	{
+ 		width: 50%;
+ 		float: left;
+ 	}
+
+ 	#block-block-8
+ 	{	
+ 		.content
+ 		{	
+			border: 3px solid $orange;
+			margin: 0 20px;
+		    padding: 35px 15px;
+
+ 		}
+ 	}
+
+ 	.region-content
+ 	{
+ 		max-width: 1060px;
+ 		margin: 0 auto;
+ 		padding-top: 40px;
+ 		overflow: hidden;
+ 		margin-bottom: 40px;
+ 	}
+
+ 	#widgets
+ 	{
+ 		clear: left;
+ 	}
+
+ 	#block-system-main,
+ 	#user-login-form
+ 	{	
+	   background-color: $yellow;
+	   background-image: url(../images/gear-login.png);
+	   background-repeat: no-repeat;
+	   background-position: center;
+ 	}
+ }
+ .not-logged-in.page-user.page-user-logout
+ {
+	#page-title
+ 	{
+ 		display: block;
+ 	}
+
+ 	#content
+ 	{
+ 		padding: 80px 10px;
+ 		@extend .layout;
+ 	}
+
+ 	#block-system-main
+ 	{	
+	   background-color: white;
+	   background-image: none;
+ 	}
+
+ }
+
+ .page-node-2,
+ .page-faq,
+ .page-what-you-need,
+ .page-learner-stories
+ {
+ 	#header
+ 	{
+ 		height: auto!important;
+ 	}
+ }
+
+  .page-node-2,
+  {
+  	#page-title
+  	{
+  		margin-top: 80px;
+  	}
+
+  	#content
+  	{
+  		padding-top: 0px;
+  	}
+  }
+
+ .inner-banner-title
+ {	
+ 	font-size: 45px;
+ 	text-align: center;
+	color: white;
+	text-shadow: 2px 2px 2px $orange;
+ }
+
+ #contact-block,
+ #mail-chimp-block
+ {
+ 	width: 46%;
+ 	display: inline-block;
+ 	vertical-align: top;
+ }
+
+#mail-chimp-block
+{
+	margin-left: 70px;
+    height: 764px;
+    position: relative;
+}
+
+.not-front .block-imageblock
+{
+	padding: 120px 0px;
+	text-align: center;
+	color: white;
+	background-size: cover;
+
+	h2
+	{
+		@extend .inner-banner-title;
+	}
+
+	.block-body
+	{	
+		text-shadow: 2px 2px 2px $orange;
+		@extend .inner-layout;
+		padding: 0 10px;
+	}
+}
+
+.page-learner-register #user-register-form
+{
+	.field-type-text
+	{
+		width: 45%;
+		display: inline-block;
+		vertical-align: top;
+
+		input
+		{
+			width: 90%;
+		}
+	}
+}
+
+
+ul.secondary
+{	
+	border-bottom: 2px solid $green;
+	padding-bottom: 30px;
+	margin-bottom: 30px;
+	li
+ 	{
+	 	border: 0px;
+	 	font-size: 18px;
+	 	font-weight: bold;
+	 	padding: 0 1.5em 0px 0px;
+	 	text-transform: lowercase;
+
+		a.active
+		{	
+			color: $orange;
+			border-bottom: 1px solid $orange;
+		}
+ 	}
+}
+
+.page-user-edit
+{	
+	.tabs.secondary
+	{
+		text-align: center;
+	}
+}
+
+.page-node-74
+{
+	.messages.status
+	{	
+		display: none;
+		border: 0px;
+		background: transparent;
+		color: $grey;
+		padding: 0px;
+	}
+}
+
+.page-node-74
+{
+	.messages.error
+	{
+		display: none;
+
+		ul
+		{
+			word-wrap: break-word;
+		}
+	}
+}
+
+#mobile-menu
+{
+	display: none;
+}
+
+#thank-you-message
+{
+	display: none;
+}
+
+.page-node-33
+{
+	#page-title
+	{
+		text-transform: inherit;
+	}
+}
+
+.page-user .entity-profile2
+{
+
+	column-count: 2;
+
+	.field
+	{
+	    margin: 20px 0px;
+
+	}
+}
+
+.community-list {
+	column-count: 4;
+	-webkit-column-count: 4;
+	-moz-column-count: 4;
+
+	p
+	{
+	 	margin: 0px 20px 0px;
+
+	 	#content &
+	 	{
+		    padding-bottom: 0;
+	 	}
+	}
+}
+
+#site-map
+{
+	ul li
+	{
+		list-style: none;
+	}
+
+	a.active
+	{	
+		color: $orange;
+		text-decoration: underline;
+	}
+
+	li.expanded > a
+	{	
+		position: relative;
+		background: url(../images/polygon.png) no-repeat;
+		background-position: left center;
+		padding-left: 20px;
+	}
+}
+
+#navigation a.dropdown
+{
+	display: none;
+}
+
+#widgets
+{
+	box-shadow: 0px -2px 10px rgba(0,0,0,0.5);
+}  
+
+.page-node-157249
+{
+	#page-title
+	{
+		display: none;
+	}
+}
+
+#edit-profile-learner-profile-field-do
+{
+	.description
+	{
+		width: 150%;
+	}
+}
+
+.live-class-download
+{
+	float: right;
+}
+
+.box1
+{
+	margin-right: 20px;
+}
+
+.box1,
+.box2
+{
+    float: left;
+    width: 44%;
+    padding: 20px;
+    border: 3px solid orange;
+    height: 510px;
+}

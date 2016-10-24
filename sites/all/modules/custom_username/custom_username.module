@@ -1,0 +1,55 @@
+
+<?php 
+function custom_username_user_presave(&$edit, $account, $category) {
+
+  if( isset($account->is_new) && $account->is_new === TRUE ){
+
+  	session_start();
+  	if(isset($edit['profile_learner_profile']))
+    {	
+
+	  	$firstname = $edit['profile_learner_profile']['field_first_name']['und'][0]['value'];
+	    $firstname_initial = substr($firstname, 0, 2);
+	    $lastname = $edit['profile_learner_profile']['field_last_name']['und'][0]['value'];
+	    // Also consider trimming the length and to lowercase your username.
+	   
+	    $name1 =  'st'.$firstname_initial.$lastname;
+	    $name1 = str_replace(array("?","!",",","'",";"," "), "", $name1);
+
+	  	if(!db_query("SELECT COUNT(*) FROM {users} WHERE name = :name;", array(':name' =>  $name1))->fetchField())
+	  	{	
+	  		 $edit['name'] = $name1;
+ 	  		 $edit['pass'] = user_hash_password('password');
+ 	  		 $_SESSION['username'] = $name1;
+		     //drupal_set_message("CHANGING {$edit['name']} TO {$name}");
+	  	}
+	  	else
+	  	{	
+	  		$i=1;
+	  		$name = $name1;
+	  		do {
+			  //Check in the database here
+			  $exists = db_query("SELECT COUNT(*) FROM {users} WHERE name = :name;", array(':name' =>  $name))->fetchField();
+			  if($exists) {
+			    $i++;
+			    $name = $name1 . $i;
+			  }
+
+			}while($exists);
+	  		
+	     	echo $name;
+	  		$edit['name'] = $name;
+	  		$edit['pass'] = user_hash_password('password');
+	  		
+	  		$_SESSION['username'] = $name;
+	  		//drupal_set_message("username: ".$edit['name']." your password is password");
+	  	}
+    }
+  
+  }
+
+}
+
+
+
+?>

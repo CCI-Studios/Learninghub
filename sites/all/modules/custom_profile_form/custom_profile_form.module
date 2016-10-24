@@ -1,0 +1,176 @@
+<?php 
+
+function custom_profile_form_form_alter(&$form, &$form_state, $form_id)
+{
+	if ($form_id == 'user_profile_form')	
+	{	
+
+		$form['actions']['#weight'] = -1000;
+		$form['actions']['cancel']['#value'] = t('Delete Account');
+
+		if(arg(0) == 'user' && arg(2) == 'edit' && arg(3) == '')
+		{
+			$form['submit']= array(
+				'#type' => 'submit',
+				'#value' => 'save',
+				'#weight' => 1000
+				);
+			$form['submit']['#prefix'] = '<div id="edit-actions" class="form-actions wrapper">';
+			$form['submit']['#suffix'] = '</div>';    
+		}
+		
+		if(arg(3)=='plan_content')
+		{
+			$form['profile_plan_content']['submit'] = array(
+				'#type' => 'submit',
+				'#value' => 'save',
+				'#weight' => 1000
+				);
+			$form['profile_plan_content']['submit']['#prefix'] = '<div id="edit-actions" class="form-actions wrapper">';
+			$form['profile_plan_content']['submit']['#suffix'] = '</div>';    
+		}
+
+		if(arg(3)=='learner_profile')
+		{
+			$form['profile_learner_profile']['submit'] = array(
+				'#type' => 'submit',
+				'#value' => 'save',
+				'#weight' => 1000
+				);
+			$form['profile_learner_profile']['submit']['#prefix'] = '<div id="edit-actions" class="form-actions wrapper">';
+			$form['profile_learner_profile']['submit']['#suffix'] = '</div>';    
+		}
+		if(arg(3)=='exit_information')
+		{
+			$form['profile_exit_information']['submit'] = array(
+				'#type' => 'submit',
+				'#value' => 'save',
+				'#weight' => 1000
+				);
+			$form['profile_exit_information']['submit']['#prefix'] = '<div id="edit-actions" class="form-actions wrapper">';
+			$form['profile_exit_information']['submit']['#suffix'] = '</div>';    
+		}
+		if(arg(3)=='follow_ups')
+		{
+			$form['profile_follow_ups']['submit'] = array(
+			'#type' => 'submit',
+			'#value' => 'save',
+			'#weight' => 1000
+			);
+			$form['profile_follow_ups']['submit']['#prefix'] = '<div id="edit-actions" class="form-actions wrapper">';
+			$form['profile_follow_ups']['submit']['#suffix'] = '</div>';    
+		}
+		
+
+		global $user;
+			
+		if(in_array('practitioner', $user->roles))
+		{
+			unset($form['account']['pass']);
+
+		}
+
+		if(in_array('practitioner', $user->roles))
+		{	
+
+			$existing = user_load(arg(1));
+
+			if(isset($existing->status))
+			{	
+				if($existing->status == 0)
+				{
+					unset($form['actions']);
+					unset($form['submit']);
+					unset($form['profile_learner_profile']['submit']);
+					unset($form['profile_follow_ups']['submit']);
+					unset($form['profile_exit_information']['submit']);
+					unset($form['profile_plan_content']['submit']);
+				}
+
+			}
+			
+		}
+
+		if(arg(0) == 'user' && arg(2) == 'edit' && arg(3) == '')
+		{	
+			if(isset($form['#user']->field_courses_4['und']))
+			{	
+				$courselist = '';
+				foreach ($form['#user']->field_courses_4['und'] as $key => $value) { 
+
+				  $cid = $value['target_id'];
+				  $nid = node_load($cid);
+				
+				  if($nid->type == 'courses_live')
+				  {
+				  	$class_type = '('.$nid->field_type_of_class['und'][0]['value'].')';
+				  }
+				  else
+				  {
+				  	$class_type = '';
+				  }
+			
+				  $courselist .= $nid->title.' '.$class_type. PHP_EOL .'<hr>';
+				}
+
+				$form['account']['cList'] = array(
+				'#type' => 'markup',
+				'#markup' => '<div class="form-type-markup"><label>Courses List</label><div>'. $courselist .'</div></div>',
+				'#weight' => 10
+				);
+			}
+			$user_id = arg(1);
+
+			$form['field_client_id']['und'][0]['markup']= array(
+			'#type' => 'markup',
+			'#markup' => '<div class="form-type-markup"><label>Client ID</label><div>'. $user_id .'</div></div>',
+			'#weight' => 10
+			);
+
+			$profiles = profile2_load_by_user($form['#user']->uid,'learner_profile');
+
+			if(isset($profiles->created))
+			{
+				$form['field_register_date']['und'][0]['markup']= array(
+				'#type' => 'markup',
+				'#markup' => '<div class="form-type-markup"><label>Registration Date</label><div>'. format_date($profiles->created, 'custom', 'd/m/y').'</div></div>',
+				'#weight' => 11
+				);
+			}
+			
+			
+		}
+
+		unset($form['account']['status']);	
+
+		$profiles = profile2_load_by_user($form['#user']->uid,'learner_profile');
+
+		$how_learn = isset($profiles->field__how_would_you_like_to_lea['und'][0]['value'])?$profiles->field__how_would_you_like_to_lea['und'][0]['value']:'not available';
+
+		$learn_type = isset($profiles->field_teacher_name['und'][0]['value'])?$profiles->field_teacher_name['und'][0]['value']:'';
+
+		if($how_learn == 'Live Classes (scheduled for a specific date and time)')
+		{	
+			$profiles->field_training_type['und'][0] = array('value'=>10);
+		}
+		else if($how_learn == 'Anytime Learning')
+		{
+			$profiles->field_training_type['und'][0] = array('value'=>20);
+		}
+		else if($how_learn == 'Blended Learning (Live Classes and Anytime Learning)')
+		{
+			$profiles->field_training_type['und'][0] = array('value'=>30);
+		}
+
+		if($learn_type == '')
+		{
+			$profiles->field_learner_type1['und'][0] = array('value'=>20);
+		}
+		else
+		{
+			$profiles->field_learner_type1['und'][0] = array('value'=>10);
+		}
+	}
+}
+
+

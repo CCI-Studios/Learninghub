@@ -1,0 +1,7 @@
+name = ABC Filter
+description = Change search textfield starts with to letter click for first letter search.
+core = 7.x
+version = 7.x-1.0
+ 
+dependencies[] = views
+dependencies[] = better_exposed_filters

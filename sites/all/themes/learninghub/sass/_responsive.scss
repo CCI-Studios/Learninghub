@@ -1,0 +1,1081 @@
+@media screen and (min-width: 1061px)
+{
+	#navigation #block-system-main-menu
+	{
+		display: inline-block!important;
+	}
+}
+
+@media screen and (max-width: 1060px)
+{	
+	#mobile-menu
+	{
+		display: inline-block;
+		position: absolute;
+		left: 10px;
+		a
+		{
+		 	display: block;
+		 	font-size: 0px;
+		 	color: transparent;
+		 	width: 20px;
+		 	height: 20px;
+		 	background: url(../images/mobile-menu.png) no-repeat;
+		}
+	}
+
+	.box1,
+	.box2
+	{
+		height: auto;
+		float: none;
+		margin: 20px auto;
+	}
+
+	#block-block-10
+	{
+		position: relative;
+		top: 0px;
+	}
+
+	.front.not-logged-in #right-block
+	{
+		margin-right: 0px;
+		position: absolute;
+		top: 20px;
+		right: 10px;
+	}
+
+	#navigation
+	{
+		z-index: 11;
+	}
+
+	#user-login
+	{	
+		max-width: 740px;
+
+		.form-type-textfield,
+		.form-type-password
+		{
+			max-width: 350px;
+			margin: 0 auto;
+			display: block;
+		}
+	}
+	ul.secondary li
+	{
+	    padding: 0 0.9em 0px 0px;
+	}
+
+	.view-learners-list
+	{
+		 .alphabet li a
+		 {
+		 	font-size: 13px;
+		 }
+	}
+
+	#block-imageblock-1
+	{
+		height: 300px;
+
+		.block-body img
+		{	
+			width: 250px;
+		    height: auto;
+		}
+	}
+
+	#navigation .region-navigation
+	{
+		display: block;
+		margin: 10px 0px;
+	}
+
+	.block-imageblock
+	{
+		background-position: center;
+	}
+
+	#logo
+	{
+		text-align: center;
+		float: none;
+	    margin: 0 auto;
+    	margin-bottom: 10px;
+    	position: relative;
+    	display: block;
+	}	
+
+	#block-system-main-menu
+	{	
+		width: 100%;
+
+		#fb,
+		#twitter
+		{
+			display: block;
+		}
+
+		&>.content>ul.menu
+		{
+			border-bottom: 5px solid $green;
+		}
+
+		ul.menu
+		{
+			text-align: center;
+		}
+
+		li.expanded
+		{	
+			position: relative;
+
+			a,span
+			{
+				position: relative;
+			}
+
+			& > a:after,
+			& > span:after
+			{	
+				content: "";
+				display: block;
+				position: absolute;
+				right: 0px;
+				top: 10px;
+				left: auto;
+				width: 10px;
+				height: 10px;
+			
+				border-bottom: 0px;
+			}
+		}
+
+		li.expanded:hover
+		{
+			ul.menu
+			{
+				display: none;
+			}
+		}
+
+		li.expanded ul.menu
+		{
+			position: relative;
+			top: 0px;
+		}
+	}
+
+
+	#navigation a.dropdown
+	{
+		position: absolute!important;
+        right: 20px;
+	    top: 0px;
+	    width: 40px;
+	    height: 10px;
+	    font-size: 0px;
+	    display: block;
+	    background: url(../images/polygon.png) no-repeat;
+	    background-position: right;
+	}
+
+	#social-block
+	{
+		//display: none;
+	}
+
+	#block-system-main-menu
+	{
+		display: none;
+	    padding-top: 20px;
+	    position: absolute;
+	    width: 100%;
+	    background: white;
+	    left: 0;
+
+	    #navigation &
+	    {
+    	  margin-top: 0px;
+    	  top: 202px;
+
+    	   li.fb,
+		   li.twitter
+		    {
+		    	display: inline-block;
+		    	padding: 0px;
+	    	    vertical-align: top;
+   				padding-bottom: 20px;
+		    }
+	    }
+
+		li
+		{
+			#navigation &
+			{
+				display: block;
+			}
+		}
+	}
+
+	#block-block-3
+	{
+		.action-button
+		{
+			margin: 10px;
+
+			a
+			{	
+				padding: 50px 10px;
+				width: 220px;
+				margin: 0 auto;
+				height: 150px;
+			}
+		}
+	}
+
+	#block-block-4
+	{
+		a img
+		{
+			margin-right: 40px;
+		}
+	}
+
+	#user-register-form,
+	#user-profile-form
+	{
+		.field-type-text,
+		.field-type-list-text,
+		#edit-account,
+		.field-type-datetime,
+		.form-type-markup
+		{
+			width: 50%;
+			margin-right: 0px;
+		}
+	}
+
+	#contact-block, #mail-chimp-block
+	{
+		width: auto;
+		display: block;
+		margin-left: 0px;
+		height: auto;
+
+		.form-actions
+		{
+			margin-top: 0px!important;
+		}
+
+		.mailchimp-newsletter-mergefields + p
+		{
+			display: none;
+		}
+	}
+
+	#right-block
+	{
+		padding-top: 0px;
+	}
+
+	.view-portal-export,
+	.view-portal-export1
+	{
+		.views-widget-filter-field_program_start_date_value
+		{	
+			margin-top: -31px;
+			&>div>div
+			{
+				width: 100px;
+			}
+		}
+	}
+
+}
+
+
+@media screen and (max-width: 767px)
+{
+	#user-register-form,
+	#user-profile-form
+	{
+		.field-type-text,
+		.field-type-list-text,
+		#edit-account,
+		.field-type-datetime,
+		.form-type-markup
+		{
+			width: 100%;
+			margin-right: 0px;
+		}
+	}
+
+	#navigation #block-system-main-menu
+	{
+		top: 286px;
+	}
+
+	#login
+	{
+		float: none;
+	}
+
+	#logo
+	{
+		float: none;
+		padding-right: 0px;
+		margin-top: 50px;
+	}
+
+     .not-logged-in.page-user:not(.page-user-register)
+     {
+     	#block-block-8,
+     	#block-system-main
+     	{
+     		float: none;
+     		width: 100%;
+     	}
+     }
+
+	#right-block
+	{
+		float: none;
+		margin: 0 auto 10px;
+		text-align: center;
+	
+		.front.not-logged-in &
+		{
+			margin-right: auto;
+			position: inherit;
+			top: auto;
+			right: auto;
+		}
+
+		.form-actions input
+		{
+			top: 5px;
+			right: -33px;
+		}
+	}
+
+	#search-block
+	{
+		position: absolute;
+	    top: 10px;
+	    left: 50%;
+	    transform: translateX(-50%);
+	    -moz-transform: translateX(-50%);
+	    -webkit-transform: translateX(-50%);
+	}
+
+
+	#block-block-4
+	{
+		a
+		{
+			display: block;
+			padding: 10px 0px;
+
+			&:first-child img
+			{
+				width: 250px;
+				height: auto;
+			}
+
+			&:first-child + a
+			{
+				padding-bottom: 30px;
+			}
+
+			img
+			{
+				margin: 0 auto;
+			}
+		}
+	}
+
+	.view-faq,
+	.view-what-you-need
+	{
+		.views-field-body
+		{
+			padding-left: 0px;
+		}
+	}
+
+	.view-portal-export,
+	.view-portal-export1
+	{
+		.view-filters select
+		{
+			min-width: 200px;
+		}
+
+		.view-header
+		{
+			margin-top: 0px;
+		}
+	}
+
+	ul.alphabet
+	{	
+		#content &
+		{
+			padding-left: 0px;
+		}
+	}
+
+	#user-profile-form
+	{
+		.alphabet li a
+		{
+			font-size: 24px;
+		}
+	}
+
+	#responsive-alpha-search
+	{	
+		width: 200px;
+		text-align: center;
+		position: relative;	
+		margin: 0 auto;
+		z-index: 9;
+
+		&>a
+		{
+			display: inline-block;
+		    border: 1px solid #ccc;
+		    padding: 8px;
+		    margin: 20px 0px;
+		    width: 180px;
+		    border-radius: 3px;
+		    color: $grey;
+		    background: url(../images/polygon.png) no-repeat;
+		    background-position: right 10px center;
+		    font-style: italic;
+		    margin-bottom: 0px;
+		}
+
+		.alphabet
+		{	
+			display: none;
+		    position: absolute;
+		    top: 58px;
+		    background: white;
+		    height: auto;
+		    bottom: auto;
+		    width: 197px;
+		    padding-left: 0px;
+	        border: 1px solid #ccc;
+
+			li
+			{
+				display: block;
+			    border-bottom: 1px solid #ccc;
+			}
+
+			li.active
+			{
+				border-radius: 0px;
+			}
+		}
+	}
+
+	#user-profile-form
+	{	
+
+		.group-referral .form-checkboxes 
+		{
+			column-count: 2;
+		    -webkit-column-count: 2;
+		    -moz-column-count: 2;
+
+		    input
+		    {
+		    	background: transparent
+		    }
+		}
+
+		.form-submit
+		{
+			margin: 10px;
+		}
+
+		.group-pg-notes .view-filters
+		{
+			position: relative;
+			top: auto;
+		}
+
+		.field-name-field-document-uploads,
+		#field-referral-values,
+		#field-referrals-services-values
+		{
+			.draggable
+			{
+				width: 300px;	
+				display: block;
+				padding: 0px;
+			}
+
+			.field-type-list-text
+			{
+				float: none;
+			}
+		}
+		
+		.field-type-multifield table td
+		{
+			width: 300px;
+			display: block;
+
+			.form-managed-file .form-submit
+			{
+				right: 0px;
+				left: auto;
+			    bottom: -38px;
+			}
+		}
+
+		.field-type-entityreference 
+		{
+			.container-inline
+			{
+				width: 95%;
+			}
+
+			.form-submit
+			{
+				margin: 0px;
+			}
+		}
+			
+		.field-type-multifield
+		{
+			.field-type-text,
+			.field-type-file
+			{
+				width: 100%;
+				display: block;
+			}
+		}
+	}
+
+	.view-learners-list,
+	.view-portal-export1,
+	.view-portal-export
+	{	
+		 #header-label,
+		 #header-label1
+	 	{	
+		 	display: none;
+		 	margin-top: 110px;
+	 	}
+
+	 	select
+	 	{
+	 		margin-right: 0px;
+	 		min-width: 197px;
+	 	}
+
+	 	.view-filters
+	 	{
+	 		position: relative;
+	 		float: none;
+	 		top: auto;
+	 		margin: 20px 0px;
+	 		padding-top: 25px;
+
+	 		.views-exposed-widget
+	 		{
+	 			float: none;
+	 			text-align: center;
+	 			margin: 10px 0px;
+	 		}
+	 	}
+
+		.views-row 
+		{	
+			border-bottom: 1px solid $orange;
+			padding: 20px 0px;
+			.field-content 
+			{
+				.email-field
+				{
+					width: 100%;
+				}
+				div 
+				{
+					float: none;
+					width: 100%;
+
+					.label
+					{
+						display: inline-block;
+						color: $orange;
+						width: 150px;
+					}
+				}
+			}
+		}
+
+	 	.view-content
+	 	{
+		 	margin-top: 0px;
+	 	}
+	}
+
+	.view-learners-list
+	{
+		.view-filters
+		{
+			padding-top: 0px;
+		}
+
+		.alphabet
+		{
+			display: none;
+		}
+	}
+
+	.view-learning-profile-info .views-row
+	{
+		-moz-column-count: inherit;
+	    -webkit-column-count: inherit;
+	    column-count: inherit;
+	}
+
+	.view-learner-plan
+	{
+		.header-label,
+		#header-label1
+		{
+			display: none;
+		}
+
+		.views-row
+		{	
+
+			background-image: none;
+			background-color: $lightgreen;
+			margin: 10px 0px;
+			padding: 20px 0px 0px;
+		}
+
+		.view-header > h3 + div
+		{
+			margin-bottom: 30px;
+			text-align: center;
+		}
+
+		.view-content
+		{	
+			padding-top: 30px;
+			&:before
+			{
+				top: 0px;
+			}
+		}
+
+		.field-name-field-milestone-outcome
+		{
+			background-image: url(../images/polygon.png);
+		    background-repeat: no-repeat;
+		    background-position: bottom 10px center;
+		    padding-bottom: 35px !important;
+		}
+
+		.field-type-entityreference
+		{
+			margin-bottom: 0px;
+		}
+
+		.views-row.open
+		{
+			background-image: none;
+		}
+
+		.views-row.open .field-name-field-milestone-outcome
+		{	
+			background-color: $lightgreen;
+		    background-image: url(../images/polygon-up.png);
+		    background-repeat: no-repeat;
+
+		}
+
+		.node-competency .content > div
+		{
+			width: auto;
+			display: block;
+
+			.field-label
+			{
+				display: none;
+				color: $orange;
+				display: inline-block;
+			    width: 116px;
+			    margin-right: 20px;
+			    padding-left: 10px;
+			}
+
+			.field-items
+			{
+				display: inline-block;
+				vertical-align: top;
+			}
+
+
+			&.field-name-field-activity
+			{	
+				background-color: white;
+
+				&>.field-label
+				{
+					display: none!important;
+				}
+			}
+			
+		}
+
+		.node-learning-activity
+		{	
+			border-bottom: 1px solid $orange;
+
+			.content
+			{
+				padding: 0px;
+			}
+
+			.content > div:last-child
+			{
+				width: auto;
+			}
+
+			.field-name-field-learning-activity .field-items
+			{
+				padding-left: 10px;
+			}
+			
+		}
+	}
+	
+
+	.form-navigation 
+	{	
+		text-align: center;
+
+		.next,
+		.prev
+		{	
+			float: none;
+			position: relative;
+			margin: 10px 0px;
+		}
+	}
+
+	#user-register-form
+	{
+		.help-button:hover + div .description
+		{
+			width: 90%;
+		}
+
+		#edit-actions
+		{
+			position: relative;
+			margin-top: 0px;
+
+			input
+			{
+				width: 190px;
+				margin: 10px auto;
+			}
+		}
+	}
+
+	ul.indicators li
+	{
+		margin: 0px 5px;
+	}
+
+	.view-courses-list-content-view
+	{
+		.views-field-field-type-of-class-1
+		{
+			display: block;
+		}
+	}
+
+
+	ul.secondary li
+	{
+		display: block;
+		margin: 10px 0px;
+		padding-right: 0px;
+	}
+
+	.confirm-parent, .password-parent
+	{
+		width: auto;
+	}
+
+	.ief-entity-table td
+	{
+		padding: 30px 0px;
+	}
+
+	#edit-profile-plan-content-field-learner-plan1,
+	#ief-entity-table-edit-profile-plan-content-field-progress-notes1-und-entities
+	{
+
+		table, thead, tbody, th, td, tr 
+		{ 
+			display: block; 
+		}
+		
+		thead tr 
+		{ 
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+		
+		tr 
+		{ 
+			vertical-align: middle;
+		}
+		
+		td
+		{ 
+			border: none;
+			position: relative;
+			padding-left: 50%; 
+			text-align: left ! important;
+			height: auto;
+			max-width: 50%;
+			width:50%;
+		}
+		
+
+		td:before
+	 	{ 
+			position: absolute;
+			left: 6px;
+			width: 45%; 
+			padding-right: 10px; 
+			text-align: left;
+			font-weight: bold;
+			max-width: 120px;
+			color: $orange;
+		}
+
+		.ief-tabledrag-handle
+		{
+			display: none;
+		}
+
+		.ief-row-form
+		{
+			&>td
+			{	
+				padding-left: 0px;
+			    max-width: 100%;
+			    width: 100%;
+
+			    &:before
+			    {
+			    	display: none;
+			    }
+			}
+		}
+
+		.ief-entity-operations
+		{	
+			#user-profile-form &
+			{
+				input
+				{
+					margin: 0px 10px;
+				}
+			}
+		}
+
+		.field-type-datetime
+		{
+			padding: 0px;
+		}
+	}
+
+	#ief-entity-table-edit-profile-plan-content-field-progress-notes1-und-entities
+	{
+		td:nth-of-type(1):before { content: "Title"; }
+		td:nth-of-type(2):before { content: "Date & Time"; }
+		td:nth-of-type(3):before { content: "Note Description"; }
+		td:nth-of-type(4):before { content: "Operations"; }
+
+		.draggable
+		{
+			td:nth-of-type(3):before { content: "Title"; }
+			td:nth-of-type(4):before { content: "Date & Time"; }
+			td:nth-of-type(5):before { content: "Note Description"; }
+			td:nth-of-type(6):before { content: "Operations"; }
+		}
+	}
+
+	#edit-profile-plan-content-field-learner-plan1
+	{	
+
+		td:nth-of-type(1):before { content: "Task Group & level Indicator"; }
+		td:nth-of-type(2):before { content: "Milestone#"; }
+		td:nth-of-type(3):before { content: "Milestone Attempt Date"; }
+		td:nth-of-type(4):before { content: "Milestone Outcome"; }
+		td:nth-of-type(5):before { content: "Operations"; }
+
+		.draggable
+		{
+			td:nth-of-type(3):before { content: "Task Group & level Indicator"; }
+			td:nth-of-type(4):before { content: "Milestone#"; }
+			td:nth-of-type(5):before { content: "Milestone Attempt Date"; }
+			td:nth-of-type(6):before { content: "Milestone Outcome"; }
+			td:nth-of-type(7):before { content: "Operations"; }
+		}
+
+		.ief-form
+		{
+			.form-type-textfield,
+			.field-type-taxonomy-term-reference,
+			.field-type-list-integer,
+			.field-type-datetime,
+			.field-type-list-text
+			{
+				float: none;
+			}
+
+			.field-name-field-task-group-level-indicator
+			{
+				min-height: auto;
+			}
+		}
+
+		
+
+		.field-name-field-activity
+		{
+			td:nth-of-type(1):before { content: "Approval"; }
+			td:nth-of-type(2):before { content: "Outcome"; }
+			td:nth-of-type(3):before { content: "Start Date"; }
+			td:nth-of-type(4):before { content: "End Date"; }
+			td:nth-of-type(5):before { content: "Learning Activity"; }
+			td:nth-of-type(6):before { content: "Operations"; }
+
+			.draggable
+			{
+				td:nth-of-type(3):before { content: "Approval"; }
+				td:nth-of-type(4):before { content: "Outcome"; }
+				td:nth-of-type(5):before { content: "Start Date"; }
+				td:nth-of-type(6):before { content: "End Date"; }
+				td:nth-of-type(7):before { content: "Learning Activity"; }
+				td:nth-of-type(8):before { content: "Operations"; }
+
+			}
+		}
+	}
+
+	#edit-profile-plan-content-field-progress-notes1 .ief-form
+	{
+		& > .fieldset-wrapper > .form-wrapper > .form-submit
+		{
+			margin: 10px 0px;
+		}
+	}
+
+	.community-list
+	{
+		column-count: 1;
+	    -webkit-column-count: 1;
+	    -moz-column-count: 1;
+	}
+
+	.item-list 
+	{	
+		padding-left: 0px;
+		.pager li
+		{
+			padding: 0px;
+			margin: 6px;
+		}
+	}
+}
+
+@media screen and (max-width: 460px)
+{
+
+	h3
+	{
+		font-size: 24px;
+	}
+
+	.field-name-field-notice
+	{	
+		width: 300px;
+
+		a
+		{
+			word-wrap: break-word;
+		}
+	}
+
+	.view-courses-list-content-view span.views-field-title
+	{
+		max-width: 60%;
+	}
+
+	#block-views-course-category-block,
+	#block-views-course-category-block-1 
+	{	
+		.views-row
+		{	
+			margin: 10px;
+			.field-content a
+			{
+			    width: 106px;
+			 	height: 113px;
+			}
+		}
+		
+		.search-all
+		{
+			width: 106px;
+			height: 112px;
+		}
+	}
+
+	#user-profile-form
+	{	
+	 	#edit-account
+	 	{	
+ 		 	input
+ 		 	{
+ 		 		width: 90%;
+ 		 	}
+	 		
+	 		input.form-radio
+	 		{
+	 			width: auto;
+	 		}
+	 	}
+	
+		.field-name-field-courses-4 select
+		{
+			width: 90%;
+		}
+	}
+
+	.password-strength
+	{
+		display: none;
+	}
+}

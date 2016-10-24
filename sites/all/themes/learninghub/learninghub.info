@@ -1,0 +1,30 @@
+name = learninghub
+description = learninghub Custom
+core = 7.x
+
+;scripts[] = js/filename.js
+scripts[] = js/parsley.min.js
+scripts[] = js/parsley.min.js
+scripts[] = js/jquery.steps.min.js
+scripts[] = js/multistepForm.js
+scripts[] = js/bgimage-size.js
+scripts[] = js/jquery.selectbox.min.js
+scripts[] = js/responsive_table/ng_responsive_tables.js
+scripts[] = js/script.js
+scripts[] = js/mobile-menu.js
+scripts[] = js/slick/slick.js
+
+
+
+stylesheets[all][] = js/slick/slick.css
+stylesheets[all][] = stylesheets/screen.css
+stylesheets[all][] = js/responsive_table/ng_responsive_tables.css
+
+regions[navigation] = Navigation
+regions[header] = Header
+regions[help] = Help
+regions[content] = Content
+regions[sidebar] = Sidebar
+regions[widgets] = Widgets
+regions[footer] = Footer
+

@@ -1,0 +1,6 @@
+name = Custom Milestone Completed field
+core = 7.x
+package = Custom Course
+version = "7.x-1.0"
+
+files[] = includes/views_handler_milestone_completed.inc

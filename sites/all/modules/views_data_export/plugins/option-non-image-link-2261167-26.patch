@@ -1,0 +1,87 @@
+diff --git a/plugins/views_data_export_plugin_style_export.inc b/plugins/views_data_export_plugin_style_export.inc
+index 493796f..de57360 100644
+--- a/plugins/views_data_export_plugin_style_export.inc
++++ b/plugins/views_data_export_plugin_style_export.inc
+@@ -28,6 +28,14 @@ class views_data_export_plugin_style_export extends views_plugin_style {
+       'default' => FALSE,
+       'translatable' => FALSE,
+     );
++    $options['text_link'] = array(
++      'default' => FALSE,
++      'translatable' => FALSE,
++    );
++    $options['text_link_class'] = array(
++      'default' => FALSE,
++      'translatable' => FALSE,
++    );
+     $options['filename'] = array(
+       'default' => $this->definition['export feed file'],
+       'translatable' => FALSE,
+@@ -62,6 +70,22 @@ class views_data_export_plugin_style_export extends views_plugin_style {
+       '#default_value' => $this->options['provide_file'],
+       '#description' => t('By deselecting this, the xml file will be provided as a feed instead of a file for download.'),
+     );
++   $form['text_link'] = array(
++      '#type' => 'checkbox',
++      '#title' => t('Use a text link'),
++      '#default_value' => $this->options['text_link'],
++      '#description' => t('Select this checkbox to use a text link instead of an icon.'),
++    );
++   $form['text_link_class'] = array(
++      '#type' => 'textfield',
++      '#title' => t('Add a class'),
++      '#default_value' => $this->options['text_link_class'],
++      '#description' => t('Enter a class to apply to the text link.'),
++	  '#process' => array('ctools_dependent_process'),
++      '#dependency' => array(
++        'edit-style-options-text-link' => array(TRUE),
++      ),
++    );
+     $form['filename'] = array(
+       '#type' => 'textfield',
+       '#title' => t('Filename'),
+@@ -168,13 +192,24 @@ class views_data_export_plugin_style_export extends views_plugin_style {
+       if (!isset($this->view->feed_icon)) {
+         $this->view->feed_icon = '';
+       }
+-      $this->view->feed_icon .= theme($theme_pattern, array(
+-          'image_path' => $this->definition['export feed icon'],
+-          'url' => $this->view->get_url(NULL, $path),
+-          'query' => $query,
+-          'text' => $this->options['attach_text'],
+-        )
+-      );
++      if (empty($this->options['text_link'])) {	
++        $this->view->feed_icon .= theme($theme_pattern, array(
++	   'image_path' => $this->definition['export feed icon'],
++	   'url' => $this->view->get_url(NULL, $path),
++	   'query' => $query,
++	   'text' => $this->options['attach_text'],
++	 )
++       );
++       } 
++      if (!empty($this->options['text_link'])) {		
++	$text_link = t('<a href="@url" class="@class" alt="@alt">@text</a>', array(
++	   '@url' => url($path, array('query' => $query)),
++	   '@text' => $this->options['attach_text'],
++	   '@alt' => $this->options['attach_text'],
++	   '@class' => $this->options['text_link_class'])
++	   ); 		
++	$this->view->feed_icon .= $text_link;		
++       }	
+     }
+   }
+ 
+diff --git a/views_data_export.drush.inc b/views_data_export.drush.inc
+index ce99aa5..0196853 100644
+--- a/views_data_export.drush.inc
++++ b/views_data_export.drush.inc
+@@ -309,6 +309,8 @@ function _drush_views_data_export_clone_display(&$view, $display_id, $settings =
+       'style_options' => array(
+         'attach_text' => 'CSV',
+         'provide_file' => 1,
++	 'text_link' => '',
++	 'text_link_class' => 1,
+         'filename' => 'view-%view.csv',
+         'parent_sort' => 1,
+         'separator' => ',',

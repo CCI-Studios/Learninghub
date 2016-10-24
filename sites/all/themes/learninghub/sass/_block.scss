@@ -1,0 +1,253 @@
+#block-imageblock-1
+{	
+	height: 532px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-bottom: 5px solid $green;
+	position: relative;
+
+	.block-body
+	{
+		position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    color: $orange;
+	    font-size: 18px;
+	    text-align: center;
+	    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+	    transform: translateY(-50%) translateX(-50%);
+	    -webkit-transform: translateY(-50%) translateX(-50%);
+	}
+
+
+    h1
+    {
+    	padding-bottom: 35px;
+    	line-height: 1em;
+    	text-transform: inherit;
+    	text-align: center;
+    }
+
+    h1:before
+    {
+    	content: url(../images/gear-icon.png);
+    	display: block;
+    	padding-bottom: 35px;
+    }
+
+ 	.button
+    {
+    	margin-top: 50px;
+    }
+
+}
+
+#block-block-2
+{
+	padding: 100px 0px;
+	text-align: center;
+	background: url(../images/watermark.png) no-repeat;
+    background-position: center;
+
+    h1
+    {
+    	padding-bottom: 35px;
+    	line-height: 1em;
+    	text-transform: inherit;
+    }
+
+    h1:before
+    {
+    	content: url(../images/gear-icon.png);
+    	display: block;
+    	padding-bottom: 35px;
+    }
+
+    .button
+    {
+    	margin-top: 50px;
+    }
+}
+
+#block-block-3
+{	
+	background: $green;
+	padding: 100px 0px;
+	text-align: center;
+
+	.action-button 
+	{
+	    display: inline-block;
+	    background-color: $orange;
+	    color: white;
+	    padding: 15px;
+	    margin: 0px 15px;
+	    vertical-align: middle;
+	    font-size: 32px;
+	    font-weight: normal;
+	    box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+
+	    a
+	    {	
+	    	display: block;
+	    	color: white;
+    	    border: 3px solid white;
+		    padding: 70px 10px;
+		    width: 250px;
+		    height: 126px;
+		    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+	    }
+
+	    a:before
+	    {
+	    	display: block;
+	    	padding-bottom: 10px;
+	    }
+
+	    span
+	    {
+	    	display: block;
+	    	font-size: 14px;
+	    	padding-top: 30px;
+	    }
+	}
+
+	#register-button a
+	{	
+		background: url(../images/hat-watermark.png) no-repeat;
+	    background-position: center;
+
+		&:before
+		{
+			content: url(../images/hat.png);
+		}
+	}
+
+
+
+	#login-button a
+	{
+		background: url(../images/laptop-wm.png) no-repeat;
+	    background-position: center;
+		
+		&:before
+		{
+			content: url(../images/laptop.png);
+		}
+	}
+
+	#classes-button a
+	{
+		background: url(../images/book-wm.png) no-repeat;
+	  	background-position: center;
+		
+		&:before
+		{
+			content: url(../images/book.png);
+		}
+	}
+
+	#login-button
+	{
+		background-color: $yellow;
+	}
+}
+
+#block-block-4
+{
+	text-align: center;
+	padding: 50px 10px;
+
+	img
+	{
+	    margin: 0px 75px 0px 0px;
+	    vertical-align: middle;
+	}
+
+	.logged-in &
+	{
+		border-top: 5px solid $green;
+	}
+}
+
+#block-block-7,
+#block-block-8
+{	
+	@extend .inner-layout;
+	padding: 50px 0px;
+	text-align: center;
+}
+
+#block-block-8
+{	
+	padding-top: 0px;
+	.platform-link
+	{
+		padding: 35px;
+		background-color: $orange;
+		border-radius: 3px;
+		display: inline-block;
+		color: white;
+		font-size: 33px;
+	 	font-weight: bold;
+ 	    height: 60px;
+	    width: 110px;
+	    vertical-align: middle;
+	    margin: 20px;
+	    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+
+		span
+		{
+			display: block;
+			font-size: 18px;
+			font-weight: normal; 
+		}
+
+		span:before
+		{
+			display: block;
+			text-align: center;
+		}
+
+		&:hover
+		{
+			background: $green;
+		}
+	}
+
+	#learn-platform
+	{
+	    padding: 15px 30px;
+	    height: 100px;
+	    width: auto;
+
+	    span:before
+	    {
+	    	content: url(../images/learnscape.png);
+	    }
+	}
+}
+
+#block-block-10
+{
+    position: absolute;
+    right: 0;
+    top: 28px;
+}
+
+#saba-platform span
+{
+	padding-top: 22px;
+}
+
+#moodle-platform span:before
+{
+	content: url(../images/moodle.png);
+	padding-bottom: 12px;
+}
+
+#plato-platform span:before
+{
+	content: url(../images/plato.png);
+	padding-bottom: 10px;
+}

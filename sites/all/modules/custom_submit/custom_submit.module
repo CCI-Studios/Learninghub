@@ -1,0 +1,365 @@
+
+<?php 
+
+function custom_submit_menu() {
+
+	 $items['course-selection'] = array(
+        'title' => 'course',
+        'description' => 'Change in course',
+        'page callback' => 'submit_value',
+        'access callback' => TRUE,  
+    );
+
+	 return $items;
+}
+
+function custom_submit_send($nid, $body, $existingUser, $profiles_plan_content) {
+  
+  $email_content = get_mail_content($nid, $body, $existingUser, $profiles_plan_content);
+  $params = array('body' => $email_content);
+  $key = 'test_email';
+  $to =  $existingUser->mail;
+  $from = 'lhreg@ed.amdsb.ca';
+  $mail = drupal_mail('test', $key, $to, language_default(), $params, $from);
+  // for better understanding,you can uncomment the following
+ // dpm($mail);
+ 
+}
+
+function custom_submit_send_admin($nid, $body, $existingUser, $profiles_plan_content) {
+  $email_content = get_mail_content_admin($nid, $body, $existingUser, $profiles_plan_content);
+  $params = array('body' => $email_content);
+  $key = 'test_email_admin';
+  $to = 'lhreg@ed.amdsb.ca';
+  $from = 'lhreg@ed.amdsb.ca';
+  $mail = drupal_mail('test_admin', $key, $to, language_default(), $params, $from);
+  // for better understanding,you can uncomment the following
+ // dpm($mail);
+ 
+}
+ 
+/**
+ * Implements hook_mail()
+ * @param 
+ *   type $key to decide which email body to sent on basis of key parameter inacese of multiple email content
+ * @param 
+ *   type $message the email content to be sent.Message array contains 'subject an 	d body ' for the email.
+ * @param 
+ *   type $params using to get the cusotm email content from a function.This can be used in my other ways aslo as per need.
+ */
+function test_mail($key, &$message, $params) {
+  $language = $message['language'];
+  switch ($key) {
+//switching on $key lets you create variations of the email based on the $key parameter
+    case 'test_email':
+      $message['subject'] = t('Course selection');
+//the email body is here, inside the $message array
+      $message['body'][] = $params['body'];
+      break;
+  }
+}
+
+function test_admin_mail($key, &$message, $params) {
+  $language = $message['language'];
+  switch ($key) {
+//switching on $key lets you create variations of the email based on the $key parameter
+    case 'test_email_admin':
+      $message['subject'] = t('Course selection');
+//the email body is here, inside the $message array
+      $message['body'][] = $params['body'];
+      break;
+  }
+}
+ 
+/**
+ * function to get the html formatted email content
+ * @param 
+ *   type $form_state to get values from form fields.
+ * @return 
+ *   $body type string return the html email content 
+ */
+function get_mail_content($nid, $bodyContent, $existingUser, $profiles_plan_content) {
+ 
+  if(isset($nid->field_time['und']))
+  {
+  	if (!function_exists('array_map_assoc'))
+  	{
+		function array_map_assoc( $callback , $array ){
+		  $r = array();
+		  foreach ($array as $key=>$value)
+		  {
+		  	$user_tz = new DateTimeZone('America/Toronto');  
+			$offset = $user_tz->getOffset(new DateTime($value['value']));
+			$start_stamp = strtotime($value['value']) + $offset;
+ 	  		$time = format_date($start_stamp, 'custom', 'd/m/y h:i a');
+		    $r[$key] = $callback($key,$time);
+		  }
+	  		
+		  return $r;
+		}
+		$date_start = implode(',',array_map_assoc(function($k,$v){return "$v";},$nid->field_time['und']));
+  	} 
+
+  }
+  else
+  {
+  	$date_start = '';
+  }
+
+  $email_to = $existingUser->mail;
+  $body = '';
+  $body .= 'Hi '.$profiles_plan_content->field_first_name['und'][0]['value'].' '.$profiles_plan_content->field_last_name['und'][0]['value']. '<br>';
+  $body .= 'you have made changes to course <br>';
+  $body .=  '<h1>'.$nid->title.'</h1><p>'.$date_start.'</p><p>'. $bodyContent . '</p>';
+  $body .= '<p>Thanks</p>';
+  $body .= 'LearningHUB Team';
+  return $body;
+}
+
+function get_mail_content_admin($nid, $bodyContent, $existingUser, $profiles_plan_content) {
+  
+  if(isset($nid->field_time['und']))
+  {		
+  	if (!function_exists('array_map_assoc1'))
+  	{
+	   function array_map_assoc1( $callback , $array ){
+		  $r = array();
+		  foreach ($array as $key=>$value)
+		  {
+		  	$user_tz = new DateTimeZone('America/Toronto');  
+			$offset = $user_tz->getOffset(new DateTime($value['value']));
+			$start_stamp = strtotime($value['value']) + $offset;
+ 	  		$time = format_date($start_stamp, 'custom', 'd/m/y h:i a');
+		    $r[$key] = $callback($key,$time);
+		  }
+		  return $r;
+		}
+
+		$date_start = implode(',',array_map_assoc1(function($k,$v){return "$v";},$nid->field_time['und']));
+  	}
+  }
+  else
+  {
+  	$date_start = '';
+  }
+
+  $email_to = $existingUser->name;
+  $body = '';
+  $body .= 'Hi, <br>';
+  $body .= 	$profiles_plan_content->field_first_name['und'][0]['value'].' '.$profiles_plan_content->field_last_name['und'][0]['value'].' has made changes to the course <br>';
+  $body .=  '<h1>'.$nid->title.'</h1><p>'.$date_start.'</p><p>'. $bodyContent . '</p>';
+  $body .= '<p>Thanks</p>';
+  $body .= 'LearningHUB Team';
+  return $body;
+}
+
+
+function submit_value(){
+
+	$nid = $_POST['nid'];
+	if(isset($_POST['radio_time']))
+	{
+		$radio_time = $_POST['radio_time'];
+	}
+	else
+	{
+		$radio_time = '';
+	}
+	$nid = node_load($nid);
+	$title = $nid->title;
+
+	global $user;
+
+	$existingUser = $user->uid;	
+
+	$existing = user_load($user->uid);
+
+	$profiles_plan_content = profile2_load_by_user($user->uid,'learner_profile');
+
+
+	$target_id = array('target_id' => $nid->nid);
+	$target_id_live = array('target_id' => $user->uid);
+
+    if (!function_exists('in_array_r'))
+    {
+      function in_array_r($needle, $haystack, $strict = false) {
+          foreach ($haystack as $item) {
+              if (($strict ? $item === $needle : $item == $needle) || (is_array($item) && in_array_r($needle, $item, $strict))) {
+                  return true;
+              }
+          }
+
+        return false;
+      }
+    }
+
+    if(isset($nid->body['und'][0]['value']))
+	{
+		$body = $nid->body['und'][0]['value'];
+	}
+	else
+	{
+		$body = '';
+	}
+
+	if($_POST['buttonValue'] == 'Add course')
+	{	
+		if(empty($nid->field_users_attending))
+		{
+			$target_id_live = array('target_id' => $user->uid);
+			$nid->field_users_attending['und'] =  array();
+			array_push($nid->field_users_attending['und'], $target_id_live);
+		}
+		else if(in_array_r($user->uid, $nid->field_users_attending) == false)
+		{		
+			$target_id_live = array('target_id' => $user->uid);
+			array_push($nid->field_users_attending['und'], $target_id_live);
+		}
+
+		if($nid->type == 'courses_live' && isset($_POST['radio_time']))
+		{
+			if(empty($existing->field_courses_live))
+			{
+				$existing->field_courses_live['und'] = array();
+				array_push($existing->field_courses_live['und'],array('value'=> $nid->nid.','.$radio_time));
+			}
+			else
+			{	
+				array_push($existing->field_courses_live['und'],array('value'=> $nid->nid.','.$radio_time));
+			}
+		}
+		
+
+		if(empty($existing->field_courses_4))
+		{
+			$target_id = array('target_id' => $nid->nid);
+			$existing->field_courses_4['und'] =  array();
+			array_push($existing->field_courses_4['und'],$target_id);
+		}
+		else if(in_array_r($nid->nid, $existing->field_courses_4) == false)
+		{	
+
+			$count = 0;
+			foreach ($existing->field_courses_4['und'] as $key => $value) {
+				
+				$c_id = node_load($value['target_id']);
+				 if($c_id->type == 'courses_live')
+				 {
+				 	$count++;
+				 }
+			}
+			$target_id = array('target_id' => $nid->nid);
+		
+			if($nid->type!='courses_live')
+			{	
+				
+				array_push($existing->field_courses_4['und'],$target_id);
+				
+			}	
+			else if($nid->type=='courses_live')
+			{	
+				if($count < 5)
+				{
+					array_push($existing->field_courses_4['und'],$target_id);
+				}
+				else
+				{
+					drupal_set_message("Cannot add more than 5 live courses.");
+					return '<a href="/course-list-content" class="button">Go Back</a></div>';
+					exit;
+				}
+			}
+			
+		}	
+
+		node_save($nid);
+		user_save($existing);
+        custom_submit_send($nid, $body, $user, $profiles_plan_content);
+        custom_submit_send_admin($nid, $body, $user, $profiles_plan_content);
+        drupal_set_message("This Course has been added to your list.  Your Practitioner will be in touch shortly with further instruction.");
+		return '<h2>'.$nid->title.'</h2>'.$body.'<div><a href="/course-list-content" class="button">Go Back</a></div>';
+	}
+   
+	
+	if($_POST['buttonValue'] == 'Remove course')
+	{	
+		if(isset($existing->field_courses_4['und']))
+		{
+			foreach ($existing->field_courses_4['und'] as $key => $value) { 
+
+			    if ($value["target_id"] == $nid->nid) { unset($existing->field_courses_4['und'][$key]); }
+			}
+		}
+
+		if($nid->type == 'courses_live')
+		{	
+			foreach ($existing->field_courses_live as $key => $value) {
+					
+
+					$id = [];
+					$time = [];
+					$group = [];
+					foreach ($value as $key => $value) {
+						
+						  $data = explode(',', $value['value']);
+						  $id1 = $data[0];
+						  $time1 = $data[1];
+						  $group1 = array('gp'=> array('id'=>$id1,'time'=>$time1));
+						  array_push($group,$group1);
+
+					}
+				}
+				if(isset($existing->field_courses_live['und']))
+				{
+                  foreach ($existing->field_courses_live['und'] as $key => $value) {
+                  	
+						$id = explode(',', $value["value"]);
+						if ($id[0] == $nid->nid)
+						{
+							unset($existing->field_courses_live['und'][$key]);
+						}
+	
+                  }
+              	}
+                  
+	
+		}
+
+		if(isset($nid->field_users_attending['und']))
+		{
+			foreach ($nid->field_users_attending['und'] as $key => $value) { 
+
+		   	 	if ($value["target_id"] == $user->uid) { unset($nid->field_users_attending['und'][$key]); }
+			}
+		}
+		node_save($nid);
+		user_save($existing);
+        drupal_set_message("This Course has been removed from your list.");
+
+		return '<h2>'.$nid->title.'</h2>'.$body.'<div><a href="/current-courses" class="button">Go Back</a></div>';
+		
+	}
+
+	if($_POST['buttonValue'] == 'Add to wait list')
+	{
+		if(empty($nid->field_wait_list))
+		{
+			$target_id_live = array('target_id' => $user->uid);
+			$nid->field_wait_list['und'] =  array();
+			array_push($nid->field_wait_list['und'], $target_id_live);
+		}
+		else if(in_array_r($user->uid, $nid->field_wait_list) == false)
+		{		
+			$target_id_live = array('target_id' => $user->uid);
+			array_push($nid->field_wait_list['und'], $target_id_live);
+		}	
+		node_save($nid);
+		user_save($existing);
+		return '<h3>You have been added to waiting list</h3><h2>'.$nid->title.'</h2>'.$body.'<div><a href="/course-list-content" class="button">Go Back</a></div>';
+	}
+
+	
+	
+}
+
+?>

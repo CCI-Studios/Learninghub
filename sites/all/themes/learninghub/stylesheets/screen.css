@@ -1,0 +1,2745 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+a img {
+  border: 0; }
+
+input, select, textarea, button {
+  font-family: inherit; }
+
+body {
+  font-family: "myriad-pro",sans-serif;
+  color: #7f7f7f;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.layout, #navigation > div, .not-logged-in.page-user.page-user-logout #content {
+  max-width: 1220px;
+  margin: 0 auto; }
+
+.inner-layout, .not-front .block-imageblock .block-body, #block-block-7,
+#block-block-8 {
+  max-width: 940px;
+  margin: 0 auto; }
+
+form span.error-msg {
+  display: none;
+  color: red; }
+
+h1 {
+  padding-bottom: 35px;
+  line-height: 1em;
+  text-align: center;
+  text-transform: lowercase; }
+
+h1#page-title:before,
+#block-block-7 h1:before {
+  content: url(../images/gear-icon.png);
+  display: block;
+  padding-bottom: 35px; }
+
+#content {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 80px 10px; }
+  #content p {
+    line-height: 1.8em;
+    padding-bottom: 20px; }
+  #content ul {
+    padding-left: 20px; }
+  #content .button,
+  #content .webform-submit,
+  #content .btn,
+  #content .form-actions .form-submit,
+  .form-actions #content .form-submit,
+  #content .group-referral .form-submit,
+  .group-referral #content .form-submit,
+  #content .form-submit-export,
+  #content #edit-actions input,
+  #edit-actions #content input,
+  #content .feed-icon a,
+  .feed-icon #content a,
+  #content .field-add-more-submit,
+  #content .view-learners-list .form-submit,
+  .view-learners-list #content .form-submit, #content .ief-form .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit, .ief-form #content .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit, #content .ief-form > .form-wrapper > .form-submit,
+  #content .ief-row-form .ief-form-row .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit,
+  .ief-row-form .ief-form-row #content .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit,
+  #content .ief-row-form .ief-form-row > .form-wrapper > .form-submit,
+  .ief-row-form #content .ief-form-row > .form-wrapper > .form-submit, #content .field-name-field-activity .ief-row-form .form-submit, .field-name-field-activity .ief-row-form #content .form-submit, #content .group-pg-notes .ief-row-form .form-submit, .group-pg-notes .ief-row-form #content .form-submit, #content .view-portal-export .view-filters .views-exposed-widget .form-submit, .view-portal-export .view-filters .views-exposed-widget #content .form-submit,
+  #content .view-portal-export1 .view-filters .views-exposed-widget .form-submit,
+  .view-portal-export1 .view-filters .views-exposed-widget #content .form-submit, #content .view-courses-list-content-view .view-filters .form-submit, .view-courses-list-content-view .view-filters #content .form-submit {
+    text-decoration: none; }
+
+h1,
+.block-block h2 {
+  font-size: 45px;
+  text-transform: lowercase; }
+
+h2,
+.view-courses-list-content-view .view-content > h3 {
+  padding-bottom: 20px;
+  font-size: 45px; }
+
+h3,
+.view-courses-list-content-view .views-field-title span {
+  font-size: 28px;
+  padding-bottom: 20px;
+  display: block; }
+
+h4 {
+  font-size: 22px; }
+
+strong {
+  color: #f28d1e; }
+
+h1, h2, h3, h4 {
+  color: #f28d1e;
+  font-weight: normal; }
+
+#navigation > div {
+  text-align: center;
+  padding: 10px 10px 0px; }
+  #navigation > div .social {
+    color: transparent;
+    font-size: 0px; }
+  #navigation > div li.fb,
+  #navigation > div li.twitter {
+    display: none; }
+
+#fb {
+  background: url(../images/fb.png) no-repeat;
+  background-position: center;
+  margin-right: 10px; }
+
+#twitter {
+  background: url(../images/twitter.png) no-repeat;
+  background-position: center; }
+
+.social {
+  color: transparent;
+  font-size: 0px;
+  width: 21px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle; }
+
+.button,
+.webform-submit,
+.btn,
+.form-actions .form-submit,
+.group-referral .form-submit,
+.form-submit-export,
+#edit-actions input,
+.feed-icon a,
+.field-add-more-submit,
+.view-learners-list .form-submit, .ief-form .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit, .ief-form > .form-wrapper > .form-submit,
+.ief-row-form .ief-form-row .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit,
+.ief-row-form .ief-form-row > .form-wrapper > .form-submit, .field-name-field-activity .ief-row-form .form-submit, .field-type-entityreference .ief-form > .fieldset-wrapper > .form-wrapper > .form-submit, .group-pg-notes .ief-row-form .form-submit, .view-portal-export .view-filters .views-exposed-widget .form-submit,
+.view-portal-export1 .view-filters .views-exposed-widget .form-submit, .view-courses-list-content-view .view-filters .form-submit {
+  background: #f28d1e;
+  border-radius: 30px;
+  color: white !important;
+  font-size: 18px;
+  display: inline-block;
+  padding: 18px 10px;
+  min-width: 170px;
+  font-weight: bold;
+  cursor: pointer;
+  border: 0px;
+  text-align: center;
+  text-transform: lowercase;
+  line-height: 0.8em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); }
+
+.button,
+.webform-submit,
+.btn,
+.form-actions .form-submit,
+.group-referral .form-submit,
+.form-submit-export,
+#edit-actions input,
+.feed-icon a,
+.field-add-more-submit,
+.view-learners-list .form-submit, .ief-form .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit, .ief-form > .form-wrapper > .form-submit,
+.ief-row-form .ief-form-row .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit,
+.ief-row-form .ief-form-row > .form-wrapper > .form-submit, .field-name-field-activity .ief-row-form .form-submit, .field-type-entityreference .ief-form > .fieldset-wrapper > .form-wrapper > .form-submit, .group-pg-notes .ief-row-form .form-submit, .view-portal-export .view-filters .views-exposed-widget .form-submit,
+.view-portal-export1 .view-filters .views-exposed-widget .form-submit, .view-courses-list-content-view .view-filters .form-submit,
+.webform-submit,
+.btn,
+.form-actions .form-submit,
+.group-referral .form-submit,
+.form-submit-export,
+#edit-actions input,
+.feed-icon a,
+.field-add-more-submit,
+.view-learners-list .form-submit {
+  -webkit-appearance: none; }
+
+#search-block-form {
+  padding-bottom: 17px; }
+  #search-block-form .form-actions input {
+    padding: 0px;
+    min-width: auto;
+    font-size: 0px; }
+  #search-block-form input {
+    font-size: 12px; }
+
+#logo,
+.region-navigation,
+#login,
+#social-block {
+  display: inline-block;
+  vertical-align: top; }
+
+a:link,
+a:active,
+a:visited {
+  color: #f28d1e;
+  text-decoration: none; }
+
+#logo {
+  width: 160px;
+  float: left; }
+
+#navigation {
+  border-bottom: 5px solid #8dd2ca;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 9; }
+  #navigation li {
+    list-style: none;
+    display: inline-block;
+    padding: 0.2em 15px; }
+  #navigation #menu-learninghub {
+    text-transform: inherit !important; }
+  #navigation .menu a,
+  #navigation span {
+    display: block;
+    padding: 0px 0px 20px;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: lowercase; }
+  #navigation .block {
+    display: inline-block; }
+  #navigation .region-navigation {
+    margin-top: 62px; }
+  #navigation .clearfix {
+    padding: 0px; }
+
+.front #navigation > div {
+  position: relative; }
+.front #navigation li {
+  padding: 0.2em 10px; }
+
+#navigation a,
+#navigation span,
+#login a,
+#login span {
+  color: #f28d1e;
+  font-size: 20px; }
+
+#login {
+  color: #f28d1e; }
+  #login a {
+    font-size: 18px;
+    padding: 0px 5px;
+    text-transform: lowercase; }
+
+.search-box, #right-block .form-actions input,
+#right-block .views-submit-button input {
+  font-size: 0px;
+  color: transparent;
+  border: 0px;
+  width: 20px;
+  height: 26px;
+  position: absolute;
+  right: 5px;
+  top: 2px;
+  background: url(../images/search-icon.png) no-repeat;
+  background-position: center; }
+
+#right-block {
+  float: right;
+  width: 200px;
+  padding-top: 14px;
+  text-align: right; }
+  #right-block #search-block-form {
+    position: relative; }
+  #right-block input[type="text"] {
+    padding: 8px 18px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    width: 163px;
+    font-size: 13px; }
+  #right-block .form-actions input,
+  #right-block .views-submit-button input {
+    min-width: inherit; }
+  #right-block ::-webkit-input-placeholder {
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 100; }
+  #right-block :-moz-placeholder {
+    /* Firefox 18- */
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 100; }
+  #right-block ::-moz-placeholder {
+    /* Firefox 19+ */
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 100; }
+  #right-block :-ms-input-placeholder {
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 100; }
+
+#right-block {
+  width: 228px; }
+  #right-block #login {
+    padding-right: 0px; }
+
+.front.not-logged-in #right-block {
+  margin-right: 145px;
+  width: 201px; }
+
+.not-logged-in #right-block {
+  width: 201px; }
+
+.not-logged-in .group-admin-info {
+  display: none; }
+
+#login {
+  padding-right: 14px;
+  font-weight: 600;
+  float: left; }
+
+.front #content {
+  display: none; }
+
+#footer {
+  background: #f3f3f3;
+  padding: 40px 10px;
+  text-align: center; }
+  #footer ul.menu {
+    text-align: center; }
+    #footer ul.menu li {
+      display: inline-block; }
+    #footer ul.menu a {
+      color: #7f7f7f; }
+
+#social-block-2 #fb {
+  background: url(../images/fb.png) no-repeat; }
+#social-block-2 #twitter {
+  background: url(../images/twitter.png) no-repeat; }
+
+#copyright {
+  padding-top: 30px; }
+
+#block-menu-menu-footer-menu {
+  padding-bottom: 30px; }
+
+#copyright,
+#site-by-cci {
+  font-size: 12px; }
+  #copyright a,
+  #site-by-cci a {
+    color: #7f7f7f; }
+
+label + br {
+  display: none; }
+
+.page-learners-list #page-title {
+  text-align: center;
+  padding-bottom: 50px; }
+
+#block-system-main-menu {
+  position: relative; }
+  #block-system-main-menu .menu a,
+  #block-system-main-menu .menu span {
+    position: relative; }
+  #block-system-main-menu .menu a:after,
+  #block-system-main-menu .menu span:after {
+    display: none;
+    content: "";
+    border-bottom: 2px solid #f0b310;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 10px; }
+  #block-system-main-menu .menu a:hover:after,
+  #block-system-main-menu .menu span:hover:after {
+    display: block; }
+  #block-system-main-menu li.expanded:hover ul.menu {
+    display: block; }
+  #block-system-main-menu li.expanded ul.menu {
+    display: none;
+    top: 46px;
+    position: absolute;
+    background: white;
+    z-index: 9; }
+    #block-system-main-menu li.expanded ul.menu li {
+      display: block; }
+  #block-system-main-menu #fb,
+  #block-system-main-menu #twitter {
+    display: none; }
+
+ul.indicators {
+  text-align: center;
+  width: 100%;
+  margin: 30px 0px;
+  padding-left: 0px !important; }
+  ul.indicators li {
+    display: inline-block;
+    padding: 25px; }
+  ul.indicators li.active {
+    background-image: url(../images/gear-indicator.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+    padding: 21px 28px; }
+    ul.indicators li.active a {
+      color: #f28d1e; }
+  ul.indicators li {
+    color: white;
+    padding: 10px 16px;
+    border-radius: 50px;
+    background-color: #f28d1e;
+    margin: 0 20px; }
+    ul.indicators li a {
+      color: white; }
+
+.page-faq #header,
+.page-what-you-need #header,
+.page-learner-stories #header {
+  height: 300px;
+  background-size: cover;
+  overflow: hidden; }
+.page-faq #block-system-main a,
+.page-what-you-need #block-system-main a,
+.page-learner-stories #block-system-main a {
+  text-decoration: underline; }
+
+.page-learner #block-block-6,
+.page-user #block-block-6 {
+  height: 300px;
+  border-bottom: 5px solid #8dd2ca;
+  background-size: cover; }
+
+.not-logged-in.page-user:not(.page-user-register) #page-title,
+.not-logged-in.page-learner:not(.page-learner-register) #page-title,
+#block-user-login #page-title {
+  display: none; }
+.not-logged-in.page-user:not(.page-user-register) #content,
+.not-logged-in.page-learner:not(.page-learner-register) #content,
+#block-user-login #content {
+  max-width: inherit;
+  padding: 0px; }
+.not-logged-in.page-user:not(.page-user-register) #block-block-8,
+.not-logged-in.page-user:not(.page-user-register) #block-system-main,
+.not-logged-in.page-learner:not(.page-learner-register) #block-block-8,
+.not-logged-in.page-learner:not(.page-learner-register) #block-system-main,
+#block-user-login #block-block-8,
+#block-user-login #block-system-main {
+  width: 50%;
+  float: left; }
+.not-logged-in.page-user:not(.page-user-register) #block-block-8 .content,
+.not-logged-in.page-learner:not(.page-learner-register) #block-block-8 .content,
+#block-user-login #block-block-8 .content {
+  border: 3px solid #f28d1e;
+  margin: 0 20px;
+  padding: 35px 15px; }
+.not-logged-in.page-user:not(.page-user-register) .region-content,
+.not-logged-in.page-learner:not(.page-learner-register) .region-content,
+#block-user-login .region-content {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding-top: 40px;
+  overflow: hidden;
+  margin-bottom: 40px; }
+.not-logged-in.page-user:not(.page-user-register) #widgets,
+.not-logged-in.page-learner:not(.page-learner-register) #widgets,
+#block-user-login #widgets {
+  clear: left; }
+.not-logged-in.page-user:not(.page-user-register) #block-system-main,
+.not-logged-in.page-user:not(.page-user-register) #user-login-form,
+.not-logged-in.page-learner:not(.page-learner-register) #block-system-main,
+.not-logged-in.page-learner:not(.page-learner-register) #user-login-form,
+#block-user-login #block-system-main,
+#block-user-login #user-login-form {
+  background-color: #f0b310;
+  background-image: url(../images/gear-login.png);
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.not-logged-in.page-user.page-user-logout #page-title {
+  display: block; }
+.not-logged-in.page-user.page-user-logout #content {
+  padding: 80px 10px; }
+.not-logged-in.page-user.page-user-logout #block-system-main {
+  background-color: white;
+  background-image: none; }
+
+.page-node-2 #header,
+.page-faq #header,
+.page-what-you-need #header,
+.page-learner-stories #header {
+  height: auto !important; }
+
+.page-node-2 #page-title {
+  margin-top: 80px; }
+.page-node-2 #content {
+  padding-top: 0px; }
+
+.inner-banner-title, .not-front .block-imageblock h2 {
+  font-size: 45px;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 2px #f28d1e; }
+
+#contact-block,
+#mail-chimp-block {
+  width: 46%;
+  display: inline-block;
+  vertical-align: top; }
+
+#mail-chimp-block {
+  margin-left: 70px;
+  height: 764px;
+  position: relative; }
+
+.not-front .block-imageblock {
+  padding: 120px 0px;
+  text-align: center;
+  color: white;
+  background-size: cover; }
+  .not-front .block-imageblock .block-body {
+    text-shadow: 2px 2px 2px #f28d1e;
+    padding: 0 10px; }
+
+.page-learner-register #user-register-form .field-type-text {
+  width: 45%;
+  display: inline-block;
+  vertical-align: top; }
+  .page-learner-register #user-register-form .field-type-text input {
+    width: 90%; }
+
+ul.secondary {
+  border-bottom: 2px solid #8dd2ca;
+  padding-bottom: 30px;
+  margin-bottom: 30px; }
+  ul.secondary li {
+    border: 0px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0 1.5em 0px 0px;
+    text-transform: lowercase; }
+    ul.secondary li a.active {
+      color: #f28d1e;
+      border-bottom: 1px solid #f28d1e; }
+
+.page-user-edit .tabs.secondary {
+  text-align: center; }
+
+.page-node-74 .messages.status {
+  display: none;
+  border: 0px;
+  background: transparent;
+  color: #7f7f7f;
+  padding: 0px; }
+
+.page-node-74 .messages.error {
+  display: none; }
+  .page-node-74 .messages.error ul {
+    word-wrap: break-word; }
+
+#mobile-menu {
+  display: none; }
+
+#thank-you-message {
+  display: none; }
+
+.page-node-33 #page-title {
+  text-transform: inherit; }
+
+.page-user .entity-profile2 {
+  column-count: 2; }
+  .page-user .entity-profile2 .field {
+    margin: 20px 0px; }
+
+.community-list {
+  column-count: 4;
+  -webkit-column-count: 4;
+  -moz-column-count: 4; }
+  .community-list p {
+    margin: 0px 20px 0px; }
+    #content .community-list p {
+      padding-bottom: 0; }
+
+#site-map ul li {
+  list-style: none; }
+#site-map a.active {
+  color: #f28d1e;
+  text-decoration: underline; }
+#site-map li.expanded > a {
+  position: relative;
+  background: url(../images/polygon.png) no-repeat;
+  background-position: left center;
+  padding-left: 20px; }
+
+#navigation a.dropdown {
+  display: none; }
+
+#widgets {
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.5); }
+
+.page-node-157249 #page-title {
+  display: none; }
+
+#edit-profile-learner-profile-field-do .description {
+  width: 150%; }
+
+.live-class-download {
+  float: right; }
+
+.box1 {
+  margin-right: 20px; }
+
+.box1,
+.box2 {
+  float: left;
+  width: 44%;
+  padding: 20px;
+  border: 3px solid orange;
+  height: 510px; }
+
+#block-imageblock-1 {
+  height: 532px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom: 5px solid #8dd2ca;
+  position: relative; }
+  #block-imageblock-1 .block-body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #f28d1e;
+    font-size: 18px;
+    text-align: center;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    transform: translateY(-50%) translateX(-50%);
+    -webkit-transform: translateY(-50%) translateX(-50%); }
+  #block-imageblock-1 h1 {
+    padding-bottom: 35px;
+    line-height: 1em;
+    text-transform: inherit;
+    text-align: center; }
+  #block-imageblock-1 h1:before {
+    content: url(../images/gear-icon.png);
+    display: block;
+    padding-bottom: 35px; }
+  #block-imageblock-1 .button,
+  #block-imageblock-1 .webform-submit,
+  #block-imageblock-1 .btn,
+  #block-imageblock-1 .form-actions .form-submit,
+  .form-actions #block-imageblock-1 .form-submit,
+  #block-imageblock-1 .group-referral .form-submit,
+  .group-referral #block-imageblock-1 .form-submit,
+  #block-imageblock-1 .form-submit-export,
+  #block-imageblock-1 #edit-actions input,
+  #edit-actions #block-imageblock-1 input,
+  #block-imageblock-1 .feed-icon a,
+  .feed-icon #block-imageblock-1 a,
+  #block-imageblock-1 .field-add-more-submit,
+  #block-imageblock-1 .view-learners-list .form-submit,
+  .view-learners-list #block-imageblock-1 .form-submit, #block-imageblock-1 .ief-form .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit, .ief-form #block-imageblock-1 .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit, #block-imageblock-1 .ief-form > .form-wrapper > .form-submit,
+  #block-imageblock-1 .ief-row-form .ief-form-row .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit,
+  .ief-row-form .ief-form-row #block-imageblock-1 .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit,
+  #block-imageblock-1 .ief-row-form .ief-form-row > .form-wrapper > .form-submit,
+  .ief-row-form #block-imageblock-1 .ief-form-row > .form-wrapper > .form-submit, #block-imageblock-1 .field-name-field-activity .ief-row-form .form-submit, .field-name-field-activity .ief-row-form #block-imageblock-1 .form-submit, #block-imageblock-1 .group-pg-notes .ief-row-form .form-submit, .group-pg-notes .ief-row-form #block-imageblock-1 .form-submit, #block-imageblock-1 .view-portal-export .view-filters .views-exposed-widget .form-submit, .view-portal-export .view-filters .views-exposed-widget #block-imageblock-1 .form-submit,
+  #block-imageblock-1 .view-portal-export1 .view-filters .views-exposed-widget .form-submit,
+  .view-portal-export1 .view-filters .views-exposed-widget #block-imageblock-1 .form-submit, #block-imageblock-1 .view-courses-list-content-view .view-filters .form-submit, .view-courses-list-content-view .view-filters #block-imageblock-1 .form-submit {
+    margin-top: 50px; }
+
+#block-block-2 {
+  padding: 100px 0px;
+  text-align: center;
+  background: url(../images/watermark.png) no-repeat;
+  background-position: center; }
+  #block-block-2 h1 {
+    padding-bottom: 35px;
+    line-height: 1em;
+    text-transform: inherit; }
+  #block-block-2 h1:before {
+    content: url(../images/gear-icon.png);
+    display: block;
+    padding-bottom: 35px; }
+  #block-block-2 .button,
+  #block-block-2 .webform-submit,
+  #block-block-2 .btn,
+  #block-block-2 .form-actions .form-submit,
+  .form-actions #block-block-2 .form-submit,
+  #block-block-2 .group-referral .form-submit,
+  .group-referral #block-block-2 .form-submit,
+  #block-block-2 .form-submit-export,
+  #block-block-2 #edit-actions input,
+  #edit-actions #block-block-2 input,
+  #block-block-2 .feed-icon a,
+  .feed-icon #block-block-2 a,
+  #block-block-2 .field-add-more-submit,
+  #block-block-2 .view-learners-list .form-submit,
+  .view-learners-list #block-block-2 .form-submit, #block-block-2 .ief-form .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit, .ief-form #block-block-2 .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit, #block-block-2 .ief-form > .form-wrapper > .form-submit,
+  #block-block-2 .ief-row-form .ief-form-row .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit,
+  .ief-row-form .ief-form-row #block-block-2 .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit,
+  #block-block-2 .ief-row-form .ief-form-row > .form-wrapper > .form-submit,
+  .ief-row-form #block-block-2 .ief-form-row > .form-wrapper > .form-submit, #block-block-2 .field-name-field-activity .ief-row-form .form-submit, .field-name-field-activity .ief-row-form #block-block-2 .form-submit, #block-block-2 .group-pg-notes .ief-row-form .form-submit, .group-pg-notes .ief-row-form #block-block-2 .form-submit, #block-block-2 .view-portal-export .view-filters .views-exposed-widget .form-submit, .view-portal-export .view-filters .views-exposed-widget #block-block-2 .form-submit,
+  #block-block-2 .view-portal-export1 .view-filters .views-exposed-widget .form-submit,
+  .view-portal-export1 .view-filters .views-exposed-widget #block-block-2 .form-submit, #block-block-2 .view-courses-list-content-view .view-filters .form-submit, .view-courses-list-content-view .view-filters #block-block-2 .form-submit {
+    margin-top: 50px; }
+
+#block-block-3 {
+  background: #8dd2ca;
+  padding: 100px 0px;
+  text-align: center; }
+  #block-block-3 .action-button {
+    display: inline-block;
+    background-color: #f28d1e;
+    color: white;
+    padding: 15px;
+    margin: 0px 15px;
+    vertical-align: middle;
+    font-size: 32px;
+    font-weight: normal;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); }
+    #block-block-3 .action-button a {
+      display: block;
+      color: white;
+      border: 3px solid white;
+      padding: 70px 10px;
+      width: 250px;
+      height: 126px;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); }
+    #block-block-3 .action-button a:before {
+      display: block;
+      padding-bottom: 10px; }
+    #block-block-3 .action-button span {
+      display: block;
+      font-size: 14px;
+      padding-top: 30px; }
+  #block-block-3 #register-button a {
+    background: url(../images/hat-watermark.png) no-repeat;
+    background-position: center; }
+    #block-block-3 #register-button a:before {
+      content: url(../images/hat.png); }
+  #block-block-3 #login-button a {
+    background: url(../images/laptop-wm.png) no-repeat;
+    background-position: center; }
+    #block-block-3 #login-button a:before {
+      content: url(../images/laptop.png); }
+  #block-block-3 #classes-button a {
+    background: url(../images/book-wm.png) no-repeat;
+    background-position: center; }
+    #block-block-3 #classes-button a:before {
+      content: url(../images/book.png); }
+  #block-block-3 #login-button {
+    background-color: #f0b310; }
+
+#block-block-4 {
+  text-align: center;
+  padding: 50px 10px; }
+  #block-block-4 img {
+    margin: 0px 75px 0px 0px;
+    vertical-align: middle; }
+  .logged-in #block-block-4 {
+    border-top: 5px solid #8dd2ca; }
+
+#block-block-7,
+#block-block-8 {
+  padding: 50px 0px;
+  text-align: center; }
+
+#block-block-8 {
+  padding-top: 0px; }
+  #block-block-8 .platform-link {
+    padding: 35px;
+    background-color: #f28d1e;
+    border-radius: 3px;
+    display: inline-block;
+    color: white;
+    font-size: 33px;
+    font-weight: bold;
+    height: 60px;
+    width: 110px;
+    vertical-align: middle;
+    margin: 20px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); }
+    #block-block-8 .platform-link span {
+      display: block;
+      font-size: 18px;
+      font-weight: normal; }
+    #block-block-8 .platform-link span:before {
+      display: block;
+      text-align: center; }
+    #block-block-8 .platform-link:hover {
+      background: #8dd2ca; }
+  #block-block-8 #learn-platform {
+    padding: 15px 30px;
+    height: 100px;
+    width: auto; }
+    #block-block-8 #learn-platform span:before {
+      content: url(../images/learnscape.png); }
+
+#block-block-10 {
+  position: absolute;
+  right: 0;
+  top: 28px; }
+
+#saba-platform span {
+  padding-top: 22px; }
+
+#moodle-platform span:before {
+  content: url(../images/moodle.png);
+  padding-bottom: 12px; }
+
+#plato-platform span:before {
+  content: url(../images/plato.png);
+  padding-bottom: 10px; }
+
+.form-actions {
+  text-align: center;
+  margin-top: 80px; }
+
+#user-register-form .field-type-text,
+#user-register-form .field-type-list-text,
+#user-register-form #edit-account,
+#user-register-form .field-type-datetime,
+#user-register-form .form-type-markup,
+#user-register-form .field-type-markup,
+#user-profile-form .field-type-text,
+#user-profile-form .field-type-list-text,
+#user-profile-form #edit-account,
+#user-profile-form .field-type-datetime,
+#user-profile-form .form-type-markup,
+#user-profile-form .field-type-markup {
+  width: 31%;
+  display: inline-block;
+  vertical-align: bottom;
+  margin-right: 20px; }
+#user-register-form .form-item-profile-learner-profile-field-agree-und-Agree label.option,
+#user-profile-form .form-item-profile-learner-profile-field-agree-und-Agree label.option {
+  text-transform: inherit; }
+#user-register-form .form-type-markup,
+#user-profile-form .form-type-markup {
+  margin-bottom: 20px; }
+
+#user-profile-form #edit-account {
+  width: 100%; }
+  #user-profile-form #edit-account input {
+    width: auto; }
+#user-profile-form .field-group-div {
+  padding-bottom: 1.5em; }
+#user-profile-form .field-name-field-courses-4 select {
+  height: 150px; }
+#user-profile-form .form-submit {
+  margin: 0px 10px; }
+#user-profile-form .form-item {
+  margin-top: 0px; }
+#user-profile-form .form-actions {
+  margin-top: 0px; }
+#user-profile-form .field-type-multifield table {
+  width: 100%; }
+  #user-profile-form .field-type-multifield table tr {
+    background-color: white; }
+  #user-profile-form .field-type-multifield table th {
+    border-bottom: 1px solid #f28d1e; }
+  #user-profile-form .field-type-multifield table td {
+    padding: 20px 0px; }
+#user-profile-form .field-type-multifield .field-add-more-submit {
+  margin-top: 10px; }
+#user-profile-form .field-type-multifield .tabledrag-toggle-weight-wrapper,
+#user-profile-form .field-type-multifield .field-multiple-drag {
+  display: none; }
+#user-profile-form .field-type-multifield .form-actions {
+  margin-top: 20px;
+  text-align: left; }
+#user-profile-form .field-type-multifield .field-type-text,
+#user-profile-form .field-type-multifield .field-type-file {
+  width: 45%;
+  text-align: left;
+  display: inline-block;
+  vertical-align: middle; }
+#user-profile-form .field-type-multifield .form-managed-file {
+  border: 1px solid #ccc;
+  padding: 17px;
+  border-radius: 3px;
+  overflow: scroll; }
+  #user-profile-form .field-type-multifield .form-managed-file .form-submit {
+    position: absolute;
+    left: 0;
+    bottom: -25px; }
+#user-profile-form .field-type-multifield .field-type-file {
+  position: relative; }
+#user-profile-form label.option {
+  text-transform: lowercase; }
+#user-profile-form .group-referral thead,
+#user-profile-form .group-referral .tabledrag-toggle-weight-wrapper {
+  display: none; }
+#user-profile-form .group-referral label.option {
+  color: #7f7f7f; }
+#user-profile-form .view-filters #notes-search {
+  padding: 5px 18px;
+  border-radius: 15px;
+  width: 163px;
+  font-style: italic;
+  background: url(../images/search-icon.png) no-repeat;
+  background-position: 172px; }
+#user-profile-form .form-item .description {
+  display: none; }
+#user-profile-form .wizard .field-group-div > h3 {
+  padding-bottom: 20px; }
+
+#user-profile-form .field-type-datetime,
+#user-register-form .field-type-datetime {
+  padding: 1em 0px 0px; }
+  #user-profile-form .field-type-datetime legend,
+  #user-register-form .field-type-datetime legend {
+    padding-bottom: 10px;
+    padding-right: 37px; }
+#user-profile-form .field-type-text input,
+#user-register-form .field-type-text input {
+  width: 90%; }
+#user-profile-form .date-combo.form-wrapper .help-button,
+#user-register-form .date-combo.form-wrapper .help-button {
+  display: none; }
+#user-profile-form .wizard > h3,
+#user-register-form .wizard > h3 {
+  font-size: 45px;
+  text-transform: lowercase; }
+#user-profile-form .wizard .field-group-div > h3,
+#user-register-form .wizard .field-group-div > h3 {
+  font-size: 36px; }
+#user-profile-form .group-training .field-type-list-text,
+#user-profile-form .group-referral .field-type-list-text,
+#user-register-form .group-training .field-type-list-text,
+#user-register-form .group-referral .field-type-list-text {
+  display: block;
+  width: 100%; }
+#user-profile-form .field-name-field-where-will-you-be-working-,
+#user-register-form .field-name-field-where-will-you-be-working- {
+  width: 100%; }
+
+#user-register-form {
+  position: relative; }
+  #user-register-form .description {
+    display: none;
+    position: absolute;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 3px;
+    background: white;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    left: 0px;
+    z-index: 99; }
+    #user-register-form .description p {
+      padding-bottom: 10px; }
+  #user-register-form .form-type-select select {
+    width: 280px; }
+  #user-register-form #edit-profile-learner-profile > legend {
+    display: none; }
+  #user-register-form #edit-profile-learner-profile-field-where-will-you-be-working- {
+    width: 100%; }
+  #user-register-form label,
+  #user-register-form fieldset legend {
+    color: #7f7f7f;
+    font-weight: normal; }
+  #user-register-form .field-name-field-notice {
+    width: 100%; }
+  #user-register-form .form-item label,
+  #user-register-form .form-item fieldset legend {
+    padding-right: 33px;
+    color: #7f7f7f;
+    font-weight: normal; }
+  #user-register-form .form-item .form-radios {
+    padding-left: 15px; }
+  #user-register-form .help-button:hover + div .description {
+    display: block; }
+  #user-register-form .form-wrapper {
+    position: relative; }
+  #user-register-form .help-button {
+    font-size: 0px;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 9;
+    display: block;
+    color: transparent;
+    cursor: pointer;
+    background: url(../images/help-button.png) no-repeat; }
+  .not-logged-in #user-register-form .wizard {
+    display: none; }
+  #user-register-form .field-group-div > h3 {
+    padding-bottom: 10px; }
+  #user-register-form #edit-actions {
+    position: absolute;
+    right: 0px;
+    bottom: -65px;
+    z-index: 99; }
+
+#edit-account input {
+  width: 90%; }
+
+span.form-required {
+  color: #f28d1e; }
+
+.form-navigation {
+  position: relative; }
+  .form-navigation .next {
+    position: absolute;
+    right: 0px; }
+  .form-navigation .next {
+    float: right; }
+  .form-navigation .prev {
+    float: left; }
+
+label {
+  color: #f28d1e;
+  padding-bottom: 10px;
+  text-transform: capitalize; }
+
+.webform-submit {
+  border: 0px; }
+
+fieldset {
+  border: 0px;
+  padding: 0px;
+  margin-bottom: 0px; }
+  fieldset legend {
+    color: #f28d1e;
+    text-transform: capitalize;
+    font-weight: bold; }
+
+#edit-actions input {
+  border: 0px; }
+
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  height: 50px;
+  width: 280px;
+  background: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url(../images/polygon.png) no-repeat;
+  background-position: right 10px center; }
+
+input.error {
+  border-color: red; }
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  border: 1px solid #ccc;
+  padding: 17px 10px;
+  border-radius: 3px;
+  font-size: 16px;
+  color: #7f7f7f; }
+
+#block-webform-client-block-1 .form-type-radio {
+  display: inline-block;
+  margin: 0px;
+  margin-right: 10px; }
+  #block-webform-client-block-1 .form-type-radio input {
+    margin-right: 15px; }
+  #block-webform-client-block-1 .form-type-radio label.option {
+    vertical-align: middle; }
+#block-webform-client-block-1 .webform-component-textarea + p {
+  display: none; }
+
+.field-group-div {
+  padding-bottom: 50px; }
+
+.register-form-label, .field-group-div > h3, .field-name-field-activity > div > fieldset > legend {
+  font-size: 45px;
+  text-transform: lowercase;
+  font-weight: normal;
+  padding-bottom: 20px; }
+
+.field-type-datetime {
+  display: inline-block;
+  width: 33%; }
+  .field-type-datetime .form-item select {
+    height: 50px;
+    width: 80px;
+    min-width: inherit;
+    background: transparent; }
+  .field-type-datetime .date-padding {
+    padding: 0px !important; }
+
+.ief-entity-table {
+  width: 100%; }
+  .ief-entity-table th {
+    color: #f28d1e;
+    font-size: 20px;
+    border-bottom: 0px;
+    padding: 10px;
+    font-weight: normal; }
+  .ief-entity-table td {
+    padding: 10px; }
+  .ief-entity-table tbody {
+    border: 0px; }
+  .ief-entity-table tr {
+    border: 0px; }
+
+.field-name-field-wage-amount,
+.field-name-field-wage-amount-6mth,
+.field-name-field-wage-amount-12mth,
+.field-name-field-per-wage-amount-frequency-,
+.field-name-field-per-wage-amount-6mth,
+.field-name-field-per-wage-amount-12mth {
+  width: 216px;
+  display: inline-block;
+  vertical-align: top; }
+  .field-name-field-wage-amount select,
+  .field-name-field-wage-amount-6mth select,
+  .field-name-field-wage-amount-12mth select,
+  .field-name-field-per-wage-amount-frequency- select,
+  .field-name-field-per-wage-amount-6mth select,
+  .field-name-field-per-wage-amount-12mth select {
+    width: 100%; }
+
+.field-name-field-wage-amount input,
+.field-name-field-wage-amount-6mth input,
+.field-name-field-wage-amount-12mth input {
+  width: 78%; }
+
+.ief-form,
+.ief-row-form .ief-form-row {
+  padding: 20px 0px; }
+  .ief-form .form-type-textfield,
+  .ief-form .field-type-taxonomy-term-reference,
+  .ief-form .field-type-list-integer,
+  .ief-form .field-type-datetime,
+  .ief-form .field-type-list-text,
+  .ief-row-form .ief-form-row .form-type-textfield,
+  .ief-row-form .ief-form-row .field-type-taxonomy-term-reference,
+  .ief-row-form .ief-form-row .field-type-list-integer,
+  .ief-row-form .ief-form-row .field-type-datetime,
+  .ief-row-form .ief-form-row .field-type-list-text {
+    float: left;
+    vertical-align: top;
+    width: 48%;
+    margin-bottom: 10px; }
+    .ief-form .form-type-textfield input,
+    .ief-form .field-type-taxonomy-term-reference input,
+    .ief-form .field-type-list-integer input,
+    .ief-form .field-type-datetime input,
+    .ief-form .field-type-list-text input,
+    .ief-row-form .ief-form-row .form-type-textfield input,
+    .ief-row-form .ief-form-row .field-type-taxonomy-term-reference input,
+    .ief-row-form .ief-form-row .field-type-list-integer input,
+    .ief-row-form .ief-form-row .field-type-datetime input,
+    .ief-row-form .ief-form-row .field-type-list-text input {
+      width: 90%; }
+  .ief-form .field-name-field-task-group-level-indicator,
+  .ief-row-form .ief-form-row .field-name-field-task-group-level-indicator {
+    min-height: 200px; }
+  .ief-form .field-name-field-milestone,
+  .ief-form .field-name-field-milestone-attempt-date,
+  .ief-form .field-name-field-milestone-outcome,
+  .ief-row-form .ief-form-row .field-name-field-milestone,
+  .ief-row-form .ief-form-row .field-name-field-milestone-attempt-date,
+  .ief-row-form .ief-form-row .field-name-field-milestone-outcome {
+    margin-bottom: 0px; }
+  .ief-form .field-name-field-milestone-attempt-date .form-item,
+  .ief-row-form .ief-form-row .field-name-field-milestone-attempt-date .form-item {
+    margin-bottom: 5px;
+    width: 90%; }
+  .ief-form .form-type-cshs > label,
+  .ief-row-form .ief-form-row .form-type-cshs > label {
+    display: none; }
+  .ief-form .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit, .ief-form > .form-wrapper > .form-submit,
+  .ief-row-form .ief-form-row .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit,
+  .ief-row-form .ief-form-row > .form-wrapper > .form-submit {
+    margin-right: 20px; }
+  #user-profile-form .field-name-field-activity .ief-form .field-type-datetime, #user-profile-form .ief-form .field-type-datetime, #user-profile-form .field-name-field-activity
+  .ief-row-form .ief-form-row .field-type-datetime, #user-profile-form
+  .ief-row-form .ief-form-row .field-type-datetime {
+    width: auto;
+    padding: 0px; }
+  .ief-form .field-type-datetime .fieldset-wrapper,
+  .ief-row-form .ief-form-row .field-type-datetime .fieldset-wrapper {
+    padding-top: 0px; }
+    .ief-form .field-type-datetime .fieldset-wrapper label,
+    .ief-row-form .ief-form-row .field-type-datetime .fieldset-wrapper label {
+      display: none; }
+  .ief-form .select-wrapper,
+  .ief-row-form .ief-form-row .select-wrapper {
+    margin-bottom: 15px; }
+  .ief-form .form-item,
+  .ief-row-form .ief-form-row .form-item {
+    margin-top: 0px; }
+  .ief-form > div.field-type-entityreference,
+  .ief-row-form .ief-form-row > div.field-type-entityreference {
+    width: 100%; }
+
+.ief-row-entity:nth-child(odd) {
+  background-color: #f0f9f8; }
+
+.ief-row-entity:nth-child(even) {
+  background-color: white; }
+
+.ief-entity-table .field-type-datetime {
+  width: auto; }
+
+.field-name-field-activity {
+  padding: 30px 0px;
+  clear: left; }
+  .field-name-field-activity > div > fieldset > legend {
+    display: block !important;
+    font-size: 36px;
+    padding-bottom: 40px; }
+  .field-name-field-activity .field-type-text-long {
+    clear: left; }
+  #user-profile-form .field-name-field-activity .field-type-datetime {
+    width: 46%; }
+  .field-name-field-activity .field-type-datetime .container-inline-date .form-item {
+    width: auto; }
+  .field-name-field-activity .field-type-datetime .container-inline-date .date-padding {
+    width: auto; }
+
+.field-name-field-learner-plan1 .ief-tabledrag-header,
+.field-name-field-learner-plan1 .tabledrag-toggle-weight,
+.field-name-field-learner-plan1 .ief-tabledrag-handle {
+  display: none; }
+.field-name-field-learner-plan1 .exportButton {
+  text-align: right; }
+.field-name-field-learner-plan1 .form-submit-export {
+  margin-top: 20px; }
+  .field-name-field-learner-plan1 .form-submit-export a {
+    color: white; }
+
+.field-type-entityreference {
+  margin-bottom: 30px; }
+  .field-type-entityreference > div > fieldset > .fieldset-wrapper {
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px; }
+    .field-type-entityreference > div > fieldset > .fieldset-wrapper:before, .field-type-entityreference > div > fieldset > .fieldset-wrapper:after {
+      content: "";
+      display: block;
+      width: 100%;
+      border-top: 1px solid #f28d1e;
+      position: absolute;
+      top: -25px; }
+    .field-type-entityreference > div > fieldset > .fieldset-wrapper:after {
+      top: auto;
+      bottom: 0; }
+  .field-type-entityreference .container-inline {
+    width: 98%;
+    background: #8dd2ca;
+    padding: 10px;
+    position: absolute;
+    top: 0px; }
+    .field-type-entityreference .container-inline .form-submit {
+      color: white; }
+  .field-type-entityreference .form-submit {
+    border: 0px;
+    background: transparent;
+    font-size: 18px;
+    cursor: pointer; }
+  .field-type-entityreference .ief-form > .fieldset-wrapper > .form-wrapper > .form-submit {
+    margin: 20px 10px; }
+  .field-type-entityreference .ief-form > legend {
+    display: none; }
+  .field-type-entityreference .container-inline .form-submit {
+    background: url(../images/plus-sign.png) no-repeat;
+    padding-left: 30px;
+    background-position: left; }
+  .field-type-entityreference .ief-entity-operations td {
+    text-align: center; }
+  .field-type-entityreference .ief-entity-operations input {
+    color: transparent;
+    font-size: 0px;
+    height: 20px;
+    width: 20px;
+    margin: 0px 10px; }
+  .field-type-entityreference .ief-entity-operations input:first-child {
+    background: url(../images/edit-icon.png) no-repeat; }
+  .field-type-entityreference .ief-entity-operations input:first-child + input {
+    background: url(../images/bin.png) no-repeat; }
+
+.webform-client-form-1 input[type="text"],
+.webform-client-form-1 input[type="email"],
+.webform-client-form-1 textarea {
+  width: 90%; }
+
+.form-type-radio label {
+  padding-bottom: 0px; }
+
+#user-login,
+#user-login-form {
+  padding: 47px 10px;
+  max-width: 940px;
+  margin: 0 auto; }
+  #user-login label,
+  #user-login .description,
+  #user-login-form label,
+  #user-login-form .description {
+    color: white; }
+  #user-login h1:before,
+  #user-login-form h1:before {
+    display: none; }
+  #user-login span.form-required,
+  #user-login-form span.form-required {
+    color: white; }
+  #user-login h1,
+  #user-login-form h1 {
+    color: white;
+    padding-bottom: 20px; }
+  #user-login .form-type-textfield,
+  #user-login .form-type-password,
+  #user-login-form .form-type-textfield,
+  #user-login-form .form-type-password {
+    display: block;
+    margin-left: 18px; }
+    #user-login .form-type-textfield input,
+    #user-login .form-type-password input,
+    #user-login-form .form-type-textfield input,
+    #user-login-form .form-type-password input {
+      width: 90%; }
+  #user-login .form-actions,
+  #user-login-form .form-actions {
+    margin-top: 20px; }
+  #user-login .form-actions .form-submit,
+  #user-login #edit-actions input,
+  #user-login-form .form-actions .form-submit,
+  #user-login-form #edit-actions input {
+    background: white;
+    text-shadow: none;
+    color: #f28d1e !important; }
+
+#field-document-uploads-values,
+.field-name-field-referrals-services,
+.field-name-field-referral {
+  width: 100%; }
+  #field-document-uploads-values .field-multiple-drag,
+  .field-name-field-referrals-services .field-multiple-drag,
+  .field-name-field-referral .field-multiple-drag {
+    display: none; }
+  #field-document-uploads-values tbody,
+  .field-name-field-referrals-services tbody,
+  .field-name-field-referral tbody {
+    border: 0px; }
+  #field-document-uploads-values th label,
+  .field-name-field-referrals-services th label,
+  .field-name-field-referral th label {
+    font-size: 45px;
+    text-transform: lowercase;
+    font-weight: normal;
+    padding-bottom: 25px; }
+  #field-document-uploads-values th,
+  .field-name-field-referrals-services th,
+  .field-name-field-referral th {
+    border: 0px; }
+  #field-document-uploads-values tr,
+  .field-name-field-referrals-services tr,
+  .field-name-field-referral tr {
+    background-color: white; }
+
+.field-name-field-referrals-services,
+.field-name-field-referral {
+  margin-bottom: 30px; }
+  .field-name-field-referrals-services .field-multiple-table,
+  .field-name-field-referral .field-multiple-table {
+    width: 100%; }
+  .field-name-field-referrals-services tr,
+  .field-name-field-referrals-services td,
+  .field-name-field-referral tr,
+  .field-name-field-referral td {
+    display: block; }
+  .field-name-field-referrals-services tr,
+  .field-name-field-referral tr {
+    margin-bottom: 10px;
+    padding: 0px; }
+  .field-name-field-referrals-services td,
+  .field-name-field-referral td {
+    padding-bottom: 30px; }
+    #user-profile-form .field-name-field-referrals-services td .form-submit, #user-profile-form
+    .field-name-field-referral td .form-submit {
+      margin-top: 20px; }
+  .field-name-field-referrals-services .field-type-list-text select,
+  .field-name-field-referral .field-type-list-text select {
+    width: 100%;
+    margin-bottom: 10px; }
+  #user-profile-form .field-name-field-referrals-services .field-type-list-text, #user-profile-form
+  .field-name-field-referral .field-type-list-text {
+    width: 45%;
+    float: left; }
+
+.field-type-entityreference > div > fieldset > legend {
+  display: none; }
+
+#field-document-uploads-values .form-wrapper {
+  margin: 10px 0px; }
+#field-document-uploads-values .form-actions {
+  text-align: left;
+  margin-top: 20px; }
+
+.ui-datepicker-header select {
+  width: auto;
+  min-width: inherit; }
+
+fieldset.date-combo .container-inline-date .date-padding {
+  width: 90%; }
+
+.container-inline-date {
+  margin-bottom: 6px; }
+  .container-inline-date .form-item, .container-inline-date .form-item input {
+    width: 100%; }
+
+#edit-profile-learner-profile-field-agree {
+  width: 100% !important; }
+
+.alphabet {
+  margin-bottom: 30px; }
+  .alphabet li {
+    display: inline-block;
+    color: #f28d1e;
+    list-style: none; }
+    .alphabet li.active {
+      background-color: #f28d1e;
+      color: white;
+      border-radius: 10px 10px 0px 0px; }
+    .alphabet li a {
+      display: block;
+      padding: 5px 15px;
+      cursor: pointer; }
+
+.group-pg-notes {
+  position: relative; }
+  .group-pg-notes .view-filters {
+    top: 22px; }
+  .group-pg-notes.field-group-div > h3 {
+    padding-bottom: 50px; }
+  #content .group-pg-notes .field-type-text-with-summary p {
+    padding-bottom: 0px; }
+  #user-profile-form .group-pg-notes .field-name-field-description {
+    width: 100%; }
+  .group-pg-notes .container-inline-date > .form-item {
+    width: 100%; }
+    .group-pg-notes .container-inline-date > .form-item .form-item {
+      width: 50%; }
+  .group-pg-notes fieldset.filter-wrapper {
+    display: none; }
+
+#mailchimp-signup-subscribe-block-subscription-form {
+  position: relative; }
+  #mailchimp-signup-subscribe-block-subscription-form .form-type-textfield input {
+    width: 90%; }
+  #mailchimp-signup-subscribe-block-subscription-form .error-msg {
+    display: none !important; }
+  #mailchimp-signup-subscribe-block-subscription-form .form-type-radios {
+    margin-top: 60px; }
+    #mailchimp-signup-subscribe-block-subscription-form .form-type-radios label {
+      text-transform: inherit;
+      color: inherit;
+      padding-left: 20px;
+      width: 70%; }
+    #mailchimp-signup-subscribe-block-subscription-form .form-type-radios > label {
+      display: none !important; }
+    #mailchimp-signup-subscribe-block-subscription-form .form-type-radios input, #mailchimp-signup-subscribe-block-subscription-form .form-type-radios label {
+      display: inline-block;
+      vertical-align: middle; }
+    #mailchimp-signup-subscribe-block-subscription-form .form-type-radios label.unsubscribe {
+      padding-left: 32px; }
+  #mailchimp-signup-subscribe-block-subscription-form .form-actions {
+    margin-top: 144px; }
+@-moz-document url-prefix() {
+  #mailchimp-signup-subscribe-block-subscription-form .form-actions {
+    margin-top: 150px; } }
+  .logged-in #mailchimp-signup-subscribe-block-subscription-form .form-actions {
+    margin-top: 121px; }
+
+.view-learners-list,
+.view-portal-export,
+.view-portal-export1 {
+  position: relative;
+  margin-bottom: 100px; }
+  .view-learners-list #header-label span,
+  .view-learners-list #header-label1 span,
+  .view-learners-list .views-row .field-content div,
+  .view-portal-export #header-label span,
+  .view-portal-export #header-label1 span,
+  .view-portal-export .views-row .field-content div,
+  .view-portal-export1 #header-label span,
+  .view-portal-export1 #header-label1 span,
+  .view-portal-export1 .views-row .field-content div {
+    float: left;
+    width: 17%;
+    padding: 5px 0px; }
+    .view-learners-list #header-label span .label,
+    .view-learners-list #header-label1 span .label,
+    .view-learners-list .views-row .field-content div .label,
+    .view-portal-export #header-label span .label,
+    .view-portal-export #header-label1 span .label,
+    .view-portal-export .views-row .field-content div .label,
+    .view-portal-export1 #header-label span .label,
+    .view-portal-export1 #header-label1 span .label,
+    .view-portal-export1 .views-row .field-content div .label {
+      display: none; }
+  .view-learners-list select,
+  .view-portal-export select,
+  .view-portal-export1 select {
+    margin-right: 17px;
+    height: 34px;
+    min-width: 135px;
+    width: 135px;
+    padding: 0px 5px; }
+  .view-learners-list #header-label .email-label,
+  .view-learners-list #header-label1 .email-label,
+  .view-learners-list .views-row .field-content .email-field,
+  .view-portal-export #header-label .email-label,
+  .view-portal-export #header-label1 .email-label,
+  .view-portal-export .views-row .field-content .email-field,
+  .view-portal-export1 #header-label .email-label,
+  .view-portal-export1 #header-label1 .email-label,
+  .view-portal-export1 .views-row .field-content .email-field {
+    width: 28%; }
+  .view-learners-list .views-row,
+  .view-portal-export .views-row,
+  .view-portal-export1 .views-row {
+    overflow: hidden;
+    clear: left; }
+  .view-learners-list .no-result,
+  .view-portal-export .no-result,
+  .view-portal-export1 .no-result {
+    display: none; }
+  .view-learners-list .alphabet li a,
+  .view-portal-export .alphabet li a,
+  .view-portal-export1 .alphabet li a {
+    padding: 5px; }
+  .view-learners-list .view-filters,
+  .view-portal-export .view-filters,
+  .view-portal-export1 .view-filters {
+    top: 85px; }
+  .view-learners-list .alphabet,
+  .view-portal-export .alphabet,
+  .view-portal-export1 .alphabet {
+    bottom: -40px;
+    position: relative;
+    margin-bottom: -30px; }
+  .view-learners-list #merge-account-button,
+  .view-portal-export #merge-account-button,
+  .view-portal-export1 #merge-account-button {
+    text-align: center; }
+  .view-learners-list #header-label span,
+  .view-learners-list #header-label1 span,
+  .view-portal-export #header-label span,
+  .view-portal-export #header-label1 span,
+  .view-portal-export1 #header-label span,
+  .view-portal-export1 #header-label1 span {
+    font-size: 24px;
+    color: #f28d1e;
+    border-top: 1px solid;
+    margin-top: 20px;
+    padding-top: 18px; }
+  .view-learners-list .pager,
+  .view-portal-export .pager,
+  .view-portal-export1 .pager {
+    margin-top: 20px; }
+
+.page-portal-export-practitioner1 #content {
+  padding-bottom: 150px; }
+
+.view-learners-list {
+  padding-bottom: 10px; }
+  .view-learners-list #header-label {
+    margin-top: 84px; }
+    .view-learners-list #header-label span {
+      font-size: 16px;
+      width: 12%; }
+    .view-learners-list #header-label .email-label {
+      width: 15%; }
+  .view-learners-list .views-row .field-content div {
+    width: 12%; }
+  .view-learners-list .views-exposed-form .views-exposed-widget {
+    float: left; }
+  .view-learners-list .views-widget-filter-status {
+    clear: left; }
+  .view-learners-list .views-row .field-content .email-field {
+    width: 15%;
+    overflow-x: scroll;
+    margin-right: 5px; }
+  .view-learners-list .alphabet,
+  .view-learners-list .bef-select-as-links {
+    bottom: -86px;
+    margin-bottom: auto;
+    margin-right: 23px; }
+  .view-learners-list .bef-select-as-links div {
+    float: left; }
+  .view-learners-list .views-widget-filter-combine {
+    margin-top: 30px; }
+  .view-learners-list .view-filters {
+    top: -100px;
+    padding-top: 0px; }
+    .view-learners-list .view-filters .views-submit-button input {
+      right: 0px;
+      top: 9px;
+      cursor: pointer;
+      margin-top: 17px;
+      margin-left: 15px; }
+    .view-learners-list .view-filters input[type="text"] {
+      padding: 8px 18px;
+      border: 1px solid #ccc;
+      border-radius: 15px;
+      width: 163px;
+      font-size: 13px; }
+  .view-learners-list .alphabet li a,
+  .view-learners-list .bef-select-as-links div {
+    margin: 6px 3px;
+    font-size: 14px; }
+  .view-learners-list .view-filters {
+    width: 100%; }
+    .view-learners-list .view-filters .views-widget-filter-rid,
+    .view-learners-list .view-filters .views-widget-filter-status {
+      text-align: left; }
+
+.view-portal-export #header-label span,
+.view-portal-export #header-label1 span,
+.view-portal-export1 #header-label span,
+.view-portal-export1 #header-label1 span {
+  margin-top: 0px; }
+.view-portal-export .view-header,
+.view-portal-export1 .view-header {
+  margin-top: 140px; }
+.view-portal-export .view-filters,
+.view-portal-export1 .view-filters {
+  top: -82px;
+  width: 100%;
+  text-align: left; }
+  .view-portal-export .view-filters select,
+  .view-portal-export1 .view-filters select {
+    min-width: 100px; }
+  .view-portal-export .view-filters .views-exposed-widget,
+  .view-portal-export1 .view-filters .views-exposed-widget {
+    padding: 0px 0px; }
+    .view-portal-export .view-filters .views-exposed-widget .form-submit,
+    .view-portal-export1 .view-filters .views-exposed-widget .form-submit {
+      cursor: pointer;
+      margin-top: 15px;
+      min-width: 150px; }
+.view-portal-export .container-inline-date .form-item input,
+.view-portal-export1 .container-inline-date .form-item input {
+  width: 77%;
+  border-radius: 3px;
+  height: 30px;
+  padding: 0; }
+.view-portal-export .edit-rid-wrapper,
+.view-portal-export1 .edit-rid-wrapper {
+  margin: 0 20px; }
+.view-portal-export .feed-icon,
+.view-portal-export1 .feed-icon {
+  margin-top: 20px; }
+.view-portal-export .views-widget-filter-field_program_start_date_value,
+.view-portal-export .views-widget-filter-created,
+.view-portal-export1 .views-widget-filter-field_program_start_date_value,
+.view-portal-export1 .views-widget-filter-created {
+  margin-top: -31px; }
+  .view-portal-export .views-widget-filter-field_program_start_date_value > div > div,
+  .view-portal-export .views-widget-filter-created > div > div,
+  .view-portal-export1 .views-widget-filter-field_program_start_date_value > div > div,
+  .view-portal-export1 .views-widget-filter-created > div > div {
+    display: inline-block;
+    width: 141px; }
+  .view-portal-export .views-widget-filter-field_program_start_date_value .bef-datepicker,
+  .view-portal-export .views-widget-filter-created .bef-datepicker,
+  .view-portal-export1 .views-widget-filter-field_program_start_date_value .bef-datepicker,
+  .view-portal-export1 .views-widget-filter-created .bef-datepicker {
+    width: 74%;
+    padding: 6px 10px; }
+  .view-portal-export .views-widget-filter-field_program_start_date_value .description,
+  .view-portal-export .views-widget-filter-created .description,
+  .view-portal-export1 .views-widget-filter-field_program_start_date_value .description,
+  .view-portal-export1 .views-widget-filter-created .description {
+    display: none; }
+
+.page-portal-export-practitioner1 .view-portal-export1 .view-header {
+  margin-top: 0px; }
+
+.view-learner-plan .header-label {
+  color: white;
+  background: #8dd2ca;
+  padding: 15px 40px; }
+  .view-learner-plan .header-label span {
+    display: inline-block;
+    width: 25%;
+    font-weight: bold; }
+.view-learner-plan .view-footer {
+  text-align: center;
+  margin-top: 100px; }
+  .view-learner-plan .view-footer h3 a {
+    text-decoration: underline; }
+.view-learner-plan .feed-icon {
+  text-align: right;
+  margin-top: 40px; }
+  .view-learner-plan .feed-icon a:before {
+    content: url(../images/print-icon.png);
+    vertical-align: middle;
+    padding-right: 8px;
+    display: inline-block; }
+.view-learner-plan .view-content {
+  position: relative; }
+  .view-learner-plan .view-content:before, .view-learner-plan .view-content:after {
+    content: "";
+    display: block;
+    width: 100%;
+    border-top: 1px solid #f28d1e;
+    position: absolute;
+    top: -70px; }
+  .view-learner-plan .view-content:after {
+    top: auto;
+    bottom: -30px; }
+.view-learner-plan .view-header > h3 {
+  font-size: 45px;
+  text-align: center;
+  margin: 20px 0px 0px; }
+.view-learner-plan .view-header #view-courses {
+  float: left;
+  width: 60%; }
+  .view-learner-plan .view-header #view-courses a:first-child {
+    margin-right: 40px; }
+.view-learner-plan .view-header #expand-table {
+  text-align: right;
+  margin-bottom: 30px; }
+  .view-learner-plan .view-header #expand-table a.hide-all,
+  .view-learner-plan .view-header #expand-table a.expand-all {
+    display: inline-block; }
+  .view-learner-plan .view-header #expand-table a.hide {
+    display: none; }
+.view-learner-plan .views-field-name {
+  display: none; }
+.view-learner-plan .views-row {
+  padding: 0px 40px;
+  background-image: url(../images/polygon-right.png);
+  background-repeat: no-repeat;
+  background-position: 15px 16px;
+  border-bottom: 3px solid #8dd2ca; }
+.view-learner-plan .views-row:last-child {
+  border-bottom: 0px; }
+.view-learner-plan .views-row.open {
+  background-image: url(../images/polygon.png) no-repeat;
+  background-repeat: no-repeat;
+  background-position: 15px 16px; }
+.view-learner-plan .views-row-odd {
+  background-color: #f0f9f8; }
+.view-learner-plan .node-competency > h2,
+.view-learner-plan .node-learning-activity > h2 {
+  display: none; }
+.view-learner-plan .node-competency .content > div,
+.view-learner-plan .node-learning-activity .content > div {
+  display: inline-block;
+  width: 25%;
+  vertical-align: top;
+  padding: 10px 0px;
+  border: 0px; }
+  .view-learner-plan .node-competency .content > div .field-label,
+  .view-learner-plan .node-learning-activity .content > div .field-label {
+    display: none; }
+  .view-learner-plan .node-competency .content > div.field-name-field-activity,
+  .view-learner-plan .node-learning-activity .content > div.field-name-field-activity {
+    display: none;
+    width: 100%; }
+    .view-learner-plan .node-competency .content > div.field-name-field-activity > .field-items > .field-item.even,
+    .view-learner-plan .node-learning-activity .content > div.field-name-field-activity > .field-items > .field-item.even {
+      background-color: white; }
+    .view-learner-plan .node-competency .content > div.field-name-field-activity > .field-items > .field-item,
+    .view-learner-plan .node-learning-activity .content > div.field-name-field-activity > .field-items > .field-item {
+      padding: 0px  30px; }
+    .view-learner-plan .node-competency .content > div.field-name-field-activity span,
+    .view-learner-plan .node-learning-activity .content > div.field-name-field-activity span {
+      width: 13%; }
+      .view-learner-plan .node-competency .content > div.field-name-field-activity span:last-child,
+      .view-learner-plan .node-learning-activity .content > div.field-name-field-activity span:last-child {
+        width: 48%; }
+.view-learner-plan .node-learning-activity .content {
+  padding: 10px; }
+  .view-learner-plan .node-learning-activity .content > div {
+    width: 13%; }
+    .view-learner-plan .node-learning-activity .content > div:last-child {
+      width: 48%; }
+
+.page-current-courses .view-courses-list-content-view .views-field-custom-submit-field .selected-time {
+  color: #f28d1e;
+  font-size: 18px; }
+.page-current-courses .view-courses-list-content-view .views-field-custom-submit-field form {
+  position: relative;
+  padding-left: 25px; }
+.page-current-courses .view-courses-list-content-view .views-field-custom-submit-field form:before {
+  content: "";
+  display: inline-block;
+  border: 2px solid #8dd2ca;
+  width: 15px;
+  position: absolute;
+  left: 0px;
+  bottom: 15px; }
+.page-current-courses .view-courses-list-content-view .views-field-custom-submit-field input {
+  background: none;
+  vertical-align: middle;
+  padding-left: 5px; }
+
+.view-filters {
+  position: absolute;
+  right: 0;
+  top: 70px;
+  padding: 0px; }
+  .view-filters .views-exposed-widget {
+    padding: 0px; }
+    .view-filters .views-exposed-widget .form-submit {
+      margin-right: 7px; }
+
+.view-faq .views-row,
+.view-what-you-need .views-row,
+.view-using-learning-hub .views-row,
+.view-learner-stories .views-row {
+  border-top: 1px solid #ccc;
+  position: relative; }
+.view-faq .views-field-body,
+.view-what-you-need .views-field-body,
+.view-using-learning-hub .views-field-body,
+.view-learner-stories .views-field-body {
+  display: none;
+  padding-left: 80px; }
+.view-faq .views-field-title,
+.view-what-you-need .views-field-title,
+.view-using-learning-hub .views-field-title,
+.view-learner-stories .views-field-title {
+  font-size: 28px;
+  color: #f28d1e;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  background: url(../images/polygon.png) no-repeat;
+  background-position: center right;
+  padding-left: 60px;
+  cursor: pointer; }
+.view-faq .views-field-title.open,
+.view-what-you-need .views-field-title.open,
+.view-using-learning-hub .views-field-title.open,
+.view-learner-stories .views-field-title.open {
+  background: url(../images/polygon-up.png) no-repeat;
+  background-position: center right; }
+.view-faq .views-field-counter,
+.view-what-you-need .views-field-counter,
+.view-using-learning-hub .views-field-counter,
+.view-learner-stories .views-field-counter {
+  position: absolute;
+  font-size: 40px;
+  color: #f28d1e;
+  top: 11px;
+  height: 100%; }
+
+.view-learning-profile-info {
+  border-top: 1px solid #f28d1e;
+  border-bottom: 1px solid #f28d1e;
+  padding: 10px 0px; }
+  .view-learning-profile-info .views-label {
+    display: inline-block;
+    color: #f28d1e;
+    font-size: 24px;
+    width: 160px;
+    padding-right: 50px; }
+  .view-learning-profile-info .views-row {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2; }
+  .view-learning-profile-info .views-field {
+    padding: 5px 0px; }
+  .view-learning-profile-info .field-content {
+    display: inline-block; }
+
+.alpha-pagination ul > li {
+  border: 0px !important;
+  font-size: 16px; }
+
+#block-views-course-category-block .views-row,
+#block-views-course-category-block-1 .views-row {
+  display: inline-block;
+  max-width: 200px;
+  vertical-align: top;
+  text-align: center;
+  margin: 10px; }
+
+.view-courses-list-content-view .view-filters {
+  position: relative;
+  top: auto;
+  float: none;
+  text-align: left; }
+  .view-courses-list-content-view .view-filters select {
+    font-size: 18px; }
+  .view-courses-list-content-view .view-filters .views-exposed-widget {
+    width: 95%;
+    margin: 0 auto;
+    text-align: center; }
+    .view-courses-list-content-view .view-filters .views-exposed-widget .views-widget {
+      padding: 20px;
+      border: 1px solid #ccc;
+      width: 100%; }
+  .view-courses-list-content-view .view-filters .form-type-radio {
+    display: inline-block;
+    width: 33%; }
+    .view-courses-list-content-view .view-filters .form-type-radio label {
+      vertical-align: middle; }
+  .view-courses-list-content-view .view-filters .form-submit {
+    margin-left: 20px;
+    display: none; }
+.view-courses-list-content-view .view-content {
+  margin-top: 50px; }
+.view-courses-list-content-view span.views-field-title {
+  color: #f28d1e;
+  max-width: 83%;
+  display: inline-block; }
+.view-courses-list-content-view .views-field-field-type-of-class-1 span,
+.view-courses-list-content-view .views-field-field-type-of-class-any span {
+  color: #7f7f7f;
+  font-size: 28px;
+  text-transform: capitalize;
+  margin-right: 78px;
+  display: inline-block; }
+.view-courses-list-content-view .views-field-field-time {
+  color: #f28d1e;
+  font-size: 18px;
+  padding-bottom: 20px; }
+.view-courses-list-content-view .views-row {
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ccc;
+  position: relative; }
+.view-courses-list-content-view .views-field-nothing {
+  position: absolute;
+  top: 0px;
+  right: 0px; }
+.view-courses-list-content-view a.back-to-top {
+  font-size: 22px;
+  color: #8dd2ca;
+  padding-left: 15px;
+  font-weight: bold;
+  background: url(../images/polygon-green.png) no-repeat;
+  background-position: center left; }
+.view-courses-list-content-view .view-header {
+  margin-top: 40px; }
+.view-courses-list-content-view .views-field-custom-submit-field input {
+  border: 0px;
+  background-color: transparent;
+  color: #8dd2ca;
+  font-size: 24px;
+  background: url(../images/plus-sign-green.png) no-repeat;
+  background-position: left;
+  padding-left: 28px;
+  cursor: pointer;
+  text-transform: capitalize; }
+
+.view-course-category {
+  margin-bottom: 60px;
+  position: relative;
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 15px 0px; }
+  .view-course-category .views-row .field-content a,
+  .view-course-category .search-all {
+    display: block;
+    padding: 30px 10px;
+    width: 140px;
+    height: 118px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    text-align: center;
+    font-weight: bold; }
+    .view-course-category .views-row .field-content a.selected, .view-course-category .views-row .field-content a:hover,
+    .view-course-category .search-all.selected,
+    .view-course-category .search-all:hover {
+      background: #8dd2ca;
+      color: white;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); }
+    .view-course-category .views-row .field-content a:before,
+    .view-course-category .search-all:before {
+      content: "";
+      display: block;
+      min-height: 80px; }
+  .view-course-category .search-all:before {
+    display: block;
+    content: url(../images/search-icon-big.png); }
+  .view-course-category .search-all.selected:before,
+  .view-course-category .search-all:hover:before {
+    content: url(../images/search-white-icon-big.png); }
+  #content .view-course-category .view-header p {
+    padding-bottom: 0px; }
+  .view-course-category .views-row-1 .field-content a:before {
+    content: url(../images/rw-icon.png); }
+  .view-course-category .views-row-1 .field-content a.selected:before,
+  .view-course-category .views-row-1 .field-content a:hover:before {
+    content: url(../images/rw-white-icon.png); }
+  .view-course-category .views-row-2 .field-content a:before {
+    content: url(../images/math-icon.png); }
+  .view-course-category .views-row-2 .field-content a.selected:before,
+  .view-course-category .views-row-2 .field-content a:hover:before {
+    content: url(../images/math-white-icon.png); }
+  .view-course-category .views-row-3 .field-content a:before {
+    content: url(../images/science-icon.png); }
+  .view-course-category .views-row-3 .field-content a.selected:before,
+  .view-course-category .views-row-3 .field-content a:hover:before {
+    content: url(../images/science-white-icon.png); }
+  .view-course-category .views-row-4 .field-content a:before {
+    content: url(../images/dt-icon.png); }
+  .view-course-category .views-row-4 .field-content a.selected:before,
+  .view-course-category .views-row-4 .field-content a:hover:before {
+    content: url(../images/dt-white-icon.png); }
+  .view-course-category .views-row-5 .field-content a:before {
+    content: url(../images/books-icon.png); }
+  .view-course-category .views-row-5 .field-content a.selected:before,
+  .view-course-category .views-row-5 .field-content a:hover:before {
+    content: url(../images/books-white-icon.png); }
+  .view-course-category .views-row-6 .field-content a:before {
+    content: url(../images/hat-icon.png); }
+  .view-course-category .views-row-6 .field-content a.selected:before,
+  .view-course-category .views-row-6 .field-content a:hover:before {
+    content: url(../images/hat-white-icon.png); }
+  .view-course-category .views-row-8 .field-content a:before {
+    content: url(../images/employment-icon.png); }
+  .view-course-category .views-row-8 .field-content a.selected:before,
+  .view-course-category .views-row-8 .field-content a:hover:before {
+    content: url(../images/employment-white-icon.png); }
+  .view-course-category .views-row-7 .field-content a:before {
+    content: url(../images/appren-icon.png); }
+  .view-course-category .views-row-7 .field-content a.selected:before,
+  .view-course-category .views-row-7 .field-content a:hover:before {
+    content: url(../images/appren-white-icon.png); }
+  .view-course-category .views-row-9 .field-content a:before {
+    content: url(../images/ged-icon.png); }
+  .view-course-category .views-row-9 .field-content a.selected:before,
+  .view-course-category .views-row-9 .field-content a:hover:before {
+    content: url(../images/ged-white-icon.png); }
+
+#block-views-slideshow-block {
+  background-size: cover;
+  background-position: center -200px;
+  padding: 50px 0px;
+  box-shadow: 1000px 1000px 10px rgba(0, 0, 0, 0.3) inset; }
+  #block-views-slideshow-block h1 {
+    color: white; }
+  #block-views-slideshow-block .view-content {
+    color: white; }
+  #block-views-slideshow-block .slick-slide {
+    outline: none; }
+  #block-views-slideshow-block .slick-dots {
+    text-align: center; }
+    #block-views-slideshow-block .slick-dots li {
+      display: inline-block;
+      margin: 5px; }
+    #block-views-slideshow-block .slick-dots button {
+      border: 0px;
+      color: transparent;
+      font-size: 0px;
+      border-radius: 15px;
+      width: 10px;
+      height: 10px;
+      background: #f28d1e;
+      cursor: pointer; }
+  #block-views-slideshow-block .views-field-body {
+    text-align: center;
+    padding: 30px 0px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); }
+    #block-views-slideshow-block .views-field-body h1 {
+      text-transform: inherit; }
+    #block-views-slideshow-block .views-field-body h1:before {
+      content: url(../images/white-gear.png);
+      display: block;
+      padding-bottom: 25px; }
+    #block-views-slideshow-block .views-field-body a.button,
+    #block-views-slideshow-block .views-field-body a.webform-submit,
+    #block-views-slideshow-block .views-field-body a.btn,
+    #block-views-slideshow-block .views-field-body .form-actions a.form-submit,
+    .form-actions #block-views-slideshow-block .views-field-body a.form-submit,
+    #block-views-slideshow-block .views-field-body .group-referral a.form-submit,
+    .group-referral #block-views-slideshow-block .views-field-body a.form-submit,
+    #block-views-slideshow-block .views-field-body a.form-submit-export,
+    #block-views-slideshow-block .views-field-body .feed-icon a,
+    .feed-icon #block-views-slideshow-block .views-field-body a,
+    #block-views-slideshow-block .views-field-body a.field-add-more-submit,
+    #block-views-slideshow-block .views-field-body .view-learners-list a.form-submit,
+    .view-learners-list #block-views-slideshow-block .views-field-body a.form-submit, #block-views-slideshow-block .views-field-body .ief-form .ief-form-bottom > .fieldset-wrapper > .form-wrapper > a.form-submit, .ief-form #block-views-slideshow-block .views-field-body .ief-form-bottom > .fieldset-wrapper > .form-wrapper > a.form-submit, #block-views-slideshow-block .views-field-body .ief-form > .form-wrapper > a.form-submit,
+    #block-views-slideshow-block .views-field-body .ief-row-form .ief-form-row .ief-form-bottom > .fieldset-wrapper > .form-wrapper > a.form-submit,
+    .ief-row-form .ief-form-row #block-views-slideshow-block .views-field-body .ief-form-bottom > .fieldset-wrapper > .form-wrapper > a.form-submit,
+    #block-views-slideshow-block .views-field-body .ief-row-form .ief-form-row > .form-wrapper > a.form-submit,
+    .ief-row-form #block-views-slideshow-block .views-field-body .ief-form-row > .form-wrapper > a.form-submit, #block-views-slideshow-block .views-field-body .field-name-field-activity .ief-row-form a.form-submit, .field-name-field-activity .ief-row-form #block-views-slideshow-block .views-field-body a.form-submit, #block-views-slideshow-block .views-field-body .group-pg-notes .ief-row-form a.form-submit, .group-pg-notes .ief-row-form #block-views-slideshow-block .views-field-body a.form-submit, #block-views-slideshow-block .views-field-body .view-portal-export .view-filters .views-exposed-widget a.form-submit, .view-portal-export .view-filters .views-exposed-widget #block-views-slideshow-block .views-field-body a.form-submit,
+    #block-views-slideshow-block .views-field-body .view-portal-export1 .view-filters .views-exposed-widget a.form-submit,
+    .view-portal-export1 .view-filters .views-exposed-widget #block-views-slideshow-block .views-field-body a.form-submit, #block-views-slideshow-block .views-field-body .view-courses-list-content-view .view-filters a.form-submit, .view-courses-list-content-view .view-filters #block-views-slideshow-block .views-field-body a.form-submit {
+      background: white;
+      color: #f28d1e !important;
+      text-shadow: none;
+      margin-top: 50px; }
+      #block-views-slideshow-block .views-field-body a.button:hover,
+      #block-views-slideshow-block .views-field-body a.webform-submit:hover,
+      #block-views-slideshow-block .views-field-body a.btn:hover,
+      #block-views-slideshow-block .views-field-body .form-actions a.form-submit:hover,
+      .form-actions #block-views-slideshow-block .views-field-body a.form-submit:hover,
+      #block-views-slideshow-block .views-field-body .group-referral a.form-submit:hover,
+      .group-referral #block-views-slideshow-block .views-field-body a.form-submit:hover,
+      #block-views-slideshow-block .views-field-body a.form-submit-export:hover,
+      #block-views-slideshow-block .views-field-body .feed-icon a:hover,
+      .feed-icon #block-views-slideshow-block .views-field-body a:hover,
+      #block-views-slideshow-block .views-field-body a.field-add-more-submit:hover,
+      #block-views-slideshow-block .views-field-body .view-learners-list a.form-submit:hover,
+      .view-learners-list #block-views-slideshow-block .views-field-body a.form-submit:hover, #block-views-slideshow-block .views-field-body .ief-form .ief-form-bottom > .fieldset-wrapper > .form-wrapper > a.form-submit:hover, .ief-form #block-views-slideshow-block .views-field-body .ief-form-bottom > .fieldset-wrapper > .form-wrapper > a.form-submit:hover, #block-views-slideshow-block .views-field-body .ief-form > .form-wrapper > a.form-submit:hover,
+      #block-views-slideshow-block .views-field-body .ief-row-form .ief-form-row .ief-form-bottom > .fieldset-wrapper > .form-wrapper > a.form-submit:hover,
+      .ief-row-form .ief-form-row #block-views-slideshow-block .views-field-body .ief-form-bottom > .fieldset-wrapper > .form-wrapper > a.form-submit:hover,
+      #block-views-slideshow-block .views-field-body .ief-row-form .ief-form-row > .form-wrapper > a.form-submit:hover,
+      .ief-row-form #block-views-slideshow-block .views-field-body .ief-form-row > .form-wrapper > a.form-submit:hover, #block-views-slideshow-block .views-field-body .field-name-field-activity .ief-row-form a.form-submit:hover, .field-name-field-activity .ief-row-form #block-views-slideshow-block .views-field-body a.form-submit:hover, #block-views-slideshow-block .views-field-body .group-pg-notes .ief-row-form a.form-submit:hover, .group-pg-notes .ief-row-form #block-views-slideshow-block .views-field-body a.form-submit:hover, #block-views-slideshow-block .views-field-body .view-portal-export .view-filters .views-exposed-widget a.form-submit:hover, .view-portal-export .view-filters .views-exposed-widget #block-views-slideshow-block .views-field-body a.form-submit:hover,
+      #block-views-slideshow-block .views-field-body .view-portal-export1 .view-filters .views-exposed-widget a.form-submit:hover,
+      .view-portal-export1 .view-filters .views-exposed-widget #block-views-slideshow-block .views-field-body a.form-submit:hover, #block-views-slideshow-block .views-field-body .view-courses-list-content-view .view-filters a.form-submit:hover, .view-courses-list-content-view .view-filters #block-views-slideshow-block .views-field-body a.form-submit:hover {
+        color: white !important;
+        background: #f28d1e; }
+
+@media screen and (min-width: 1061px) {
+  #navigation #block-system-main-menu {
+    display: inline-block !important; } }
+@media screen and (max-width: 1060px) {
+  #mobile-menu {
+    display: inline-block;
+    position: absolute;
+    left: 10px; }
+    #mobile-menu a {
+      display: block;
+      font-size: 0px;
+      color: transparent;
+      width: 20px;
+      height: 20px;
+      background: url(../images/mobile-menu.png) no-repeat; }
+
+  .box1,
+  .box2 {
+    height: auto;
+    float: none;
+    margin: 20px auto; }
+
+  #block-block-10 {
+    position: relative;
+    top: 0px; }
+
+  .front.not-logged-in #right-block {
+    margin-right: 0px;
+    position: absolute;
+    top: 20px;
+    right: 10px; }
+
+  #navigation {
+    z-index: 11; }
+
+  #user-login {
+    max-width: 740px; }
+    #user-login .form-type-textfield,
+    #user-login .form-type-password {
+      max-width: 350px;
+      margin: 0 auto;
+      display: block; }
+
+  ul.secondary li {
+    padding: 0 0.9em 0px 0px; }
+
+  .view-learners-list .alphabet li a {
+    font-size: 13px; }
+
+  #block-imageblock-1 {
+    height: 300px; }
+    #block-imageblock-1 .block-body img {
+      width: 250px;
+      height: auto; }
+
+  #navigation .region-navigation {
+    display: block;
+    margin: 10px 0px; }
+
+  .block-imageblock {
+    background-position: center; }
+
+  #logo {
+    text-align: center;
+    float: none;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    position: relative;
+    display: block; }
+
+  #block-system-main-menu {
+    width: 100%; }
+    #block-system-main-menu #fb,
+    #block-system-main-menu #twitter {
+      display: block; }
+    #block-system-main-menu > .content > ul.menu {
+      border-bottom: 5px solid #8dd2ca; }
+    #block-system-main-menu ul.menu {
+      text-align: center; }
+    #block-system-main-menu li.expanded {
+      position: relative; }
+      #block-system-main-menu li.expanded a, #block-system-main-menu li.expanded span {
+        position: relative; }
+      #block-system-main-menu li.expanded > a:after, #block-system-main-menu li.expanded > span:after {
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0px;
+        top: 10px;
+        left: auto;
+        width: 10px;
+        height: 10px;
+        border-bottom: 0px; }
+    #block-system-main-menu li.expanded:hover ul.menu {
+      display: none; }
+    #block-system-main-menu li.expanded ul.menu {
+      position: relative;
+      top: 0px; }
+
+  #navigation a.dropdown {
+    position: absolute !important;
+    right: 20px;
+    top: 0px;
+    width: 40px;
+    height: 10px;
+    font-size: 0px;
+    display: block;
+    background: url(../images/polygon.png) no-repeat;
+    background-position: right; }
+
+  #block-system-main-menu {
+    display: none;
+    padding-top: 20px;
+    position: absolute;
+    width: 100%;
+    background: white;
+    left: 0; }
+    #navigation #block-system-main-menu {
+      margin-top: 0px;
+      top: 202px; }
+      #navigation #block-system-main-menu li.fb,
+      #navigation #block-system-main-menu li.twitter {
+        display: inline-block;
+        padding: 0px;
+        vertical-align: top;
+        padding-bottom: 20px; }
+    #navigation #block-system-main-menu li {
+      display: block; }
+
+  #block-block-3 .action-button {
+    margin: 10px; }
+    #block-block-3 .action-button a {
+      padding: 50px 10px;
+      width: 220px;
+      margin: 0 auto;
+      height: 150px; }
+
+  #block-block-4 a img {
+    margin-right: 40px; }
+
+  #user-register-form .field-type-text,
+  #user-register-form .field-type-list-text,
+  #user-register-form #edit-account,
+  #user-register-form .field-type-datetime,
+  #user-register-form .form-type-markup,
+  #user-profile-form .field-type-text,
+  #user-profile-form .field-type-list-text,
+  #user-profile-form #edit-account,
+  #user-profile-form .field-type-datetime,
+  #user-profile-form .form-type-markup {
+    width: 50%;
+    margin-right: 0px; }
+
+  #contact-block, #mail-chimp-block {
+    width: auto;
+    display: block;
+    margin-left: 0px;
+    height: auto; }
+    #contact-block .form-actions, #mail-chimp-block .form-actions {
+      margin-top: 0px !important; }
+    #contact-block .mailchimp-newsletter-mergefields + p, #mail-chimp-block .mailchimp-newsletter-mergefields + p {
+      display: none; }
+
+  #right-block {
+    padding-top: 0px; }
+
+  .view-portal-export .views-widget-filter-field_program_start_date_value,
+  .view-portal-export1 .views-widget-filter-field_program_start_date_value {
+    margin-top: -31px; }
+    .view-portal-export .views-widget-filter-field_program_start_date_value > div > div,
+    .view-portal-export1 .views-widget-filter-field_program_start_date_value > div > div {
+      width: 100px; } }
+@media screen and (max-width: 767px) {
+  #user-register-form .field-type-text,
+  #user-register-form .field-type-list-text,
+  #user-register-form #edit-account,
+  #user-register-form .field-type-datetime,
+  #user-register-form .form-type-markup,
+  #user-profile-form .field-type-text,
+  #user-profile-form .field-type-list-text,
+  #user-profile-form #edit-account,
+  #user-profile-form .field-type-datetime,
+  #user-profile-form .form-type-markup {
+    width: 100%;
+    margin-right: 0px; }
+
+  #navigation #block-system-main-menu {
+    top: 286px; }
+
+  #login {
+    float: none; }
+
+  #logo {
+    float: none;
+    padding-right: 0px;
+    margin-top: 50px; }
+
+  .not-logged-in.page-user:not(.page-user-register) #block-block-8,
+  .not-logged-in.page-user:not(.page-user-register) #block-system-main {
+    float: none;
+    width: 100%; }
+
+  #right-block {
+    float: none;
+    margin: 0 auto 10px;
+    text-align: center; }
+    .front.not-logged-in #right-block {
+      margin-right: auto;
+      position: inherit;
+      top: auto;
+      right: auto; }
+    #right-block .form-actions input {
+      top: 5px;
+      right: -33px; }
+
+  #search-block {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%); }
+
+  #block-block-4 a {
+    display: block;
+    padding: 10px 0px; }
+    #block-block-4 a:first-child img {
+      width: 250px;
+      height: auto; }
+    #block-block-4 a:first-child + a {
+      padding-bottom: 30px; }
+    #block-block-4 a img {
+      margin: 0 auto; }
+
+  .view-faq .views-field-body,
+  .view-what-you-need .views-field-body {
+    padding-left: 0px; }
+
+  .view-portal-export .view-filters select,
+  .view-portal-export1 .view-filters select {
+    min-width: 200px; }
+  .view-portal-export .view-header,
+  .view-portal-export1 .view-header {
+    margin-top: 0px; }
+
+  #content ul.alphabet {
+    padding-left: 0px; }
+
+  #user-profile-form .alphabet li a {
+    font-size: 24px; }
+
+  #responsive-alpha-search {
+    width: 200px;
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    z-index: 9; }
+    #responsive-alpha-search > a {
+      display: inline-block;
+      border: 1px solid #ccc;
+      padding: 8px;
+      margin: 20px 0px;
+      width: 180px;
+      border-radius: 3px;
+      color: #7f7f7f;
+      background: url(../images/polygon.png) no-repeat;
+      background-position: right 10px center;
+      font-style: italic;
+      margin-bottom: 0px; }
+    #responsive-alpha-search .alphabet {
+      display: none;
+      position: absolute;
+      top: 58px;
+      background: white;
+      height: auto;
+      bottom: auto;
+      width: 197px;
+      padding-left: 0px;
+      border: 1px solid #ccc; }
+      #responsive-alpha-search .alphabet li {
+        display: block;
+        border-bottom: 1px solid #ccc; }
+      #responsive-alpha-search .alphabet li.active {
+        border-radius: 0px; }
+
+  #user-profile-form .group-referral .form-checkboxes {
+    column-count: 2;
+    -webkit-column-count: 2;
+    -moz-column-count: 2; }
+    #user-profile-form .group-referral .form-checkboxes input {
+      background: transparent; }
+  #user-profile-form .form-submit {
+    margin: 10px; }
+  #user-profile-form .group-pg-notes .view-filters {
+    position: relative;
+    top: auto; }
+  #user-profile-form .field-name-field-document-uploads .draggable,
+  #user-profile-form #field-referral-values .draggable,
+  #user-profile-form #field-referrals-services-values .draggable {
+    width: 300px;
+    display: block;
+    padding: 0px; }
+  #user-profile-form .field-name-field-document-uploads .field-type-list-text,
+  #user-profile-form #field-referral-values .field-type-list-text,
+  #user-profile-form #field-referrals-services-values .field-type-list-text {
+    float: none; }
+  #user-profile-form .field-type-multifield table td {
+    width: 300px;
+    display: block; }
+    #user-profile-form .field-type-multifield table td .form-managed-file .form-submit {
+      right: 0px;
+      left: auto;
+      bottom: -38px; }
+  #user-profile-form .field-type-entityreference .container-inline {
+    width: 95%; }
+  #user-profile-form .field-type-entityreference .form-submit {
+    margin: 0px; }
+  #user-profile-form .field-type-multifield .field-type-text,
+  #user-profile-form .field-type-multifield .field-type-file {
+    width: 100%;
+    display: block; }
+
+  .view-learners-list #header-label,
+  .view-learners-list #header-label1,
+  .view-portal-export1 #header-label,
+  .view-portal-export1 #header-label1,
+  .view-portal-export #header-label,
+  .view-portal-export #header-label1 {
+    display: none;
+    margin-top: 110px; }
+  .view-learners-list select,
+  .view-portal-export1 select,
+  .view-portal-export select {
+    margin-right: 0px;
+    min-width: 197px; }
+  .view-learners-list .view-filters,
+  .view-portal-export1 .view-filters,
+  .view-portal-export .view-filters {
+    position: relative;
+    float: none;
+    top: auto;
+    margin: 20px 0px;
+    padding-top: 25px; }
+    .view-learners-list .view-filters .views-exposed-widget,
+    .view-portal-export1 .view-filters .views-exposed-widget,
+    .view-portal-export .view-filters .views-exposed-widget {
+      float: none;
+      text-align: center;
+      margin: 10px 0px; }
+  .view-learners-list .views-row,
+  .view-portal-export1 .views-row,
+  .view-portal-export .views-row {
+    border-bottom: 1px solid #f28d1e;
+    padding: 20px 0px; }
+    .view-learners-list .views-row .field-content .email-field,
+    .view-portal-export1 .views-row .field-content .email-field,
+    .view-portal-export .views-row .field-content .email-field {
+      width: 100%; }
+    .view-learners-list .views-row .field-content div,
+    .view-portal-export1 .views-row .field-content div,
+    .view-portal-export .views-row .field-content div {
+      float: none;
+      width: 100%; }
+      .view-learners-list .views-row .field-content div .label,
+      .view-portal-export1 .views-row .field-content div .label,
+      .view-portal-export .views-row .field-content div .label {
+        display: inline-block;
+        color: #f28d1e;
+        width: 150px; }
+  .view-learners-list .view-content,
+  .view-portal-export1 .view-content,
+  .view-portal-export .view-content {
+    margin-top: 0px; }
+
+  .view-learners-list .view-filters {
+    padding-top: 0px; }
+  .view-learners-list .alphabet {
+    display: none; }
+
+  .view-learning-profile-info .views-row {
+    -moz-column-count: inherit;
+    -webkit-column-count: inherit;
+    column-count: inherit; }
+
+  .view-learner-plan .header-label,
+  .view-learner-plan #header-label1 {
+    display: none; }
+  .view-learner-plan .views-row {
+    background-image: none;
+    background-color: #f0f9f8;
+    margin: 10px 0px;
+    padding: 20px 0px 0px; }
+  .view-learner-plan .view-header > h3 + div {
+    margin-bottom: 30px;
+    text-align: center; }
+  .view-learner-plan .view-content {
+    padding-top: 30px; }
+    .view-learner-plan .view-content:before {
+      top: 0px; }
+  .view-learner-plan .field-name-field-milestone-outcome {
+    background-image: url(../images/polygon.png);
+    background-repeat: no-repeat;
+    background-position: bottom 10px center;
+    padding-bottom: 35px !important; }
+  .view-learner-plan .field-type-entityreference {
+    margin-bottom: 0px; }
+  .view-learner-plan .views-row.open {
+    background-image: none; }
+  .view-learner-plan .views-row.open .field-name-field-milestone-outcome {
+    background-color: #f0f9f8;
+    background-image: url(../images/polygon-up.png);
+    background-repeat: no-repeat; }
+  .view-learner-plan .node-competency .content > div {
+    width: auto;
+    display: block; }
+    .view-learner-plan .node-competency .content > div .field-label {
+      display: none;
+      color: #f28d1e;
+      display: inline-block;
+      width: 116px;
+      margin-right: 20px;
+      padding-left: 10px; }
+    .view-learner-plan .node-competency .content > div .field-items {
+      display: inline-block;
+      vertical-align: top; }
+    .view-learner-plan .node-competency .content > div.field-name-field-activity {
+      background-color: white; }
+      .view-learner-plan .node-competency .content > div.field-name-field-activity > .field-label {
+        display: none !important; }
+  .view-learner-plan .node-learning-activity {
+    border-bottom: 1px solid #f28d1e; }
+    .view-learner-plan .node-learning-activity .content {
+      padding: 0px; }
+    .view-learner-plan .node-learning-activity .content > div:last-child {
+      width: auto; }
+    .view-learner-plan .node-learning-activity .field-name-field-learning-activity .field-items {
+      padding-left: 10px; }
+
+  .form-navigation {
+    text-align: center; }
+    .form-navigation .next,
+    .form-navigation .prev {
+      float: none;
+      position: relative;
+      margin: 10px 0px; }
+
+  #user-register-form .help-button:hover + div .description {
+    width: 90%; }
+  #user-register-form #edit-actions {
+    position: relative;
+    margin-top: 0px; }
+    #user-register-form #edit-actions input {
+      width: 190px;
+      margin: 10px auto; }
+
+  ul.indicators li {
+    margin: 0px 5px; }
+
+  .view-courses-list-content-view .views-field-field-type-of-class-1 {
+    display: block; }
+
+  ul.secondary li {
+    display: block;
+    margin: 10px 0px;
+    padding-right: 0px; }
+
+  .confirm-parent, .password-parent {
+    width: auto; }
+
+  .ief-entity-table td {
+    padding: 30px 0px; }
+
+  #edit-profile-plan-content-field-learner-plan1 table, #edit-profile-plan-content-field-learner-plan1 thead, #edit-profile-plan-content-field-learner-plan1 tbody, #edit-profile-plan-content-field-learner-plan1 th, #edit-profile-plan-content-field-learner-plan1 td, #edit-profile-plan-content-field-learner-plan1 tr,
+  #ief-entity-table-edit-profile-plan-content-field-progress-notes1-und-entities table,
+  #ief-entity-table-edit-profile-plan-content-field-progress-notes1-und-entities thead,
+  #ief-entity-table-edit-profile-plan-content-field-progress-notes1-und-entities tbody,
+  #ief-entity-table-edit-profile-plan-content-field-progress-notes1-und-entities th,
+  #ief-entity-table-edit-profile-plan-content-field-progress-notes1-und-entities td,
+  #ief-entity-table-edit-profile-plan-content-field-progress-notes1-und-entities tr {
+    display: block; }
+  #edit-profile-plan-content-field-learner-plan1 thead tr,
+  #ief-entity-table-edit-profile-plan-content-field-progress-notes1-und-entities thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px; }
+  #edit-profile-plan-content-field-learner-plan1 tr,
+  #ief-entity-table-edit-profile-plan-content-field-progress-notes1-und-entities tr {
+    vertical-align: middle; }
+  #edit-profile-plan-content-field-learner-plan1 td,
+  #ief-entity-table-edit-profile-plan-content-field-progress-notes1-und-entities td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+    text-align: left !important;
+    height: auto;
+    max-width: 50%;
+    width: 50%; }
+  #edit-profile-plan-content-field-learner-plan1 td:before,
+  #ief-entity-table-edit-profile-plan-content-field-progress-notes1-und-entities td:before {
+    position: absolute;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    text-align: left;
+    font-weight: bold;
+    max-width: 120px;
+    color: #f28d1e; }
+  #edit-profile-plan-content-field-learner-plan1 .ief-tabledrag-handle,
+  #ief-entity-table-edit-profile-plan-content-field-progress-notes1-und-entities .ief-tabledrag-handle {
+    display: none; }
+  #edit-profile-plan-content-field-learner-plan1 .ief-row-form > td,
+  #ief-entity-table-edit-profile-plan-content-field-progress-notes1-und-entities .ief-row-form > td {
+    padding-left: 0px;
+    max-width: 100%;
+    width: 100%; }
+    #edit-profile-plan-content-field-learner-plan1 .ief-row-form > td:before,
+    #ief-entity-table-edit-profile-plan-content-field-progress-notes1-und-entities .ief-row-form > td:before {
+      display: none; }
+  #user-profile-form #edit-profile-plan-content-field-learner-plan1 .ief-entity-operations input, #user-profile-form
+  #ief-entity-table-edit-profile-plan-content-field-progress-notes1-und-entities .ief-entity-operations input {
+    margin: 0px 10px; }
+  #edit-profile-plan-content-field-learner-plan1 .field-type-datetime,
+  #ief-entity-table-edit-profile-plan-content-field-progress-notes1-und-entities .field-type-datetime {
+    padding: 0px; }
+
+  #ief-entity-table-edit-profile-plan-content-field-progress-notes1-und-entities td:nth-of-type(1):before {
+    content: "Title"; }
+  #ief-entity-table-edit-profile-plan-content-field-progress-notes1-und-entities td:nth-of-type(2):before {
+    content: "Date & Time"; }
+  #ief-entity-table-edit-profile-plan-content-field-progress-notes1-und-entities td:nth-of-type(3):before {
+    content: "Note Description"; }
+  #ief-entity-table-edit-profile-plan-content-field-progress-notes1-und-entities td:nth-of-type(4):before {
+    content: "Operations"; }
+  #ief-entity-table-edit-profile-plan-content-field-progress-notes1-und-entities .draggable td:nth-of-type(3):before {
+    content: "Title"; }
+  #ief-entity-table-edit-profile-plan-content-field-progress-notes1-und-entities .draggable td:nth-of-type(4):before {
+    content: "Date & Time"; }
+  #ief-entity-table-edit-profile-plan-content-field-progress-notes1-und-entities .draggable td:nth-of-type(5):before {
+    content: "Note Description"; }
+  #ief-entity-table-edit-profile-plan-content-field-progress-notes1-und-entities .draggable td:nth-of-type(6):before {
+    content: "Operations"; }
+
+  #edit-profile-plan-content-field-learner-plan1 td:nth-of-type(1):before {
+    content: "Task Group & level Indicator"; }
+  #edit-profile-plan-content-field-learner-plan1 td:nth-of-type(2):before {
+    content: "Milestone#"; }
+  #edit-profile-plan-content-field-learner-plan1 td:nth-of-type(3):before {
+    content: "Milestone Attempt Date"; }
+  #edit-profile-plan-content-field-learner-plan1 td:nth-of-type(4):before {
+    content: "Milestone Outcome"; }
+  #edit-profile-plan-content-field-learner-plan1 td:nth-of-type(5):before {
+    content: "Operations"; }
+  #edit-profile-plan-content-field-learner-plan1 .draggable td:nth-of-type(3):before {
+    content: "Task Group & level Indicator"; }
+  #edit-profile-plan-content-field-learner-plan1 .draggable td:nth-of-type(4):before {
+    content: "Milestone#"; }
+  #edit-profile-plan-content-field-learner-plan1 .draggable td:nth-of-type(5):before {
+    content: "Milestone Attempt Date"; }
+  #edit-profile-plan-content-field-learner-plan1 .draggable td:nth-of-type(6):before {
+    content: "Milestone Outcome"; }
+  #edit-profile-plan-content-field-learner-plan1 .draggable td:nth-of-type(7):before {
+    content: "Operations"; }
+  #edit-profile-plan-content-field-learner-plan1 .ief-form .form-type-textfield,
+  #edit-profile-plan-content-field-learner-plan1 .ief-form .field-type-taxonomy-term-reference,
+  #edit-profile-plan-content-field-learner-plan1 .ief-form .field-type-list-integer,
+  #edit-profile-plan-content-field-learner-plan1 .ief-form .field-type-datetime,
+  #edit-profile-plan-content-field-learner-plan1 .ief-form .field-type-list-text {
+    float: none; }
+  #edit-profile-plan-content-field-learner-plan1 .ief-form .field-name-field-task-group-level-indicator {
+    min-height: auto; }
+  #edit-profile-plan-content-field-learner-plan1 .field-name-field-activity td:nth-of-type(1):before {
+    content: "Approval"; }
+  #edit-profile-plan-content-field-learner-plan1 .field-name-field-activity td:nth-of-type(2):before {
+    content: "Outcome"; }
+  #edit-profile-plan-content-field-learner-plan1 .field-name-field-activity td:nth-of-type(3):before {
+    content: "Start Date"; }
+  #edit-profile-plan-content-field-learner-plan1 .field-name-field-activity td:nth-of-type(4):before {
+    content: "End Date"; }
+  #edit-profile-plan-content-field-learner-plan1 .field-name-field-activity td:nth-of-type(5):before {
+    content: "Learning Activity"; }
+  #edit-profile-plan-content-field-learner-plan1 .field-name-field-activity td:nth-of-type(6):before {
+    content: "Operations"; }
+  #edit-profile-plan-content-field-learner-plan1 .field-name-field-activity .draggable td:nth-of-type(3):before {
+    content: "Approval"; }
+  #edit-profile-plan-content-field-learner-plan1 .field-name-field-activity .draggable td:nth-of-type(4):before {
+    content: "Outcome"; }
+  #edit-profile-plan-content-field-learner-plan1 .field-name-field-activity .draggable td:nth-of-type(5):before {
+    content: "Start Date"; }
+  #edit-profile-plan-content-field-learner-plan1 .field-name-field-activity .draggable td:nth-of-type(6):before {
+    content: "End Date"; }
+  #edit-profile-plan-content-field-learner-plan1 .field-name-field-activity .draggable td:nth-of-type(7):before {
+    content: "Learning Activity"; }
+  #edit-profile-plan-content-field-learner-plan1 .field-name-field-activity .draggable td:nth-of-type(8):before {
+    content: "Operations"; }
+
+  #edit-profile-plan-content-field-progress-notes1 .ief-form > .fieldset-wrapper > .form-wrapper > .form-submit {
+    margin: 10px 0px; }
+
+  .community-list {
+    column-count: 1;
+    -webkit-column-count: 1;
+    -moz-column-count: 1; }
+
+  .item-list {
+    padding-left: 0px; }
+    .item-list .pager li {
+      padding: 0px;
+      margin: 6px; } }
+@media screen and (max-width: 460px) {
+  h3 {
+    font-size: 24px; }
+
+  .field-name-field-notice {
+    width: 300px; }
+    .field-name-field-notice a {
+      word-wrap: break-word; }
+
+  .view-courses-list-content-view span.views-field-title {
+    max-width: 60%; }
+
+  #block-views-course-category-block .views-row,
+  #block-views-course-category-block-1 .views-row {
+    margin: 10px; }
+    #block-views-course-category-block .views-row .field-content a,
+    #block-views-course-category-block-1 .views-row .field-content a {
+      width: 106px;
+      height: 113px; }
+  #block-views-course-category-block .search-all,
+  #block-views-course-category-block-1 .search-all {
+    width: 106px;
+    height: 112px; }
+
+  #user-profile-form #edit-account input {
+    width: 90%; }
+  #user-profile-form #edit-account input.form-radio {
+    width: auto; }
+  #user-profile-form .field-name-field-courses-4 select {
+    width: 90%; }
+
+  .password-strength {
+    display: none; } }

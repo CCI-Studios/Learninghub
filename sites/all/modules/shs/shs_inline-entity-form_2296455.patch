@@ -1,0 +1,44 @@
+diff --git a/shs.module b/shs.module
+index b9f73bc..34b8f5b 100644
+--- a/shs.module
++++ b/shs.module
+@@ -341,7 +341,11 @@ function shs_field_widget_afterbuild($element, &$form_state) {
+   // Create Javascript settings for the element only if it hasn't been added
+   // before.
+   if (empty($js_added[$element['#name']][$js_hash])) {
+-    $element_value = $element['#default_value']['tid'];
++    if (isset($element['#default_value']['tid'])) {
++      $element_value = $element['#default_value']['tid'];
++    } else {
++      $element_value = $element['#default_value'];
++    }
+ 
+     if (empty($element_value)) {
+       // Add fake parent for new items.
+@@ -387,11 +391,24 @@ function shs_field_widget_afterbuild($element, &$form_state) {
+ function shs_field_widget_validate($element, &$form_state, $form) {
+   $field_name = $element['#field_name'];
+   $field_language = $element['#language'];
++  $field_inline = array();
++
++  // /check if the field has parents (because embeded in a inline entity form)
++  if (!empty($element['#field_parents'])) {
++    $field_inline = drupal_array_get_nested_value($form_state['field']['#parents'], $element['#field_parents']);
++  }
+ 
+-  if (empty($form_state['field'][$field_name][$field_language]['instance']['widget'])) {
++  // Search if shs field is in the form or a subform
++  if (!empty($form_state['field'][$field_name][$field_language]['instance']['widget'])) {
++    $field = $form_state['field'][$field_name][$field_language];
++  }
++  elseif (!empty($field_inline['#fields'][$field_name][$field_language]['instance']['widget'])) {
++    $field = $field_inline['#fields'][$field_name][$field_language];
++  }
++  else {
+     return;
+   }
+-  $field = $form_state['field'][$field_name][$field_language];
++
+   $instance = $field['instance'];
+   $settings = empty($instance['widget']['settings']['shs']) ? array() : $instance['widget']['settings']['shs'];
+ 

@@ -1,0 +1,75 @@
+diff --git a/feeds_profile2.module b/feeds_profile2.module
+index 5e565d0..7ba0eae 100644
+--- a/feeds_profile2.module
++++ b/feeds_profile2.module
+@@ -15,6 +15,27 @@ function feeds_profile2_feeds_processor_targets_alter(&$targets, $entity_type, $
+           'description' => t($field['description']),
+         );
+       }
++      // Only variables can be passed by reference
++      $profile2_type = 'profile2';
++      // Invoke hook_feeds_processor_targets() for profile2 fields
++      $new_targets = module_invoke_all('feeds_processor_targets', $profile2_type, $profile_type->type);
++      foreach ($new_targets as $target_key => $target) {
++        $targets["profile2:{$profile_type->type}:$target_key"] = $target;
++      }
++
++      // Store targets prior to invoking alter hook
++      $targets_old = $targets;
++
++      // Invoke hook_feeds_processor_targets_alter for profile2 fields
++      drupal_alter('feeds_processor_targets', $targets, $profile2_type, $profile_type->type);
++      $targets_new = array_diff_key ($targets, $targets_old);
++      if (is_array($targets_new)) {
++        // Loop through new targets adding profile2:
++        foreach ($targets_new as $target_key => $target) {
++          unset($targets[$target_key]);
++          $targets["profile2:{$profile_type->type}:$target_key"] = $target;
++        }
++      }
+     }
+   }
+ }
+@@ -24,12 +45,18 @@ function feeds_profile2_feeds_processor_targets_alter(&$targets, $entity_type, $
+  */
+ function feeds_profile2_feeds_after_save(FeedsSource $source, $entity, $item, $entity_id) {
+   $profiles = array();
++  $callbacks = array();
+ 
+   // Loop through mappings to compile values for each Profile2 bundle & field.
+   $config = $source->importer->getConfig();
++  $targets = $source->importer->processor->getMappingTargets();
+   foreach ($config['processor']['config']['mappings'] as $mapping) {
+     if (strpos($mapping['target'], 'profile2:') === 0) {
+-      list($entity_type, $bundle, $field_name) = explode(':', $mapping['target']);
++      list($entity_type, $bundle, $field_name) = explode(':', $mapping['target'], 3);
++      if (isset($targets[$mapping['target']]['callback'])) {
++        $callbacks[$bundle][$field_name] = $targets[$mapping['target']]['callback'];
++        $mappings[$bundle][$field_name] = $mapping;
++      }
+       $profiles[$bundle][$field_name] = $item[strtolower($mapping['source'])];
+     }
+   }
+@@ -56,7 +83,21 @@ function feeds_profile2_feeds_after_save(FeedsSource $source, $entity, $item, $e
+ 
+     // Set mapped field values.
+     foreach ($values as $field_name => $value) {
+-      $profile_wrapper->{$field_name}->set($value);
++      // Convert the values into an array if it isn't one already
++      if (!is_array($value)) {
++        $value = array($value);
++      }
++      // Make sure there's a valid language set
++      if (!isset($profile->language)) {
++        $profile->language = LANGUAGE_NONE;
++      }
++      // Check for field callback
++      if (isset($callbacks[$bundle][$field_name])) {
++        call_user_func($callbacks[$bundle][$field_name], $source, $profile, $field_name, $value, $mappings[$bundle][$field_name]);
++      }
++      else {
++        $source->importer->processor->setTargetElement($source, $profile, $field_name, $value);
++      }
+     }
+ 
+     // Save profile.
