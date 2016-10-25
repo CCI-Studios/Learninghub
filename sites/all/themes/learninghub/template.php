@@ -861,7 +861,34 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 }
 if (!function_exists('learninghub_validate_register_form'))   {
 	function learninghub_validate_register_form(&$form, &$form_state) {
+		$how_learn = isset($form_state['values']['profile_learner_profile']['field__how_would_you_like_to_lea']['und'][0]['value'])?$form_state['values']['profile_learner_profile']['field__how_would_you_like_to_lea']['und'][0]['value']:'';
+		$learn_type = isset($form_state['values']['profile_learner_profile']['field_teacher_name']['und'][0]['value'])?$form_state['values']['profile_learner_profile']['field_teacher_name']['und'][0]['value']:'';
+		
+		if($how_learn == 'Live Classes (scheduled for a specific date and time)')
+		{	
+			$form_state['values']['profile_learner_profile']['field_training_type']['und'][0]['value'] = 10;
+		}
+		else if($how_learn == 'Anytime Learning')
+		{
+			$form_state['values']['profile_learner_profile']['field_training_type']['und'][0]['value'] = 20;
+		}
+		else if($how_learn == 'Blended Learning (Live Classes and Anytime Learning)')
+		{
+			$form_state['values']['profile_learner_profile']['field_training_type']['und'][0]['value'] = 30 ;
+		}
+		else
+		{
+			$form_state['values']['profile_learner_profile']['field_training_type']['und'][0]['value'] = '_none';
+		}
 
+		if($learn_type == '')
+		{
+			$form_state['values']['profile_learner_profile']['field_learner_type1']['und'][0]['value'] = 20;
+		}
+		else
+		{
+			$form_state['values']['profile_learner_profile']['field_learner_type1']['und'][0]['value'] = 10;
+		}
 		
 		$mail = $form['account']['mail']['#value'];
   

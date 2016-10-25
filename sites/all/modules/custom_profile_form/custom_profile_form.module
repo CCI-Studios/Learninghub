@@ -104,13 +104,18 @@ function custom_profile_form_form_alter(&$form, &$form_state, $form_id)
 				  if($nid->type == 'courses_live')
 				  {
 				  	$class_type = '('.$nid->field_type_of_class['und'][0]['value'].')';
+				  	
+				  	$timestamp = strtotime($nid->field_time['und'][0]['value']); 
+					$time = date('d-m-Y h:ia', $timestamp);
+			 
 				  }
 				  else
 				  {
 				  	$class_type = '';
+				  	$time = '';
 				  }
 			
-				  $courselist .= $nid->title.' '.$class_type. PHP_EOL .'<hr>';
+				  $courselist .= $nid->title.' '.$class_type. ' <br>'.$time.PHP_EOL .'<hr>';
 				}
 
 				$form['account']['cList'] = array(
@@ -129,47 +134,19 @@ function custom_profile_form_form_alter(&$form, &$form_state, $form_id)
 
 			$profiles = profile2_load_by_user($form['#user']->uid,'learner_profile');
 
+		
 			if(isset($profiles->created))
 			{
 				$form['field_register_date']['und'][0]['markup']= array(
 				'#type' => 'markup',
-				'#markup' => '<div class="form-type-markup"><label>Registration Date</label><div>'. format_date($profiles->created, 'custom', 'd/m/y').'</div></div>',
+				'#markup' => '<div class="form-type-markup"><label>Registration Date</label><div>'. format_date($form['#user']->created, 'custom', 'd/m/Y H:i').'</div></div>',
 				'#weight' => 11
 				);
 			}
-			
-			
+					
 		}
 
 		unset($form['account']['status']);	
-
-		$profiles = profile2_load_by_user($form['#user']->uid,'learner_profile');
-
-		$how_learn = isset($profiles->field__how_would_you_like_to_lea['und'][0]['value'])?$profiles->field__how_would_you_like_to_lea['und'][0]['value']:'not available';
-
-		$learn_type = isset($profiles->field_teacher_name['und'][0]['value'])?$profiles->field_teacher_name['und'][0]['value']:'';
-
-		if($how_learn == 'Live Classes (scheduled for a specific date and time)')
-		{	
-			$profiles->field_training_type['und'][0] = array('value'=>10);
-		}
-		else if($how_learn == 'Anytime Learning')
-		{
-			$profiles->field_training_type['und'][0] = array('value'=>20);
-		}
-		else if($how_learn == 'Blended Learning (Live Classes and Anytime Learning)')
-		{
-			$profiles->field_training_type['und'][0] = array('value'=>30);
-		}
-
-		if($learn_type == '')
-		{
-			$profiles->field_learner_type1['und'][0] = array('value'=>20);
-		}
-		else
-		{
-			$profiles->field_learner_type1['und'][0] = array('value'=>10);
-		}
 	}
 }
 

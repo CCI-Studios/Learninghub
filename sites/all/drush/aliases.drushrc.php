@@ -13,11 +13,13 @@ $aliases['dev'] = array(
 );
 
 $aliases['live'] = array(
-	'uri'=> 'live.learninghub.ca',
-	'root' => '/home/learni11/subdomains/live/public_html',
-	'remote-host'=> 'host.ccistudios.com',
+	'uri'=> 'learninghub.ca',
+	'root' => '/home/learni11/public_html',
+	'remote-host'=> 'learninghub.ca',
 	'remote-user'=> 'learni11',
 	'path-aliases'=> array(
 		'%files'=> 'sites/default/files',
 	),
+
+	'ssh-options' => '-p 27'
 );
