@@ -176,7 +176,6 @@ function submit_value(){
 
 	$profiles_plan_content = profile2_load_by_user($user->uid,'learner_profile');
 
-
 	$target_id = array('target_id' => $nid->nid);
 	$target_id_live = array('target_id' => $user->uid);
 
@@ -240,21 +239,39 @@ function submit_value(){
 		{	
 
 			$count = 0;
+			
 			foreach ($existing->field_courses_4['und'] as $key => $value) {
-				
+				$flag_time = 0;
 				$c_id = node_load($value['target_id']);
-				 if($c_id->type == 'courses_live')
-				 {
-				 	$count++;
-				 }
+				
+				if(isset($c_id->field_time['und']))
+				{
+					foreach ($c_id->field_time['und'] as $key => $value) {
+						
+						$user_tz = new DateTimeZone('America/Toronto');  
+						$offset = $user_tz->getOffset(new DateTime($value['value']));
+						$start_stamp = strtotime($value['value']) + $offset;
+			 	  		$time = format_date($start_stamp, 'custom', 'd/m/y h:i a');
+			
+			 	  		if(time() < $start_stamp)
+			 	  		{	
+							$flag_time++;
+			 	  		}
+							
+					}
+			
+				 	if($c_id->type == 'courses_live' && $flag_time > 0)
+				 	{
+					 	$count++;
+				 	}	
+				}
 			}
+		
 			$target_id = array('target_id' => $nid->nid);
 		
 			if($nid->type!='courses_live')
 			{	
-				
 				array_push($existing->field_courses_4['und'],$target_id);
-				
 			}	
 			else if($nid->type=='courses_live')
 			{	
@@ -321,8 +338,6 @@ function submit_value(){
 	
                   }
               	}
-                  
-	
 		}
 
 		if(isset($nid->field_users_attending['und']))

@@ -39,6 +39,7 @@ function render($values) {
 		$existing = user_load($user->uid);
 
 		node_load();
+		$flag = 0;
 	
 		if(in_array('learner',$user->roles)) {
 			$target_id = array('target_id' => $values->nid);
@@ -60,7 +61,8 @@ function render($values) {
 			$time_v = '';
 
 			if(in_array_r($values->nid, $existing->field_courses_4) == true)
-			{
+			{	
+				$flag++;
 				$button_value = 'Remove course';
 
 				foreach ($existing->field_courses_live as $key => $value) {
@@ -97,7 +99,10 @@ function render($values) {
 			}
 			else if(in_array_r($values->nid, $existing->field_courses_4) == false )
 			{
-
+				if($values->_field_data['nid']['entity']->type == 'courses')
+				{
+					$flag++;
+				}
 				if($values->_field_data['nid']['entity']->type == 'courses_live')
 				{
 					if(isset($values->_field_data['nid']['entity']->field_class_size['und'][0]['value']))
@@ -150,6 +155,23 @@ function render($values) {
 					{
 						$input = '';
 					}
+
+					if(count($values->_field_data['nid']['entity']->field_time['und']) >= 1 )
+					{	
+						foreach ($values->_field_data['nid']['entity']->field_time['und'] as $key => $value) {
+							$user_tz = new DateTimeZone('America/Toronto');  
+							$offset = $user_tz->getOffset(new DateTime($value['value']));
+							$start_stamp = strtotime($value['value']) + $offset;
+				 	  		$time = format_date($start_stamp, 'custom', 'd/m/y h:i a');
+				
+				 	  		if(time() < $start_stamp)
+				 	  		{	
+								$flag++;
+				 	  		}
+									
+						}
+						
+					}
 				}
 
 			}
@@ -163,12 +185,20 @@ function render($values) {
 			{
 				$time_v = '';
 			}
+
+			if($flag>0)
+			{
+				$form = '<span class="selected-time">'.$time_v.'</span><form method="post" action="/course-selection">
+				<input type="hidden" name ="buttonValue" value="'.$button_value.'">
+				<input type="hidden" name ="nid" value="'.$values->nid.'">'.$input.'
+				<br/><input type="submit" value ="'.$button_value.'">
+				</form>';
+			}
+			else
+			{
+				$form = '';
+			}
 			
-			$form = '<span class="selected-time">'.$time_v.'</span><form method="post" action="/course-selection">
-			<input type="hidden" name ="buttonValue" value="'.$button_value.'">
-			<input type="hidden" name ="nid" value="'.$values->nid.'">'.$input.'
-			<br/><input type="submit" value ="'.$button_value.'">
-			</form>';
 			
 			return $form;
 			
