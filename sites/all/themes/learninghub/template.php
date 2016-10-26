@@ -890,6 +890,7 @@ if (!function_exists('learninghub_validate_register_form'))   {
 			$form_state['values']['profile_learner_profile']['field_learner_type1']['und'][0]['value'] = 10;
 		}
 		
+		
 		$mail = $form['account']['mail']['#value'];
   
 		$emails = db_query("SELECT status FROM {users} WHERE mail = :mail;", array(':mail' =>  $mail))->fetchAll();

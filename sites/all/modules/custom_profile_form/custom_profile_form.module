@@ -139,7 +139,7 @@ function custom_profile_form_form_alter(&$form, &$form_state, $form_id)
 			{
 				$form['field_register_date']['und'][0]['markup']= array(
 				'#type' => 'markup',
-				'#markup' => '<div class="form-type-markup"><label>Registration Date</label><div>'. format_date($form['#user']->created, 'custom', 'd/m/Y H:i').'</div></div>',
+				'#markup' => '<div class="form-type-markup"><label>Registration Date</label><div>'. format_date($form['#user']->created, 'custom', 'd/m/Y H:ia').'</div></div>',
 				'#weight' => 11
 				);
 			}
