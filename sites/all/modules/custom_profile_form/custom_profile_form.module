@@ -106,8 +106,10 @@ function custom_profile_form_form_alter(&$form, &$form_state, $form_id)
 				  	$class_type = '('.$nid->field_type_of_class['und'][0]['value'].')';
 				  	
 				  	$timestamp = strtotime($nid->field_time['und'][0]['value']); 
-					$time = date('d-m-Y h:ia', $timestamp);
-			 
+				  	$user_tz = new DateTimeZone('America/Toronto');  
+					$offset = $user_tz->getOffset(new DateTime($nid->field_time['und'][0]['value']));
+					$start_stamp = $timestamp + $offset;
+		 	  		$time = format_date($start_stamp, 'custom', 'd/m/Y h:i a');			 
 				  }
 				  else
 				  {
@@ -150,3 +152,4 @@ function custom_profile_form_form_alter(&$form, &$form_state, $form_id)
 	}
 }
 
+		
