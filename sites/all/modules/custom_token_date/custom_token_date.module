@@ -1,0 +1,49 @@
+<?php 
+/**
+ * Implements hook_token_info().
+ */
+function custom_token_date_token_info() {
+  $info = array();
+
+  // Define any new tokens.
+  $info['tokens']['profile2']['custom_date_arrived'] = array(
+    'name' => t('Custom date arrived'),
+    'description' => t('Profile form date arrived field.'),
+  );
+  return $info;
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function custom_token_date_tokens($type, $tokens, array $data = array(), array $options = array()) {
+$replacements = array();
+
+  if ($type == 'profile2') {
+    // Loop through the available tokens.
+    foreach ($tokens as $name => $original) {
+      // Find our custom tokens by name.
+
+      switch ($name) {
+        case 'custom_date_arrived':
+          // Work out the value of our token.
+        if(isset($data['profile2']->field_date_arrived_in_canada_if_['und'][0]['value']))
+        {	
+        	$value = $data['profile2']->field_date_arrived_in_canada_if_['und'][0]['value'];
+    	 	$user_tz = 'Canada/Eastern';
+		    $value = new DateTime($value,new DateTimeZone($user_tz));
+		    $value = $value->format('d/m/Y');
+        }
+        else
+        {
+        	$value = '';
+        }
+      
+          $replacements[$original] = $value;
+          break;
+      }
+    }
+  }
+
+  return $replacements;
+}
