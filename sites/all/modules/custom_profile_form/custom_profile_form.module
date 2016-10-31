@@ -96,28 +96,85 @@ function custom_profile_form_form_alter(&$form, &$form_state, $form_id)
 			if(isset($form['#user']->field_courses_4['und']))
 			{	
 				$courselist = '';
+
+				if (!function_exists('in_array_r'))
+				{
+					function in_array_r($needle, $haystack, $strict = false) {
+					    foreach ($haystack as $item) {
+					        if (($strict ? $item === $needle : $item == $needle) || (is_array($item) && in_array_r($needle, $item, $strict))) {
+					            return true;
+					        }
+					    }
+
+					    return false;
+					}
+				}
 				foreach ($form['#user']->field_courses_4['und'] as $key => $value) { 
 
-				  $cid = $value['target_id'];
-				  $nid = node_load($cid);
-				
-				  if($nid->type == 'courses_live')
-				  {
-				  	$class_type = '('.$nid->field_type_of_class['und'][0]['value'].')';
-				  	
-				  	$timestamp = strtotime($nid->field_time['und'][0]['value']); 
-				  	$user_tz = new DateTimeZone('America/Toronto');  
-					$offset = $user_tz->getOffset(new DateTime($nid->field_time['und'][0]['value']));
-					$start_stamp = $timestamp + $offset;
-		 	  		$time = format_date($start_stamp, 'custom', 'd/m/Y h:i a');			 
-				  }
-				  else
-				  {
-				  	$class_type = '';
-				  	$time = '';
-				  }
+				  	$cid = $value['target_id'];
+				  	$nid = node_load($cid);
+					
+				  	if(in_array_r($nid->nid, $form['#user']->field_courses_4) == true)
+					{	
+						foreach ($form['#user']->field_courses_live as $key => $value) {
+							$id = [];
+							$time = [];
+							$group = [];
+							foreach ($value as $key => $value) {
+								
+								  $data = explode(',', $value['value']);
+								  $id1 = $data[0];
+								  $time1 = $data[1];
+								  $group1 = array('gp'=> array('id'=>$id1,'time'=>$time1));
+								  array_push($group,$group1);
+
+							}
+						}
+						if(isset($group))
+						{
+							foreach ($group as $key => $value) {
+		                  	
+		                  	if(in_array_r($nid->nid, $value))
+							{   
+								$time_v = $value['gp']['time'];
+								break;
+							}
+							else
+							{
+								$time_v = '';
+							}
+
+		                  }
+						}
+					}
 			
-				  $courselist .= $nid->title.' '.$class_type. ' <br>'.$time.PHP_EOL .'<hr>';
+				  	if($nid->type == 'courses_live')
+				  	{	
+				  	  	$count = count($nid->field_time['und']);
+					  	$class_type = '('.$nid->field_type_of_class['und'][0]['value'].')';
+					  	
+					  	$timestamp = strtotime($nid->field_time['und'][0]['value']); 
+					  	$user_tz = new DateTimeZone('America/Toronto');  
+						$offset = $user_tz->getOffset(new DateTime($nid->field_time['und'][0]['value']));
+						$start_stamp = $timestamp + $offset;
+			 	  		$time_n = format_date($start_stamp, 'custom', 'd/m/y h:i a');		 
+				  	}
+				  	else
+				  	{
+					  	$class_type = '';
+					  	$time_n = '';
+				  	}
+
+					if($count>1)
+					{
+						$time = $time_v;
+					}
+					else
+					{
+						$time = $time_n;
+					}
+			
+				  	$courselist .= $nid->title.' '.$class_type. ' <br>'.$time.PHP_EOL .'<hr>';
 				}
 
 				$form['account']['cList'] = array(

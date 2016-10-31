@@ -168,9 +168,7 @@ function render($values) {
 				 	  		{	
 								$flag++;
 				 	  		}
-									
-						}
-						
+						}	
 					}
 				}
 
