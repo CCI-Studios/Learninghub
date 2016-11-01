@@ -113,7 +113,15 @@ function custom_profile_form_form_alter(&$form, &$form_state, $form_id)
 
 				  	$cid = $value['target_id'];
 				  	$nid = node_load($cid);
-					
+					if(isset($nid->field_time['und']))
+			  		{
+			  			$count = count($nid->field_time['und']);
+			  		}
+			  		else
+			  		{
+			  			$count = '';
+			  		}
+				  	  	
 				  	if(in_array_r($nid->nid, $form['#user']->field_courses_4) == true)
 					{	
 						foreach ($form['#user']->field_courses_live as $key => $value) {
@@ -150,7 +158,7 @@ function custom_profile_form_form_alter(&$form, &$form_state, $form_id)
 			
 				  	if($nid->type == 'courses_live')
 				  	{	
-				  	  	$count = count($nid->field_time['und']);
+				  		
 					  	$class_type = '('.$nid->field_type_of_class['und'][0]['value'].')';
 					  	
 					  	$timestamp = strtotime($nid->field_time['und'][0]['value']); 
