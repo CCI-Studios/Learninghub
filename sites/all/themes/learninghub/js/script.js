@@ -21,6 +21,13 @@
 
 	    $('.view-footer').insertAfter('.feed-icon');
 
+	    $('.view-learner-plan .feed-icon a').click(function(e){
+
+	    	e.preventDefault();
+	    	window.print();
+
+	    });
+
 	    /* move export buttons in course catalogue*/
 
 

@@ -18,7 +18,7 @@ function custom_submit_send($nid, $body, $existingUser, $profiles_plan_content) 
   $email_content = get_mail_content($nid, $body, $existingUser, $profiles_plan_content);
   $params = array('body' => $email_content);
   $key = 'test_email';
-  $to =  $existingUser->mail;
+  $to =  'hsanvaria@ccistudios.com';
   $from = 'info.learninghub@gmail.com';
   $mail = drupal_mail('test', $key, $to, language_default(), $params, $from);
   // for better understanding,you can uncomment the following
@@ -30,7 +30,7 @@ function custom_submit_send_admin($nid, $body, $existingUser, $profiles_plan_con
   $email_content = get_mail_content_admin($nid, $body, $existingUser, $profiles_plan_content);
   $params = array('body' => $email_content);
   $key = 'test_email_admin';
-  $to = 'lhreg@ed.amdsb.ca';
+  $to = 'hsanvaria@ccistudios.com';
   $from = 'lhreg@ed.amdsb.ca';
   $mail = drupal_mail('test_admin', $key, $to, language_default(), $params, $from);
   // for better understanding,you can uncomment the following

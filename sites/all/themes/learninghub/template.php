@@ -708,11 +708,11 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 						{	
 							if($node->field_milestone1['und'][0]['value'] !=0 )
 							{	
-								$date1 = date("d m Y", strtotime($node->field_milestone_attempt_date['und'][0]['value']));
-								$date2 = date("d m Y", strtotime('+3 month January' ));
-								
+								$date1 = strtotime($node->field_milestone_attempt_date['und'][0]['value']);
+								$date2 = strtotime('+3 month January' );
+								echo $date1;
 								if($date1 < $date2)
-								{	
+								{	echo $date2;
 									array_push($activities_completed_fiscal, $node->field_milestone1['und'][0]['value']);
 								}
 							}
