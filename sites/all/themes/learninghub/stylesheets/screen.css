@@ -68,7 +68,9 @@ h1#page-title:before,
   #content .ief-row-form .ief-form-row > .form-wrapper > .form-submit,
   .ief-row-form #content .ief-form-row > .form-wrapper > .form-submit, #content .field-name-field-activity .ief-row-form .form-submit, .field-name-field-activity .ief-row-form #content .form-submit, #content .group-pg-notes .ief-row-form .form-submit, .group-pg-notes .ief-row-form #content .form-submit, #content .view-portal-export .view-filters .views-exposed-widget .form-submit, .view-portal-export .view-filters .views-exposed-widget #content .form-submit,
   #content .view-portal-export1 .view-filters .views-exposed-widget .form-submit,
-  .view-portal-export1 .view-filters .views-exposed-widget #content .form-submit, #content .view-courses-list-content-view .view-filters .form-submit, .view-courses-list-content-view .view-filters #content .form-submit {
+  .view-portal-export1 .view-filters .views-exposed-widget #content .form-submit, #content .view-courses-list-content-view .view-filters .form-submit, .view-courses-list-content-view .view-filters #content .form-submit,
+  #content .view-live-courses-users .view-filters .form-submit,
+  .view-live-courses-users .view-filters #content .form-submit {
     text-decoration: none; }
 
 h1,
@@ -136,7 +138,8 @@ h1, h2, h3, h4 {
 .view-learners-list .form-submit, .ief-form .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit, .ief-form > .form-wrapper > .form-submit,
 .ief-row-form .ief-form-row .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit,
 .ief-row-form .ief-form-row > .form-wrapper > .form-submit, .field-name-field-activity .ief-row-form .form-submit, .field-type-entityreference .ief-form > .fieldset-wrapper > .form-wrapper > .form-submit, .group-pg-notes .ief-row-form .form-submit, .view-portal-export .view-filters .views-exposed-widget .form-submit,
-.view-portal-export1 .view-filters .views-exposed-widget .form-submit, .view-courses-list-content-view .view-filters .form-submit {
+.view-portal-export1 .view-filters .views-exposed-widget .form-submit, .view-courses-list-content-view .view-filters .form-submit,
+.view-live-courses-users .view-filters .form-submit {
   background: #f28d1e;
   border-radius: 30px;
   color: white !important;
@@ -165,6 +168,7 @@ h1, h2, h3, h4 {
 .ief-row-form .ief-form-row .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit,
 .ief-row-form .ief-form-row > .form-wrapper > .form-submit, .field-name-field-activity .ief-row-form .form-submit, .field-type-entityreference .ief-form > .fieldset-wrapper > .form-wrapper > .form-submit, .group-pg-notes .ief-row-form .form-submit, .view-portal-export .view-filters .views-exposed-widget .form-submit,
 .view-portal-export1 .view-filters .views-exposed-widget .form-submit, .view-courses-list-content-view .view-filters .form-submit,
+.view-live-courses-users .view-filters .form-submit,
 .webform-submit,
 .btn,
 .form-actions .form-submit,
@@ -658,7 +662,9 @@ ul.secondary {
   #block-imageblock-1 .ief-row-form .ief-form-row > .form-wrapper > .form-submit,
   .ief-row-form #block-imageblock-1 .ief-form-row > .form-wrapper > .form-submit, #block-imageblock-1 .field-name-field-activity .ief-row-form .form-submit, .field-name-field-activity .ief-row-form #block-imageblock-1 .form-submit, #block-imageblock-1 .group-pg-notes .ief-row-form .form-submit, .group-pg-notes .ief-row-form #block-imageblock-1 .form-submit, #block-imageblock-1 .view-portal-export .view-filters .views-exposed-widget .form-submit, .view-portal-export .view-filters .views-exposed-widget #block-imageblock-1 .form-submit,
   #block-imageblock-1 .view-portal-export1 .view-filters .views-exposed-widget .form-submit,
-  .view-portal-export1 .view-filters .views-exposed-widget #block-imageblock-1 .form-submit, #block-imageblock-1 .view-courses-list-content-view .view-filters .form-submit, .view-courses-list-content-view .view-filters #block-imageblock-1 .form-submit {
+  .view-portal-export1 .view-filters .views-exposed-widget #block-imageblock-1 .form-submit, #block-imageblock-1 .view-courses-list-content-view .view-filters .form-submit, .view-courses-list-content-view .view-filters #block-imageblock-1 .form-submit,
+  #block-imageblock-1 .view-live-courses-users .view-filters .form-submit,
+  .view-live-courses-users .view-filters #block-imageblock-1 .form-submit {
     margin-top: 50px; }
 
 #block-block-2 {
@@ -694,7 +700,9 @@ ul.secondary {
   #block-block-2 .ief-row-form .ief-form-row > .form-wrapper > .form-submit,
   .ief-row-form #block-block-2 .ief-form-row > .form-wrapper > .form-submit, #block-block-2 .field-name-field-activity .ief-row-form .form-submit, .field-name-field-activity .ief-row-form #block-block-2 .form-submit, #block-block-2 .group-pg-notes .ief-row-form .form-submit, .group-pg-notes .ief-row-form #block-block-2 .form-submit, #block-block-2 .view-portal-export .view-filters .views-exposed-widget .form-submit, .view-portal-export .view-filters .views-exposed-widget #block-block-2 .form-submit,
   #block-block-2 .view-portal-export1 .view-filters .views-exposed-widget .form-submit,
-  .view-portal-export1 .view-filters .views-exposed-widget #block-block-2 .form-submit, #block-block-2 .view-courses-list-content-view .view-filters .form-submit, .view-courses-list-content-view .view-filters #block-block-2 .form-submit {
+  .view-portal-export1 .view-filters .views-exposed-widget #block-block-2 .form-submit, #block-block-2 .view-courses-list-content-view .view-filters .form-submit, .view-courses-list-content-view .view-filters #block-block-2 .form-submit,
+  #block-block-2 .view-live-courses-users .view-filters .form-submit,
+  .view-live-courses-users .view-filters #block-block-2 .form-submit {
     margin-top: 50px; }
 
 #block-block-3 {
@@ -748,8 +756,16 @@ ul.secondary {
   text-align: center;
   padding: 50px 10px; }
   #block-block-4 img {
-    margin: 0px 75px 0px 0px;
+    margin: 0px 33px 10px 0px;
     vertical-align: middle; }
+  #block-block-4 a.emp-ontario-logo {
+    width: 550px;
+    color: black; }
+  #block-block-4 a {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 auto;
+    font-size: 14px; }
   .logged-in #block-block-4 {
     border-top: 5px solid #8dd2ca; }
 
@@ -1699,7 +1715,7 @@ fieldset.date-combo .container-inline-date .date-padding {
     width: 100%;
     border-top: 1px solid #f28d1e;
     position: absolute;
-    top: -70px; }
+    top: -15px; }
   .view-learner-plan .view-content:after {
     top: auto;
     bottom: -30px; }
@@ -1723,17 +1739,22 @@ fieldset.date-combo .container-inline-date .date-padding {
 .view-learner-plan .views-field-name {
   display: none; }
 .view-learner-plan .views-row {
-  padding: 0px 40px;
+  padding: 0px;
   background-image: url(../images/polygon-right.png);
   background-repeat: no-repeat;
-  background-position: 15px 16px;
-  border-bottom: 3px solid #8dd2ca; }
+  background-position: 20px 66px;
+  border-bottom: 3px solid #f28d1e; }
+.view-learner-plan .views-field-field-learner-plan1,
+.view-learner-plan .views-field-description {
+  padding: 0 40px; }
+.view-learner-plan .views-field-description {
+  color: #f28d1e;
+  width: 100% !important; }
 .view-learner-plan .views-row:last-child {
   border-bottom: 0px; }
 .view-learner-plan .views-row.open {
   background-image: url(../images/polygon.png) no-repeat;
-  background-repeat: no-repeat;
-  background-position: 15px 16px; }
+  background-repeat: no-repeat; }
 .view-learner-plan .views-row-odd {
   background-color: #f0f9f8; }
 .view-learner-plan .node-competency > h2,
@@ -1872,65 +1893,84 @@ fieldset.date-combo .container-inline-date .date-padding {
   text-align: center;
   margin: 10px; }
 
-.view-courses-list-content-view .view-filters {
+.view-courses-list-content-view .view-filters,
+.view-live-courses-users .view-filters {
   position: relative;
   top: auto;
   float: none;
   text-align: left; }
-  .view-courses-list-content-view .view-filters select {
+  .view-courses-list-content-view .view-filters select,
+  .view-live-courses-users .view-filters select {
     font-size: 18px; }
-  .view-courses-list-content-view .view-filters .views-exposed-widget {
+  .view-courses-list-content-view .view-filters .views-exposed-widget,
+  .view-live-courses-users .view-filters .views-exposed-widget {
     width: 95%;
     margin: 0 auto;
     text-align: center; }
-    .view-courses-list-content-view .view-filters .views-exposed-widget .views-widget {
+    .view-courses-list-content-view .view-filters .views-exposed-widget .views-widget,
+    .view-live-courses-users .view-filters .views-exposed-widget .views-widget {
       padding: 20px;
       border: 1px solid #ccc;
       width: 100%; }
-  .view-courses-list-content-view .view-filters .form-type-radio {
+  .view-courses-list-content-view .view-filters .form-type-radio,
+  .view-live-courses-users .view-filters .form-type-radio {
     display: inline-block;
     width: 33%; }
-    .view-courses-list-content-view .view-filters .form-type-radio label {
+    .view-courses-list-content-view .view-filters .form-type-radio label,
+    .view-live-courses-users .view-filters .form-type-radio label {
       vertical-align: middle; }
-  .view-courses-list-content-view .view-filters .form-submit {
+  .view-courses-list-content-view .view-filters .form-submit,
+  .view-live-courses-users .view-filters .form-submit {
     margin-left: 20px;
     display: none; }
-.view-courses-list-content-view .view-content {
+.view-courses-list-content-view .view-content,
+.view-live-courses-users .view-content {
   margin-top: 50px; }
-.view-courses-list-content-view span.views-field-title {
+.view-courses-list-content-view span.views-field-title,
+.view-courses-list-content-view .views-field-title,
+.view-live-courses-users span.views-field-title,
+.view-live-courses-users .views-field-title {
   color: #f28d1e;
   max-width: 83%;
   display: inline-block; }
 .view-courses-list-content-view .views-field-field-type-of-class-1 span,
-.view-courses-list-content-view .views-field-field-type-of-class-any span {
+.view-courses-list-content-view .views-field-field-type-of-class-any span,
+.view-live-courses-users .views-field-field-type-of-class-1 span,
+.view-live-courses-users .views-field-field-type-of-class-any span {
   color: #7f7f7f;
   font-size: 28px;
   text-transform: capitalize;
   margin-right: 78px;
   display: inline-block; }
-.view-courses-list-content-view .views-field-field-time {
+.view-courses-list-content-view .views-field-field-time,
+.view-live-courses-users .views-field-field-time {
   color: #f28d1e;
   font-size: 18px;
   padding-bottom: 20px; }
-.view-courses-list-content-view .views-row {
+.view-courses-list-content-view .views-row,
+.view-live-courses-users .views-row {
   padding-bottom: 30px;
   margin-bottom: 30px;
   border-bottom: 1px solid #ccc;
   position: relative; }
-.view-courses-list-content-view .views-field-nothing {
+.view-courses-list-content-view .views-field-nothing,
+.view-live-courses-users .views-field-nothing {
   position: absolute;
   top: 0px;
   right: 0px; }
-.view-courses-list-content-view a.back-to-top {
+.view-courses-list-content-view a.back-to-top,
+.view-live-courses-users a.back-to-top {
   font-size: 22px;
   color: #8dd2ca;
   padding-left: 15px;
   font-weight: bold;
   background: url(../images/polygon-green.png) no-repeat;
   background-position: center left; }
-.view-courses-list-content-view .view-header {
+.view-courses-list-content-view .view-header,
+.view-live-courses-users .view-header {
   margin-top: 40px; }
-.view-courses-list-content-view .views-field-custom-submit-field input {
+.view-courses-list-content-view .views-field-custom-submit-field input,
+.view-live-courses-users .views-field-custom-submit-field input {
   border: 0px;
   background-color: transparent;
   color: #8dd2ca;
@@ -1940,6 +1980,14 @@ fieldset.date-combo .container-inline-date .date-padding {
   padding-left: 28px;
   cursor: pointer;
   text-transform: capitalize; }
+
+.view-live-courses-users .views-field-title {
+  font-size: 32px; }
+.view-live-courses-users input[type="checkbox"] {
+  float: left;
+  margin: 5px 10px;
+  clear: left;
+  vertical-align: middle; }
 
 .view-course-category {
   margin-bottom: 60px;
@@ -2075,7 +2123,9 @@ fieldset.date-combo .container-inline-date .date-padding {
     #block-views-slideshow-block .views-field-body .ief-row-form .ief-form-row > .form-wrapper > a.form-submit,
     .ief-row-form #block-views-slideshow-block .views-field-body .ief-form-row > .form-wrapper > a.form-submit, #block-views-slideshow-block .views-field-body .field-name-field-activity .ief-row-form a.form-submit, .field-name-field-activity .ief-row-form #block-views-slideshow-block .views-field-body a.form-submit, #block-views-slideshow-block .views-field-body .group-pg-notes .ief-row-form a.form-submit, .group-pg-notes .ief-row-form #block-views-slideshow-block .views-field-body a.form-submit, #block-views-slideshow-block .views-field-body .view-portal-export .view-filters .views-exposed-widget a.form-submit, .view-portal-export .view-filters .views-exposed-widget #block-views-slideshow-block .views-field-body a.form-submit,
     #block-views-slideshow-block .views-field-body .view-portal-export1 .view-filters .views-exposed-widget a.form-submit,
-    .view-portal-export1 .view-filters .views-exposed-widget #block-views-slideshow-block .views-field-body a.form-submit, #block-views-slideshow-block .views-field-body .view-courses-list-content-view .view-filters a.form-submit, .view-courses-list-content-view .view-filters #block-views-slideshow-block .views-field-body a.form-submit {
+    .view-portal-export1 .view-filters .views-exposed-widget #block-views-slideshow-block .views-field-body a.form-submit, #block-views-slideshow-block .views-field-body .view-courses-list-content-view .view-filters a.form-submit, .view-courses-list-content-view .view-filters #block-views-slideshow-block .views-field-body a.form-submit,
+    #block-views-slideshow-block .views-field-body .view-live-courses-users .view-filters a.form-submit,
+    .view-live-courses-users .view-filters #block-views-slideshow-block .views-field-body a.form-submit {
       background: white;
       color: #f28d1e !important;
       text-shadow: none;
@@ -2098,7 +2148,9 @@ fieldset.date-combo .container-inline-date .date-padding {
       #block-views-slideshow-block .views-field-body .ief-row-form .ief-form-row > .form-wrapper > a.form-submit:hover,
       .ief-row-form #block-views-slideshow-block .views-field-body .ief-form-row > .form-wrapper > a.form-submit:hover, #block-views-slideshow-block .views-field-body .field-name-field-activity .ief-row-form a.form-submit:hover, .field-name-field-activity .ief-row-form #block-views-slideshow-block .views-field-body a.form-submit:hover, #block-views-slideshow-block .views-field-body .group-pg-notes .ief-row-form a.form-submit:hover, .group-pg-notes .ief-row-form #block-views-slideshow-block .views-field-body a.form-submit:hover, #block-views-slideshow-block .views-field-body .view-portal-export .view-filters .views-exposed-widget a.form-submit:hover, .view-portal-export .view-filters .views-exposed-widget #block-views-slideshow-block .views-field-body a.form-submit:hover,
       #block-views-slideshow-block .views-field-body .view-portal-export1 .view-filters .views-exposed-widget a.form-submit:hover,
-      .view-portal-export1 .view-filters .views-exposed-widget #block-views-slideshow-block .views-field-body a.form-submit:hover, #block-views-slideshow-block .views-field-body .view-courses-list-content-view .view-filters a.form-submit:hover, .view-courses-list-content-view .view-filters #block-views-slideshow-block .views-field-body a.form-submit:hover {
+      .view-portal-export1 .view-filters .views-exposed-widget #block-views-slideshow-block .views-field-body a.form-submit:hover, #block-views-slideshow-block .views-field-body .view-courses-list-content-view .view-filters a.form-submit:hover, .view-courses-list-content-view .view-filters #block-views-slideshow-block .views-field-body a.form-submit:hover,
+      #block-views-slideshow-block .views-field-body .view-live-courses-users .view-filters a.form-submit:hover,
+      .view-live-courses-users .view-filters #block-views-slideshow-block .views-field-body a.form-submit:hover {
         color: white !important;
         background: #f28d1e; }
 
@@ -2334,7 +2386,10 @@ fieldset.date-combo .container-inline-date .date-padding {
     #block-block-4 a:first-child + a {
       padding-bottom: 30px; }
     #block-block-4 a img {
-      margin: 0 auto; }
+      display: block;
+      margin: 10px auto; }
+  #block-block-4 a.emp-ontario-logo {
+    width: auto; }
 
   .view-faq .views-field-body,
   .view-what-you-need .views-field-body {

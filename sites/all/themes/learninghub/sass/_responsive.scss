@@ -391,10 +391,17 @@
 			}
 
 			img
-			{
-				margin: 0 auto;
+			{	
+				display: block;
+				margin: 10px auto;
 			}
 		}
+
+		a.emp-ontario-logo
+		{
+			width: auto;
+		}
+
 	}
 
 	.view-faq,

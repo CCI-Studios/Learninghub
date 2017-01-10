@@ -1,0 +1,5 @@
+name = Check seat available
+core = 7.x
+description = Check if there is space in live class
+package = Views
+version = "7.x-1.0"

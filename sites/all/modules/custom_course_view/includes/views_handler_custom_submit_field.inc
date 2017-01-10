@@ -59,6 +59,7 @@ function render($values) {
 
 			$input = '';
 			$time_v = '';
+			$time_n = '';
 
 			if(in_array_r($values->nid, $existing->field_courses_4) == true)
 			{	
@@ -70,6 +71,7 @@ function render($values) {
 					$id = [];
 					$time = [];
 					$group = [];
+
 					foreach ($value as $key => $value) {
 						
 						  $data = explode(',', $value['value']);
@@ -96,6 +98,31 @@ function render($values) {
 
                   }
 				}
+
+				if(isset($values->_field_data['nid']['entity']->field_time['und']))
+		  		{	
+		  			$field_time = $values->_field_data['nid']['entity']->field_time['und'];
+		  			$count = count($field_time);
+		  		}
+		  		else
+		  		{
+		  			$count = '';
+		  		}
+
+				if($values->_field_data['nid']['entity']->type == 'courses_live')
+			  	{	
+			  		
+				  	$timestamp = strtotime($field_time[0]['value']); 
+				  	$user_tz = new DateTimeZone('America/Toronto');  
+					$offset = $user_tz->getOffset(new DateTime($field_time[0]['value']));
+					$start_stamp = $timestamp + $offset;
+		 	  		$time_n = format_date($start_stamp, 'custom', 'd/m/y h:i a');
+		 	  		$time_n = 'Selected time: '.$time_n;
+			  	}
+			  	else
+			  	{
+				  	$time_n = '';
+			  	}
 			}
 			else if(in_array_r($values->nid, $existing->field_courses_4) == false )
 			{
@@ -146,9 +173,8 @@ function render($values) {
 				
 				 	  		if(time() < $start_stamp)
 				 	  		{	
-								$input .= t('<input type="radio" name ="radio_time" value="'.$time.'"> '.$time.'<br/>');
+								$input .= t('<input type="radio" class="select-time" required name="radio_time" value="'.$time.'"> '.$time.'<br/>');
 				 	  		}
-									
 						}
 					}
 					else
@@ -165,13 +191,12 @@ function render($values) {
 				 	  		$time = format_date($start_stamp, 'custom', 'd/m/y h:i a');
 				
 				 	  		if(time() < $start_stamp)
-				 	  		{	
+				 	  		{			
 								$flag++;
 				 	  		}
 						}	
 					}
 				}
-
 			}
 
 			if(!$input)
@@ -181,22 +206,24 @@ function render($values) {
 
 			if(!$time_v)
 			{
+				$time_v = $time_n;
+			}
+			else if(!$time_v)
+			{
 				$time_v = '';
 			}
 
 			if($flag>0)
 			{
-				$form = '<span class="selected-time">'.$time_v.'</span><form method="post" action="/course-selection">
-				<input type="hidden" name ="buttonValue" value="'.$button_value.'">
+				$form = '<span class="selected-time">'.$time_v.'</span><form method="post" id="course-select" action="/course-selection">
 				<input type="hidden" name ="nid" value="'.$values->nid.'">'.$input.'
-				<br/><input type="submit" value ="'.$button_value.'">
+				<br/><input type="submit" name ="buttonValue" value ="'.$button_value.'">
 				</form>';
 			}
 			else
 			{
 				$form = '';
 			}
-			
 			
 			return $form;
 			

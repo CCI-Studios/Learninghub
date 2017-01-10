@@ -43,30 +43,6 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 	   $form['profile_plan_content']['field_progress_notes1']['und']['actions']['ief_add']['#value'] = t('Add Progress Notes');
     	
 
-	  /*  for ($i=0; $i<count($form['profile_plan_content']['field_learner_plan1']['und']['entities']); $i++) {
-	    	if (!isset($form['profile_plan_content']['field_learner_plan1']['und']['entities'][$i])) break;
-
-
-	    	$uid = $form['profile_plan_content']['field_learner_plan1']['und']['entities'][$i]['#entity']->vid;
-	    	$form['profile_plan_content']['field_learner_plan1']['und']['entities'][$i]['activity_view'] = array(
-			'#type' => 'markup',
-			'#markup' => views_embed_view('learning_activity','block',$uid),
-			'#weight' => 2,
-			'#access' => true,
-			);
-
-	        //echo '<pre>';
-			// print htmlspecialchars(print_r($rows[$i], true));
-			// echo '</pre>';
-			
-
-	    
-		}
-		echo '<pre>';
-		print htmlspecialchars(print_r($form['profile_plan_content']['field_learner_plan1'], true));
-		echo '</pre>';
-		*/
-
 	   unset($form['profile_plan_content']['field_learner_plan1']['und']['form']['field_user_id']['und']);
        unset($form['profile_plan_content']['field_learner_plan1']['und']['entities'][0]['form']['field_user_id']['und']);
        unset($form['profile_plan_content']['field_learner_plan1']['und']['entities'][0]['form']['status']);
@@ -89,7 +65,6 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 		$firstname = $form['profile_learner_profile']['field_first_name']['#value'];
 	    $firstname_initial = substr($firstname, 0, 2);
 	    $lastname = $form['profile_learner_profile']['field_last_name']['#value'];
-	    // Also consider trimming the length and to lowercase your username.
 	   
 	    $name1 =  'st'.$firstname_initial.$lastname;
 	    $name1 = str_replace(array("?","!",",","'",";"," "), "", $name1);
@@ -97,7 +72,6 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 	  	if(!db_query("SELECT COUNT(*) FROM {users} WHERE name = :name;", array(':name' =>  $name1))->fetchField())
 	  	{	
 	  		 $final_username = $name1;
-		     //drupal_set_message("CHANGING {$edit['name']} TO {$name}");
 	  	}
 	  	else
 	  	{	
@@ -153,7 +127,8 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 		 		 for ($outer = 0; $outer < $length; $outer++) {
 				  for ($inner = 0; $inner < $length; $inner++) {
 
-				   if (strtolower($array[$outer]['#entity']->title) < strtolower($array[$inner]['#entity']->title) ) {
+				   if (strcmp(strtolower($array[$outer]['#entity']->title), strtolower($array[$inner]['#entity']->title) ) < 0) {
+			
 				    $tmp = $array[$outer];
 				    $array[$outer] = $array[$inner];
 				    $array[$inner] = $tmp;
@@ -163,22 +138,7 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 			return $array;
 			}
 
-			$arr = bubbleSort($arr);
-
 			$length = 0;
-			foreach ($arr as $key => $value) {
-				
-				if(is_int($key))
-				{	
-					$length++;
-					$value['#weight'] = $key;
-				}
-			}
-
-			for($i=0; $i<$length; $i++)
-			{
-				$arr[$i]['#weight']=$i;
-			}
 		}
 		
 
@@ -369,7 +329,7 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 		{
 			$referral_out = 'Not found';
 		}
-  /* Referral out time */
+        /* Referral out time */
 		if($referral_out_time == '10')
 		{
 			$referral_out_time = 'Referred at Entrance';
@@ -710,9 +670,8 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 							{	
 								$date1 = strtotime($node->field_milestone_attempt_date['und'][0]['value']);
 								$date2 = strtotime('+3 month January' );
-								echo $date1;
 								if($date1 < $date2)
-								{	echo $date2;
+								{	
 									array_push($activities_completed_fiscal, $node->field_milestone1['und'][0]['value']);
 								}
 							}

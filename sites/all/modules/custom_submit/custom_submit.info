@@ -1,4 +1,5 @@
 name = Custom submit view
 core = 7.x
-package = subscription
+package = Views
+description = Add course into user profile and user name in to course user attending/user waiting field.
 version = "7.x-1.0"

@@ -335,7 +335,7 @@
 	    	width: 100%;
 	    	border-top: 1px solid $orange;
 	    	position: absolute;
-  			top: -70px;
+  			top: -15px;
 	    }
 
 	    &:after
@@ -390,11 +390,23 @@
 
 	.views-row
 	{
-		padding: 0px 40px;
+		padding: 0px;
 		background-image: url(../images/polygon-right.png);
 		background-repeat: no-repeat;
-		background-position: 15px 16px;
-		border-bottom: 3px solid $green;
+		background-position: 20px 66px;
+		border-bottom: 3px solid $orange;
+	}
+
+	.views-field-field-learner-plan1,
+	.views-field-description
+	{
+		padding: 0 40px;
+	}
+
+	.views-field-description
+	{
+		color: $orange;
+		width: 100%!important;
 	}
 
 	.views-row:last-child
@@ -406,7 +418,6 @@
 	{
 		background-image: url(../images/polygon.png) no-repeat;
 		background-repeat: no-repeat;
-		background-position: 15px 16px;
 	}
 
 	.views-row-odd
@@ -633,9 +644,9 @@
 	}
 }
 
-.view-courses-list-content-view
+.view-courses-list-content-view,
+.view-live-courses-users
 {	
-
 	.view-filters
 	{
 		position: relative;
@@ -687,7 +698,8 @@
 		margin-top: 50px;
 	}
 
-	span.views-field-title
+	span.views-field-title,
+	.views-field-title
 	{
 		color: $orange;
 	    max-width: 83%;
@@ -755,6 +767,22 @@
 			cursor: pointer;
 			text-transform: capitalize;
 		}
+	}
+}
+
+.view-live-courses-users
+{
+	.views-field-title
+	{
+		font-size: 32px;
+	}
+
+	input[type="checkbox"]
+	{
+	    float: left;
+	    margin: 5px 10px;
+	    clear: left;
+	    vertical-align: middle;
 	}
 }
 

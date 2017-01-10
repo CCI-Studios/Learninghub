@@ -13,12 +13,12 @@ function custom_submit_menu() {
 	 return $items;
 }
 
-function custom_submit_send($nid, $body, $existingUser, $profiles_plan_content) {
+function custom_submit_send($nid, $body, $existingUser, $profiles_plan_content, $radio_time) {
   
-  $email_content = get_mail_content($nid, $body, $existingUser, $profiles_plan_content);
+  $email_content = get_mail_content($nid, $body, $existingUser, $profiles_plan_content,$radio_time);
   $params = array('body' => $email_content);
   $key = 'test_email';
-  $to =  'hsanvaria@ccistudios.com';
+  $to =   $existingUser->mail;
   $from = 'info.learninghub@gmail.com';
   $mail = drupal_mail('test', $key, $to, language_default(), $params, $from);
   // for better understanding,you can uncomment the following
@@ -26,11 +26,11 @@ function custom_submit_send($nid, $body, $existingUser, $profiles_plan_content) 
  
 }
 
-function custom_submit_send_admin($nid, $body, $existingUser, $profiles_plan_content) {
-  $email_content = get_mail_content_admin($nid, $body, $existingUser, $profiles_plan_content);
+function custom_submit_send_admin($nid, $body, $existingUser, $profiles_plan_content, $radio_time) {
+  $email_content = get_mail_content_admin($nid, $body, $existingUser, $profiles_plan_content, $radio_time);
   $params = array('body' => $email_content);
   $key = 'test_email_admin';
-  $to = 'hsanvaria@ccistudios.com';
+  $to = 'lhreg@ed.amdsb.ca';
   $from = 'lhreg@ed.amdsb.ca';
   $mail = drupal_mail('test_admin', $key, $to, language_default(), $params, $from);
   // for better understanding,you can uncomment the following
@@ -78,28 +78,12 @@ function test_admin_mail($key, &$message, $params) {
  * @return 
  *   $body type string return the html email content 
  */
-function get_mail_content($nid, $bodyContent, $existingUser, $profiles_plan_content) {
+function get_mail_content($nid, $bodyContent, $existingUser, $profiles_plan_content, $radio_time) {
  
   if(isset($nid->field_time['und']))
   {
-  	if (!function_exists('array_map_assoc'))
-  	{
-		function array_map_assoc( $callback , $array ){
-		  $r = array();
-		  foreach ($array as $key=>$value)
-		  {
-		  	$user_tz = new DateTimeZone('America/Toronto');  
-			$offset = $user_tz->getOffset(new DateTime($value['value']));
-			$start_stamp = strtotime($value['value']) + $offset;
- 	  		$time = format_date($start_stamp, 'custom', 'd/m/y h:i a');
-		    $r[$key] = $callback($key,$time);
-		  }
-	  		
-		  return $r;
-		}
-		$date_start = implode(',',array_map_assoc(function($k,$v){return "$v";},$nid->field_time['und']));
-  	} 
-
+  	
+	$date_start = $radio_time;
   }
   else
   {
@@ -116,27 +100,11 @@ function get_mail_content($nid, $bodyContent, $existingUser, $profiles_plan_cont
   return $body;
 }
 
-function get_mail_content_admin($nid, $bodyContent, $existingUser, $profiles_plan_content) {
+function get_mail_content_admin($nid, $bodyContent, $existingUser, $profiles_plan_content, $radio_time) {
   
   if(isset($nid->field_time['und']))
   {		
-  	if (!function_exists('array_map_assoc1'))
-  	{
-	   function array_map_assoc1( $callback , $array ){
-		  $r = array();
-		  foreach ($array as $key=>$value)
-		  {
-		  	$user_tz = new DateTimeZone('America/Toronto');  
-			$offset = $user_tz->getOffset(new DateTime($value['value']));
-			$start_stamp = strtotime($value['value']) + $offset;
- 	  		$time = format_date($start_stamp, 'custom', 'd/m/y h:i a');
-		    $r[$key] = $callback($key,$time);
-		  }
-		  return $r;
-		}
-
-		$date_start = implode(',',array_map_assoc1(function($k,$v){return "$v";},$nid->field_time['und']));
-  	}
+  	$date_start = $radio_time;
   }
   else
   {
@@ -157,15 +125,25 @@ function get_mail_content_admin($nid, $bodyContent, $existingUser, $profiles_pla
 function submit_value(){
 
 	$nid = $_POST['nid'];
+	$nid = node_load($nid);
 	if(isset($_POST['radio_time']))
 	{
 		$radio_time = $_POST['radio_time'];
+	}
+	else if($nid->type == 'courses_live' && !isset($_POST['radio_time']))
+	{	
+		$radio_time = $nid->field_time['und'][0]['value'];
+		$user_tz = new DateTimeZone('America/Toronto');  
+		$offset = $user_tz->getOffset(new DateTime($radio_time));
+		$start_stamp = strtotime($radio_time) + $offset;
+  		$radio_time = format_date($start_stamp, 'custom', 'd/m/y h:i a');
+  		
 	}
 	else
 	{
 		$radio_time = '';
 	}
-	$nid = node_load($nid);
+	
 	$title = $nid->title;
 
 	global $user;
@@ -291,8 +269,8 @@ function submit_value(){
 
 		node_save($nid);
 		user_save($existing);
-        custom_submit_send($nid, $body, $user, $profiles_plan_content);
-        custom_submit_send_admin($nid, $body, $user, $profiles_plan_content);
+        custom_submit_send($nid, $body, $user, $profiles_plan_content, $radio_time);
+        custom_submit_send_admin($nid, $body, $user, $profiles_plan_content, $radio_time);
         drupal_set_message("This Course has been added to your list.  Your Practitioner will be in touch shortly with further instruction.");
 		return '<h2>'.$nid->title.'</h2>'.$body.'<div><a href="/course-list-content" class="button">Go Back</a></div>';
 	}

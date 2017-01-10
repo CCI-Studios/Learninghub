@@ -1,6 +1,7 @@
 name = Custom Course View
 core = 7.x
-package = Custom Course
+package = Views
+description = Custom submit button field in course selection view for adding courses
 version = "7.x-1.0"
 
 files[] = includes/views_handler_custom_submit_field.inc

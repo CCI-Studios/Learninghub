@@ -1,0 +1,68 @@
+
+<?php 
+
+function check_seat_available_init() {
+ 
+  drupal_add_js(drupal_get_path('module', 'check_seat_available') . '/check_seat_available.js', array('scope' => 'footer'));
+}
+
+function check_seat_available_menu() {
+
+	 $items['check-seat-available'] = array(
+        'title' => 'Check seat',
+        'description' => 'Check seat',
+        'page callback' => 'check_seat',
+        'access arguments'=> array('access content'),
+        'type' => MENU_CALLBACK
+    );
+
+	 return $items;
+}
+
+function check_seat(){
+
+    $nid = $_POST["nid"];
+    $time = $_POST["time"];
+    $node = node_load($nid);
+    $count = 0;
+    $class_size = $node->field_class_size['und'][0]['value'];
+
+    foreach ($node->field_users_attending['und'] as $key => $value) {
+    	
+    	$user = user_load($value['target_id']);
+
+    	foreach ($user->field_courses_live['und'] as $key => $value) {
+    		
+		 	$data = explode(',', $value['value']);
+			$id1 = $data[0];
+		  	$time1 = $data[1];
+		  	if($time1 == $time)
+	    	{
+	    		$count++;
+	    	}
+    	}   
+    }
+	
+	if(!empty($node->field_users_attending))
+	{
+
+		if($count == $class_size)
+		{
+			$button_value = 'Add to wait list';
+		}
+		else
+		{
+			$button_value = 'Add course';
+		}
+	}
+	else
+	{
+		$button_value = 'Add course';
+	}
+
+ 	echo json_encode($button_value);
+
+	drupal_exit();
+}
+
+?>

@@ -160,8 +160,22 @@
 
 	img
 	{
-	    margin: 0px 75px 0px 0px;
+   		margin: 0px 33px 10px 0px;
 	    vertical-align: middle;
+	}
+
+	a.emp-ontario-logo
+	{
+		width: 550px;
+		color: black;
+	}
+
+	a
+	{	
+		display: inline-block;
+	    vertical-align: middle;
+	    margin: 0 auto;
+	    font-size: 14px;
 	}
 
 	.logged-in &

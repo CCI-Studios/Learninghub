@@ -1,0 +1,7 @@
+name = Custom Course users
+core = 7.x
+package = Custom Course 
+description = Add custom field users name in live course users view.
+version = "7.x-1.0"
+
+files[] = includes/views_handler_custom_empty_button_field.inc

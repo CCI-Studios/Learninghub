@@ -1,0 +1,122 @@
+
+<?php 
+
+function custom_empty_button_init() {
+ 
+  drupal_add_js(drupal_get_path('module', 'custom_empty_button') . '/custom_empty_button.js', array('scope' => 'footer'));
+}
+
+function custom_empty_button_menu() {
+
+	 $items['empty-course-users'] = array(
+        'title' => 'course users',
+        'description' => 'users attending',
+        'page callback' => 'empty_button',
+        'access arguments'=> array('access content'),
+        'type' => MENU_CALLBACK
+    );
+
+	 return $items;
+}
+
+
+function custom_empty_button_cron(){
+
+	$node_type = 'courses_live';
+	$nids = db_query("SELECT nid FROM {node} WHERE type = :type", array(':type' => $node_type))
+    ->fetchCol();
+
+    $nodes = node_load_multiple($nids);
+
+    foreach ($nodes as $key => $node) {
+	 foreach ($node->field_users_attending['und'] as $key => $value) {
+    	
+    	$user = user_load($value['target_id']);
+
+    	foreach ($user->field_courses_live['und'] as $key => $value) {
+    		
+		 	$data = explode(',', $value['value']);
+			$id1 = $data[0];
+		  	$time1 = $data[1];
+		  	if($time1 == $time)
+	    	{
+	    		$count++;
+	    	}
+		}   
+	 }
+    }
+   watchdog('module', 
+         $count, 
+         $variables = array(), 
+         $severity = WATCHDOG_NOTICE, 
+         $link = NULL);
+}
+
+function empty_button(){
+
+    $nid = $_POST["nid"];
+	
+	if(isset($_POST['chk_attending_'.$nid]) == true)
+	{
+		$attending_names = $_POST['chk_attending_'.$nid];
+
+		$atten_string = implode(',',$attending_names);
+	}
+	else
+	{	
+		$atten_string = '';
+		$attending_names = [];
+	}
+
+	if(isset($_POST['chk_waiting_'.$nid]))
+	{
+		$waiting_names = $_POST['chk_waiting_'.$nid];
+		$waiting_string = implode(',',$waiting_names);
+	}
+	else
+	{	
+		$waiting_string = '';
+		$waiting_names = [];
+	}
+	
+	$node = node_load($nid);
+	
+	$users_attending = array_merge($attending_names,$waiting_names);
+
+	foreach ($users_attending as $key => $value) {
+		
+	$uid = $value;
+
+	$user  = user_load($uid);
+
+	foreach ($node->field_users_attending['und'] as $key => $value) {
+		
+		if(in_array($value['target_id'], $users_attending))
+		{
+			unset($node->field_users_attending['und'][$key]);
+		}
+	}
+
+	if(isset($node->field_wait_list['und']))
+	{
+		foreach ($node->field_wait_list['und'] as $key => $value) {
+	
+			if(in_array($value['target_id'], $users_attending))
+			{
+				unset($node->field_wait_list['und'][$key]);
+			}
+		}
+	}
+	
+	node_save($node);
+
+    drupal_set_message("Deleted Selected users from course list");
+
+    echo json_encode($atten_string);
+
+	drupal_exit();
+	
+}
+}
+
+?>

@@ -113,6 +113,7 @@ function custom_profile_form_form_alter(&$form, &$form_state, $form_id)
 
 				  	$cid = $value['target_id'];
 				  	$nid = node_load($cid);
+				  	$time_v = '';
 					if(isset($nid->field_time['und']))
 			  		{
 			  			$count = count($nid->field_time['und']);
@@ -160,7 +161,7 @@ function custom_profile_form_form_alter(&$form, &$form_state, $form_id)
 				  	{	
 				  		
 					  	$class_type = '('.$nid->field_type_of_class['und'][0]['value'].')';
-					  	
+					  
 					  	$timestamp = strtotime($nid->field_time['und'][0]['value']); 
 					  	$user_tz = new DateTimeZone('America/Toronto');  
 						$offset = $user_tz->getOffset(new DateTime($nid->field_time['und'][0]['value']));
@@ -173,7 +174,7 @@ function custom_profile_form_form_alter(&$form, &$form_state, $form_id)
 					  	$time_n = '';
 				  	}
 
-					if($count>1)
+					if($count>1 && $time_v != '')
 					{
 						$time = $time_v;
 					}
@@ -216,5 +217,27 @@ function custom_profile_form_form_alter(&$form, &$form_state, $form_id)
 		unset($form['account']['status']);	
 	}
 }
+
+
+/*function custom_profile_form_node_update($node) 
+{	
+	
+	$node = node_load($node->nid);
+
+	$arr = $node->field_users_attending['und'];
+	foreach ($arr as $key => $value) {
+		
+		print_r($value['target_id']);
+		$uid = $value['target_id'];
+		$existing = user_load($uid);
+
+		if(in_array($node->nid, haystack))
+		echo '<pre>';
+		print_r($existing->field_courses_4['und']);
+		echo '</pre>';
+	}
+	
+}
+*/
 
 		

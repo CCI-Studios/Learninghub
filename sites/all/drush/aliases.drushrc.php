@@ -1,15 +1,15 @@
 <?php
 
 $aliases['dev'] = array(
-	'uri'=> 'learninghub.ccistaging.com',
-	'root' => '/home/staging/subdomains/learninghub/public_html',
-	'remote-host'=> 'host.ccistudios.com',
-	'remote-user'=> 'staging',
+	'uri'=> 'staging.learninghub.ca',
+	'root' => '/home/learni11/subdomains/dev/public_html',
+	'remote-host'=> 'learninghub.ca',
+	'remote-user'=> 'learni11',
 	'path-aliases'=> array(
 		'%files'=> 'sites/default/files',
 	),
 
-	'ssh-options' => '-p 37241'
+	'ssh-options' => '-p 27'
 );
 
 $aliases['live'] = array(

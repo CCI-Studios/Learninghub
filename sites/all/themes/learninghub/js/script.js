@@ -3,12 +3,21 @@
 
     $(function(){ 
 
+ 
+    	
 	 	$('.view-faq .views-field-title,.view-what-you-need .views-field-title, .view-using-learning-hub .views-field-title, .view-learner-stories .views-field-title').click(function(){
 	        $(this).next().slideToggle();
 	        $('.view-faq .views-field-body, .view-what-you-need .views-field-body, .view-using-learning-hub .views-field-body, .view-learner-stories .views-field-body').not($(this).next()).slideUp();
 	        $('.view-faq .views-field-title, .view-what-you-need .views-field-title, .view-using-learning-hub .views-field-title,  .view-learner-stories .views-field-body').not($(this)).removeClass('open');
 	        $(this).toggleClass('open');
 	    });
+
+	 	$('.view-learner-plan .views-row').each(function(){
+
+	 		var div = $(this).find('.field-name-field-activity');
+	    	$(this).find('.views-field-description').insertBefore(div);
+
+	 	})
 
 	    $('.view-learner-plan .views-row').click(function(){
 	        $(this).find('.field-name-field-activity').slideToggle();
@@ -188,6 +197,37 @@
 	    $(".group-pg-notes tbody").append(this);
 	})
 
+	var plan = '.field-name-field-learner-plan1 tr.ief-row-entity';
+	$(plan).sort(asc_sort).appendTo('.field-name-field-learner-plan1 tbody');
+
+	function asc_sort(a, b){
+	    return ($(b).find('.field-name-field-task-group-level-indicator .field-item').text().toLowerCase()) < ($(a).find('.field-name-field-task-group-level-indicator .field-item').text().toLowerCase()) ? 1 : -1;    
+	}
+
+	$(document).ajaxComplete(function(event, xhr, settings) {
+
+		$('.ief-row-form').each(function(i){
+			$(this).addClass('row-form-'+i);
+			$(this).prev('.ief-row-entity').addClass('row-form-'+i);
+		})
+
+	 	var plan = '.field-name-field-learner-plan1 #ief-entity-table-edit-profile-plan-content-field-learner-plan1-und-entities > tbody > tr.ief-row-entity';
+		$(plan).sort(asc_sort).appendTo('.field-name-field-learner-plan1 #ief-entity-table-edit-profile-plan-content-field-learner-plan1-und-entities > tbody');
+
+		function asc_sort(a, b){
+		    return ($(b).find('.field-name-field-task-group-level-indicator .field-item').text().toLowerCase()) < ($(a).find('.field-name-field-task-group-level-indicator .field-item').text().toLowerCase()) ? 1 : -1;    
+		}
+
+		$('.ief-row-form').each(function(i){
+			
+			if($(this).hasClass('row-form-'+i))
+			{
+				$(this).insertAfter('.ief-row-entity.row-form-'+i);
+			}
+		})
+
+	});
+
 	
 	 /* Add dropdown arrow*/
 	 $('#block-system-main-menu li.expanded').append('<a href="#" class="dropdown">Drop</a>');
@@ -210,6 +250,24 @@
    });
    		
 	});
+
+
+	Drupal.behaviors.module = {
+  attach: function() {
+
+    var events = $('#profile-plan-content-field-referral-add-more-wrapper .form-submit').data('events'); // Get the jQuery events.
+    $('.confirm').unbind('click'); // Remove the click events.
+    $('.confirm').click(function () {
+     console.log('hello');
+        $.each(events.click, function() {
+          this.handler(); // Invoke the click handlers that was removed.
+        });
+     
+      // Prevent default action.
+      return false;
+    });
+  }
+}
 
 	Drupal.behaviors.yourBehaviorName = {
 	    attach: function (context, settings) {
@@ -239,6 +297,9 @@
 		  
 		    });
 		});
+
 	    }
 	  }
+
+	
 })(jQuery)
