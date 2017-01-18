@@ -646,8 +646,8 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 					}
 						
 					if(isset($node->field_milestone1['und']))
-					{
-						if($node->field_milestone1['und'][0]['value'] != 0)
+					{	
+						if($node->field_milestone1['und'][0]['value'] != 0 && $node->field_milestone1['und'][0]['value'] !== '')
 						{
 							array_push($milestones_identified, $node->field_milestone1['und'][0]['value']);
 						}
@@ -668,7 +668,15 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 						{	
 							if($node->field_milestone1['und'][0]['value'] !=0 )
 							{	
-								$date1 = strtotime($node->field_milestone_attempt_date['und'][0]['value']);
+								if(isset($node->field_milestone_attempt_date['und'][0]['value']))
+								{
+									$d_t = $node->field_milestone_attempt_date['und'][0]['value']?$node->field_milestone_attempt_date['und'][0]['value']:'';
+									$date1 = strtotime($d_t);
+								}
+								else
+								{
+									$date1 = '';
+								}
 								$date2 = strtotime('+3 month January' );
 								if($date1 < $date2)
 								{	
@@ -677,7 +685,6 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 							}
 						}
 					}
-
 				}
 				
 			    $activities_completed = count(array_unique($activities_completed_array));

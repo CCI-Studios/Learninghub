@@ -215,8 +215,8 @@ function submit_value(){
 		}
 		else if(in_array_r($nid->nid, $existing->field_courses_4) == false)
 		{	
-
 			$count = 0;
+			$count_anytime = 0;
 			
 			foreach ($existing->field_courses_4['und'] as $key => $value) {
 				$flag_time = 0;
@@ -241,15 +241,29 @@ function submit_value(){
 				 	if($c_id->type == 'courses_live' && $flag_time > 0)
 				 	{
 					 	$count++;
-				 	}	
+				 	}
 				}
+
+				if($c_id->type != 'courses_live')
+			 	{
+				 	$count_anytime++;
+			 	}
 			}
 		
 			$target_id = array('target_id' => $nid->nid);
 		
 			if($nid->type!='courses_live')
 			{	
-				array_push($existing->field_courses_4['und'],$target_id);
+				if($count_anytime < 8)
+				{	
+					array_push($existing->field_courses_4['und'],$target_id);
+				}
+				else
+				{
+					drupal_set_message("Cannot add more than 8 Anytime courses.");
+					return '<a href="/course-list-content" class="button">Go Back</a></div>';
+					exit;
+				}
 			}	
 			else if($nid->type=='courses_live')
 			{	
