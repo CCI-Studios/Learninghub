@@ -1,0 +1,27 @@
+
+<?php 
+
+/**
+* Implements hook_form_alter()
+*/
+function alphasearch_form_alter(&$form, $form_state, $form_id) {    
+echo 'hello'; die;// set up array of letters  $letters = array('' =----> '');
+if($form_id == 'views_exposed_form_learners_list_page')
+	{	
+
+		foreach (range('a', 'z') as $letter) {
+        $letters[$letter] = strtoupper($letter);
+    }
+ 
+    // add the new options and adjust other settings to change the exposed filter
+    $form['field_first_name'] += array(
+        '#type' => 'select',
+        '#theme' => 'select_as_links',
+        '#size' => '',
+        '#default_value' => '',
+        '#options' => $letters,
+    );
+	}
+
+}
+?>

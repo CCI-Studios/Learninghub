@@ -1,0 +1,16 @@
+***************
+*** 140,145 ****
+        'roles' => array(),
+        'status' => 1,
+        'defuse_mail' => FALSE,
+      ) + parent::configDefaults();
+    }
+  
+--- 155,161 ----
+        'roles' => array(),
+        'status' => 1,
+        'defuse_mail' => FALSE,
++       'user_roles_create' => TRUE,
+      ) + parent::configDefaults();
+    }
+  
