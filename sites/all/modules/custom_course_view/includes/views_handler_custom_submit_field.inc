@@ -95,7 +95,7 @@ function render($values) {
 						$datereverse[0] = $dt->format('Y');
 						$date = implode('-', $datereverse );					
 						$date = new DateTime($date);
-						$time_v = 'Selected time: '.$date->format('D, M d, Y').' '.$time[1].' '.$time[2];
+						$time_v = 'Selected time: '.$date->format('l, F d, Y').' '.$time[1].' '.$time[2];
 						break;
 					}
 					else
@@ -124,7 +124,7 @@ function render($values) {
 					$offset = $user_tz->getOffset(new DateTime($field_time[0]['value']));
 					$start_stamp = $timestamp + $offset;
 		 	  		$time_n = format_date($start_stamp, 'custom', 'd/m/y h:i a');
-		 	  		$time_display = format_date($start_stamp, 'custom', 'D, M d, Y h:i a');
+		 	  		$time_display = format_date($start_stamp, 'custom', 'l, F d, Y h:i a');
 		 	  		$time_n = 'Selected time: '.$time_display;
 			  	}
 			  	else
@@ -178,7 +178,7 @@ function render($values) {
 							$offset = $user_tz->getOffset(new DateTime($value['value']));
 							$start_stamp = strtotime($value['value']) + $offset;
 				 	  		$time = format_date($start_stamp, 'custom', 'd/m/y h:i a');
-				 	  		$time_display = format_date($start_stamp, 'custom', 'D, M d, Y h:i a');
+				 	  		$time_display = format_date($start_stamp, 'custom', 'l, F d, Y h:i a');
 				
 				 	  		if(time() < $start_stamp)
 				 	  		{	
@@ -198,7 +198,7 @@ function render($values) {
 							$offset = $user_tz->getOffset(new DateTime($value['value']));
 							$start_stamp = strtotime($value['value']) + $offset;
 				 	  		$time = format_date($start_stamp, 'custom', 'd/m/y h:i a');
-				 	  		$time_display = format_date($start_stamp, 'custom', 'D, M d, y h:i a');
+				 	  		$time_display = format_date($start_stamp, 'custom', 'l, F d, Y h:i a');
 				
 				 	  		if(time() < $start_stamp)
 				 	  		{			
