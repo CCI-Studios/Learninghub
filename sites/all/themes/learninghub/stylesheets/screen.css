@@ -224,8 +224,6 @@ a:visited {
     text-decoration: none;
     font-weight: 600;
     text-transform: lowercase; }
-  #navigation .block {
-    display: inline-block; }
   #navigation .region-navigation {
     margin-top: 62px; }
   #navigation .clearfix {
@@ -2072,7 +2070,8 @@ fieldset.date-combo .container-inline-date .date-padding {
 
 #block-views-slideshow-block {
   background-size: cover;
-  background-position: center -200px;
+  background-position: center -100px;
+  background-repeat: no-repeat;
   padding: 50px 0px;
   box-shadow: 1000px 1000px 10px rgba(0, 0, 0, 0.3) inset; }
   #block-views-slideshow-block h1 {
@@ -2325,7 +2324,10 @@ fieldset.date-combo .container-inline-date .date-padding {
     margin-top: -31px; }
     .view-portal-export .views-widget-filter-field_program_start_date_value > div > div,
     .view-portal-export1 .views-widget-filter-field_program_start_date_value > div > div {
-      width: 100px; } }
+      width: 100px; }
+
+  #block-views-slideshow-block {
+    background-position: center; } }
 @media screen and (max-width: 767px) {
   #user-register-form .field-type-text,
   #user-register-form .field-type-list-text,
