@@ -1,0 +1,4 @@
+name = Custom user registration
+core = 7.x
+package = subscription
+version = "7.x-1.0"
