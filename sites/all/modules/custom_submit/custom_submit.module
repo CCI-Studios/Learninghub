@@ -3,35 +3,60 @@
 
 function custom_submit_menu() {
 
-	 $items['course-selection'] = array(
+	 $items['course-selection/%'] = array(
         'title' => 'course',
         'description' => 'Change in course',
         'page callback' => 'submit_value',
-        'access callback' => TRUE,  
+        'page arguments' => array(1),
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
     );
 
 	 return $items;
 }
 
+function practitioner_mail($existingUser){
+
+	$message = 'Sending mail to practitioner';
+
+	$MailPractitioner = $existingUser->mail;
+	watchdog('cusotm_submit', 'Message:%mail', $variables = array('%mail' => $existingUser), $severity = WATCHDOG_DEBUG, $link = NULL);
+
+	return $MailPractitioner;
+}
+
 function custom_submit_send($nid, $body, $existingUser, $profiles_plan_content, $radio_time) {
   
   $email_content = get_mail_content($nid, $body, $existingUser, $profiles_plan_content,$radio_time);
+
   $params = array('body' => $email_content);
   $key = 'test_email';
   $to =   $existingUser->mail;
   $from = 'info.learninghub@gmail.com';
   $mail = drupal_mail('test', $key, $to, language_default(), $params, $from);
   // for better understanding,you can uncomment the following
- // dpm($mail);
+  //dpm($mail);
  
 }
 
-function custom_submit_send_admin($nid, $body, $existingUser, $profiles_plan_content, $radio_time) {
+function custom_submit_send_admin($nid, $body, $existingUser, $profiles_plan_content, $radio_time, $prac_mail) {
   $email_content = get_mail_content_admin($nid, $body, $existingUser, $profiles_plan_content, $radio_time);
+
+  if($prac_mail == 'NA')
+  {
+  	$to = 'lhreg@ed.amdsb.ca';
+  }
+  else
+  {
+  	$to = 'lhreg@ed.amdsb.ca,'.$prac_mail;
+  }
+
   $params = array('body' => $email_content);
   $key = 'test_email_admin';
-  $to = 'lhreg@ed.amdsb.ca';
   $from = 'lhreg@ed.amdsb.ca';
+
+  watchdog('cusotm_submit', 'Message:%mail', $variables = array('%mail' => $to), $severity = WATCHDOG_DEBUG, $link = NULL);
+
   $mail = drupal_mail('test_admin', $key, $to, language_default(), $params, $from);
   // for better understanding,you can uncomment the following
  // dpm($mail);
@@ -122,7 +147,7 @@ function get_mail_content_admin($nid, $bodyContent, $existingUser, $profiles_pla
 }
 
 
-function submit_value(){
+function submit_value($arg){
 
 	$nid = $_POST['nid'];
 	$nid = node_load($nid);
@@ -148,14 +173,31 @@ function submit_value(){
 
 	global $user;
 
-	$existingUser = $user->uid;	
+	$existingUser = $arg;	
 
-	$existing = user_load($user->uid);
+	$existing = user_load($arg);
 
-	$profiles_plan_content = profile2_load_by_user($user->uid,'learner_profile');
+	// Fetch Practitioner mail
+
+	if(isset($existing->field_practitioner1['und']))
+	{
+			$prac_id = $existing->field_practitioner1['und'][0]['target_id'];
+			$prac_mail = db_select('users', 'u')
+				->fields('u', array('mail'))
+		 	 	->condition('u.uid', $prac_id)
+		 	 	->execute()
+		 	 	->fetchAssoc();
+		 	$prac_mail = $prac_mail['mail'];
+	}
+	else
+	{
+		$prac_mail = 'NA';
+	}
+
+	$profiles_plan_content = profile2_load_by_user($arg,'learner_profile');
 
 	$target_id = array('target_id' => $nid->nid);
-	$target_id_live = array('target_id' => $user->uid);
+	$target_id_live = array('target_id' => $arg);
 
     if (!function_exists('in_array_r'))
     {
@@ -183,13 +225,13 @@ function submit_value(){
 	{	
 		if(empty($nid->field_users_attending))
 		{
-			$target_id_live = array('target_id' => $user->uid);
+			$target_id_live = array('target_id' => $arg);
 			$nid->field_users_attending['und'] =  array();
 			array_push($nid->field_users_attending['und'], $target_id_live);
 		}
-		else if(in_array_r($user->uid, $nid->field_users_attending) == false)
+		else if(in_array_r($arg, $nid->field_users_attending) == false)
 		{		
-			$target_id_live = array('target_id' => $user->uid);
+			$target_id_live = array('target_id' => $arg);
 			array_push($nid->field_users_attending['und'], $target_id_live);
 		}
 
@@ -284,7 +326,7 @@ function submit_value(){
 		node_save($nid);
 		user_save($existing);
         custom_submit_send($nid, $body, $user, $profiles_plan_content, $radio_time);
-        custom_submit_send_admin($nid, $body, $user, $profiles_plan_content, $radio_time);
+        custom_submit_send_admin($nid, $body, $user, $profiles_plan_content, $radio_time,$prac_mail);
         drupal_set_message("This Course has been added to your list.  Your Practitioner will be in touch shortly with further instruction.");
 		return '<h2>'.$nid->title.'</h2>'.$body.'<div><a href="/course-list-content" class="button">Go Back</a></div>';
 	}
@@ -336,7 +378,7 @@ function submit_value(){
 		{
 			foreach ($nid->field_users_attending['und'] as $key => $value) { 
 
-		   	 	if ($value["target_id"] == $user->uid) { unset($nid->field_users_attending['und'][$key]); }
+		   	 	if ($value["target_id"] == $arg) { unset($nid->field_users_attending['und'][$key]); }
 			}
 		}
 		node_save($nid);
@@ -351,13 +393,13 @@ function submit_value(){
 	{
 		if(empty($nid->field_wait_list))
 		{
-			$target_id_live = array('target_id' => $user->uid);
+			$target_id_live = array('target_id' => $arg);
 			$nid->field_wait_list['und'] =  array();
 			array_push($nid->field_wait_list['und'], $target_id_live);
 		}
-		else if(in_array_r($user->uid, $nid->field_wait_list) == false)
+		else if(in_array_r($arg, $nid->field_wait_list) == false)
 		{		
-			$target_id_live = array('target_id' => $user->uid);
+			$target_id_live = array('target_id' => $arg);
 			array_push($nid->field_wait_list['und'], $target_id_live);
 		}	
 		node_save($nid);

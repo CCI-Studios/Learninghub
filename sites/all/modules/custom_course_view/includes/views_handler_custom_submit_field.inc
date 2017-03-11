@@ -35,13 +35,12 @@ parent::options_form($form, $form_state);
 function render($values) {
 
 		global $user;
-		$existingUser = $user->uid;
-		$existing = user_load($user->uid);
+		$existingUser = arg(1);
+		$existing = user_load(arg(1));
 
-		node_load();
 		$flag = 0;
 	
-		if(in_array('learner',$user->roles)) {
+		if(in_array('LHUB admin',$user->roles) || in_array('practitioner', $user->roles)) {
 			$target_id = array('target_id' => $values->nid);
 		
 			if (!function_exists('in_array_r'))
@@ -225,7 +224,7 @@ function render($values) {
 
 			if($flag>0)
 			{
-				$form = '<span class="selected-time">'.$time_v.'</span><form method="post" id="course-select" action="/course-selection">
+				$form = '<span class="selected-time">'.$time_v.'</span><form method="post" id="course-select" action="/course-selection/'.$existingUser.'">
 				<input type="hidden" name ="nid" value="'.$values->nid.'">'.$input.'
 				<br/><input type="submit" name ="buttonValue" value ="'.$button_value.'">
 				</form>';

@@ -33,11 +33,16 @@ h1 {
   text-align: center;
   text-transform: lowercase; }
 
-h1#page-title:before,
 #block-block-7 h1:before {
   content: url(../images/gear-icon.png);
   display: block;
   padding-bottom: 35px; }
+
+h1#page-title:before {
+  content: url(../images/gear-icon.png);
+  display: inline-block;
+  padding-right: 15px;
+  vertical-align: middle; }
 
 #content {
   max-width: 940px;
@@ -66,7 +71,7 @@ h1#page-title:before,
   #content .ief-row-form .ief-form-row .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit,
   .ief-row-form .ief-form-row #content .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit,
   #content .ief-row-form .ief-form-row > .form-wrapper > .form-submit,
-  .ief-row-form #content .ief-form-row > .form-wrapper > .form-submit, #content .field-name-field-activity .ief-row-form .form-submit, .field-name-field-activity .ief-row-form #content .form-submit, #content .group-pg-notes .ief-row-form .form-submit, .group-pg-notes .ief-row-form #content .form-submit, #content .view-portal-export .view-filters .views-exposed-widget .form-submit, .view-portal-export .view-filters .views-exposed-widget #content .form-submit,
+  .ief-row-form #content .ief-form-row > .form-wrapper > .form-submit, #content .field-name-field-activity .ief-row-form .form-submit, .field-name-field-activity .ief-row-form #content .form-submit, #content .field-type-entityreference .ief-form > .fieldset-wrapper > .form-wrapper > .form-submit, .field-type-entityreference #content .ief-form > .fieldset-wrapper > .form-wrapper > .form-submit, #content .group-pg-notes .ief-row-form .form-submit, .group-pg-notes .ief-row-form #content .form-submit, #content .view-portal-export .view-filters .views-exposed-widget .form-submit, .view-portal-export .view-filters .views-exposed-widget #content .form-submit,
   #content .view-portal-export1 .view-filters .views-exposed-widget .form-submit,
   .view-portal-export1 .view-filters .views-exposed-widget #content .form-submit, #content .view-courses-list-content-view .view-filters .form-submit, .view-courses-list-content-view .view-filters #content .form-submit,
   #content .view-live-courses-users .view-filters .form-submit,
@@ -658,7 +663,7 @@ ul.secondary {
   #block-imageblock-1 .ief-row-form .ief-form-row .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit,
   .ief-row-form .ief-form-row #block-imageblock-1 .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit,
   #block-imageblock-1 .ief-row-form .ief-form-row > .form-wrapper > .form-submit,
-  .ief-row-form #block-imageblock-1 .ief-form-row > .form-wrapper > .form-submit, #block-imageblock-1 .field-name-field-activity .ief-row-form .form-submit, .field-name-field-activity .ief-row-form #block-imageblock-1 .form-submit, #block-imageblock-1 .group-pg-notes .ief-row-form .form-submit, .group-pg-notes .ief-row-form #block-imageblock-1 .form-submit, #block-imageblock-1 .view-portal-export .view-filters .views-exposed-widget .form-submit, .view-portal-export .view-filters .views-exposed-widget #block-imageblock-1 .form-submit,
+  .ief-row-form #block-imageblock-1 .ief-form-row > .form-wrapper > .form-submit, #block-imageblock-1 .field-name-field-activity .ief-row-form .form-submit, .field-name-field-activity .ief-row-form #block-imageblock-1 .form-submit, #block-imageblock-1 .field-type-entityreference .ief-form > .fieldset-wrapper > .form-wrapper > .form-submit, .field-type-entityreference #block-imageblock-1 .ief-form > .fieldset-wrapper > .form-wrapper > .form-submit, #block-imageblock-1 .group-pg-notes .ief-row-form .form-submit, .group-pg-notes .ief-row-form #block-imageblock-1 .form-submit, #block-imageblock-1 .view-portal-export .view-filters .views-exposed-widget .form-submit, .view-portal-export .view-filters .views-exposed-widget #block-imageblock-1 .form-submit,
   #block-imageblock-1 .view-portal-export1 .view-filters .views-exposed-widget .form-submit,
   .view-portal-export1 .view-filters .views-exposed-widget #block-imageblock-1 .form-submit, #block-imageblock-1 .view-courses-list-content-view .view-filters .form-submit, .view-courses-list-content-view .view-filters #block-imageblock-1 .form-submit,
   #block-imageblock-1 .view-live-courses-users .view-filters .form-submit,
@@ -696,7 +701,7 @@ ul.secondary {
   #block-block-2 .ief-row-form .ief-form-row .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit,
   .ief-row-form .ief-form-row #block-block-2 .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit,
   #block-block-2 .ief-row-form .ief-form-row > .form-wrapper > .form-submit,
-  .ief-row-form #block-block-2 .ief-form-row > .form-wrapper > .form-submit, #block-block-2 .field-name-field-activity .ief-row-form .form-submit, .field-name-field-activity .ief-row-form #block-block-2 .form-submit, #block-block-2 .group-pg-notes .ief-row-form .form-submit, .group-pg-notes .ief-row-form #block-block-2 .form-submit, #block-block-2 .view-portal-export .view-filters .views-exposed-widget .form-submit, .view-portal-export .view-filters .views-exposed-widget #block-block-2 .form-submit,
+  .ief-row-form #block-block-2 .ief-form-row > .form-wrapper > .form-submit, #block-block-2 .field-name-field-activity .ief-row-form .form-submit, .field-name-field-activity .ief-row-form #block-block-2 .form-submit, #block-block-2 .field-type-entityreference .ief-form > .fieldset-wrapper > .form-wrapper > .form-submit, .field-type-entityreference #block-block-2 .ief-form > .fieldset-wrapper > .form-wrapper > .form-submit, #block-block-2 .group-pg-notes .ief-row-form .form-submit, .group-pg-notes .ief-row-form #block-block-2 .form-submit, #block-block-2 .view-portal-export .view-filters .views-exposed-widget .form-submit, .view-portal-export .view-filters .views-exposed-widget #block-block-2 .form-submit,
   #block-block-2 .view-portal-export1 .view-filters .views-exposed-widget .form-submit,
   .view-portal-export1 .view-filters .views-exposed-widget #block-block-2 .form-submit, #block-block-2 .view-courses-list-content-view .view-filters .form-submit, .view-courses-list-content-view .view-filters #block-block-2 .form-submit,
   #block-block-2 .view-live-courses-users .view-filters .form-submit,
@@ -1575,17 +1580,17 @@ fieldset.date-combo .container-inline-date .date-padding {
     margin-top: 84px; }
     .view-learners-list #header-label span {
       font-size: 16px;
-      width: 12%; }
+      width: 10%; }
     .view-learners-list #header-label .email-label {
-      width: 15%; }
+      width: 25%; }
   .view-learners-list .views-row .field-content div {
-    width: 12%; }
+    width: 10%; }
   .view-learners-list .views-exposed-form .views-exposed-widget {
     float: left; }
   .view-learners-list .views-widget-filter-status {
     clear: left; }
   .view-learners-list .views-row .field-content .email-field {
-    width: 15%;
+    width: 25%;
     overflow-x: scroll;
     margin-right: 5px; }
   .view-learners-list .alphabet,
@@ -1621,6 +1626,9 @@ fieldset.date-combo .container-inline-date .date-padding {
     .view-learners-list .view-filters .views-widget-filter-rid,
     .view-learners-list .view-filters .views-widget-filter-status {
       text-align: left; }
+
+#views-exposed-form-learners-list-page-1 .views-exposed-widget.views-widget-filter-combine {
+  clear: left; }
 
 .view-portal-export #header-label span,
 .view-portal-export #header-label1 span,
@@ -2120,7 +2128,7 @@ fieldset.date-combo .container-inline-date .date-padding {
     #block-views-slideshow-block .views-field-body .ief-row-form .ief-form-row .ief-form-bottom > .fieldset-wrapper > .form-wrapper > a.form-submit,
     .ief-row-form .ief-form-row #block-views-slideshow-block .views-field-body .ief-form-bottom > .fieldset-wrapper > .form-wrapper > a.form-submit,
     #block-views-slideshow-block .views-field-body .ief-row-form .ief-form-row > .form-wrapper > a.form-submit,
-    .ief-row-form #block-views-slideshow-block .views-field-body .ief-form-row > .form-wrapper > a.form-submit, #block-views-slideshow-block .views-field-body .field-name-field-activity .ief-row-form a.form-submit, .field-name-field-activity .ief-row-form #block-views-slideshow-block .views-field-body a.form-submit, #block-views-slideshow-block .views-field-body .group-pg-notes .ief-row-form a.form-submit, .group-pg-notes .ief-row-form #block-views-slideshow-block .views-field-body a.form-submit, #block-views-slideshow-block .views-field-body .view-portal-export .view-filters .views-exposed-widget a.form-submit, .view-portal-export .view-filters .views-exposed-widget #block-views-slideshow-block .views-field-body a.form-submit,
+    .ief-row-form #block-views-slideshow-block .views-field-body .ief-form-row > .form-wrapper > a.form-submit, #block-views-slideshow-block .views-field-body .field-name-field-activity .ief-row-form a.form-submit, .field-name-field-activity .ief-row-form #block-views-slideshow-block .views-field-body a.form-submit, #block-views-slideshow-block .views-field-body .field-type-entityreference .ief-form > .fieldset-wrapper > .form-wrapper > a.form-submit, .field-type-entityreference #block-views-slideshow-block .views-field-body .ief-form > .fieldset-wrapper > .form-wrapper > a.form-submit, #block-views-slideshow-block .views-field-body .group-pg-notes .ief-row-form a.form-submit, .group-pg-notes .ief-row-form #block-views-slideshow-block .views-field-body a.form-submit, #block-views-slideshow-block .views-field-body .view-portal-export .view-filters .views-exposed-widget a.form-submit, .view-portal-export .view-filters .views-exposed-widget #block-views-slideshow-block .views-field-body a.form-submit,
     #block-views-slideshow-block .views-field-body .view-portal-export1 .view-filters .views-exposed-widget a.form-submit,
     .view-portal-export1 .view-filters .views-exposed-widget #block-views-slideshow-block .views-field-body a.form-submit, #block-views-slideshow-block .views-field-body .view-courses-list-content-view .view-filters a.form-submit, .view-courses-list-content-view .view-filters #block-views-slideshow-block .views-field-body a.form-submit,
     #block-views-slideshow-block .views-field-body .view-live-courses-users .view-filters a.form-submit,
@@ -2145,7 +2153,7 @@ fieldset.date-combo .container-inline-date .date-padding {
       #block-views-slideshow-block .views-field-body .ief-row-form .ief-form-row .ief-form-bottom > .fieldset-wrapper > .form-wrapper > a.form-submit:hover,
       .ief-row-form .ief-form-row #block-views-slideshow-block .views-field-body .ief-form-bottom > .fieldset-wrapper > .form-wrapper > a.form-submit:hover,
       #block-views-slideshow-block .views-field-body .ief-row-form .ief-form-row > .form-wrapper > a.form-submit:hover,
-      .ief-row-form #block-views-slideshow-block .views-field-body .ief-form-row > .form-wrapper > a.form-submit:hover, #block-views-slideshow-block .views-field-body .field-name-field-activity .ief-row-form a.form-submit:hover, .field-name-field-activity .ief-row-form #block-views-slideshow-block .views-field-body a.form-submit:hover, #block-views-slideshow-block .views-field-body .group-pg-notes .ief-row-form a.form-submit:hover, .group-pg-notes .ief-row-form #block-views-slideshow-block .views-field-body a.form-submit:hover, #block-views-slideshow-block .views-field-body .view-portal-export .view-filters .views-exposed-widget a.form-submit:hover, .view-portal-export .view-filters .views-exposed-widget #block-views-slideshow-block .views-field-body a.form-submit:hover,
+      .ief-row-form #block-views-slideshow-block .views-field-body .ief-form-row > .form-wrapper > a.form-submit:hover, #block-views-slideshow-block .views-field-body .field-name-field-activity .ief-row-form a.form-submit:hover, .field-name-field-activity .ief-row-form #block-views-slideshow-block .views-field-body a.form-submit:hover, #block-views-slideshow-block .views-field-body .field-type-entityreference .ief-form > .fieldset-wrapper > .form-wrapper > a.form-submit:hover, .field-type-entityreference #block-views-slideshow-block .views-field-body .ief-form > .fieldset-wrapper > .form-wrapper > a.form-submit:hover, #block-views-slideshow-block .views-field-body .group-pg-notes .ief-row-form a.form-submit:hover, .group-pg-notes .ief-row-form #block-views-slideshow-block .views-field-body a.form-submit:hover, #block-views-slideshow-block .views-field-body .view-portal-export .view-filters .views-exposed-widget a.form-submit:hover, .view-portal-export .view-filters .views-exposed-widget #block-views-slideshow-block .views-field-body a.form-submit:hover,
       #block-views-slideshow-block .views-field-body .view-portal-export1 .view-filters .views-exposed-widget a.form-submit:hover,
       .view-portal-export1 .view-filters .views-exposed-widget #block-views-slideshow-block .views-field-body a.form-submit:hover, #block-views-slideshow-block .views-field-body .view-courses-list-content-view .view-filters a.form-submit:hover, .view-courses-list-content-view .view-filters #block-views-slideshow-block .views-field-body a.form-submit:hover,
       #block-views-slideshow-block .views-field-body .view-live-courses-users .view-filters a.form-submit:hover,
@@ -2800,3 +2808,5 @@ fieldset.date-combo .container-inline-date .date-padding {
 
   .password-strength {
     display: none; } }
+
+/*# sourceMappingURL=screen.css.map */
