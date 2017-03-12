@@ -5,7 +5,7 @@ function search_letter_form_alter(&$form, $form_state, $form_id)
 	if ($form_id == 'views_exposed_form') {
 
 		$view = $form_state['view'];
-        if ($view->name == 'learners_list' && ($view->current_display == 'page' || $view->current_display == 'page_1' || $view->current_display == 'page_2')) {
+        if ($view->name == 'learners_list' && ($view->current_display == 'page' || $view->current_display == 'page_1' || $view->current_display == 'page_2' || $view->current_display == 'page_3')) {
 
 		    foreach (range('a','z') as $letter) {
 		    	$letters[$letter] = strtoupper($letter);

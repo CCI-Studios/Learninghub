@@ -35,27 +35,40 @@ parent::options_form($form, $form_state);
 function render($values) {
 
 		global $user;
-		$existingUser = arg(1);
-		$existing = user_load(arg(1));
+
+		if(arg(1))
+		{
+			$existingUser = arg(1);
+		}
+		else
+		{
+			$existingUser = $user->uid;
+		}
+		
+		$existing = user_load($existingUser);
 
 		$flag = 0;
-	
-		if(in_array('LHUB admin',$user->roles) || in_array('practitioner', $user->roles)) {
+		
+		if (!function_exists('in_array_r'))
+		{
+			function in_array_r($needle, $haystack, $strict = false) {
+			    foreach ($haystack as $item) {
+			        if (($strict ? $item === $needle : $item == $needle) || (is_array($item) && in_array_r($needle, $item, $strict))) {
+			            return true;
+			        }
+			    }
+
+			    return false;
+			}
+		}
+
+		$lhubAdmin = in_array('LHUB admin',$user->roles);
+		$prac = in_array('practitioner', $user->roles);
+
+
+		if(($lhubAdmin == 1 || $prac == 1) && arg(1)) {
 			$target_id = array('target_id' => $values->nid);
 		
-			if (!function_exists('in_array_r'))
-			{
-				function in_array_r($needle, $haystack, $strict = false) {
-				    foreach ($haystack as $item) {
-				        if (($strict ? $item === $needle : $item == $needle) || (is_array($item) && in_array_r($needle, $item, $strict))) {
-				            return true;
-				        }
-				    }
-
-				    return false;
-				}
-			}
-
 			$input = '';
 			$time_v = '';
 			$time_n = '';
