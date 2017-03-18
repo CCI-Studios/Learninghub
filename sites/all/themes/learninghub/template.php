@@ -100,10 +100,31 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 }
 	if ($form_id == 'user_profile_form') 
 	{ 	
+
+		$profiles = profile2_load_by_user($form['#user']->uid,'learner_profile');
+
 		$form['subtitle'] = array(
 		'#type' => 'markup',
 		'#markup' => '<h3 class="subtitle">User: '.$form['#user']->name.'</h3>',
 		'#weight' => -1000
+		);
+		$form['top-email'] = array(
+		'#type' => 'markup',
+		'#markup' => '<h3 class="email">Email: '.$form['#user']->mail.'</h3>',
+		'#weight' => -999
+		);
+
+		$form['top-name'] = array(
+		'#type' => 'markup',
+		'#markup' => '<h3 class="prefer-name">Preferred Name: '.$profiles->field_preferred_name_nickname['und'][0]['value'].'</h3>',
+		'#weight' => -989
+		);
+
+		$lhub_no = empty($form['#user']->field_hub_lbs_1)?'NA':(string)$form['#user']->field_hub_lbs_1['und'][0]['value'];
+		$form['top-lbs'] = array(
+		'#type' => 'markup',
+		'#markup' => '<h3 class="lbs-num">HUB LBS#: '.$lhub_no.'</h3>',
+		'#weight' => -979
 		);
 
 		if(isset($form['profile_plan_content']['field_learner_plan1']['und']['entities']))
@@ -142,7 +163,6 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 		}
 		
 
-		$profiles = profile2_load_by_user($form['#user']->uid,'learner_profile');
 		
 		$firstName = $profiles->field_first_name['und'][0]['value'];
 		$lastName = $profiles->field_last_name['und'][0]['value'];
