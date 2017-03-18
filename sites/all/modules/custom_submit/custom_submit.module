@@ -27,11 +27,13 @@ function practitioner_mail($existingUser){
 
 function custom_submit_send($nid, $body, $existingUser, $profiles_plan_content, $radio_time) {
   
+  $existingUser = user_load($existingUser);
   $email_content = get_mail_content($nid, $body, $existingUser, $profiles_plan_content,$radio_time);
 
   $params = array('body' => $email_content);
   $key = 'test_email';
   $to =   $existingUser->mail;
+
   $from = 'info.learninghub@gmail.com';
   $mail = drupal_mail('test', $key, $to, language_default(), $params, $from);
   // for better understanding,you can uncomment the following
@@ -39,8 +41,8 @@ function custom_submit_send($nid, $body, $existingUser, $profiles_plan_content, 
  
 }
 
-function custom_submit_send_admin($nid, $body, $existingUser, $profiles_plan_content, $radio_time, $prac_mail) {
-  $email_content = get_mail_content_admin($nid, $body, $existingUser, $profiles_plan_content, $radio_time);
+function custom_submit_send_admin($nid, $body, $profiles_plan_content, $radio_time, $prac_mail) {
+  $email_content = get_mail_content_admin($nid, $body, $profiles_plan_content, $radio_time);
 
   if($prac_mail == 'NA')
   {
@@ -115,7 +117,6 @@ function get_mail_content($nid, $bodyContent, $existingUser, $profiles_plan_cont
   	$date_start = '';
   }
 
-  $email_to = $existingUser->mail;
   $body = '';
   $body .= 'Hi '.$profiles_plan_content->field_first_name['und'][0]['value'].' '.$profiles_plan_content->field_last_name['und'][0]['value']. '<br>';
   $body .= 'you have made changes to course <br>';
@@ -125,7 +126,7 @@ function get_mail_content($nid, $bodyContent, $existingUser, $profiles_plan_cont
   return $body;
 }
 
-function get_mail_content_admin($nid, $bodyContent, $existingUser, $profiles_plan_content, $radio_time) {
+function get_mail_content_admin($nid, $bodyContent, $profiles_plan_content, $radio_time) {
   
   if(isset($nid->field_time['und']))
   {		
@@ -136,7 +137,6 @@ function get_mail_content_admin($nid, $bodyContent, $existingUser, $profiles_pla
   	$date_start = '';
   }
 
-  $email_to = $existingUser->name;
   $body = '';
   $body .= 'Hi, <br>';
   $body .= 	$profiles_plan_content->field_first_name['und'][0]['value'].' '.$profiles_plan_content->field_last_name['und'][0]['value'].' has made changes to the course <br>';
@@ -170,12 +170,18 @@ function submit_value($arg){
 	}
 	
 	$title = $nid->title;
-
 	global $user;
 
-	$existingUser = $arg;	
-
-	$existing = user_load($arg);
+	if(in_array('learner', $user->roles))
+	{
+		$existingUser = $user->uid;
+	}
+	else
+	{
+		$existingUser = $arg;
+	}
+		
+	$existing = user_load($existingUser);
 
 	// Fetch Practitioner mail
 
@@ -194,7 +200,7 @@ function submit_value($arg){
 		$prac_mail = 'NA';
 	}
 
-	$profiles_plan_content = profile2_load_by_user($arg,'learner_profile');
+	$profiles_plan_content = profile2_load_by_user($existingUser,'learner_profile');
 
 	$target_id = array('target_id' => $nid->nid);
 	$target_id_live = array('target_id' => $arg);
@@ -287,7 +293,7 @@ function submit_value($arg){
 				}
 
 				if($c_id->type != 'courses_live')
-			 	{
+			 	{	
 				 	$count_anytime++;
 			 	}
 			}
@@ -325,10 +331,23 @@ function submit_value($arg){
 
 		node_save($nid);
 		user_save($existing);
-        custom_submit_send($nid, $body, $user, $profiles_plan_content, $radio_time);
-        custom_submit_send_admin($nid, $body, $user, $profiles_plan_content, $radio_time,$prac_mail);
-        drupal_set_message("This Course has been added to your list.  Your Practitioner will be in touch shortly with further instruction.");
-		return '<h2>'.$nid->title.'</h2>'.$body.'<div><a href="/course-list-content" class="button">Go Back</a></div>';
+
+        custom_submit_send($nid, $body, $existingUser, $profiles_plan_content, $radio_time);
+        custom_submit_send_admin($nid, $body, $profiles_plan_content, $radio_time,$prac_mail);
+
+        if(in_array('learner', $user->roles))
+        {
+        	drupal_set_message("This Course has been added to your list.  Your Practitioner will be in touch shortly with further instruction.");
+			return '<h2>'.$nid->title.'</h2>'.$body.'<div><a href="/course-list-content" class="button">Go Back</a></div>';
+
+        }
+        else
+        {
+        	drupal_set_message("This Course has been added to learner's list.");
+			return '<h2>'.$nid->title.'</h2>'.$body.'<div><a href="/learners-course-selection/'.$arg.'" class="button">Go Back</a></div>';
+
+        }
+        
 	}
    
 	
@@ -346,7 +365,6 @@ function submit_value($arg){
 		{	
 			foreach ($existing->field_courses_live as $key => $value) {
 					
-
 					$id = [];
 					$time = [];
 					$group = [];
@@ -383,9 +401,16 @@ function submit_value($arg){
 		}
 		node_save($nid);
 		user_save($existing);
-        drupal_set_message("This Course has been removed from your list.");
+        drupal_set_message("This Course has been removed from list.");
 
-		return '<h2>'.$nid->title.'</h2>'.$body.'<div><a href="/current-courses" class="button">Go Back</a></div>';
+        if(in_array('learner', $user->roles))
+        {
+			return '<h2>'.$nid->title.'</h2>'.$body.'<div><a href="/current-courses" class="button">Go Back</a></div>';
+		}
+		else
+		{
+			return '<h2>'.$nid->title.'</h2>'.$body.'<div><a href="/learners-course-selection/'.$arg.'" class="button">Go Back</a></div>';
+		}
 		
 	}
 

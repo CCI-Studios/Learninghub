@@ -505,6 +505,16 @@
 	}
 }
 
+.remove-course-icon{
+
+	display: inline-block;
+	border: 2px solid $green;
+	width: 15px;
+	left: 0px;
+	margin-right: 5px;
+	bottom: 15px;
+}
+
 .page-current-courses .view-courses-list-content-view .views-field-custom-submit-field
 {	
 	.selected-time
@@ -517,21 +527,12 @@
 		position: relative;
 		padding-left: 25px;
 	}
-	form:before
-	{
-		content: "";
-		display: inline-block;
-		border: 2px solid $green;
-		width: 15px;
-		position: absolute;
-		left: 0px;
-		bottom: 15px;
-	}
+	
  	input
  	{
 		background: none;
 		vertical-align: middle;
-		padding-left: 5px;
+		padding-left: 15px;
  	}
 }
 
@@ -639,8 +640,7 @@
 	font-size: 16px;
 }
 
-#block-views-course-category-block,
-#block-views-course-category-block-1
+.view-course-category
 {
 	.views-row
 	{
@@ -763,19 +763,28 @@
 
 	.views-field-custom-submit-field
 	{	
+		position: relative;
 		input
 		{
 			border: 0px;
 			background-color: transparent;
 			color: $green;
 			font-size: 24px;
-			background: url(../images/plus-sign-green.png) no-repeat;
-			background-position: left;
-			padding-left: 28px;
 			cursor: pointer;
 			text-transform: capitalize;
+			vertical-align: middle;
 		}
 	}
+}
+
+.add-course-icon
+{	
+	display: inline-block;
+	width: 25px;
+	height: 23px;
+	background: url(../images/plus-sign-green.png) no-repeat;
+	background-position: center;
+	vertical-align: middle;
 }
 
 .view-live-courses-users

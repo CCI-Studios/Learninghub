@@ -236,7 +236,15 @@
 	 $('.username-thankyou').insertAfter('.info-block');
 	
 	   //course selection block active
-	   var id =  window.location.pathname.split('/')[2];
+	   if(window.location.pathname.split('/')[1] == 'course-list-content' || window.location.pathname.split('/')[1] == 'current-courses')
+	   {
+   		   var id =  window.location.pathname.split('/')[2];
+	   }
+	   else
+	   {
+		   var id =  window.location.pathname.split('/')[3];
+	   }
+
 	   $('.view-course-category .search-all').addClass('selected');
 
 	   $('.view-course-category .view-content').each(function(){

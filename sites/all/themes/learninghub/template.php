@@ -962,3 +962,8 @@ function learninghub_js_alter(&$js) {
  $js['settings']['data'][] = array('better_exposed_filters'=> array('datepicker_options' => array('dateformat'=>'dd-mm-yy')));}
 }
 
+function learninghub_preprocess_views_view(&$varibales){
+	
+
+	drupal_set_title();
+}

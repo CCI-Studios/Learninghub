@@ -1799,24 +1799,24 @@ fieldset.date-combo .container-inline-date .date-padding {
     .view-learner-plan .node-learning-activity .content > div:last-child {
       width: 48%; }
 
+.remove-course-icon {
+  display: inline-block;
+  border: 2px solid #8dd2ca;
+  width: 15px;
+  left: 0px;
+  margin-right: 5px;
+  bottom: 15px; }
+
 .page-current-courses .view-courses-list-content-view .views-field-custom-submit-field .selected-time {
   color: #f28d1e;
   font-size: 18px; }
 .page-current-courses .view-courses-list-content-view .views-field-custom-submit-field form {
   position: relative;
   padding-left: 25px; }
-.page-current-courses .view-courses-list-content-view .views-field-custom-submit-field form:before {
-  content: "";
-  display: inline-block;
-  border: 2px solid #8dd2ca;
-  width: 15px;
-  position: absolute;
-  left: 0px;
-  bottom: 15px; }
 .page-current-courses .view-courses-list-content-view .views-field-custom-submit-field input {
   background: none;
   vertical-align: middle;
-  padding-left: 5px; }
+  padding-left: 15px; }
 
 .view-filters {
   position: absolute;
@@ -1891,8 +1891,7 @@ fieldset.date-combo .container-inline-date .date-padding {
   border: 0px !important;
   font-size: 16px; }
 
-#block-views-course-category-block .views-row,
-#block-views-course-category-block-1 .views-row {
+.view-course-category .views-row {
   display: inline-block;
   max-width: 200px;
   vertical-align: top;
@@ -1975,17 +1974,26 @@ fieldset.date-combo .container-inline-date .date-padding {
 .view-courses-list-content-view .view-header,
 .view-live-courses-users .view-header {
   margin-top: 40px; }
-.view-courses-list-content-view .views-field-custom-submit-field input,
-.view-live-courses-users .views-field-custom-submit-field input {
-  border: 0px;
-  background-color: transparent;
-  color: #8dd2ca;
-  font-size: 24px;
+.view-courses-list-content-view .views-field-custom-submit-field,
+.view-live-courses-users .views-field-custom-submit-field {
+  position: relative; }
+  .view-courses-list-content-view .views-field-custom-submit-field input,
+  .view-live-courses-users .views-field-custom-submit-field input {
+    border: 0px;
+    background-color: transparent;
+    color: #8dd2ca;
+    font-size: 24px;
+    cursor: pointer;
+    text-transform: capitalize;
+    vertical-align: middle; }
+
+.add-course-icon {
+  display: inline-block;
+  width: 25px;
+  height: 23px;
   background: url(../images/plus-sign-green.png) no-repeat;
-  background-position: left;
-  padding-left: 28px;
-  cursor: pointer;
-  text-transform: capitalize; }
+  background-position: center;
+  vertical-align: middle; }
 
 .view-live-courses-users .views-field-title {
   font-size: 32px; }

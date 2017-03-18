@@ -36,7 +36,7 @@ function render($values) {
 
 		global $user;
 
-		if(arg(1))
+		if(arg(1) && arg(0) == 'learners-course-selection')
 		{
 			$existingUser = arg(1);
 		}
@@ -48,6 +48,7 @@ function render($values) {
 		$existing = user_load($existingUser);
 
 		$flag = 0;
+		$class_button = '';
 		
 		if (!function_exists('in_array_r'))
 		{
@@ -64,10 +65,13 @@ function render($values) {
 
 		$lhubAdmin = in_array('LHUB admin',$user->roles);
 		$prac = in_array('practitioner', $user->roles);
+		$admin = in_array('admin', $user->roles);
+		$learner = in_array('learner', $user->roles);
 
 
-		if(($lhubAdmin == 1 || $prac == 1) && arg(1)) {
-			$target_id = array('target_id' => $values->nid);
+		if(($prac == 0 || $lhubAdmin == 0 || $admin == 0 ) && arg(0) != 'course-list-content' || $learner == 1) {
+
+			$target_id = array('target_id' => $values->nid);	
 		
 			$input = '';
 			$time_v = '';
@@ -235,11 +239,21 @@ function render($values) {
 				$time_v = '';
 			}
 
+			if(in_array('learner', $user->roles) && $button_value == 'Remove course')
+			{
+				$flag = 0;
+			}
+
+			if($button_value == 'Remove course')
+				{ $class_button = 'remove-course-icon'; 
+				} else 
+				{ $class_button = "add-course-icon"; }
+
 			if($flag>0)
 			{
 				$form = '<span class="selected-time">'.$time_v.'</span><form method="post" id="course-select" action="/course-selection/'.$existingUser.'">
 				<input type="hidden" name ="nid" value="'.$values->nid.'">'.$input.'
-				<br/><input type="submit" name ="buttonValue" value ="'.$button_value.'">
+				<br/><span class='.$class_button.'></span><input type="submit" name ="buttonValue" value ="'.$button_value.'">
 				</form>';
 			}
 			else
