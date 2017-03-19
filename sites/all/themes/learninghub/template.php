@@ -719,6 +719,11 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 		    	$in_progress = 'Not Available';
 		    	$milestones_identified = 'Not Available';
 		    }
+		    $form['profile_plan_content']['milestone_heading'] = array(
+			'#type' => 'markup',
+			'#markup' => '<h2>Milestones</h2>',
+			'#weight' => -33
+			);
 
 			$form['profile_plan_content']['milestones_completed'] = array(
 			'#type' => 'markup',
@@ -757,34 +762,10 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 			'#weight' => -15
 			);
 
-			$form['profile_plan_content']['path_changed2'] = array(
-			'#type' => 'markup',
-			'#markup' => '<div class="form-type-markup"><label>Goal path changed </label>'.$path_changed.'</div>',
-			'#weight' => -16
-			);
-
-			$form['profile_plan_content']['how_learn2'] = array(
-			'#type' => 'markup',
-			'#markup' => '<div class="form-type-markup"><label>How would you like to learn? </label>'.$how_learn.'</div>',
-			'#weight' => -17,
-			);
-
 			$form['profile_plan_content']['training_type2'] = array(
 			'#type' => 'markup',
 			'#markup' => '<div class="form-type-markup"><label>Training Type  </label>'.$training_type.'</div>',
 			'#weight' => -18,
-			);
-
-			$form['profile_plan_content']['learner_type2'] = array(
-			'#type' => 'markup',
-			'#markup' => '<div class="form-type-markup"><label>Learner Type</label>'.$learner_type.'</div>',
-			'#weight' => -19
-			);
-
-			$form['profile_plan_content']['where_work2'] = array(
-			'#type' => 'markup',
-			'#markup' => '<div class="form-type-markup"><label>Where will you be working on your upgrading?</label>'.$where_work.'</div>',
-			'#weight' => -20
 			);
 
 			$form['profile_plan_content']['site_name2'] = array(
@@ -810,16 +791,10 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 			'#weight' => -24
 			);
 
-			$form['profile_plan_content']['learner_weekly2'] = array(
-			'#type' => 'markup',
-			'#markup' => '<div class="form-type-markup"><label>Estimated Learner Weekly Time Commitment at Registration </label>'.$learner_weekly.'</div>',
-			'#weight' => -25
-			);
-
 			$form['profile_plan_content']['culminating_task2'] = array(
 			'#type' => 'markup',
 			'#markup' => '<div class="form-type-markup"><label>Culminating Tasks Completed </label>'.$culminating_task.'</div>',
-			'#weight' => -26
+			'#weight' => -29
 			);
 		}
 	}
