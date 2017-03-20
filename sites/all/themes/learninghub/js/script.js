@@ -4,7 +4,10 @@
     $(function(){ 
 
  
-    	
+    	/* Move subit button in learner's list before sort order */
+
+		$('.view-learners-list .views-submit-button').insertBefore('.view-learners-list .views-widget-sort-by');
+
 	 	$('.view-faq .views-field-title,.view-what-you-need .views-field-title, .view-using-learning-hub .views-field-title, .view-learner-stories .views-field-title').click(function(){
 	        $(this).next().slideToggle();
 	        $('.view-faq .views-field-body, .view-what-you-need .views-field-body, .view-using-learning-hub .views-field-body, .view-learner-stories .views-field-body').not($(this).next()).slideUp();
@@ -118,7 +121,7 @@
         var search = '<div class="view-filters"><input id="notes-search" type="text" placeholder="Search progress notes" value=""></div>';
 
         $('#edit-profile-plan-content-field-learner-plan1').append(exportButton);
-        $('.group-pg-notes').prepend(search);
+        $('.group-pg-notes .field-type-entityreference').prepend(search);
 	    $('.field-name-field-activity').prepend(divHeader);
 
 
@@ -156,7 +159,7 @@
 	    	 var alphabetFilterDrop = '<div id="responsive-alpha-search"><a href="#">Alphabetical Search</a></div>'
 	    }
 
-     	$(alphabetFilter).insertBefore('#edit-profile-plan-content-field-learner-plan1');
+     	$('#edit-profile-plan-content-field-learner-plan1').prepend(alphabetFilter);
 
      	//$(alphabetFilterDrop).insertBefore('.view-learners-list .alphabet');
      	//$('.view-learners-list .alphabet').appendTo('#responsive-alpha-search');
@@ -277,37 +280,36 @@
   }
 }
 
-	Drupal.behaviors.yourBehaviorName = {
-	    attach: function (context, settings) {
-    	var count = 0;
-    	var triggers = $('ul.alphabet li a');
-		var filters = $('.field-name-field-task-group-level-indicator .field-item');
+Drupal.behaviors.yourBehaviorName = {
+    attach: function (context, settings) {
+	var count = 0;
+	var triggers = $('ul.alphabet li a');
+	var filters = $('.field-name-field-task-group-level-indicator .field-item');
 
-	      triggers.click(function() {
+      triggers.click(function() {
 
-			$('ul.alphabet li').removeClass('active');
-			$(this).parent().addClass('active');
-		    var takeLetter = $(this).text().toLowerCase();
-		    filters.parents('tr.ief-row-entity').hide();
-		    
-		    filters.each(function(i) {
-		        var compareFirstLetter = $(this).text().substr(0,1).toLowerCase();
-		        if ( compareFirstLetter ==  takeLetter ) {
+		$('ul.alphabet li').removeClass('active');
+		$(this).parent().addClass('active');
+	    var takeLetter = $(this).text().toLowerCase();
+	    filters.parents('tr.ief-row-entity').hide();
+	    
+	    filters.each(function(i) {
+	        var compareFirstLetter = $(this).text().substr(0,1).toLowerCase();
+	        if ( compareFirstLetter ==  takeLetter ) {
 
-		        	$('.no-result').hide();
-		            $(this).parents('tr.ief-row-entity').fadeIn(222);
-		        }
-		        else if(takeLetter === 'all')
-		        {	
-		        	$('.no-result').hide();
-		        	 $('tr.ief-row-entity').fadeIn(222);
-		        }
-		  
-		    });
-		});
+	        	$('.no-result').hide();
+	            $(this).parents('tr.ief-row-entity').fadeIn(222);
+	        }
+	        else if(takeLetter === 'all')
+	        {	
+	        	$('.no-result').hide();
+	        	 $('tr.ief-row-entity').fadeIn(222);
+	        }
+	  
+	    });
+	});
 
-	    }
-	  }
-
+    }
+  }
 	
 })(jQuery)

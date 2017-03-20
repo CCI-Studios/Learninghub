@@ -1356,7 +1356,6 @@ textarea {
   #field-document-uploads-values th label,
   .field-name-field-referrals-services th label,
   .field-name-field-referral th label {
-    font-size: 45px;
     text-transform: lowercase;
     font-weight: normal;
     padding-bottom: 25px; }
@@ -1483,6 +1482,18 @@ fieldset.date-combo .container-inline-date .date-padding {
   .logged-in #mailchimp-signup-subscribe-block-subscription-form .form-actions {
     margin-top: 121px; }
 
+.registration-container,
+.milestone-container,
+.field-group-div .field-type-entityreference,
+.group-referral .field-type-field-collection,
+.field-name-field-learner-progress,
+.field-name-field-document-uploads,
+.field-name-field-doclinks {
+  display: none; }
+
+.collapsible h3 {
+  font-size: 45px; }
+
 .view-learners-list,
 .view-portal-export,
 .view-portal-export1 {
@@ -1577,7 +1588,7 @@ fieldset.date-combo .container-inline-date .date-padding {
 .view-learners-list {
   padding-bottom: 10px; }
   .view-learners-list #header-label {
-    margin-top: 84px; }
+    margin-top: 150px; }
     .view-learners-list #header-label span {
       font-size: 16px;
       width: 10%; }
@@ -1603,7 +1614,7 @@ fieldset.date-combo .container-inline-date .date-padding {
   .view-learners-list .views-widget-filter-combine {
     margin-top: 30px; }
   .view-learners-list .view-filters {
-    top: -100px;
+    top: -170px;
     padding-top: 0px; }
     .view-learners-list .view-filters .views-submit-button input {
       right: 0px;

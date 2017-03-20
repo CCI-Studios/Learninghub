@@ -13,6 +13,8 @@ scripts[] = js/responsive_table/ng_responsive_tables.js
 scripts[] = js/script.js
 scripts[] = js/mobile-menu.js
 scripts[] = js/slick/slick.js
+scripts[] = js/portal-accordian.js
+
 
 
 

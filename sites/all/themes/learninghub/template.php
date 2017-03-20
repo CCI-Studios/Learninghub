@@ -114,9 +114,11 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 		'#weight' => -999
 		);
 
+		$nick_name = isset($profiles->field_preferred_name_nickname['und'][0]['value'])?$profiles->field_preferred_name_nickname['und'][0]['value']:'NA';
+
 		$form['top-name'] = array(
 		'#type' => 'markup',
-		'#markup' => '<h3 class="prefer-name">Preferred Name: '.$profiles->field_preferred_name_nickname['und'][0]['value'].'</h3>',
+		'#markup' => '<h3 class="prefer-name">Preferred Name: '.$nick_name.'</h3>',
 		'#weight' => -989
 		);
 
@@ -719,83 +721,101 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 		    	$in_progress = 'Not Available';
 		    	$milestones_identified = 'Not Available';
 		    }
+
+		    /*Milestone Group*/
 		    $form['profile_plan_content']['milestone_heading'] = array(
 			'#type' => 'markup',
-			'#markup' => '<h2>Milestones</h2>',
-			'#weight' => -33
+			'#markup' => '<div class="collapsable milestone-head"><h2>Milestones</h2></div>',
+			'#weight' => 3,
 			);
 
-			$form['profile_plan_content']['milestones_completed'] = array(
+		   	$form['profile_plan_content']['milestone_group']= array(
+			'#type' => 'container',
+			'#weight' => 3,
+			'#prefix' => '<div class="milestone-container">',
+			'#suffix' => '</div>'
+			);
+
+			$form['profile_plan_content']['milestone_group']['milestones_completed'] = array(
 			'#type' => 'markup',
 			'#markup' => '<div class="form-type-markup"><label>Current Number of Completed Milestones </label>'.$activities_completed.'</div>',
-			'#weight' => -28
+			'#weight' => 3
 			);
 
-			$form['profile_plan_content']['milestones_in_progress'] = array(
+			$form['profile_plan_content']['milestone_group']['milestones_in_progress'] = array(
 			'#type' => 'markup',
 			'#markup' => '<div class="form-type-markup"><label>Current Number of In-Progress Milestones</label>'.$in_progress.'</div>',
-			'#weight' => -29
+			'#weight' => 3
 			);
 
-			$form['profile_plan_content']['milestones_identified'] = array(
+			$form['profile_plan_content']['milestone_group']['milestones_identified'] = array(
 			'#type' => 'markup',
 			'#markup' => '<div class="form-type-markup"><label>Number of Milestones Identified for learner</label>'.$milestones_identified.'</div>',
-			'#weight' => -30
+			'#weight' => 3
 			);
 
-			$form['profile_plan_content']['milestones_identified_fiscal'] = array(
+			$form['profile_plan_content']['milestone_group']['milestones_identified_fiscal'] = array(
 			'#type' => 'markup',
 			'#markup' => '<div class="form-type-markup"><label>Number of Milestones completed at start of fiscal</label>'.$activities_completed_fiscal.'</div>',
-			'#weight' => -30
+			'#weight' => 3
 			);
 
+			$form['profile_plan_content']['milestone_group']['culminating_task2'] = array(
+			'#type' => 'markup',
+			'#markup' => '<div class="form-type-markup"><label>Culminating Tasks Completed </label>'.$culminating_task.'</div>',
+			'#weight' => 3
+			);
+
+			/* Registration Information*/
+
+			$form['profile_plan_content']['registration_group']= array(
+			'#type' => 'container',
+			'#weight' => -27,
+			'#prefix' => '<div class="registration-container">',
+			'#suffix' => '</div>'
+			);
 
 			$form['profile_plan_content']['goal_path_heading'] = array(
 			'#type' => 'markup',
-			'#markup' => '<h2>Goal Path</h2>',
-			'#weight' => -27
+			'#markup' => '<div class="collapsable registration-head"><h2>Registration Information</h2></div>',
+			'#weight' => -28
 			);
 
-			$form['profile_plan_content']['long_term2'] = array(
+			$form['profile_plan_content']['registration_group']['long_term2'] = array(
 			'#type' => 'markup',
 			'#markup' => '<div class="form-type-markup"><label>What is your long term goal? </label>'.$long_term.'</div>',
 			'#weight' => -15
 			);
 
-			$form['profile_plan_content']['training_type2'] = array(
+			$form['profile_plan_content']['registration_group']['training_type2'] = array(
 			'#type' => 'markup',
 			'#markup' => '<div class="form-type-markup"><label>Training Type  </label>'.$training_type.'</div>',
 			'#weight' => -18,
 			);
 
-			$form['profile_plan_content']['site_name2'] = array(
+			$form['profile_plan_content']['registration_group']['site_name2'] = array(
 			'#type' => 'markup',
 			'#markup' => '<div class="form-type-markup"><label>Site name </label>'.$site_name.'</div>',
 			'#weight' => -21
 			);
-			$form['profile_plan_content']['teacher_name2'] = array(
+			$form['profile_plan_content']['registration_group']['teacher_name2'] = array(
 			'#type' => 'markup',
 			'#markup' => '<div class="form-type-markup"><label>Teacher Name</label>'.$teacher_name.'</div>',
 			'#weight' => -22
 			);
 
-			$form['profile_plan_content']['teacher_phone2'] = array(
+			$form['profile_plan_content']['registration_group']['teacher_phone2'] = array(
 			'#type' => 'markup',
 			'#markup' => '<div class="form-type-markup"><label>Teacher Phone </label>'.$teacher_phone.'</div>',
 			'#weight' => -23
 			);
 
-			$form['profile_plan_content']['teacher_email2'] = array(
+			$form['profile_plan_content']['registration_group']['teacher_email2'] = array(
 			'#type' => 'markup',
 			'#markup' => '<div class="form-type-markup"><label>Teacher Email </label>'.$teacher_email.'</div>',
 			'#weight' => -24
 			);
 
-			$form['profile_plan_content']['culminating_task2'] = array(
-			'#type' => 'markup',
-			'#markup' => '<div class="form-type-markup"><label>Culminating Tasks Completed </label>'.$culminating_task.'</div>',
-			'#weight' => -29
-			);
 		}
 	}
 
