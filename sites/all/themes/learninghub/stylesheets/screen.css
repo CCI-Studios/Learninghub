@@ -851,6 +851,8 @@ ul.secondary {
 #user-profile-form .form-type-markup {
   margin-bottom: 20px; }
 
+#user-profile-form .form-wrapper, #user-profile-form p, #user-profile-form input {
+  color: black; }
 #user-profile-form #edit-account {
   width: 100%; }
   #user-profile-form #edit-account input {
@@ -1484,15 +1486,53 @@ fieldset.date-combo .container-inline-date .date-padding {
 
 .registration-container,
 .milestone-container,
-.field-group-div .field-type-entityreference,
+.field-group-div > .field-type-entityreference,
 .group-referral .field-type-field-collection,
 .field-name-field-learner-progress,
 .field-name-field-document-uploads,
-.field-name-field-doclinks {
+.field-name-field-doclinks,
+.old-referral .referral-container {
   display: none; }
+  .registration-container.show,
+  .milestone-container.show,
+  .field-group-div > .field-type-entityreference.show,
+  .group-referral .field-type-field-collection.show,
+  .field-name-field-learner-progress.show,
+  .field-name-field-document-uploads.show,
+  .field-name-field-doclinks.show,
+  .old-referral .referral-container.show {
+    display: block; }
 
 .collapsible h3 {
   font-size: 45px; }
+
+.field-group-div h3,
+.collapsable h2,
+.collapsible.collapsed h3 {
+  cursor: pointer;
+  background: url(../images/polygon.png) no-repeat right; }
+
+.field-group-div h3.polygon-up,
+.collapsable h2.polygon-up,
+.collapsible h3 {
+  background: url(../images/polygon-up.png) no-repeat right; }
+
+.heading-info-container h3 {
+  display: inline-block;
+  width: 50%; }
+
+#edit-profile-plan-content-field-document-uploads .field-name-field-document .form-submit {
+  display: none; }
+
+#action-bar.fixed {
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  padding: 10px;
+  left: 0;
+  top: 0px;
+  background: white;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); }
 
 .view-learners-list,
 .view-portal-export,
@@ -1591,11 +1631,16 @@ fieldset.date-combo .container-inline-date .date-padding {
     margin-top: 150px; }
     .view-learners-list #header-label span {
       font-size: 16px;
-      width: 10%; }
+      width: 12%; }
     .view-learners-list #header-label .email-label {
       width: 25%; }
   .view-learners-list .views-row .field-content div {
-    width: 10%; }
+    width: 12%;
+    color: black; }
+    .view-learners-list .views-row .field-content div a {
+      color: black; }
+      .view-learners-list .views-row .field-content div a:hover {
+        text-decoration: underline; }
   .view-learners-list .views-exposed-form .views-exposed-widget {
     float: left; }
   .view-learners-list .views-widget-filter-status {
@@ -1638,7 +1683,20 @@ fieldset.date-combo .container-inline-date .date-padding {
     .view-learners-list .view-filters .views-widget-filter-status {
       text-align: left; }
 
-#views-exposed-form-learners-list-page-1 .views-exposed-widget.views-widget-filter-combine {
+.page-learner-list-practitioner .view-learners-list .view-filters,
+.page-learners-list-course-practitioner .view-learners-list .view-filters {
+  top: -120px; }
+.page-learner-list-practitioner .views-exposed-widget.views-widget-filter-combine,
+.page-learners-list-course-practitioner .views-exposed-widget.views-widget-filter-combine {
+  margin-right: 20px; }
+.page-learner-list-practitioner .views-submit-button,
+.page-learners-list-course-practitioner .views-submit-button {
+  position: absolute;
+  right: 0;
+  bottom: 0; }
+
+#views-exposed-form-learners-list-page-1 .views-exposed-widget.views-widget-filter-combine,
+.page-learners-list-course-practitioner .views-exposed-widget.views-widget-filter-combine {
   clear: left; }
 
 .view-portal-export #header-label span,
@@ -1742,9 +1800,11 @@ fieldset.date-combo .container-inline-date .date-padding {
   margin: 20px 0px 0px; }
 .view-learner-plan .view-header #view-courses {
   float: left;
-  width: 60%; }
+  width: 75%; }
   .view-learner-plan .view-header #view-courses a:first-child {
     margin-right: 40px; }
+  .view-learner-plan .view-header #view-courses .learning-platform-links {
+    margin-left: 40px; }
 .view-learner-plan .view-header #expand-table {
   text-align: right;
   margin-bottom: 30px; }
@@ -2179,6 +2239,9 @@ fieldset.date-combo .container-inline-date .date-padding {
       .view-live-courses-users .view-filters #block-views-slideshow-block .views-field-body a.form-submit:hover {
         color: white !important;
         background: #f28d1e; }
+
+.page-node-349167 #block-block-8 .content > h2 {
+  display: none; }
 
 @media screen and (min-width: 1061px) {
   #navigation #block-system-main-menu {

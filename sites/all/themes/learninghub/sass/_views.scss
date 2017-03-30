@@ -102,7 +102,7 @@
 		span
 		{
 			font-size: 16px;
-			width: 10%;
+			width: 12%;
 		}
 
 		.email-label
@@ -113,7 +113,17 @@
 
 	.views-row .field-content div
 	{
-		width: 10%;
+		width: 12%;
+		color: black;
+
+		a{
+			color: black;
+
+			&:hover
+			{
+				text-decoration: underline;
+			}
+		}
 	}
 
 	.views-exposed-form .views-exposed-widget
@@ -153,7 +163,6 @@
 
 	.view-filters
 	{	
-
 		top: -170px;
 		padding-top: 0px;
 
@@ -196,7 +205,29 @@
 	}
 }
 
-#views-exposed-form-learners-list-page-1
+.page-learner-list-practitioner,
+.page-learners-list-course-practitioner
+{
+	.view-learners-list .view-filters
+	{
+		top: -120px;
+	}
+
+	.views-exposed-widget.views-widget-filter-combine
+	{
+		margin-right: 20px;
+	}
+
+	.views-submit-button
+	{
+		position: absolute;
+		right: 0;
+		bottom: 0;
+	}
+}
+
+#views-exposed-form-learners-list-page-1,
+.page-learners-list-course-practitioner
 {
 	.views-exposed-widget.views-widget-filter-combine
 	{
@@ -365,11 +396,16 @@
 		#view-courses
 		{
 			float: left;
-			width: 60%;
+			width: 75%;
 
 			a:first-child
 			{
 				margin-right: 40px;
+			}
+
+			.learning-platform-links
+			{
+				margin-left: 40px;
 			}
 		}
 		#expand-table
@@ -859,7 +895,6 @@
 			{
 				padding-bottom: 0px;
 			}
-			
 		}
 	}
 
@@ -1067,6 +1102,17 @@
 				color: white!important;
 				background: $orange;
 			}
+		}
+	}
+}
+
+.page-node-349167 
+{
+	#block-block-8
+	{
+		.content > h2
+		{
+			display: none;
 		}
 	}
 }

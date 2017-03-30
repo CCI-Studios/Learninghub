@@ -103,12 +103,19 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 
 		$profiles = profile2_load_by_user($form['#user']->uid,'learner_profile');
 
-		$form['subtitle'] = array(
+		$form['heading-info'] = array(
+		'#type' => 'container',
+		'#prefix' => '<div class="heading-info-container">',
+		'#suffix' => '</div>',
+		'#weight' => -1000
+		);
+
+		$form['heading-info']['subtitle'] = array(
 		'#type' => 'markup',
 		'#markup' => '<h3 class="subtitle">User: '.$form['#user']->name.'</h3>',
 		'#weight' => -1000
 		);
-		$form['top-email'] = array(
+		$form['heading-info']['top-email'] = array(
 		'#type' => 'markup',
 		'#markup' => '<h3 class="email">Email: '.$form['#user']->mail.'</h3>',
 		'#weight' => -999
@@ -116,14 +123,14 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 
 		$nick_name = isset($profiles->field_preferred_name_nickname['und'][0]['value'])?$profiles->field_preferred_name_nickname['und'][0]['value']:'NA';
 
-		$form['top-name'] = array(
+		$form['heading-info']['top-name'] = array(
 		'#type' => 'markup',
 		'#markup' => '<h3 class="prefer-name">Preferred Name: '.$nick_name.'</h3>',
 		'#weight' => -989
 		);
 
 		$lhub_no = empty($form['#user']->field_hub_lbs_1)?'NA':(string)$form['#user']->field_hub_lbs_1['und'][0]['value'];
-		$form['top-lbs'] = array(
+		$form['heading-info']['top-lbs'] = array(
 		'#type' => 'markup',
 		'#markup' => '<h3 class="lbs-num">HUB LBS#: '.$lhub_no.'</h3>',
 		'#weight' => -979

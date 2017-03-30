@@ -37,6 +37,10 @@
 
 #user-profile-form 
 {	
+	.form-wrapper,p, input
+	{
+		color: black;
+	}
 	#edit-account
 	{
 		width: 100%;
@@ -1231,16 +1235,66 @@ fieldset.date-combo .container-inline-date .date-padding
 
 .registration-container,
 .milestone-container,
-.field-group-div .field-type-entityreference,
+.field-group-div > .field-type-entityreference,
 .group-referral .field-type-field-collection,
 .field-name-field-learner-progress,
 .field-name-field-document-uploads,
-.field-name-field-doclinks
+.field-name-field-doclinks,
+.old-referral .referral-container
 {
 	display: none;
+
+	&.show{
+		
+		display: block;
+	}
 }
 
 .collapsible h3
 {
 	font-size: 45px;
+}
+
+.field-group-div h3,
+.collapsable h2,
+.collapsible.collapsed h3
+{
+	cursor: pointer;
+	background: url(../images/polygon.png) no-repeat right;
+}
+
+.field-group-div h3.polygon-up,
+.collapsable h2.polygon-up,
+.collapsible h3
+{
+	background: url(../images/polygon-up.png) no-repeat right;
+}
+
+.heading-info-container
+{
+	h3{
+
+		display: inline-block;
+		width: 50%;
+	}
+}
+
+#edit-profile-plan-content-field-document-uploads .field-name-field-document
+{
+	.form-submit
+	{
+		display: none;
+	}
+}
+
+#action-bar.fixed
+{
+	position: fixed;
+	width: 100%;
+	z-index: 99;
+	padding: 10px;	
+	left: 0;
+	top: 0px;
+	background: white;
+	box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
 }
