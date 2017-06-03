@@ -3,7 +3,7 @@
 
     $(function(){ 
 
- 
+ 		/* */
     	/* Move subit button in learner's list before sort order */
 
 		$('.view-learners-list .views-submit-button').insertBefore('.view-learners-list .views-widget-sort-by');
@@ -17,7 +17,7 @@
 
 	 	$('.view-learner-plan .views-row').each(function(){
 
-	 		var div = $(this).find('.field-name-field-activity');
+	 		var div = $(this).find('.field-name-field-3');
 	    	$(this).find('.views-field-description').insertBefore(div);
 
 	 	})
@@ -120,7 +120,7 @@
 
         var search = '<div class="view-filters"><input id="notes-search" type="text" placeholder="Search progress notes" value=""></div>';
 
-        $('#edit-profile-plan-content-field-learner-plan1').append(exportButton);
+        //$('#edit-profile-plan-content-field-learner-plan1').append(exportButton);
         $('.group-pg-notes .field-type-entityreference').prepend(search);
 	    $('.field-name-field-activity').prepend(divHeader);
 

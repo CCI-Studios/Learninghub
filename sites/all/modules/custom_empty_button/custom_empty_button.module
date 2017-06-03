@@ -20,6 +20,7 @@ function custom_empty_button_menu() {
 }
 
 
+/*
 function custom_empty_button_cron(){
 
 	$node_type = 'courses_live';
@@ -51,6 +52,7 @@ function custom_empty_button_cron(){
          $severity = WATCHDOG_NOTICE, 
          $link = NULL);
 }
+*/
 
 function empty_button(){
 

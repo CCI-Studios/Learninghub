@@ -1,7 +1,7 @@
 body 
 {
   font-family: "myriad-pro",sans-serif;
-  color: $grey;
+  color: black;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -26,18 +26,12 @@ form span.error-msg
 
 h1
 {
-	padding-bottom: 35px;
+	padding-bottom: 25px;
 	line-height: 1em;
 	text-align: center;
 	text-transform: lowercase;
 }
 
-#block-block-7 h1:before
-{
-	content: url(../images/gear-icon.png);
-	display: block;
-	padding-bottom: 35px;
-}
 
 h1#page-title:before
 {
@@ -50,11 +44,11 @@ h1#page-title:before
 {
 	max-width: 940px;
 	margin: 0 auto;
-	padding: 80px 10px;
+	padding: 35px 10px;
 
 	p
 	{
-		line-height: 1.8em;
+		line-height: 1.2em;
 		padding-bottom: 20px;
 	}
 
@@ -639,7 +633,7 @@ ul.indicators
  		{	
 			border: 3px solid $orange;
 			margin: 0 20px;
-		    padding: 35px 15px;
+		    padding: 21px 15px;
 
  		}
  	}
@@ -650,7 +644,7 @@ ul.indicators
  		margin: 0 auto;
  		padding-top: 40px;
  		overflow: hidden;
- 		margin-bottom: 40px;
+ 		margin-bottom: 40px;	
  	}
 
  	#widgets
@@ -676,7 +670,7 @@ ul.indicators
 
  	#content
  	{
- 		padding: 80px 10px;
+ 		padding: 30px 10px;
  		@extend .layout;
  	}
 
@@ -937,4 +931,39 @@ ul.secondary
     padding: 20px;
     border: 3px solid orange;
     height: 510px;
+}
+
+.page-node-74 {
+	.box2 {
+
+		float: none;
+		width: 100%;
+		height: auto;
+		border: 0px;
+	}
+}
+
+.logged-in.page-learner-plan {
+
+	.region-content {
+		position: relative;
+		margin-top: 70px;
+	}
+
+	#view-courses {
+		position: absolute;
+		top: -75px;
+		margin: 0 auto;
+		text-align: center;
+		width: 100%;
+	}
+}
+
+#course-list-admin  {
+	width: 100%!important;
+	 div {
+	 	-webkit-column-count: 3;
+	 	-moz-column-count: 3;
+	 	column-count: 3;
+	 }
 }

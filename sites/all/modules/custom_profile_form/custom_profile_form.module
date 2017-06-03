@@ -1,7 +1,36 @@
 <?php 
+function custom_profile_form_views_pre_render (&$view) {
+	//die;
 
+    
+}
+		
 function custom_profile_form_form_alter(&$form, &$form_state, $form_id)
-{
+{	
+	if($form_id == 'views_exposed_form') {
+
+		 $view = $form_state['view'];
+		 if ($view->name == 'learners_list') {
+            // alter your exposed form here
+  
+            if(!empty($_REQUEST)) {
+    			if(isset($_SESSION['filter'])) {
+						unset($_SESSION['filter']);
+    			}
+				foreach ($_REQUEST as $key => $value) {
+						$_SESSION['filter'][$key] = $value;
+				}		
+			}
+
+			if(isset($_SESSION['filter'])) {
+				foreach ($_SESSION['filter'] as $key => $value) {
+					$form[$key]['#value'] = $value;
+					$_POST[$key] = $value;
+				}
+			}
+        }	
+	}
+
 	if ($form_id == 'user_profile_form')	
 	{	
 
@@ -30,7 +59,7 @@ function custom_profile_form_form_alter(&$form, &$form_state, $form_id)
 			
 			$form['action-bar']['expand-all'] = array(
 				'#type' => 'button',
-				'#value' => 'exapand all',
+				'#value' => 'expand all',
 				'#weight' => -1000
 				);
 
@@ -160,12 +189,12 @@ function custom_profile_form_form_alter(&$form, &$form_state, $form_id)
 						$time = $time_n;
 					}
 			
-				  	$courselist .= $nid->title.' '.$class_type. ' <br>'.$time.PHP_EOL .'<hr>';
+				  	$courselist .= '<span>'.$nid->title.' '.$class_type. ' </br>'.$time.PHP_EOL .'<hr></span>';
 				}
 
 				$form['account']['cList'] = array(
 				'#type' => 'markup',
-				'#markup' => '<div class="form-type-markup"><label>Courses List</label><div>'. $courselist .'</div></div>',
+				'#markup' => '<div class="form-type-markup" id="course-list-admin"><label>Courses List</label><div>'. $courselist .'</div></div>',
 				'#weight' => 10
 				);
 			}
@@ -217,5 +246,3 @@ function custom_profile_form_form_alter(&$form, &$form_state, $form_id)
 	
 }
 */
-
-		

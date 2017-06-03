@@ -229,16 +229,31 @@ function submit_value($arg){
 
 	if($_POST['buttonValue'] == 'Add course')
 	{	
+
+		$class_value = $arg.','.$radio_time;
 		if(empty($nid->field_users_attending))
 		{
 			$target_id_live = array('target_id' => $arg);
 			$nid->field_users_attending['und'] =  array();
 			array_push($nid->field_users_attending['und'], $target_id_live);
+
 		}
 		else if(in_array_r($arg, $nid->field_users_attending) == false)
 		{		
 			$target_id_live = array('target_id' => $arg);
 			array_push($nid->field_users_attending['und'], $target_id_live);
+		}
+
+		//Adding user class time
+
+		if(empty($nid->field_users_class_time))
+		{
+			$nid->field_users_class_time['und'] =  array();
+			array_push($nid->field_users_class_time['und'], array('value'=> $nid->nid.','.$radio_time));
+		}
+		else if(in_array_r($class_value, $nid->field_users_class_time) == false)
+		{		
+			array_push($nid->field_users_class_time['und'],array('value'=> $nid->nid.','.$radio_time));
 		}
 
 		if($nid->type == 'courses_live' && isset($_POST['radio_time']))

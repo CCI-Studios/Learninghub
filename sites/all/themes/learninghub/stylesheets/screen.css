@@ -10,7 +10,7 @@ input, select, textarea, button {
 
 body {
   font-family: "myriad-pro",sans-serif;
-  color: #7f7f7f;
+  color: black;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
@@ -28,15 +28,10 @@ form span.error-msg {
   color: red; }
 
 h1 {
-  padding-bottom: 35px;
+  padding-bottom: 25px;
   line-height: 1em;
   text-align: center;
   text-transform: lowercase; }
-
-#block-block-7 h1:before {
-  content: url(../images/gear-icon.png);
-  display: block;
-  padding-bottom: 35px; }
 
 h1#page-title:before {
   content: url(../images/gear-icon.png);
@@ -47,9 +42,9 @@ h1#page-title:before {
 #content {
   max-width: 940px;
   margin: 0 auto;
-  padding: 80px 10px; }
+  padding: 35px 10px; }
   #content p {
-    line-height: 1.8em;
+    line-height: 1.2em;
     padding-bottom: 20px; }
   #content ul {
     padding-left: 20px; }
@@ -455,7 +450,7 @@ ul.indicators {
 #block-user-login #block-block-8 .content {
   border: 3px solid #f28d1e;
   margin: 0 20px;
-  padding: 35px 15px; }
+  padding: 21px 15px; }
 .not-logged-in.page-user:not(.page-user-register) .region-content,
 .not-logged-in.page-learner:not(.page-learner-register) .region-content,
 #block-user-login .region-content {
@@ -482,7 +477,7 @@ ul.indicators {
 .not-logged-in.page-user.page-user-logout #page-title {
   display: block; }
 .not-logged-in.page-user.page-user-logout #content {
-  padding: 80px 10px; }
+  padding: 30px 10px; }
 .not-logged-in.page-user.page-user-logout #block-system-main {
   background-color: white;
   background-image: none; }
@@ -619,6 +614,29 @@ ul.secondary {
   padding: 20px;
   border: 3px solid orange;
   height: 510px; }
+
+.page-node-74 .box2 {
+  float: none;
+  width: 100%;
+  height: auto;
+  border: 0px; }
+
+.logged-in.page-learner-plan .region-content {
+  position: relative;
+  margin-top: 70px; }
+.logged-in.page-learner-plan #view-courses {
+  position: absolute;
+  top: -75px;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%; }
+
+#course-list-admin {
+  width: 100% !important; }
+  #course-list-admin div {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3; }
 
 #block-imageblock-1 {
   height: 532px;
@@ -774,8 +792,17 @@ ul.secondary {
 
 #block-block-7,
 #block-block-8 {
-  padding: 50px 0px;
+  padding: 0px 0px 25px 0px;
   text-align: center; }
+  #block-block-7 h1,
+  #block-block-8 h1 {
+    padding-bottom: 20px; }
+
+#block-block-7 h1:before {
+  content: url(../images/gear-icon.png);
+  display: inline-block;
+  padding-right: 15px;
+  vertical-align: middle; }
 
 #block-block-8 {
   padding-top: 0px; }
@@ -857,8 +884,10 @@ ul.secondary {
   width: 100%; }
   #user-profile-form #edit-account input {
     width: auto; }
-#user-profile-form .field-group-div {
-  padding-bottom: 1.5em; }
+#user-profile-form .field-group-div,
+#user-profile-form .milestone-head,
+#user-profile-form .registration-head {
+  padding-bottom: 0px; }
 #user-profile-form .field-name-field-courses-4 select {
   height: 150px; }
 #user-profile-form .form-submit {
@@ -1387,10 +1416,13 @@ textarea {
     padding: 0px; }
   .field-name-field-referrals-services td,
   .field-name-field-referral td {
-    padding-bottom: 30px; }
+    padding-bottom: 20px;
+    display: inline-block;
+    width: 100%;
+    position: relative; }
     #user-profile-form .field-name-field-referrals-services td .form-submit, #user-profile-form
     .field-name-field-referral td .form-submit {
-      margin-top: 20px; }
+      margin-top: 45px; }
   .field-name-field-referrals-services .field-type-list-text select,
   .field-name-field-referral .field-type-list-text select {
     width: 100%;
@@ -1441,10 +1473,11 @@ fieldset.date-combo .container-inline-date .date-padding {
 
 .group-pg-notes {
   position: relative; }
+  .group-pg-notes .field-name-field-progress-notes1 {
+    margin-top: 30px; }
   .group-pg-notes .view-filters {
-    top: 22px; }
-  .group-pg-notes.field-group-div > h3 {
-    padding-bottom: 50px; }
+    top: 22px;
+    right: 45px; }
   #content .group-pg-notes .field-type-text-with-summary p {
     padding-bottom: 0px; }
   #user-profile-form .group-pg-notes .field-name-field-description {
@@ -1484,45 +1517,65 @@ fieldset.date-combo .container-inline-date .date-padding {
   .logged-in #mailchimp-signup-subscribe-block-subscription-form .form-actions {
     margin-top: 121px; }
 
-.registration-container,
-.milestone-container,
-.field-group-div > .field-type-entityreference,
-.group-referral .field-type-field-collection,
-.field-name-field-learner-progress,
-.field-name-field-document-uploads,
-.field-name-field-doclinks,
-.old-referral .referral-container {
+.page-user-edit-plan-content .registration-container,
+.page-user-edit-plan-content .milestone-container,
+.page-user-edit-plan-content .field-group-div > .field-type-entityreference,
+.page-user-edit-plan-content .group-referral .field-type-field-collection,
+.page-user-edit-plan-content .field-name-field-learner-progress,
+.page-user-edit-plan-content .field-name-field-document-uploads,
+.page-user-edit-plan-content .field-name-field-doclinks,
+.page-user-edit-plan-content .old-referral .referral-container {
   display: none; }
-  .registration-container.show,
-  .milestone-container.show,
-  .field-group-div > .field-type-entityreference.show,
-  .group-referral .field-type-field-collection.show,
-  .field-name-field-learner-progress.show,
-  .field-name-field-document-uploads.show,
-  .field-name-field-doclinks.show,
-  .old-referral .referral-container.show {
+  .page-user-edit-plan-content .registration-container.show,
+  .page-user-edit-plan-content .milestone-container.show,
+  .page-user-edit-plan-content .field-group-div > .field-type-entityreference.show,
+  .page-user-edit-plan-content .group-referral .field-type-field-collection.show,
+  .page-user-edit-plan-content .field-name-field-learner-progress.show,
+  .page-user-edit-plan-content .field-name-field-document-uploads.show,
+  .page-user-edit-plan-content .field-name-field-doclinks.show,
+  .page-user-edit-plan-content .old-referral .referral-container.show {
     display: block; }
-
-.collapsible h3 {
+.page-user-edit-plan-content .collapsible h3 {
   font-size: 45px; }
-
-.field-group-div h3,
-.collapsable h2,
-.collapsible.collapsed h3 {
+.page-user-edit-plan-content .field-group-div h3,
+.page-user-edit-plan-content .collapsable h2,
+.page-user-edit-plan-content .collapsible.collapsed h3 {
   cursor: pointer;
+  text-transform: lowercase;
+  font-size: 28px;
   background: url(../images/polygon.png) no-repeat right; }
-
-.field-group-div h3.polygon-up,
-.collapsable h2.polygon-up,
-.collapsible h3 {
+.page-user-edit-plan-content .field-group-div h3.polygon-up,
+.page-user-edit-plan-content .collapsable h2.polygon-up,
+.page-user-edit-plan-content .collapsible h3 {
   background: url(../images/polygon-up.png) no-repeat right; }
 
 .heading-info-container h3 {
   display: inline-block;
-  width: 50%; }
+  width: 50%;
+  padding-bottom: 10px; }
+  .heading-info-container h3 span {
+    color: black; }
 
+.bin-back, #user-profile-form .field-name-field-referrals-services td .form-submit, #user-profile-form
+.field-name-field-referral td .form-submit, #edit-profile-plan-content-field-document-uploads .form-actions .remove-button {
+  font-size: 0px;
+  padding: 0px;
+  border: 0px;
+  background: url("../images/bin.png") no-repeat;
+  height: 21px;
+  width: 24px;
+  min-width: 25px;
+  line-height: 2em;
+  background-position: center; }
+
+#edit-profile-plan-content-field-document-uploads tr td {
+  position: relative; }
 #edit-profile-plan-content-field-document-uploads .field-name-field-document .form-submit {
   display: none; }
+#edit-profile-plan-content-field-document-uploads .form-actions {
+  position: absolute;
+  right: 0px;
+  top: 50px; }
 
 #action-bar.fixed {
   position: fixed;
@@ -1533,6 +1586,9 @@ fieldset.date-combo .container-inline-date .date-padding {
   top: 0px;
   background: white;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); }
+
+.portal-username {
+  color: black; }
 
 .view-learners-list,
 .view-portal-export,
@@ -1647,7 +1703,7 @@ fieldset.date-combo .container-inline-date .date-padding {
     clear: left; }
   .view-learners-list .views-row .field-content .email-field {
     width: 25%;
-    overflow-x: scroll;
+    overflow-x: hidden;
     margin-right: 5px; }
   .view-learners-list .alphabet,
   .view-learners-list .bef-select-as-links {
@@ -1684,12 +1740,19 @@ fieldset.date-combo .container-inline-date .date-padding {
       text-align: left; }
 
 .page-learner-list-practitioner .view-learners-list .view-filters,
+.page-exited-learners .view-learners-list .view-filters,
 .page-learners-list-course-practitioner .view-learners-list .view-filters {
   top: -120px; }
+.page-learner-list-practitioner h1,
+.page-exited-learners h1,
+.page-learners-list-course-practitioner h1 {
+  padding-bottom: 0px; }
 .page-learner-list-practitioner .views-exposed-widget.views-widget-filter-combine,
+.page-exited-learners .views-exposed-widget.views-widget-filter-combine,
 .page-learners-list-course-practitioner .views-exposed-widget.views-widget-filter-combine {
   margin-right: 20px; }
 .page-learner-list-practitioner .views-submit-button,
+.page-exited-learners .views-submit-button,
 .page-learners-list-course-practitioner .views-submit-button {
   position: absolute;
   right: 0;
@@ -1799,8 +1862,7 @@ fieldset.date-combo .container-inline-date .date-padding {
   text-align: center;
   margin: 20px 0px 0px; }
 .view-learner-plan .view-header #view-courses {
-  float: left;
-  width: 75%; }
+  float: left; }
   .view-learner-plan .view-header #view-courses a:first-child {
     margin-right: 40px; }
   .view-learner-plan .view-header #view-courses .learning-platform-links {
@@ -1999,9 +2061,6 @@ fieldset.date-combo .container-inline-date .date-padding {
   .view-live-courses-users .view-filters .form-submit {
     margin-left: 20px;
     display: none; }
-.view-courses-list-content-view .view-content,
-.view-live-courses-users .view-content {
-  margin-top: 50px; }
 .view-courses-list-content-view span.views-field-title,
 .view-courses-list-content-view .views-field-title,
 .view-live-courses-users span.views-field-title,
@@ -2242,6 +2301,9 @@ fieldset.date-combo .container-inline-date .date-padding {
 
 .page-node-349167 #block-block-8 .content > h2 {
   display: none; }
+
+.page-exited-learners .view-filters #edit-combine-wrapper {
+  clear: left; }
 
 @media screen and (min-width: 1061px) {
   #navigation #block-system-main-menu {

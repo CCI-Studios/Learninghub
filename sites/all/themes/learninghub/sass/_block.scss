@@ -188,8 +188,21 @@
 #block-block-8
 {	
 	@extend .inner-layout;
-	padding: 50px 0px;
+	padding: 0px 0px 25px 0px;
 	text-align: center;
+
+	h1 {
+		padding-bottom: 20px;
+	}
+}
+
+
+#block-block-7 h1:before
+{
+	content: url(../images/gear-icon.png);
+	display: inline-block;
+	padding-right: 15px;
+	vertical-align: middle;
 }
 
 #block-block-8

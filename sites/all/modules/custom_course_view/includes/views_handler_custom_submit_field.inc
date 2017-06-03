@@ -162,8 +162,13 @@ function render($values) {
 					}
 
 					if(!empty($values->_field_data['nid']['entity']->field_users_attending))
-					{
+					{	
 						$users_attending = count($values->_field_data['nid']['entity']->field_users_attending['und']);
+
+						foreach ($values->_field_data['nid']['entity']->field_users_attending['und'] as $key => $value) {
+							//echo $values->nid;
+							//print_r($value);
+						}
 
 						if($class_size == $users_attending)
 						{
@@ -258,7 +263,7 @@ function render($values) {
 			}
 			else
 			{
-				$form = '';
+				$form = '<span class="selected-time">'.$time_v.'</span>';
 			}
 			
 			return $form;

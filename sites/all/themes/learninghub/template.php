@@ -112,12 +112,12 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 
 		$form['heading-info']['subtitle'] = array(
 		'#type' => 'markup',
-		'#markup' => '<h3 class="subtitle">User: '.$form['#user']->name.'</h3>',
+		'#markup' => '<h3 class="subtitle">User: <span>'.$form['#user']->name.'</span></h3>',
 		'#weight' => -1000
 		);
 		$form['heading-info']['top-email'] = array(
 		'#type' => 'markup',
-		'#markup' => '<h3 class="email">Email: '.$form['#user']->mail.'</h3>',
+		'#markup' => '<h3 class="email"><span>'.$form['#user']->mail.'</span></h3>',
 		'#weight' => -999
 		);
 
@@ -125,14 +125,14 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 
 		$form['heading-info']['top-name'] = array(
 		'#type' => 'markup',
-		'#markup' => '<h3 class="prefer-name">Preferred Name: '.$nick_name.'</h3>',
+		'#markup' => '<h3 class="prefer-name">Preferred Name: <span>'.$nick_name.'</span></h3>',
 		'#weight' => -989
 		);
 
 		$lhub_no = empty($form['#user']->field_hub_lbs_1)?'NA':(string)$form['#user']->field_hub_lbs_1['und'][0]['value'];
 		$form['heading-info']['top-lbs'] = array(
 		'#type' => 'markup',
-		'#markup' => '<h3 class="lbs-num">HUB LBS#: '.$lhub_no.'</h3>',
+		'#markup' => '<h3 class="lbs-num">HUB LBS#: <span>'.$lhub_no.'</span></h3>',
 		'#weight' => -979
 		);
 
@@ -531,7 +531,7 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 
 		$form['subtitle_fname'] = array(
 		'#type' => 'markup',
-		'#markup' => '<h3 class="subtitle">'.$firstName.' '.$lastName.'</h3>',
+		'#markup' => '<h3 class="subtitle portal-username">'.$firstName.' '.$lastName.'</h3>',
 		'#weight' => -1200
 		);
 
@@ -580,22 +580,16 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 
 			}
 			
-			$form['profile_exit_information']['clientID'] = array(
+			$form['heading-info']['clientID'] = array(
 			'#type' => 'markup',
-			'#markup' => '<div class="form-type-markup"><label>client ID</label><div>'. $clientID .'</div></div>',
-			'#weight' => 10
+			'#markup' => '<h3> Client ID: '. $clientID .'</h3>',
+			'#weight' => -1
 			);
 
-			$form['profile_exit_information']['EO_num'] = array(
+			$form['heading-info']['EO_num'] = array(
 			'#type' => 'markup',
-			'#markup' => '<div class="form-type-markup"><label>EO #</label><div>'. $EO_num .'</div></div>',
-			'#weight' => 11
-			);
-
-			$form['profile_exit_information']['hub_lbs_1'] = array(
-			'#type' => 'markup',
-			'#markup' => '<div class="form-type-markup"><label>HUB LBS #</label><div>'. $hub_lbs_1 .'</div></div>',
-			'#weight' => 11
+			'#markup' => '<h3>EO #: '. $EO_num .'</h3>',
+			'#weight' => -1
 			);
 
 			unset($form['milestones_completed']);
@@ -706,11 +700,22 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 								{
 									$date1 = '';
 								}
-								$date2 = strtotime('+3 month January' );
-								if($date1 < $date2)
-								{	
-									array_push($activities_completed_fiscal, $node->field_milestone1['und'][0]['value']);
+								$currentYearFiscalEnd = strtotime('31 March' );
+								$lastYearFiscalStart = strtotime('1 April last year');
+								$nextYearFiscalEnd = strtotime('31 March next year');
+								$current = strtotime('now');
+								if($current < $currentYearFiscalEnd) {
+									if($date1 < $currentYearFiscalEnd && $date1 > $lastYearFiscalStart)
+									{	
+										array_push($activities_completed_fiscal, $node->field_milestone1['und'][0]['value']);
+									}
+								} elseif ($current > $currentYearFiscalEnd) {
+									if($date1 < $nextYearFiscalEnd && $date1 > $currentYearFiscalEnd)
+									{	
+										array_push($activities_completed_fiscal, $node->field_milestone1['und'][0]['value']);
+									}
 								}
+								
 							}
 						}
 					}
@@ -733,12 +738,12 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 		    $form['profile_plan_content']['milestone_heading'] = array(
 			'#type' => 'markup',
 			'#markup' => '<div class="collapsable milestone-head"><h2>Milestones</h2></div>',
-			'#weight' => 3,
+			'#weight' => 3.8,
 			);
 
 		   	$form['profile_plan_content']['milestone_group']= array(
 			'#type' => 'container',
-			'#weight' => 3,
+			'#weight' => 4,
 			'#prefix' => '<div class="milestone-container">',
 			'#suffix' => '</div>'
 			);
@@ -746,31 +751,31 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 			$form['profile_plan_content']['milestone_group']['milestones_completed'] = array(
 			'#type' => 'markup',
 			'#markup' => '<div class="form-type-markup"><label>Current Number of Completed Milestones </label>'.$activities_completed.'</div>',
-			'#weight' => 3
+			'#weight' => 4
 			);
 
 			$form['profile_plan_content']['milestone_group']['milestones_in_progress'] = array(
 			'#type' => 'markup',
 			'#markup' => '<div class="form-type-markup"><label>Current Number of In-Progress Milestones</label>'.$in_progress.'</div>',
-			'#weight' => 3
+			'#weight' => 4
 			);
 
 			$form['profile_plan_content']['milestone_group']['milestones_identified'] = array(
 			'#type' => 'markup',
 			'#markup' => '<div class="form-type-markup"><label>Number of Milestones Identified for learner</label>'.$milestones_identified.'</div>',
-			'#weight' => 3
+			'#weight' => 4
 			);
 
 			$form['profile_plan_content']['milestone_group']['milestones_identified_fiscal'] = array(
 			'#type' => 'markup',
 			'#markup' => '<div class="form-type-markup"><label>Number of Milestones completed at start of fiscal</label>'.$activities_completed_fiscal.'</div>',
-			'#weight' => 3
+			'#weight' => 4
 			);
 
 			$form['profile_plan_content']['milestone_group']['culminating_task2'] = array(
 			'#type' => 'markup',
 			'#markup' => '<div class="form-type-markup"><label>Culminating Tasks Completed </label>'.$culminating_task.'</div>',
-			'#weight' => 3
+			'#weight' => 4
 			);
 
 			/* Registration Information*/
@@ -909,6 +914,7 @@ function learninghub_inline_entity_form_entity_form_alter(&$entity_form, &$form_
 	 if($entity_form['#entity_type'] == 'node' && $entity_form['#bundle'] == 'competency')
 	 { 
 	    unset($entity_form['title']); 
+	  
 	    $entity_form['field_activity']['und']['actions']['ief_add']['#value'] = t('Add New Activity');
      	$entity_form['actions']['ief_add_save']['#value'] = t('Create Competency');
      	$entity_form['actions']['ief_edit_save']['#value'] = t('Update Competency');
@@ -924,6 +930,8 @@ function learninghub_inline_entity_form_entity_form_alter(&$entity_form, &$form_
 
   	if($entity_form['#entity_type'] == 'node' && $entity_form['#bundle'] == 'learning_activity')
 	{	
+  	    unset($entity_form['title']); 
+
 	    $entity_form['actions']['ief_add_save']['#value'] = t('Create Activity');
 	    $entity_form['actions']['ief_edit_save']['#value'] = t('Update Activity');
 	    $entity_form['markup_field'] = array(
@@ -985,7 +993,6 @@ function learninghub_js_alter(&$js) {
 }
 
 function learninghub_preprocess_views_view(&$varibales){
-	
-
 	drupal_set_title();
 }
+

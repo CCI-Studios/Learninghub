@@ -51,9 +51,11 @@
 		}
 	}
 
-	.field-group-div
+	.field-group-div,
+	.milestone-head,
+	.registration-head
 	{
-		padding-bottom: 1.5em;
+		padding-bottom: 0px;
 
 		&>h3
 		{
@@ -1009,16 +1011,22 @@ textarea
 	}
 
 	td
-	{
-		padding-bottom: 30px;
+	{	
+		padding-bottom: 20px;
+		display: inline-block;
+		width: 100%;
+		position: relative;
+
 		.form-submit
 		{	
 			#user-profile-form &
-			{
-				margin-top: 20px;
+			{	
+				@extend .bin-back;
+				margin-top: 45px;
 			}
 		}
 	}
+
 	.field-type-list-text
 	{	
 		select
@@ -1112,6 +1120,11 @@ fieldset.date-combo .container-inline-date .date-padding
 {
 	position: relative;
 
+	.field-name-field-progress-notes1
+	{
+		margin-top: 30px;
+	}
+
 	.tabledrag-toggle-weight-wrapper
 	{
 		//display: none;
@@ -1120,14 +1133,7 @@ fieldset.date-combo .container-inline-date .date-padding
 	.view-filters
 	{
 		top: 22px;
-	}
-
-	&.field-group-div
-	{
-		&>h3
-		{
-			padding-bottom: 50px;
-		}
+		right: 45px;
 	}
 
 	.field-type-text-with-summary p
@@ -1233,57 +1239,97 @@ fieldset.date-combo .container-inline-date .date-padding
 	}
 }
 
-.registration-container,
-.milestone-container,
-.field-group-div > .field-type-entityreference,
-.group-referral .field-type-field-collection,
-.field-name-field-learner-progress,
-.field-name-field-document-uploads,
-.field-name-field-doclinks,
-.old-referral .referral-container
-{
-	display: none;
+.page-user-edit-plan-content {
+	
+	.registration-container,
+	.milestone-container,
+	.field-group-div > .field-type-entityreference,
+	.group-referral .field-type-field-collection,
+	.field-name-field-learner-progress,
+	.field-name-field-document-uploads,
+	.field-name-field-doclinks,
+	.old-referral .referral-container
+	{
+		display: none;
 
-	&.show{
-		
-		display: block;
+		&.show{
+			
+			display: block;
+		}
 	}
+
+	.collapsible h3
+	{
+		font-size: 45px;
+	}
+
+	.field-group-div h3,
+	.collapsable h2,
+	.collapsible.collapsed h3
+	{
+		cursor: pointer;
+		text-transform: lowercase;
+		font-size: 28px;
+		background: url(../images/polygon.png) no-repeat right;
+	}
+
+	.field-group-div h3.polygon-up,
+	.collapsable h2.polygon-up,
+	.collapsible h3
+	{
+		background: url(../images/polygon-up.png) no-repeat right;
+	}
+
 }
 
-.collapsible h3
-{
-	font-size: 45px;
-}
-
-.field-group-div h3,
-.collapsable h2,
-.collapsible.collapsed h3
-{
-	cursor: pointer;
-	background: url(../images/polygon.png) no-repeat right;
-}
-
-.field-group-div h3.polygon-up,
-.collapsable h2.polygon-up,
-.collapsible h3
-{
-	background: url(../images/polygon-up.png) no-repeat right;
-}
 
 .heading-info-container
 {
-	h3{
+	h3{	
 
 		display: inline-block;
 		width: 50%;
+		padding-bottom: 10px;
+
+		span {
+			color: black;
+		}
 	}
 }
 
-#edit-profile-plan-content-field-document-uploads .field-name-field-document
-{
-	.form-submit
+.bin-back {
+
+	font-size: 0px;
+	padding: 0px;
+	border: 0px;
+	background: url("../images/bin.png") no-repeat;
+	height: 21px;
+	width: 24px;
+	min-width: 25px;
+	line-height: 2em;
+	background-position: center;
+}
+
+#edit-profile-plan-content-field-document-uploads 
+{	
+	tr td{
+		position: relative;
+	}
+
+	.field-name-field-document .form-submit
 	{
 		display: none;
+	}
+
+	.form-actions {
+
+		position: absolute;
+		right: 0px;
+		top: 50px;
+
+		.remove-button {
+		   @extend .bin-back
+		}
 	}
 }
 
@@ -1297,4 +1343,8 @@ fieldset.date-combo .container-inline-date .date-padding
 	top: 0px;
 	background: white;
 	box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+.portal-username {
+	color: black;
 }

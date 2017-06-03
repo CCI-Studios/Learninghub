@@ -139,7 +139,7 @@
     .views-row .field-content .email-field
     {
     	width: 25%;
-		overflow-x: scroll;
+		overflow-x: hidden;
 		margin-right: 5px;
     }
 
@@ -206,11 +206,16 @@
 }
 
 .page-learner-list-practitioner,
+.page-exited-learners,
 .page-learners-list-course-practitioner
 {
 	.view-learners-list .view-filters
 	{
 		top: -120px;
+	}
+
+	h1 {
+	 padding-bottom: 0px;
 	}
 
 	.views-exposed-widget.views-widget-filter-combine
@@ -396,7 +401,6 @@
 		#view-courses
 		{
 			float: left;
-			width: 75%;
 
 			a:first-child
 			{
@@ -739,7 +743,7 @@
 
 	.view-content
 	{
-		margin-top: 50px;
+		//margin-top: 50px;
 	}
 
 	span.views-field-title,
@@ -1113,6 +1117,14 @@
 		.content > h2
 		{
 			display: none;
+		}
+	}
+}
+
+.page-exited-learners {
+	.view-filters {
+		#edit-combine-wrapper {
+			clear: left;	
 		}
 	}
 }
