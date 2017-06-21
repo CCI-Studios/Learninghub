@@ -197,12 +197,23 @@
 }
 
 
-#block-block-7 h1:before
-{
-	content: url(../images/gear-icon.png);
-	display: inline-block;
-	padding-right: 15px;
-	vertical-align: middle;
+#block-block-7 
+{	
+	text-align: center;
+	padding-bottom: 0px;
+
+	p {
+		position: absolute;
+		bottom: -10px;
+		width: 100%;
+	}
+	h1:before{
+		content: url(../images/gear-icon.png);
+		display: inline-block;
+		padding-right: 15px;
+		vertical-align: middle;
+	}
+	
 }
 
 #block-block-8

@@ -311,6 +311,10 @@ a:visited {
 .not-logged-in .group-admin-info {
   display: none; }
 
+.not-front.not-logged-in.page-user .region-content {
+  position: relative;
+  padding-bottom: 30px; }
+
 #login {
   padding-right: 14px;
   font-weight: 600;
@@ -798,11 +802,18 @@ ul.secondary {
   #block-block-8 h1 {
     padding-bottom: 20px; }
 
-#block-block-7 h1:before {
-  content: url(../images/gear-icon.png);
-  display: inline-block;
-  padding-right: 15px;
-  vertical-align: middle; }
+#block-block-7 {
+  text-align: center;
+  padding-bottom: 0px; }
+  #block-block-7 p {
+    position: absolute;
+    bottom: -10px;
+    width: 100%; }
+  #block-block-7 h1:before {
+    content: url(../images/gear-icon.png);
+    display: inline-block;
+    padding-right: 15px;
+    vertical-align: middle; }
 
 #block-block-8 {
   padding-top: 0px; }
@@ -1552,7 +1563,8 @@ fieldset.date-combo .container-inline-date .date-padding {
 .heading-info-container h3 {
   display: inline-block;
   width: 50%;
-  padding-bottom: 10px; }
+  padding-bottom: 2px;
+  font-size: 22px; }
   .heading-info-container h3 span {
     color: black; }
 
@@ -1589,6 +1601,9 @@ fieldset.date-combo .container-inline-date .date-padding {
 
 .portal-username {
   color: black; }
+
+#edit-profile-exit-information-field-self-reported-learner-week {
+  display: block !important; }
 
 .view-learners-list,
 .view-portal-export,
@@ -2299,7 +2314,8 @@ fieldset.date-combo .container-inline-date .date-padding {
         color: white !important;
         background: #f28d1e; }
 
-.page-node-349167 #block-block-8 .content > h2 {
+.page-node-349167 #block-block-8 .content > h2,
+.page-node-360450 #block-block-8 .content > h2 {
   display: none; }
 
 .page-exited-learners .view-filters #edit-combine-wrapper {

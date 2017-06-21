@@ -702,15 +702,16 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 								}
 								$currentYearFiscalEnd = strtotime('31 March' );
 								$lastYearFiscalStart = strtotime('1 April last year');
-								$nextYearFiscalEnd = strtotime('31 March next year');
+								$nextYearFiscalEnd = strtotime('31 March next year'); 
 								$current = strtotime('now');
+								$lastToLastYear = strtotime('-2 year 1 April');
 								if($current < $currentYearFiscalEnd) {
-									if($date1 < $currentYearFiscalEnd && $date1 > $lastYearFiscalStart)
+									if($date1 < $lastYearFiscalStart && $date1 > $lastToLastYear)
 									{	
 										array_push($activities_completed_fiscal, $node->field_milestone1['und'][0]['value']);
 									}
 								} elseif ($current > $currentYearFiscalEnd) {
-									if($date1 < $nextYearFiscalEnd && $date1 > $currentYearFiscalEnd)
+									if($date1 < $currentYearFiscalEnd && $date1 > $lastYearFiscalStart)
 									{	
 										array_push($activities_completed_fiscal, $node->field_milestone1['und'][0]['value']);
 									}

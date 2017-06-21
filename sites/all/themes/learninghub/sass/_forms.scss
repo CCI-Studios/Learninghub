@@ -1282,6 +1282,11 @@ fieldset.date-combo .container-inline-date .date-padding
 
 }
 
+.page-user-edit {
+	.form-actions {
+		//display: inline-block;
+	}
+}
 
 .heading-info-container
 {
@@ -1289,7 +1294,8 @@ fieldset.date-combo .container-inline-date .date-padding
 
 		display: inline-block;
 		width: 50%;
-		padding-bottom: 10px;
+	    padding-bottom: 2px;
+   		font-size: 22px;
 
 		span {
 			color: black;
@@ -1347,4 +1353,8 @@ fieldset.date-combo .container-inline-date .date-padding
 
 .portal-username {
 	color: black;
+}
+
+#edit-profile-exit-information-field-self-reported-learner-week {
+	display: block!important;
 }

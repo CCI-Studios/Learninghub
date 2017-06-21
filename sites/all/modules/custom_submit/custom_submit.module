@@ -41,8 +41,8 @@ function custom_submit_send($nid, $body, $existingUser, $profiles_plan_content, 
  
 }
 
-function custom_submit_send_admin($nid, $body, $profiles_plan_content, $radio_time, $prac_mail) {
-  $email_content = get_mail_content_admin($nid, $body, $profiles_plan_content, $radio_time);
+function custom_submit_send_admin($nid, $body, $profiles_plan_content, $radio_time, $prac_mail, $change_type) {
+  $email_content = get_mail_content_admin($nid, $body, $profiles_plan_content, $radio_time, $change_type);
 
   if($prac_mail == 'NA')
   {
@@ -126,7 +126,7 @@ function get_mail_content($nid, $bodyContent, $existingUser, $profiles_plan_cont
   return $body;
 }
 
-function get_mail_content_admin($nid, $bodyContent, $profiles_plan_content, $radio_time) {
+function get_mail_content_admin($nid, $bodyContent, $profiles_plan_content, $radio_time, $change_type) {
   
   if(isset($nid->field_time['und']))
   {		
@@ -137,9 +137,15 @@ function get_mail_content_admin($nid, $bodyContent, $profiles_plan_content, $rad
   	$date_start = '';
   }
 
+  if($change_type == 'Add course') {
+  	$change_message = 'added';
+  } else {
+  	$change_message = 'removed';
+  }
+
   $body = '';
   $body .= 'Hi, <br>';
-  $body .= 	$profiles_plan_content->field_first_name['und'][0]['value'].' '.$profiles_plan_content->field_last_name['und'][0]['value'].' has made changes to the course <br>';
+  $body .= 	$profiles_plan_content->field_first_name['und'][0]['value'].' '.$profiles_plan_content->field_last_name['und'][0]['value'].' has '.$change_message.' the course <br>';
   $body .=  '<h1>'.$nid->title.'</h1><p>'.$date_start.'</p><p>'. $bodyContent . '</p>';
   $body .= '<p>Thanks</p>';
   $body .= 'LearningHUB Team';
@@ -348,7 +354,7 @@ function submit_value($arg){
 		user_save($existing);
 
         custom_submit_send($nid, $body, $existingUser, $profiles_plan_content, $radio_time);
-        custom_submit_send_admin($nid, $body, $profiles_plan_content, $radio_time,$prac_mail);
+        custom_submit_send_admin($nid, $body, $profiles_plan_content, $radio_time,$prac_mail, $_POST['buttonValue']);
 
         if(in_array('learner', $user->roles))
         {
@@ -417,6 +423,9 @@ function submit_value($arg){
 		node_save($nid);
 		user_save($existing);
         drupal_set_message("This Course has been removed from list.");
+
+        custom_submit_send($nid, $body, $existingUser, $profiles_plan_content, $radio_time);
+        custom_submit_send_admin($nid, $body, $profiles_plan_content, $radio_time,$prac_mail,$_POST['buttonValue']);
 
         if(in_array('learner', $user->roles))
         {

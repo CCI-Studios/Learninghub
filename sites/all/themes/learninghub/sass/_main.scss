@@ -387,6 +387,13 @@ a:visited
 	display: none;
 }
 
+.not-front.not-logged-in.page-user{
+	.region-content {
+		position: relative;
+		padding-bottom: 30px;
+	}
+}
+
 #login
 {
 	padding-right: 14px;
