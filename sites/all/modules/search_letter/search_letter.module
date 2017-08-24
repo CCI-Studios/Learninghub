@@ -1,73 +1,59 @@
 <?php 
 
-function search_letter_form_alter(&$form, $form_state, $form_id)
+function search_letter_form_views_exposed_form_alter(&$form, $form_state, $form_id)
 {
-	if ($form_id == 'views_exposed_form') {
-
 		$view = $form_state['view'];
-        if ($view->name == 'learners_list') {
+		if ($view->name == 'learners_list') {
+				foreach (range('a','z') as $letter) {
+						$letters[$letter] = strtoupper($letter);
+				}
 
-		    foreach (range('a','z') as $letter) {
-		    	$letters[$letter] = strtoupper($letter);
-		    }
+				if(!function_exists('get_value_options')) {
+						function get_value_options() {
+								$query = 'SELECT DISTINCT(ur.uid) 
+								FROM {users_roles} AS ur
+								WHERE ur.rid IN (:rids)';
+								$result = db_query($query, array(':rids' => array(5)));
 
-		    if(!function_exists('get_value_options'))
-		    {
-		    	function get_value_options() {
+								$uids = $result->fetchCol();
 
-			    $query = 'SELECT DISTINCT(ur.uid) 
-			      FROM {users_roles} AS ur
-			      WHERE ur.rid IN (:rids)';
-			    $result = db_query($query, array(':rids' => array(5)));
+								$users_list = user_load_multiple($uids);
 
-			    $uids = $result->fetchCol();
+								foreach ($users_list as $user) {
+										$users[$user->uid] = $user->name;
+								}
 
-			    $users_list = user_load_multiple($uids);
-			   // $users_list = entity_load('user');
+								// We don't need Guest user here, so remove it.
+								unset($users[0]);
 
-			    foreach ($users_list as $user) {
+								// Sort by username.
+								natsort($users);
 
-			     
-			        $users[$user->uid] = $user->name;
-			   
-			    }
+								return $users;
+						}
+				}
 
-			    // We don't need Guest user here, so remove it.
-			    unset($users[0]);
-
-			    // Sort by username.
-			    natsort($users);
-
-			    return $users;
-			  }
-		    }
-		      
-      		$dropdown_array[''] = '-- Any --';
-		 	$dropdown_array += get_value_options();
-	     	$letters[''] = 'All';
+				$dropdown_array[''] = '-- Any --';
+				$dropdown_array += get_value_options();
+				$letters[''] = 'All';
 
 
-		    $form['field_last_name_value'] += array(
-		        '#type' => 'select',
-		        '#theme' => 'select_as_links',
-		        '#size' => '',	
-		        '#default_value' => 'null',
-		        '#options' => $letters,
-		    );
+				$form['field_last_name_value'] += array(
+						'#type' => 'select',
+						'#theme' => 'select_as_links',
+						'#size' => '',	
+						'#default_value' => 'null',
+						'#options' => $letters,
+				);
 
-		    global $user;
-		     if(!in_array('practitioner', $user->roles))
-		     {
-		     		 $form['field_practitioner1_target_id'] = array(
-			        '#type' => 'select',
-			        '#size' => '',	
-			        '#default_value' => '',
-			        '#options' => $dropdown_array,
-			    );
-		     }
-
-		 	
-
-        }
-  }
+				global $user;
+				if(!in_array('practitioner', $user->roles)) {
+					$form['field_practitioner1_target_id'] = array(
+						'#type' => 'select',
+						'#size' => '',	
+						'#default_value' => '',
+						'#options' => $dropdown_array,
+					);
+				}
+		}
 }	
