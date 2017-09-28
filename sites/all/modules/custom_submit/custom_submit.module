@@ -284,39 +284,32 @@ function submit_value($arg){
 		}
 		else if(in_array_r($nid->nid, $existing->field_courses_4) == false)
 		{	
-			$count = 0;
+			$count_live = 0;
 			$count_anytime = 0;
 			
 			foreach ($existing->field_courses_4['und'] as $key => $value) {
 				$flag_time = 0;
 				$c_id = node_load($value['target_id']);
-				
-				if(isset($c_id->field_time['und']))
-				{
-					foreach ($c_id->field_time['und'] as $key => $value) {
-						
-						$user_tz = new DateTimeZone('America/Toronto');  
-						$offset = $user_tz->getOffset(new DateTime($value['value']));
-						$start_stamp = strtotime($value['value']) + $offset;
-			 	  		$time = format_date($start_stamp, 'custom', 'd/m/y h:i a');
-			
-			 	  		if(time() < $start_stamp)
-			 	  		{	
-							$flag_time++;
-			 	  		}
-							
-					}
-			
-				 	if($c_id->type == 'courses_live' && $flag_time > 0)
-				 	{
-					 	$count++;
-				 	}
-				}
 
-				if($c_id->type != 'courses_live')
-			 	{	
-				 	$count_anytime++;
-			 	}
+				if($c_id->type == 'courses_live')
+			 	{
+					 $time = "";
+					 foreach ($existing->field_courses_live['und'] as $live_course) {
+						$values = explode(",", $live_course['value']);
+						$course_id = (int)$values[0];
+						$chosen_time = $values[1];
+						if ($course_id == $c_id->nid) {
+							$format = "d/m/y h:i a";
+							$dateobj = DateTime::createFromFormat($format, $chosen_time);
+							if ($dateobj > new DateTime("now")) {
+								$count_live++;
+							}
+							break;
+						}
+					 }
+			 	} else {
+					$count_anytime++;
+				}
 			}
 		
 			$target_id = array('target_id' => $nid->nid);
@@ -336,7 +329,7 @@ function submit_value($arg){
 			}	
 			else if($nid->type=='courses_live')
 			{	
-				if($count < 5)
+				if($count_live < 5)
 				{
 					array_push($existing->field_courses_4['und'],$target_id);
 				}
