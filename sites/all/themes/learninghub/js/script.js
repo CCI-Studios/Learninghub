@@ -22,7 +22,14 @@
 
 	 	})
 
-	    $('.view-learner-plan .views-row').click(function(){
+		//show/hide the learner plan sections in Plan Content on click
+	    $('.view-learner-plan .views-row').click(function(e){
+			if(getSelection().toString().length > 0 && e.target.contains(getSelection().anchorNode)) {
+				//if the user selected text inside the plan content
+				//then don't close the learner plan section
+				return;
+			}
+
 	        $(this).find('.field-name-field-activity').slideToggle();
 	        $('.view-learner-plan .field-name-field-activity').not($(this).find('.field-name-field-activity')).slideUp();
 	        $('.view-learner-plan .views-row').not($(this)).removeClass('open');
