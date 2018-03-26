@@ -1,0 +1,37 @@
+<?php
+// $Id: readspeaker_hl.install,v 1.2 2011/02/01 10:49:09 rsp Exp $
+
+/**
+ * @file
+ * The install and uninstall code for the ReadSpeaker module.
+ *
+ * @ingroup ReadSpeaker
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * Set variables for ReadSpeaker module
+ */
+function readspeaker_hl_install() {
+  variable_set('readspeaker_accountid', '');
+  variable_set('readspeaker_langid', '');
+  variable_set('readspeaker_prefer_uk', FALSE);
+  variable_set('readspeaker_buttonstyle', FALSE);
+  variable_set('readspeaker_playerstyle', FALSE);
+  variable_set('readspeaker_nodes', array());
+}
+
+/**
+ * Implements hook_uninstall().
+ *
+ * Unset variables for ReadSpeaker module
+ */
+function readspeaker_hl_uninstall() {
+  variable_del('readspeaker_accountid');
+  variable_del('readspeaker_langid');
+  variable_del('readspeaker_prefer_uk');
+  variable_del('readspeaker_buttonstyle');
+  variable_del('readspeaker_playerstyle');
+  variable_del('readspeaker_nodes');
+}

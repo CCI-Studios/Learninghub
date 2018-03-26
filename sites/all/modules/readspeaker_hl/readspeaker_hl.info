@@ -1,0 +1,8 @@
+; $Id: readspeaker_hl.info,v 1.2 2011/02/01 10:49:09 rsp Exp $
+name = ReadSpeaker Highlighting
+description = Insert ReadSpeaker webReader to selected node types.
+version = 1.2
+package = Content
+core = 7.x
+php = 5.1.x
+configure = admin/config/content/readspeaker_hl
