@@ -375,6 +375,13 @@
 		right: 0px;
 		bottom: -65px;
 		z-index: 99;
+
+		.form-submit[disabled]
+		{
+			background-color: #d0d0d0;
+			cursor: not-allowed;
+			margin-right: 15px;
+		}
 	}
 }
 

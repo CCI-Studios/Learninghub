@@ -48,28 +48,29 @@ h1#page-title:before {
     padding-bottom: 20px; }
   #content ul {
     padding-left: 20px; }
-  #content .button,
-  #content .webform-submit,
-  #content .btn,
-  #content .form-actions .form-submit,
-  .form-actions #content .form-submit,
-  #content .group-referral .form-submit,
-  .group-referral #content .form-submit,
-  #content .form-submit-export,
-  #content #edit-actions input,
-  #edit-actions #content input,
-  #content .feed-icon a,
-  .feed-icon #content a,
-  #content .field-add-more-submit,
-  #content .view-learners-list .form-submit,
-  .view-learners-list #content .form-submit, #content .ief-form .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit, .ief-form #content .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit, #content .ief-form > .form-wrapper > .form-submit,
-  #content .ief-row-form .ief-form-row .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit,
-  .ief-row-form .ief-form-row #content .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit,
-  #content .ief-row-form .ief-form-row > .form-wrapper > .form-submit,
-  .ief-row-form #content .ief-form-row > .form-wrapper > .form-submit, #content .field-name-field-activity .ief-row-form .form-submit, .field-name-field-activity .ief-row-form #content .form-submit, #content .field-type-entityreference .ief-form > .fieldset-wrapper > .form-wrapper > .form-submit, .field-type-entityreference #content .ief-form > .fieldset-wrapper > .form-wrapper > .form-submit, #content .group-pg-notes .ief-row-form .form-submit, .group-pg-notes .ief-row-form #content .form-submit, #content .view-portal-export .view-filters .views-exposed-widget .form-submit, .view-portal-export .view-filters .views-exposed-widget #content .form-submit,
-  #content .view-portal-export1 .view-filters .views-exposed-widget .form-submit,
-  .view-portal-export1 .view-filters .views-exposed-widget #content .form-submit, #content .view-courses-list-content-view .view-filters .form-submit, .view-courses-list-content-view .view-filters #content .form-submit,
-  #content .view-live-courses-users .view-filters .form-submit,
+  #content .button, #content
+  .webform-submit, #content
+  .btn, #content
+  .form-actions .form-submit,
+  .form-actions #content .form-submit, #content
+  .group-referral .form-submit,
+  .group-referral #content .form-submit, #content
+  .form-submit-export, #content
+  #edit-actions input,
+  #edit-actions #content input, #content
+  .feed-icon a,
+  .feed-icon #content a, #content
+  .field-add-more-submit, #content
+  .view-learners-list .form-submit,
+  .view-learners-list #content .form-submit, #content .ief-form .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit, .ief-form #content .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit, #content
+  .ief-form > .form-wrapper > .form-submit, #content
+  .ief-row-form .ief-form-row .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit,
+  .ief-row-form .ief-form-row #content .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit, #content
+  .ief-row-form .ief-form-row > .form-wrapper > .form-submit,
+  .ief-row-form #content .ief-form-row > .form-wrapper > .form-submit, #content .field-name-field-activity .ief-row-form .form-submit, .field-name-field-activity .ief-row-form #content .form-submit, #content .field-type-entityreference .ief-form > .fieldset-wrapper > .form-wrapper > .form-submit, .field-type-entityreference #content .ief-form > .fieldset-wrapper > .form-wrapper > .form-submit, #content .group-pg-notes .ief-row-form .form-submit, .group-pg-notes .ief-row-form #content .form-submit, #content .view-portal-export .view-filters .views-exposed-widget .form-submit, .view-portal-export .view-filters .views-exposed-widget #content .form-submit, #content
+  .view-portal-export1 .view-filters .views-exposed-widget .form-submit,
+  .view-portal-export1 .view-filters .views-exposed-widget #content .form-submit, #content .view-courses-list-content-view .view-filters .form-submit, .view-courses-list-content-view .view-filters #content .form-submit, #content
+  .view-live-courses-users .view-filters .form-submit,
   .view-live-courses-users .view-filters #content .form-submit {
     text-decoration: none; }
 
@@ -135,7 +136,8 @@ h1, h2, h3, h4 {
 #edit-actions input,
 .feed-icon a,
 .field-add-more-submit,
-.view-learners-list .form-submit, .ief-form .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit, .ief-form > .form-wrapper > .form-submit,
+.view-learners-list .form-submit, .ief-form .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit,
+.ief-form > .form-wrapper > .form-submit,
 .ief-row-form .ief-form-row .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit,
 .ief-row-form .ief-form-row > .form-wrapper > .form-submit, .field-name-field-activity .ief-row-form .form-submit, .field-type-entityreference .ief-form > .fieldset-wrapper > .form-wrapper > .form-submit, .group-pg-notes .ief-row-form .form-submit, .view-portal-export .view-filters .views-exposed-widget .form-submit,
 .view-portal-export1 .view-filters .views-exposed-widget .form-submit, .view-courses-list-content-view .view-filters .form-submit,
@@ -164,7 +166,8 @@ h1, h2, h3, h4 {
 #edit-actions input,
 .feed-icon a,
 .field-add-more-submit,
-.view-learners-list .form-submit, .ief-form .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit, .ief-form > .form-wrapper > .form-submit,
+.view-learners-list .form-submit, .ief-form .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit,
+.ief-form > .form-wrapper > .form-submit,
 .ief-row-form .ief-form-row .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit,
 .ief-row-form .ief-form-row > .form-wrapper > .form-submit, .field-name-field-activity .ief-row-form .form-submit, .field-type-entityreference .ief-form > .fieldset-wrapper > .form-wrapper > .form-submit, .group-pg-notes .ief-row-form .form-submit, .view-portal-export .view-filters .views-exposed-widget .form-submit,
 .view-portal-export1 .view-filters .views-exposed-widget .form-submit, .view-courses-list-content-view .view-filters .form-submit,
@@ -231,6 +234,7 @@ a:visited {
 
 .front #navigation > div {
   position: relative; }
+
 .front #navigation li {
   padding: 0.2em 10px; }
 
@@ -336,6 +340,7 @@ a:visited {
 
 #social-block-2 #fb {
   background: url(../images/fb.png) no-repeat; }
+
 #social-block-2 #twitter {
   background: url(../images/twitter.png) no-repeat; }
 
@@ -421,6 +426,7 @@ ul.indicators {
   height: 300px;
   background-size: cover;
   overflow: hidden; }
+
 .page-faq #block-system-main a,
 .page-what-you-need #block-system-main a,
 .page-learner-stories #block-system-main a {
@@ -436,11 +442,13 @@ ul.indicators {
 .not-logged-in.page-learner:not(.page-learner-register) #page-title,
 #block-user-login #page-title {
   display: none; }
+
 .not-logged-in.page-user:not(.page-user-register) #content,
 .not-logged-in.page-learner:not(.page-learner-register) #content,
 #block-user-login #content {
   max-width: inherit;
   padding: 0px; }
+
 .not-logged-in.page-user:not(.page-user-register) #block-block-8,
 .not-logged-in.page-user:not(.page-user-register) #block-system-main,
 .not-logged-in.page-learner:not(.page-learner-register) #block-block-8,
@@ -449,12 +457,14 @@ ul.indicators {
 #block-user-login #block-system-main {
   width: 50%;
   float: left; }
+
 .not-logged-in.page-user:not(.page-user-register) #block-block-8 .content,
 .not-logged-in.page-learner:not(.page-learner-register) #block-block-8 .content,
 #block-user-login #block-block-8 .content {
   border: 3px solid #f28d1e;
   margin: 0 20px;
   padding: 21px 15px; }
+
 .not-logged-in.page-user:not(.page-user-register) .region-content,
 .not-logged-in.page-learner:not(.page-learner-register) .region-content,
 #block-user-login .region-content {
@@ -463,10 +473,12 @@ ul.indicators {
   padding-top: 40px;
   overflow: hidden;
   margin-bottom: 40px; }
+
 .not-logged-in.page-user:not(.page-user-register) #widgets,
 .not-logged-in.page-learner:not(.page-learner-register) #widgets,
 #block-user-login #widgets {
   clear: left; }
+
 .not-logged-in.page-user:not(.page-user-register) #block-system-main,
 .not-logged-in.page-user:not(.page-user-register) #user-login-form,
 .not-logged-in.page-learner:not(.page-learner-register) #block-system-main,
@@ -480,8 +492,10 @@ ul.indicators {
 
 .not-logged-in.page-user.page-user-logout #page-title {
   display: block; }
+
 .not-logged-in.page-user.page-user-logout #content {
   padding: 30px 10px; }
+
 .not-logged-in.page-user.page-user-logout #block-system-main {
   background-color: white;
   background-image: none; }
@@ -494,6 +508,7 @@ ul.indicators {
 
 .page-node-2 #page-title {
   margin-top: 80px; }
+
 .page-node-2 #content {
   padding-top: 0px; }
 
@@ -584,9 +599,11 @@ ul.secondary {
 
 #site-map ul li {
   list-style: none; }
+
 #site-map a.active {
   color: #f28d1e;
   text-decoration: underline; }
+
 #site-map li.expanded > a {
   position: relative;
   background: url(../images/polygon.png) no-repeat;
@@ -628,6 +645,7 @@ ul.secondary {
 .logged-in.page-learner-plan .region-content {
   position: relative;
   margin-top: 70px; }
+
 .logged-in.page-learner-plan #view-courses {
   position: absolute;
   top: -75px;
@@ -667,28 +685,29 @@ ul.secondary {
     content: url(../images/gear-icon.png);
     display: block;
     padding-bottom: 35px; }
-  #block-imageblock-1 .button,
-  #block-imageblock-1 .webform-submit,
-  #block-imageblock-1 .btn,
-  #block-imageblock-1 .form-actions .form-submit,
-  .form-actions #block-imageblock-1 .form-submit,
-  #block-imageblock-1 .group-referral .form-submit,
-  .group-referral #block-imageblock-1 .form-submit,
-  #block-imageblock-1 .form-submit-export,
-  #block-imageblock-1 #edit-actions input,
-  #edit-actions #block-imageblock-1 input,
-  #block-imageblock-1 .feed-icon a,
-  .feed-icon #block-imageblock-1 a,
-  #block-imageblock-1 .field-add-more-submit,
-  #block-imageblock-1 .view-learners-list .form-submit,
-  .view-learners-list #block-imageblock-1 .form-submit, #block-imageblock-1 .ief-form .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit, .ief-form #block-imageblock-1 .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit, #block-imageblock-1 .ief-form > .form-wrapper > .form-submit,
-  #block-imageblock-1 .ief-row-form .ief-form-row .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit,
-  .ief-row-form .ief-form-row #block-imageblock-1 .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit,
-  #block-imageblock-1 .ief-row-form .ief-form-row > .form-wrapper > .form-submit,
-  .ief-row-form #block-imageblock-1 .ief-form-row > .form-wrapper > .form-submit, #block-imageblock-1 .field-name-field-activity .ief-row-form .form-submit, .field-name-field-activity .ief-row-form #block-imageblock-1 .form-submit, #block-imageblock-1 .field-type-entityreference .ief-form > .fieldset-wrapper > .form-wrapper > .form-submit, .field-type-entityreference #block-imageblock-1 .ief-form > .fieldset-wrapper > .form-wrapper > .form-submit, #block-imageblock-1 .group-pg-notes .ief-row-form .form-submit, .group-pg-notes .ief-row-form #block-imageblock-1 .form-submit, #block-imageblock-1 .view-portal-export .view-filters .views-exposed-widget .form-submit, .view-portal-export .view-filters .views-exposed-widget #block-imageblock-1 .form-submit,
-  #block-imageblock-1 .view-portal-export1 .view-filters .views-exposed-widget .form-submit,
-  .view-portal-export1 .view-filters .views-exposed-widget #block-imageblock-1 .form-submit, #block-imageblock-1 .view-courses-list-content-view .view-filters .form-submit, .view-courses-list-content-view .view-filters #block-imageblock-1 .form-submit,
-  #block-imageblock-1 .view-live-courses-users .view-filters .form-submit,
+  #block-imageblock-1 .button, #block-imageblock-1
+  .webform-submit, #block-imageblock-1
+  .btn, #block-imageblock-1
+  .form-actions .form-submit,
+  .form-actions #block-imageblock-1 .form-submit, #block-imageblock-1
+  .group-referral .form-submit,
+  .group-referral #block-imageblock-1 .form-submit, #block-imageblock-1
+  .form-submit-export, #block-imageblock-1
+  #edit-actions input,
+  #edit-actions #block-imageblock-1 input, #block-imageblock-1
+  .feed-icon a,
+  .feed-icon #block-imageblock-1 a, #block-imageblock-1
+  .field-add-more-submit, #block-imageblock-1
+  .view-learners-list .form-submit,
+  .view-learners-list #block-imageblock-1 .form-submit, #block-imageblock-1 .ief-form .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit, .ief-form #block-imageblock-1 .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit, #block-imageblock-1
+  .ief-form > .form-wrapper > .form-submit, #block-imageblock-1
+  .ief-row-form .ief-form-row .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit,
+  .ief-row-form .ief-form-row #block-imageblock-1 .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit, #block-imageblock-1
+  .ief-row-form .ief-form-row > .form-wrapper > .form-submit,
+  .ief-row-form #block-imageblock-1 .ief-form-row > .form-wrapper > .form-submit, #block-imageblock-1 .field-name-field-activity .ief-row-form .form-submit, .field-name-field-activity .ief-row-form #block-imageblock-1 .form-submit, #block-imageblock-1 .field-type-entityreference .ief-form > .fieldset-wrapper > .form-wrapper > .form-submit, .field-type-entityreference #block-imageblock-1 .ief-form > .fieldset-wrapper > .form-wrapper > .form-submit, #block-imageblock-1 .group-pg-notes .ief-row-form .form-submit, .group-pg-notes .ief-row-form #block-imageblock-1 .form-submit, #block-imageblock-1 .view-portal-export .view-filters .views-exposed-widget .form-submit, .view-portal-export .view-filters .views-exposed-widget #block-imageblock-1 .form-submit, #block-imageblock-1
+  .view-portal-export1 .view-filters .views-exposed-widget .form-submit,
+  .view-portal-export1 .view-filters .views-exposed-widget #block-imageblock-1 .form-submit, #block-imageblock-1 .view-courses-list-content-view .view-filters .form-submit, .view-courses-list-content-view .view-filters #block-imageblock-1 .form-submit, #block-imageblock-1
+  .view-live-courses-users .view-filters .form-submit,
   .view-live-courses-users .view-filters #block-imageblock-1 .form-submit {
     margin-top: 50px; }
 
@@ -705,28 +724,29 @@ ul.secondary {
     content: url(../images/gear-icon.png);
     display: block;
     padding-bottom: 35px; }
-  #block-block-2 .button,
-  #block-block-2 .webform-submit,
-  #block-block-2 .btn,
-  #block-block-2 .form-actions .form-submit,
-  .form-actions #block-block-2 .form-submit,
-  #block-block-2 .group-referral .form-submit,
-  .group-referral #block-block-2 .form-submit,
-  #block-block-2 .form-submit-export,
-  #block-block-2 #edit-actions input,
-  #edit-actions #block-block-2 input,
-  #block-block-2 .feed-icon a,
-  .feed-icon #block-block-2 a,
-  #block-block-2 .field-add-more-submit,
-  #block-block-2 .view-learners-list .form-submit,
-  .view-learners-list #block-block-2 .form-submit, #block-block-2 .ief-form .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit, .ief-form #block-block-2 .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit, #block-block-2 .ief-form > .form-wrapper > .form-submit,
-  #block-block-2 .ief-row-form .ief-form-row .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit,
-  .ief-row-form .ief-form-row #block-block-2 .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit,
-  #block-block-2 .ief-row-form .ief-form-row > .form-wrapper > .form-submit,
-  .ief-row-form #block-block-2 .ief-form-row > .form-wrapper > .form-submit, #block-block-2 .field-name-field-activity .ief-row-form .form-submit, .field-name-field-activity .ief-row-form #block-block-2 .form-submit, #block-block-2 .field-type-entityreference .ief-form > .fieldset-wrapper > .form-wrapper > .form-submit, .field-type-entityreference #block-block-2 .ief-form > .fieldset-wrapper > .form-wrapper > .form-submit, #block-block-2 .group-pg-notes .ief-row-form .form-submit, .group-pg-notes .ief-row-form #block-block-2 .form-submit, #block-block-2 .view-portal-export .view-filters .views-exposed-widget .form-submit, .view-portal-export .view-filters .views-exposed-widget #block-block-2 .form-submit,
-  #block-block-2 .view-portal-export1 .view-filters .views-exposed-widget .form-submit,
-  .view-portal-export1 .view-filters .views-exposed-widget #block-block-2 .form-submit, #block-block-2 .view-courses-list-content-view .view-filters .form-submit, .view-courses-list-content-view .view-filters #block-block-2 .form-submit,
-  #block-block-2 .view-live-courses-users .view-filters .form-submit,
+  #block-block-2 .button, #block-block-2
+  .webform-submit, #block-block-2
+  .btn, #block-block-2
+  .form-actions .form-submit,
+  .form-actions #block-block-2 .form-submit, #block-block-2
+  .group-referral .form-submit,
+  .group-referral #block-block-2 .form-submit, #block-block-2
+  .form-submit-export, #block-block-2
+  #edit-actions input,
+  #edit-actions #block-block-2 input, #block-block-2
+  .feed-icon a,
+  .feed-icon #block-block-2 a, #block-block-2
+  .field-add-more-submit, #block-block-2
+  .view-learners-list .form-submit,
+  .view-learners-list #block-block-2 .form-submit, #block-block-2 .ief-form .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit, .ief-form #block-block-2 .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit, #block-block-2
+  .ief-form > .form-wrapper > .form-submit, #block-block-2
+  .ief-row-form .ief-form-row .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit,
+  .ief-row-form .ief-form-row #block-block-2 .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit, #block-block-2
+  .ief-row-form .ief-form-row > .form-wrapper > .form-submit,
+  .ief-row-form #block-block-2 .ief-form-row > .form-wrapper > .form-submit, #block-block-2 .field-name-field-activity .ief-row-form .form-submit, .field-name-field-activity .ief-row-form #block-block-2 .form-submit, #block-block-2 .field-type-entityreference .ief-form > .fieldset-wrapper > .form-wrapper > .form-submit, .field-type-entityreference #block-block-2 .ief-form > .fieldset-wrapper > .form-wrapper > .form-submit, #block-block-2 .group-pg-notes .ief-row-form .form-submit, .group-pg-notes .ief-row-form #block-block-2 .form-submit, #block-block-2 .view-portal-export .view-filters .views-exposed-widget .form-submit, .view-portal-export .view-filters .views-exposed-widget #block-block-2 .form-submit, #block-block-2
+  .view-portal-export1 .view-filters .views-exposed-widget .form-submit,
+  .view-portal-export1 .view-filters .views-exposed-widget #block-block-2 .form-submit, #block-block-2 .view-courses-list-content-view .view-filters .form-submit, .view-courses-list-content-view .view-filters #block-block-2 .form-submit, #block-block-2
+  .view-live-courses-users .view-filters .form-submit,
   .view-live-courses-users .view-filters #block-block-2 .form-submit {
     margin-top: 50px; }
 
@@ -882,31 +902,40 @@ ul.secondary {
   display: inline-block;
   vertical-align: bottom;
   margin-right: 20px; }
+
 #user-register-form .form-item-profile-learner-profile-field-agree-und-Agree label.option,
 #user-profile-form .form-item-profile-learner-profile-field-agree-und-Agree label.option {
   text-transform: inherit; }
+
 #user-register-form .form-type-markup,
 #user-profile-form .form-type-markup {
   margin-bottom: 20px; }
 
 #user-profile-form .form-wrapper, #user-profile-form p, #user-profile-form input {
   color: black; }
+
 #user-profile-form #edit-account {
   width: 100%; }
   #user-profile-form #edit-account input {
     width: auto; }
+
 #user-profile-form .field-group-div,
 #user-profile-form .milestone-head,
 #user-profile-form .registration-head {
   padding-bottom: 0px; }
+
 #user-profile-form .field-name-field-courses-4 select {
   height: 150px; }
+
 #user-profile-form .form-submit {
   margin: 0px 10px; }
+
 #user-profile-form .form-item {
   margin-top: 0px; }
+
 #user-profile-form .form-actions {
   margin-top: 0px; }
+
 #user-profile-form .field-type-multifield table {
   width: 100%; }
   #user-profile-form .field-type-multifield table tr {
@@ -915,20 +944,25 @@ ul.secondary {
     border-bottom: 1px solid #f28d1e; }
   #user-profile-form .field-type-multifield table td {
     padding: 20px 0px; }
+
 #user-profile-form .field-type-multifield .field-add-more-submit {
   margin-top: 10px; }
+
 #user-profile-form .field-type-multifield .tabledrag-toggle-weight-wrapper,
 #user-profile-form .field-type-multifield .field-multiple-drag {
   display: none; }
+
 #user-profile-form .field-type-multifield .form-actions {
   margin-top: 20px;
   text-align: left; }
+
 #user-profile-form .field-type-multifield .field-type-text,
 #user-profile-form .field-type-multifield .field-type-file {
   width: 45%;
   text-align: left;
   display: inline-block;
   vertical-align: middle; }
+
 #user-profile-form .field-type-multifield .form-managed-file {
   border: 1px solid #ccc;
   padding: 17px;
@@ -938,15 +972,20 @@ ul.secondary {
     position: absolute;
     left: 0;
     bottom: -25px; }
+
 #user-profile-form .field-type-multifield .field-type-file {
   position: relative; }
+
 #user-profile-form label.option {
   text-transform: lowercase; }
+
 #user-profile-form .group-referral thead,
 #user-profile-form .group-referral .tabledrag-toggle-weight-wrapper {
   display: none; }
+
 #user-profile-form .group-referral label.option {
   color: #7f7f7f; }
+
 #user-profile-form .view-filters #notes-search {
   padding: 5px 18px;
   border-radius: 15px;
@@ -954,8 +993,10 @@ ul.secondary {
   font-style: italic;
   background: url(../images/search-icon.png) no-repeat;
   background-position: 172px; }
+
 #user-profile-form .form-item .description {
   display: none; }
+
 #user-profile-form .wizard .field-group-div > h3 {
   padding-bottom: 20px; }
 
@@ -966,25 +1007,31 @@ ul.secondary {
   #user-register-form .field-type-datetime legend {
     padding-bottom: 10px;
     padding-right: 37px; }
+
 #user-profile-form .field-type-text input,
 #user-register-form .field-type-text input {
   width: 90%; }
+
 #user-profile-form .date-combo.form-wrapper .help-button,
 #user-register-form .date-combo.form-wrapper .help-button {
   display: none; }
+
 #user-profile-form .wizard > h3,
 #user-register-form .wizard > h3 {
   font-size: 45px;
   text-transform: lowercase; }
+
 #user-profile-form .wizard .field-group-div > h3,
 #user-register-form .wizard .field-group-div > h3 {
   font-size: 36px; }
+
 #user-profile-form .group-training .field-type-list-text,
 #user-profile-form .group-referral .field-type-list-text,
 #user-register-form .group-training .field-type-list-text,
 #user-register-form .group-referral .field-type-list-text {
   display: block;
   width: 100%; }
+
 #user-profile-form .field-name-field-where-will-you-be-working-,
 #user-register-form .field-name-field-where-will-you-be-working- {
   width: 100%; }
@@ -1047,6 +1094,10 @@ ul.secondary {
     right: 0px;
     bottom: -65px;
     z-index: 99; }
+    #user-register-form #edit-actions .form-submit[disabled] {
+      background-color: #d0d0d0;
+      cursor: not-allowed;
+      margin-right: 15px; }
 
 #edit-account input {
   width: 90%; }
@@ -1117,6 +1168,7 @@ textarea {
     margin-right: 15px; }
   #block-webform-client-block-1 .form-type-radio label.option {
     vertical-align: middle; }
+
 #block-webform-client-block-1 .webform-component-textarea + p {
   display: none; }
 
@@ -1222,12 +1274,15 @@ textarea {
   .ief-form .form-type-cshs > label,
   .ief-row-form .ief-form-row .form-type-cshs > label {
     display: none; }
-  .ief-form .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit, .ief-form > .form-wrapper > .form-submit,
+  .ief-form .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit,
+  .ief-form > .form-wrapper > .form-submit,
   .ief-row-form .ief-form-row .ief-form-bottom > .fieldset-wrapper > .form-wrapper > .form-submit,
   .ief-row-form .ief-form-row > .form-wrapper > .form-submit {
     margin-right: 20px; }
-  #user-profile-form .field-name-field-activity .ief-form .field-type-datetime, #user-profile-form .ief-form .field-type-datetime, #user-profile-form .field-name-field-activity
-  .ief-row-form .ief-form-row .field-type-datetime, #user-profile-form
+  #user-profile-form .field-name-field-activity .ief-form .field-type-datetime,
+  #user-profile-form .ief-form .field-type-datetime, #user-profile-form .field-name-field-activity
+  .ief-row-form .ief-form-row .field-type-datetime,
+  #user-profile-form
   .ief-row-form .ief-form-row .field-type-datetime {
     width: auto;
     padding: 0px; }
@@ -1276,8 +1331,10 @@ textarea {
 .field-name-field-learner-plan1 .tabledrag-toggle-weight,
 .field-name-field-learner-plan1 .ief-tabledrag-handle {
   display: none; }
+
 .field-name-field-learner-plan1 .exportButton {
   text-align: right; }
+
 .field-name-field-learner-plan1 .form-submit-export {
   margin-top: 20px; }
   .field-name-field-learner-plan1 .form-submit-export a {
@@ -1448,6 +1505,7 @@ textarea {
 
 #field-document-uploads-values .form-wrapper {
   margin: 10px 0px; }
+
 #field-document-uploads-values .form-actions {
   text-align: left;
   margin-top: 20px; }
@@ -1522,6 +1580,7 @@ fieldset.date-combo .container-inline-date .date-padding {
       padding-left: 32px; }
   #mailchimp-signup-subscribe-block-subscription-form .form-actions {
     margin-top: 144px; }
+
 @-moz-document url-prefix() {
   #mailchimp-signup-subscribe-block-subscription-form .form-actions {
     margin-top: 150px; } }
@@ -1546,8 +1605,10 @@ fieldset.date-combo .container-inline-date .date-padding {
   .page-user-edit-plan-content .field-name-field-doclinks.show,
   .page-user-edit-plan-content .old-referral .referral-container.show {
     display: block; }
+
 .page-user-edit-plan-content .collapsible h3 {
   font-size: 45px; }
+
 .page-user-edit-plan-content .field-group-div h3,
 .page-user-edit-plan-content .collapsable h2,
 .page-user-edit-plan-content .collapsible.collapsed h3 {
@@ -1555,6 +1616,7 @@ fieldset.date-combo .container-inline-date .date-padding {
   text-transform: lowercase;
   font-size: 28px;
   background: url(../images/polygon.png) no-repeat right; }
+
 .page-user-edit-plan-content .field-group-div h3.polygon-up,
 .page-user-edit-plan-content .collapsable h2.polygon-up,
 .page-user-edit-plan-content .collapsible h3 {
@@ -1582,8 +1644,10 @@ fieldset.date-combo .container-inline-date .date-padding {
 
 #edit-profile-plan-content-field-document-uploads tr td {
   position: relative; }
+
 #edit-profile-plan-content-field-document-uploads .field-name-field-document .form-submit {
   display: none; }
+
 #edit-profile-plan-content-field-document-uploads .form-actions {
   position: absolute;
   right: 0px;
@@ -1758,14 +1822,17 @@ fieldset.date-combo .container-inline-date .date-padding {
 .page-exited-learners .view-learners-list .view-filters,
 .page-learners-list-course-practitioner .view-learners-list .view-filters {
   top: -120px; }
+
 .page-learner-list-practitioner h1,
 .page-exited-learners h1,
 .page-learners-list-course-practitioner h1 {
   padding-bottom: 0px; }
+
 .page-learner-list-practitioner .views-exposed-widget.views-widget-filter-combine,
 .page-exited-learners .views-exposed-widget.views-widget-filter-combine,
 .page-learners-list-course-practitioner .views-exposed-widget.views-widget-filter-combine {
   margin-right: 20px; }
+
 .page-learner-list-practitioner .views-submit-button,
 .page-exited-learners .views-submit-button,
 .page-learners-list-course-practitioner .views-submit-button {
@@ -1782,9 +1849,11 @@ fieldset.date-combo .container-inline-date .date-padding {
 .view-portal-export1 #header-label span,
 .view-portal-export1 #header-label1 span {
   margin-top: 0px; }
+
 .view-portal-export .view-header,
 .view-portal-export1 .view-header {
   margin-top: 140px; }
+
 .view-portal-export .view-filters,
 .view-portal-export1 .view-filters {
   top: -82px;
@@ -1801,18 +1870,22 @@ fieldset.date-combo .container-inline-date .date-padding {
       cursor: pointer;
       margin-top: 15px;
       min-width: 150px; }
+
 .view-portal-export .container-inline-date .form-item input,
 .view-portal-export1 .container-inline-date .form-item input {
   width: 77%;
   border-radius: 3px;
   height: 30px;
   padding: 0; }
+
 .view-portal-export .edit-rid-wrapper,
 .view-portal-export1 .edit-rid-wrapper {
   margin: 0 20px; }
+
 .view-portal-export .feed-icon,
 .view-portal-export1 .feed-icon {
   margin-top: 20px; }
+
 .view-portal-export .views-widget-filter-field_program_start_date_value,
 .view-portal-export .views-widget-filter-created,
 .view-portal-export1 .views-widget-filter-field_program_start_date_value,
@@ -1847,11 +1920,13 @@ fieldset.date-combo .container-inline-date .date-padding {
     display: inline-block;
     width: 25%;
     font-weight: bold; }
+
 .view-learner-plan .view-footer {
   text-align: center;
   margin-top: 100px; }
   .view-learner-plan .view-footer h3 a {
     text-decoration: underline; }
+
 .view-learner-plan .feed-icon {
   text-align: right;
   margin-top: 40px; }
@@ -1860,6 +1935,7 @@ fieldset.date-combo .container-inline-date .date-padding {
     vertical-align: middle;
     padding-right: 8px;
     display: inline-block; }
+
 .view-learner-plan .view-content {
   position: relative; }
   .view-learner-plan .view-content:before, .view-learner-plan .view-content:after {
@@ -1872,16 +1948,19 @@ fieldset.date-combo .container-inline-date .date-padding {
   .view-learner-plan .view-content:after {
     top: auto;
     bottom: -30px; }
+
 .view-learner-plan .view-header > h3 {
   font-size: 45px;
   text-align: center;
   margin: 20px 0px 0px; }
+
 .view-learner-plan .view-header #view-courses {
   float: left; }
   .view-learner-plan .view-header #view-courses a:first-child {
     margin-right: 40px; }
   .view-learner-plan .view-header #view-courses .learning-platform-links {
     margin-left: 40px; }
+
 .view-learner-plan .view-header #expand-table {
   text-align: right;
   margin-bottom: 30px; }
@@ -1890,30 +1969,39 @@ fieldset.date-combo .container-inline-date .date-padding {
     display: inline-block; }
   .view-learner-plan .view-header #expand-table a.hide {
     display: none; }
+
 .view-learner-plan .views-field-name {
   display: none; }
+
 .view-learner-plan .views-row {
   padding: 0px;
   background-image: url(../images/polygon-right.png);
   background-repeat: no-repeat;
   background-position: 20px 66px;
   border-bottom: 3px solid #f28d1e; }
+
 .view-learner-plan .views-field-field-learner-plan1,
 .view-learner-plan .views-field-description {
   padding: 0 40px; }
+
 .view-learner-plan .views-field-description {
   color: #f28d1e;
   width: 100% !important; }
+
 .view-learner-plan .views-row:last-child {
   border-bottom: 0px; }
+
 .view-learner-plan .views-row.open {
   background-image: url(../images/polygon.png) no-repeat;
   background-repeat: no-repeat; }
+
 .view-learner-plan .views-row-odd {
   background-color: #f0f9f8; }
+
 .view-learner-plan .node-competency > h2,
 .view-learner-plan .node-learning-activity > h2 {
   display: none; }
+
 .view-learner-plan .node-competency .content > div,
 .view-learner-plan .node-learning-activity .content > div {
   display: inline-block;
@@ -1940,6 +2028,7 @@ fieldset.date-combo .container-inline-date .date-padding {
       .view-learner-plan .node-competency .content > div.field-name-field-activity span:last-child,
       .view-learner-plan .node-learning-activity .content > div.field-name-field-activity span:last-child {
         width: 48%; }
+
 .view-learner-plan .node-learning-activity .content {
   padding: 10px; }
   .view-learner-plan .node-learning-activity .content > div {
@@ -1958,9 +2047,11 @@ fieldset.date-combo .container-inline-date .date-padding {
 .page-current-courses .view-courses-list-content-view .views-field-custom-submit-field .selected-time {
   color: #f28d1e;
   font-size: 18px; }
+
 .page-current-courses .view-courses-list-content-view .views-field-custom-submit-field form {
   position: relative;
   padding-left: 25px; }
+
 .page-current-courses .view-courses-list-content-view .views-field-custom-submit-field input {
   background: none;
   vertical-align: middle;
@@ -1982,12 +2073,14 @@ fieldset.date-combo .container-inline-date .date-padding {
 .view-learner-stories .views-row {
   border-top: 1px solid #ccc;
   position: relative; }
+
 .view-faq .views-field-body,
 .view-what-you-need .views-field-body,
 .view-using-learning-hub .views-field-body,
 .view-learner-stories .views-field-body {
   display: none;
   padding-left: 80px; }
+
 .view-faq .views-field-title,
 .view-what-you-need .views-field-title,
 .view-using-learning-hub .views-field-title,
@@ -2000,12 +2093,14 @@ fieldset.date-combo .container-inline-date .date-padding {
   background-position: center right;
   padding-left: 60px;
   cursor: pointer; }
+
 .view-faq .views-field-title.open,
 .view-what-you-need .views-field-title.open,
 .view-using-learning-hub .views-field-title.open,
 .view-learner-stories .views-field-title.open {
   background: url(../images/polygon-up.png) no-repeat;
   background-position: center right; }
+
 .view-faq .views-field-counter,
 .view-what-you-need .views-field-counter,
 .view-using-learning-hub .views-field-counter,
@@ -2076,6 +2171,7 @@ fieldset.date-combo .container-inline-date .date-padding {
   .view-live-courses-users .view-filters .form-submit {
     margin-left: 20px;
     display: none; }
+
 .view-courses-list-content-view span.views-field-title,
 .view-courses-list-content-view .views-field-title,
 .view-live-courses-users span.views-field-title,
@@ -2083,6 +2179,7 @@ fieldset.date-combo .container-inline-date .date-padding {
   color: #f28d1e;
   max-width: 83%;
   display: inline-block; }
+
 .view-courses-list-content-view .views-field-field-type-of-class-1 span,
 .view-courses-list-content-view .views-field-field-type-of-class-any span,
 .view-live-courses-users .views-field-field-type-of-class-1 span,
@@ -2092,22 +2189,26 @@ fieldset.date-combo .container-inline-date .date-padding {
   text-transform: capitalize;
   margin-right: 78px;
   display: inline-block; }
+
 .view-courses-list-content-view .views-field-field-time,
 .view-live-courses-users .views-field-field-time {
   color: #f28d1e;
   font-size: 18px;
   padding-bottom: 20px; }
+
 .view-courses-list-content-view .views-row,
 .view-live-courses-users .views-row {
   padding-bottom: 30px;
   margin-bottom: 30px;
   border-bottom: 1px solid #ccc;
   position: relative; }
+
 .view-courses-list-content-view .views-field-nothing,
 .view-live-courses-users .views-field-nothing {
   position: absolute;
   top: 0px;
   right: 0px; }
+
 .view-courses-list-content-view a.back-to-top,
 .view-live-courses-users a.back-to-top {
   font-size: 22px;
@@ -2116,9 +2217,11 @@ fieldset.date-combo .container-inline-date .date-padding {
   font-weight: bold;
   background: url(../images/polygon-green.png) no-repeat;
   background-position: center left; }
+
 .view-courses-list-content-view .view-header,
 .view-live-courses-users .view-header {
   margin-top: 40px; }
+
 .view-courses-list-content-view .views-field-custom-submit-field,
 .view-live-courses-users .views-field-custom-submit-field {
   position: relative; }
@@ -2142,6 +2245,7 @@ fieldset.date-combo .container-inline-date .date-padding {
 
 .view-live-courses-users .views-field-title {
   font-size: 32px; }
+
 .view-live-courses-users input[type="checkbox"] {
   float: left;
   margin: 5px 10px;
@@ -2265,51 +2369,53 @@ fieldset.date-combo .container-inline-date .date-padding {
       content: url(../images/white-gear.png);
       display: block;
       padding-bottom: 25px; }
-    #block-views-slideshow-block .views-field-body a.button,
-    #block-views-slideshow-block .views-field-body a.webform-submit,
-    #block-views-slideshow-block .views-field-body a.btn,
-    #block-views-slideshow-block .views-field-body .form-actions a.form-submit,
-    .form-actions #block-views-slideshow-block .views-field-body a.form-submit,
-    #block-views-slideshow-block .views-field-body .group-referral a.form-submit,
-    .group-referral #block-views-slideshow-block .views-field-body a.form-submit,
-    #block-views-slideshow-block .views-field-body a.form-submit-export,
-    #block-views-slideshow-block .views-field-body .feed-icon a,
-    .feed-icon #block-views-slideshow-block .views-field-body a,
-    #block-views-slideshow-block .views-field-body a.field-add-more-submit,
-    #block-views-slideshow-block .views-field-body .view-learners-list a.form-submit,
-    .view-learners-list #block-views-slideshow-block .views-field-body a.form-submit, #block-views-slideshow-block .views-field-body .ief-form .ief-form-bottom > .fieldset-wrapper > .form-wrapper > a.form-submit, .ief-form #block-views-slideshow-block .views-field-body .ief-form-bottom > .fieldset-wrapper > .form-wrapper > a.form-submit, #block-views-slideshow-block .views-field-body .ief-form > .form-wrapper > a.form-submit,
-    #block-views-slideshow-block .views-field-body .ief-row-form .ief-form-row .ief-form-bottom > .fieldset-wrapper > .form-wrapper > a.form-submit,
-    .ief-row-form .ief-form-row #block-views-slideshow-block .views-field-body .ief-form-bottom > .fieldset-wrapper > .form-wrapper > a.form-submit,
-    #block-views-slideshow-block .views-field-body .ief-row-form .ief-form-row > .form-wrapper > a.form-submit,
-    .ief-row-form #block-views-slideshow-block .views-field-body .ief-form-row > .form-wrapper > a.form-submit, #block-views-slideshow-block .views-field-body .field-name-field-activity .ief-row-form a.form-submit, .field-name-field-activity .ief-row-form #block-views-slideshow-block .views-field-body a.form-submit, #block-views-slideshow-block .views-field-body .field-type-entityreference .ief-form > .fieldset-wrapper > .form-wrapper > a.form-submit, .field-type-entityreference #block-views-slideshow-block .views-field-body .ief-form > .fieldset-wrapper > .form-wrapper > a.form-submit, #block-views-slideshow-block .views-field-body .group-pg-notes .ief-row-form a.form-submit, .group-pg-notes .ief-row-form #block-views-slideshow-block .views-field-body a.form-submit, #block-views-slideshow-block .views-field-body .view-portal-export .view-filters .views-exposed-widget a.form-submit, .view-portal-export .view-filters .views-exposed-widget #block-views-slideshow-block .views-field-body a.form-submit,
-    #block-views-slideshow-block .views-field-body .view-portal-export1 .view-filters .views-exposed-widget a.form-submit,
-    .view-portal-export1 .view-filters .views-exposed-widget #block-views-slideshow-block .views-field-body a.form-submit, #block-views-slideshow-block .views-field-body .view-courses-list-content-view .view-filters a.form-submit, .view-courses-list-content-view .view-filters #block-views-slideshow-block .views-field-body a.form-submit,
-    #block-views-slideshow-block .views-field-body .view-live-courses-users .view-filters a.form-submit,
+    #block-views-slideshow-block .views-field-body a.button, #block-views-slideshow-block .views-field-body
+    a.webform-submit, #block-views-slideshow-block .views-field-body
+    a.btn, #block-views-slideshow-block .views-field-body
+    .form-actions a.form-submit,
+    .form-actions #block-views-slideshow-block .views-field-body a.form-submit, #block-views-slideshow-block .views-field-body
+    .group-referral a.form-submit,
+    .group-referral #block-views-slideshow-block .views-field-body a.form-submit, #block-views-slideshow-block .views-field-body
+    a.form-submit-export, #block-views-slideshow-block .views-field-body
+    .feed-icon a,
+    .feed-icon #block-views-slideshow-block .views-field-body a, #block-views-slideshow-block .views-field-body
+    a.field-add-more-submit, #block-views-slideshow-block .views-field-body
+    .view-learners-list a.form-submit,
+    .view-learners-list #block-views-slideshow-block .views-field-body a.form-submit, #block-views-slideshow-block .views-field-body .ief-form .ief-form-bottom > .fieldset-wrapper > .form-wrapper > a.form-submit, .ief-form #block-views-slideshow-block .views-field-body .ief-form-bottom > .fieldset-wrapper > .form-wrapper > a.form-submit, #block-views-slideshow-block .views-field-body
+    .ief-form > .form-wrapper > a.form-submit, #block-views-slideshow-block .views-field-body
+    .ief-row-form .ief-form-row .ief-form-bottom > .fieldset-wrapper > .form-wrapper > a.form-submit,
+    .ief-row-form .ief-form-row #block-views-slideshow-block .views-field-body .ief-form-bottom > .fieldset-wrapper > .form-wrapper > a.form-submit, #block-views-slideshow-block .views-field-body
+    .ief-row-form .ief-form-row > .form-wrapper > a.form-submit,
+    .ief-row-form #block-views-slideshow-block .views-field-body .ief-form-row > .form-wrapper > a.form-submit, #block-views-slideshow-block .views-field-body .field-name-field-activity .ief-row-form a.form-submit, .field-name-field-activity .ief-row-form #block-views-slideshow-block .views-field-body a.form-submit, #block-views-slideshow-block .views-field-body .field-type-entityreference .ief-form > .fieldset-wrapper > .form-wrapper > a.form-submit, .field-type-entityreference #block-views-slideshow-block .views-field-body .ief-form > .fieldset-wrapper > .form-wrapper > a.form-submit, #block-views-slideshow-block .views-field-body .group-pg-notes .ief-row-form a.form-submit, .group-pg-notes .ief-row-form #block-views-slideshow-block .views-field-body a.form-submit, #block-views-slideshow-block .views-field-body .view-portal-export .view-filters .views-exposed-widget a.form-submit, .view-portal-export .view-filters .views-exposed-widget #block-views-slideshow-block .views-field-body a.form-submit, #block-views-slideshow-block .views-field-body
+    .view-portal-export1 .view-filters .views-exposed-widget a.form-submit,
+    .view-portal-export1 .view-filters .views-exposed-widget #block-views-slideshow-block .views-field-body a.form-submit, #block-views-slideshow-block .views-field-body .view-courses-list-content-view .view-filters a.form-submit, .view-courses-list-content-view .view-filters #block-views-slideshow-block .views-field-body a.form-submit, #block-views-slideshow-block .views-field-body
+    .view-live-courses-users .view-filters a.form-submit,
     .view-live-courses-users .view-filters #block-views-slideshow-block .views-field-body a.form-submit {
       background: white;
       color: #f28d1e !important;
       text-shadow: none;
       margin-top: 50px; }
-      #block-views-slideshow-block .views-field-body a.button:hover,
-      #block-views-slideshow-block .views-field-body a.webform-submit:hover,
-      #block-views-slideshow-block .views-field-body a.btn:hover,
-      #block-views-slideshow-block .views-field-body .form-actions a.form-submit:hover,
-      .form-actions #block-views-slideshow-block .views-field-body a.form-submit:hover,
-      #block-views-slideshow-block .views-field-body .group-referral a.form-submit:hover,
-      .group-referral #block-views-slideshow-block .views-field-body a.form-submit:hover,
-      #block-views-slideshow-block .views-field-body a.form-submit-export:hover,
-      #block-views-slideshow-block .views-field-body .feed-icon a:hover,
-      .feed-icon #block-views-slideshow-block .views-field-body a:hover,
-      #block-views-slideshow-block .views-field-body a.field-add-more-submit:hover,
-      #block-views-slideshow-block .views-field-body .view-learners-list a.form-submit:hover,
-      .view-learners-list #block-views-slideshow-block .views-field-body a.form-submit:hover, #block-views-slideshow-block .views-field-body .ief-form .ief-form-bottom > .fieldset-wrapper > .form-wrapper > a.form-submit:hover, .ief-form #block-views-slideshow-block .views-field-body .ief-form-bottom > .fieldset-wrapper > .form-wrapper > a.form-submit:hover, #block-views-slideshow-block .views-field-body .ief-form > .form-wrapper > a.form-submit:hover,
-      #block-views-slideshow-block .views-field-body .ief-row-form .ief-form-row .ief-form-bottom > .fieldset-wrapper > .form-wrapper > a.form-submit:hover,
-      .ief-row-form .ief-form-row #block-views-slideshow-block .views-field-body .ief-form-bottom > .fieldset-wrapper > .form-wrapper > a.form-submit:hover,
-      #block-views-slideshow-block .views-field-body .ief-row-form .ief-form-row > .form-wrapper > a.form-submit:hover,
-      .ief-row-form #block-views-slideshow-block .views-field-body .ief-form-row > .form-wrapper > a.form-submit:hover, #block-views-slideshow-block .views-field-body .field-name-field-activity .ief-row-form a.form-submit:hover, .field-name-field-activity .ief-row-form #block-views-slideshow-block .views-field-body a.form-submit:hover, #block-views-slideshow-block .views-field-body .field-type-entityreference .ief-form > .fieldset-wrapper > .form-wrapper > a.form-submit:hover, .field-type-entityreference #block-views-slideshow-block .views-field-body .ief-form > .fieldset-wrapper > .form-wrapper > a.form-submit:hover, #block-views-slideshow-block .views-field-body .group-pg-notes .ief-row-form a.form-submit:hover, .group-pg-notes .ief-row-form #block-views-slideshow-block .views-field-body a.form-submit:hover, #block-views-slideshow-block .views-field-body .view-portal-export .view-filters .views-exposed-widget a.form-submit:hover, .view-portal-export .view-filters .views-exposed-widget #block-views-slideshow-block .views-field-body a.form-submit:hover,
-      #block-views-slideshow-block .views-field-body .view-portal-export1 .view-filters .views-exposed-widget a.form-submit:hover,
-      .view-portal-export1 .view-filters .views-exposed-widget #block-views-slideshow-block .views-field-body a.form-submit:hover, #block-views-slideshow-block .views-field-body .view-courses-list-content-view .view-filters a.form-submit:hover, .view-courses-list-content-view .view-filters #block-views-slideshow-block .views-field-body a.form-submit:hover,
-      #block-views-slideshow-block .views-field-body .view-live-courses-users .view-filters a.form-submit:hover,
+      #block-views-slideshow-block .views-field-body a.button:hover, #block-views-slideshow-block .views-field-body
+      a.webform-submit:hover, #block-views-slideshow-block .views-field-body
+      a.btn:hover, #block-views-slideshow-block .views-field-body
+      .form-actions a.form-submit:hover,
+      .form-actions #block-views-slideshow-block .views-field-body a.form-submit:hover, #block-views-slideshow-block .views-field-body
+      .group-referral a.form-submit:hover,
+      .group-referral #block-views-slideshow-block .views-field-body a.form-submit:hover, #block-views-slideshow-block .views-field-body
+      a.form-submit-export:hover, #block-views-slideshow-block .views-field-body
+      .feed-icon a:hover,
+      .feed-icon #block-views-slideshow-block .views-field-body a:hover, #block-views-slideshow-block .views-field-body
+      a.field-add-more-submit:hover, #block-views-slideshow-block .views-field-body
+      .view-learners-list a.form-submit:hover,
+      .view-learners-list #block-views-slideshow-block .views-field-body a.form-submit:hover, #block-views-slideshow-block .views-field-body .ief-form .ief-form-bottom > .fieldset-wrapper > .form-wrapper > a.form-submit:hover, .ief-form #block-views-slideshow-block .views-field-body .ief-form-bottom > .fieldset-wrapper > .form-wrapper > a.form-submit:hover, #block-views-slideshow-block .views-field-body
+      .ief-form > .form-wrapper > a.form-submit:hover, #block-views-slideshow-block .views-field-body
+      .ief-row-form .ief-form-row .ief-form-bottom > .fieldset-wrapper > .form-wrapper > a.form-submit:hover,
+      .ief-row-form .ief-form-row #block-views-slideshow-block .views-field-body .ief-form-bottom > .fieldset-wrapper > .form-wrapper > a.form-submit:hover, #block-views-slideshow-block .views-field-body
+      .ief-row-form .ief-form-row > .form-wrapper > a.form-submit:hover,
+      .ief-row-form #block-views-slideshow-block .views-field-body .ief-form-row > .form-wrapper > a.form-submit:hover, #block-views-slideshow-block .views-field-body .field-name-field-activity .ief-row-form a.form-submit:hover, .field-name-field-activity .ief-row-form #block-views-slideshow-block .views-field-body a.form-submit:hover, #block-views-slideshow-block .views-field-body .field-type-entityreference .ief-form > .fieldset-wrapper > .form-wrapper > a.form-submit:hover, .field-type-entityreference #block-views-slideshow-block .views-field-body .ief-form > .fieldset-wrapper > .form-wrapper > a.form-submit:hover, #block-views-slideshow-block .views-field-body .group-pg-notes .ief-row-form a.form-submit:hover, .group-pg-notes .ief-row-form #block-views-slideshow-block .views-field-body a.form-submit:hover, #block-views-slideshow-block .views-field-body .view-portal-export .view-filters .views-exposed-widget a.form-submit:hover, .view-portal-export .view-filters .views-exposed-widget #block-views-slideshow-block .views-field-body a.form-submit:hover, #block-views-slideshow-block .views-field-body
+      .view-portal-export1 .view-filters .views-exposed-widget a.form-submit:hover,
+      .view-portal-export1 .view-filters .views-exposed-widget #block-views-slideshow-block .views-field-body a.form-submit:hover, #block-views-slideshow-block .views-field-body .view-courses-list-content-view .view-filters a.form-submit:hover, .view-courses-list-content-view .view-filters #block-views-slideshow-block .views-field-body a.form-submit:hover, #block-views-slideshow-block .views-field-body
+      .view-live-courses-users .view-filters a.form-submit:hover,
       .view-live-courses-users .view-filters #block-views-slideshow-block .views-field-body a.form-submit:hover {
         color: white !important;
         background: #f28d1e; }
@@ -2324,6 +2430,7 @@ fieldset.date-combo .container-inline-date .date-padding {
 @media screen and (min-width: 1061px) {
   #navigation #block-system-main-menu {
     display: inline-block !important; } }
+
 @media screen and (max-width: 1060px) {
   #mobile-menu {
     display: inline-block;
@@ -2336,26 +2443,21 @@ fieldset.date-combo .container-inline-date .date-padding {
       width: 20px;
       height: 20px;
       background: url(../images/mobile-menu.png) no-repeat; }
-
   .box1,
   .box2 {
     height: auto;
     float: none;
     margin: 20px auto; }
-
   #block-block-10 {
     position: relative;
     top: 0px; }
-
   .front.not-logged-in #right-block {
     margin-right: 0px;
     position: absolute;
     top: 20px;
     right: 10px; }
-
   #navigation {
     z-index: 11; }
-
   #user-login {
     max-width: 740px; }
     #user-login .form-type-textfield,
@@ -2363,26 +2465,20 @@ fieldset.date-combo .container-inline-date .date-padding {
       max-width: 350px;
       margin: 0 auto;
       display: block; }
-
   ul.secondary li {
     padding: 0 0.9em 0px 0px; }
-
   .view-learners-list .alphabet li a {
     font-size: 13px; }
-
   #block-imageblock-1 {
     height: 300px; }
     #block-imageblock-1 .block-body img {
       width: 250px;
       height: auto; }
-
   #navigation .region-navigation {
     display: block;
     margin: 10px 0px; }
-
   .block-imageblock {
     background-position: center; }
-
   #logo {
     text-align: center;
     float: none;
@@ -2390,7 +2486,6 @@ fieldset.date-combo .container-inline-date .date-padding {
     margin-bottom: 10px;
     position: relative;
     display: block; }
-
   #block-system-main-menu {
     width: 100%; }
     #block-system-main-menu #fb,
@@ -2404,7 +2499,8 @@ fieldset.date-combo .container-inline-date .date-padding {
       position: relative; }
       #block-system-main-menu li.expanded a, #block-system-main-menu li.expanded span {
         position: relative; }
-      #block-system-main-menu li.expanded > a:after, #block-system-main-menu li.expanded > span:after {
+      #block-system-main-menu li.expanded > a:after,
+      #block-system-main-menu li.expanded > span:after {
         content: "";
         display: block;
         position: absolute;
@@ -2419,7 +2515,6 @@ fieldset.date-combo .container-inline-date .date-padding {
     #block-system-main-menu li.expanded ul.menu {
       position: relative;
       top: 0px; }
-
   #navigation a.dropdown {
     position: absolute !important;
     right: 20px;
@@ -2430,7 +2525,6 @@ fieldset.date-combo .container-inline-date .date-padding {
     display: block;
     background: url(../images/polygon.png) no-repeat;
     background-position: right; }
-
   #block-system-main-menu {
     display: none;
     padding-top: 20px;
@@ -2449,7 +2543,6 @@ fieldset.date-combo .container-inline-date .date-padding {
         padding-bottom: 20px; }
     #navigation #block-system-main-menu li {
       display: block; }
-
   #block-block-3 .action-button {
     margin: 10px; }
     #block-block-3 .action-button a {
@@ -2457,10 +2550,8 @@ fieldset.date-combo .container-inline-date .date-padding {
       width: 220px;
       margin: 0 auto;
       height: 150px; }
-
   #block-block-4 a img {
     margin-right: 40px; }
-
   #user-register-form .field-type-text,
   #user-register-form .field-type-list-text,
   #user-register-form #edit-account,
@@ -2473,7 +2564,6 @@ fieldset.date-combo .container-inline-date .date-padding {
   #user-profile-form .form-type-markup {
     width: 50%;
     margin-right: 0px; }
-
   #contact-block, #mail-chimp-block {
     width: auto;
     display: block;
@@ -2483,19 +2573,17 @@ fieldset.date-combo .container-inline-date .date-padding {
       margin-top: 0px !important; }
     #contact-block .mailchimp-newsletter-mergefields + p, #mail-chimp-block .mailchimp-newsletter-mergefields + p {
       display: none; }
-
   #right-block {
     padding-top: 0px; }
-
   .view-portal-export .views-widget-filter-field_program_start_date_value,
   .view-portal-export1 .views-widget-filter-field_program_start_date_value {
     margin-top: -31px; }
     .view-portal-export .views-widget-filter-field_program_start_date_value > div > div,
     .view-portal-export1 .views-widget-filter-field_program_start_date_value > div > div {
       width: 100px; }
-
   #block-views-slideshow-block {
     background-position: center; } }
+
 @media screen and (max-width: 767px) {
   #user-register-form .field-type-text,
   #user-register-form .field-type-list-text,
@@ -2509,23 +2597,18 @@ fieldset.date-combo .container-inline-date .date-padding {
   #user-profile-form .form-type-markup {
     width: 100%;
     margin-right: 0px; }
-
   #navigation #block-system-main-menu {
     top: 286px; }
-
   #login {
     float: none; }
-
   #logo {
     float: none;
     padding-right: 0px;
     margin-top: 50px; }
-
   .not-logged-in.page-user:not(.page-user-register) #block-block-8,
   .not-logged-in.page-user:not(.page-user-register) #block-system-main {
     float: none;
     width: 100%; }
-
   #right-block {
     float: none;
     margin: 0 auto 10px;
@@ -2538,7 +2621,6 @@ fieldset.date-combo .container-inline-date .date-padding {
     #right-block .form-actions input {
       top: 5px;
       right: -33px; }
-
   #search-block {
     position: absolute;
     top: 10px;
@@ -2546,7 +2628,6 @@ fieldset.date-combo .container-inline-date .date-padding {
     transform: translateX(-50%);
     -moz-transform: translateX(-50%);
     -webkit-transform: translateX(-50%); }
-
   #block-block-4 a {
     display: block;
     padding: 10px 0px; }
@@ -2560,24 +2641,19 @@ fieldset.date-combo .container-inline-date .date-padding {
       margin: 10px auto; }
   #block-block-4 a.emp-ontario-logo {
     width: auto; }
-
   .view-faq .views-field-body,
   .view-what-you-need .views-field-body {
     padding-left: 0px; }
-
   .view-portal-export .view-filters select,
   .view-portal-export1 .view-filters select {
     min-width: 200px; }
   .view-portal-export .view-header,
   .view-portal-export1 .view-header {
     margin-top: 0px; }
-
   #content ul.alphabet {
     padding-left: 0px; }
-
   #user-profile-form .alphabet li a {
     font-size: 24px; }
-
   #responsive-alpha-search {
     width: 200px;
     text-align: center;
@@ -2611,7 +2687,6 @@ fieldset.date-combo .container-inline-date .date-padding {
         border-bottom: 1px solid #ccc; }
       #responsive-alpha-search .alphabet li.active {
         border-radius: 0px; }
-
   #user-profile-form .group-referral .form-checkboxes {
     column-count: 2;
     -webkit-column-count: 2;
@@ -2648,7 +2723,6 @@ fieldset.date-combo .container-inline-date .date-padding {
   #user-profile-form .field-type-multifield .field-type-file {
     width: 100%;
     display: block; }
-
   .view-learners-list #header-label,
   .view-learners-list #header-label1,
   .view-portal-export1 #header-label,
@@ -2700,17 +2774,14 @@ fieldset.date-combo .container-inline-date .date-padding {
   .view-portal-export1 .view-content,
   .view-portal-export .view-content {
     margin-top: 0px; }
-
   .view-learners-list .view-filters {
     padding-top: 0px; }
   .view-learners-list .alphabet {
     display: none; }
-
   .view-learning-profile-info .views-row {
     -moz-column-count: inherit;
     -webkit-column-count: inherit;
     column-count: inherit; }
-
   .view-learner-plan .header-label,
   .view-learner-plan #header-label1 {
     display: none; }
@@ -2764,7 +2835,6 @@ fieldset.date-combo .container-inline-date .date-padding {
       width: auto; }
     .view-learner-plan .node-learning-activity .field-name-field-learning-activity .field-items {
       padding-left: 10px; }
-
   .form-navigation {
     text-align: center; }
     .form-navigation .next,
@@ -2772,7 +2842,6 @@ fieldset.date-combo .container-inline-date .date-padding {
       float: none;
       position: relative;
       margin: 10px 0px; }
-
   #user-register-form .help-button:hover + div .description {
     width: 90%; }
   #user-register-form #edit-actions {
@@ -2781,24 +2850,18 @@ fieldset.date-combo .container-inline-date .date-padding {
     #user-register-form #edit-actions input {
       width: 190px;
       margin: 10px auto; }
-
   ul.indicators li {
     margin: 0px 5px; }
-
   .view-courses-list-content-view .views-field-field-type-of-class-1 {
     display: block; }
-
   ul.secondary li {
     display: block;
     margin: 10px 0px;
     padding-right: 0px; }
-
   .confirm-parent, .password-parent {
     width: auto; }
-
   .ief-entity-table td {
     padding: 30px 0px; }
-
   #edit-profile-plan-content-field-learner-plan1 table, #edit-profile-plan-content-field-learner-plan1 thead, #edit-profile-plan-content-field-learner-plan1 tbody, #edit-profile-plan-content-field-learner-plan1 th, #edit-profile-plan-content-field-learner-plan1 td, #edit-profile-plan-content-field-learner-plan1 tr,
   #ief-entity-table-edit-profile-plan-content-field-progress-notes1-und-entities table,
   #ief-entity-table-edit-profile-plan-content-field-progress-notes1-und-entities thead,
@@ -2851,7 +2914,6 @@ fieldset.date-combo .container-inline-date .date-padding {
   #edit-profile-plan-content-field-learner-plan1 .field-type-datetime,
   #ief-entity-table-edit-profile-plan-content-field-progress-notes1-und-entities .field-type-datetime {
     padding: 0px; }
-
   #ief-entity-table-edit-profile-plan-content-field-progress-notes1-und-entities td:nth-of-type(1):before {
     content: "Title"; }
   #ief-entity-table-edit-profile-plan-content-field-progress-notes1-und-entities td:nth-of-type(2):before {
@@ -2868,7 +2930,6 @@ fieldset.date-combo .container-inline-date .date-padding {
     content: "Note Description"; }
   #ief-entity-table-edit-profile-plan-content-field-progress-notes1-und-entities .draggable td:nth-of-type(6):before {
     content: "Operations"; }
-
   #edit-profile-plan-content-field-learner-plan1 td:nth-of-type(1):before {
     content: "Task Group & level Indicator"; }
   #edit-profile-plan-content-field-learner-plan1 td:nth-of-type(2):before {
@@ -2921,32 +2982,27 @@ fieldset.date-combo .container-inline-date .date-padding {
     content: "Learning Activity"; }
   #edit-profile-plan-content-field-learner-plan1 .field-name-field-activity .draggable td:nth-of-type(8):before {
     content: "Operations"; }
-
   #edit-profile-plan-content-field-progress-notes1 .ief-form > .fieldset-wrapper > .form-wrapper > .form-submit {
     margin: 10px 0px; }
-
   .community-list {
     column-count: 1;
     -webkit-column-count: 1;
     -moz-column-count: 1; }
-
   .item-list {
     padding-left: 0px; }
     .item-list .pager li {
       padding: 0px;
       margin: 6px; } }
+
 @media screen and (max-width: 460px) {
   h3 {
     font-size: 24px; }
-
   .field-name-field-notice {
     width: 300px; }
     .field-name-field-notice a {
       word-wrap: break-word; }
-
   .view-courses-list-content-view span.views-field-title {
     max-width: 60%; }
-
   #block-views-course-category-block .views-row,
   #block-views-course-category-block-1 .views-row {
     margin: 10px; }
@@ -2958,15 +3014,11 @@ fieldset.date-combo .container-inline-date .date-padding {
   #block-views-course-category-block-1 .search-all {
     width: 106px;
     height: 112px; }
-
   #user-profile-form #edit-account input {
     width: 90%; }
   #user-profile-form #edit-account input.form-radio {
     width: auto; }
   #user-profile-form .field-name-field-courses-4 select {
     width: 90%; }
-
   .password-strength {
     display: none; } }
-
-/*# sourceMappingURL=screen.css.map */
