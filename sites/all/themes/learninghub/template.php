@@ -6,6 +6,13 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 	{
 		$form['search_block_form']['#attributes']['placeholder'] = t( 'Search' );
 	}
+	if ($form_id == 'search_api_page_search_form_content') {
+	    echo '<!-- -->';
+	    $form['form']['keys']['#attributes']['placeholder'] = t( 'Search' );
+	    $form['form']['keys_1']['#attributes']['placeholder'] = t( 'Search' );
+	    $form['form']['keys']['#title'] = t( 'Search' );
+	    $form['form']['keys_1']['#title'] = t( 'Search' );
+	}
 
 	switch ($form_id) {
     case 'user_login':
@@ -59,6 +66,7 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 
 	if ($form_id == 'user_register_form' ) 
 	{ 	
+	    $form['actions']['submit']['#value'] = t('Submit Registration');
 		unset($form['account']['name']);
 		$form['profile_learner_profile']['field_first_name']['#value'] = "";
 		$form['profile_learner_profile']['field_last_name']['#value'] = "";
@@ -706,12 +714,12 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 								$current = strtotime('now');
 								$lastToLastYear = strtotime('-2 year 1 April');
 								if($current < $currentYearFiscalEnd) {
-									if($date1 < $lastYearFiscalStart && $date1 > $lastToLastYear)
+									if($date1 < $lastYearFiscalStart)
 									{	
 										array_push($activities_completed_fiscal, $node->field_milestone1['und'][0]['value']);
 									}
 								} elseif ($current > $currentYearFiscalEnd) {
-									if($date1 < $currentYearFiscalEnd && $date1 > $lastYearFiscalStart)
+									if($date1 < $currentYearFiscalEnd)
 									{	
 										array_push($activities_completed_fiscal, $node->field_milestone1['und'][0]['value']);
 									}
@@ -739,12 +747,12 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 		    $form['profile_plan_content']['milestone_heading'] = array(
 			'#type' => 'markup',
 			'#markup' => '<div class="collapsable milestone-head"><h2>Milestones</h2></div>',
-			'#weight' => 3.8,
+			'#weight' => 5,
 			);
 
 		   	$form['profile_plan_content']['milestone_group']= array(
 			'#type' => 'container',
-			'#weight' => 4,
+			'#weight' => 6,
 			'#prefix' => '<div class="milestone-container">',
 			'#suffix' => '</div>'
 			);
@@ -752,31 +760,31 @@ function learninghub_form_alter(&$form, &$form_state, $form_id) {
 			$form['profile_plan_content']['milestone_group']['milestones_completed'] = array(
 			'#type' => 'markup',
 			'#markup' => '<div class="form-type-markup"><label>Current Number of Completed Milestones </label>'.$activities_completed.'</div>',
-			'#weight' => 4
+			'#weight' => 6
 			);
 
 			$form['profile_plan_content']['milestone_group']['milestones_in_progress'] = array(
 			'#type' => 'markup',
 			'#markup' => '<div class="form-type-markup"><label>Current Number of In-Progress Milestones</label>'.$in_progress.'</div>',
-			'#weight' => 4
+			'#weight' => 6
 			);
 
 			$form['profile_plan_content']['milestone_group']['milestones_identified'] = array(
 			'#type' => 'markup',
 			'#markup' => '<div class="form-type-markup"><label>Number of Milestones Identified for learner</label>'.$milestones_identified.'</div>',
-			'#weight' => 4
+			'#weight' => 6
 			);
 
 			$form['profile_plan_content']['milestone_group']['milestones_identified_fiscal'] = array(
 			'#type' => 'markup',
 			'#markup' => '<div class="form-type-markup"><label>Number of Milestones completed at start of fiscal</label>'.$activities_completed_fiscal.'</div>',
-			'#weight' => 4
+			'#weight' => 6
 			);
 
 			$form['profile_plan_content']['milestone_group']['culminating_task2'] = array(
 			'#type' => 'markup',
 			'#markup' => '<div class="form-type-markup"><label>Culminating Tasks Completed </label>'.$culminating_task.'</div>',
-			'#weight' => 4
+			'#weight' => 6
 			);
 
 			/* Registration Information*/

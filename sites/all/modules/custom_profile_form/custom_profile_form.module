@@ -45,10 +45,10 @@ function custom_profile_form_form_alter(&$form, &$form_state, $form_id)
 				'#weight' => -1000,
 			);
 
-		$form['action-bar']['#prefix'] = '<div id="action-bar" class="form-actions wrapper">';
-		$form['action-bar']['#suffix'] = '</div>';
+		$form['actions']['#prefix'] = '<div id="action-bar" class="form-actions wrapper">';
+		$form['actions']['#suffix'] = '</div>';
 
-		$form['action-bar']['submit']= array(
+		$form['actions']['submit']= array(
 				'#type' => 'submit',
 				'#value' => 'save',
 				'#weight' => -1000
@@ -57,16 +57,16 @@ function custom_profile_form_form_alter(&$form, &$form_state, $form_id)
 		if(arg(3)=='plan_content')
 		{
 			
-			$form['action-bar']['expand-all'] = array(
+			$form['actions']['expand-all'] = array(
 				'#type' => 'button',
 				'#value' => 'expand all',
-				'#weight' => -1000
+				'#weight' => -10
 				);
 
-			$form['action-bar']['collapse-all'] = array(
+			$form['actions']['collapse-all'] = array(
 				'#type' => 'button',
 				'#value' => 'Collapse all',
-				'#weight' => -1000
+				'#weight' => -11
 				);
 		}
 
@@ -85,7 +85,7 @@ function custom_profile_form_form_alter(&$form, &$form_state, $form_id)
 			{	
 				if($existing->status == 0)
 				{
-					unset($form['actions']);
+					unset($form['action-bar']);
 					unset($form['submit']);
 					unset($form['profile_learner_profile']['submit']);
 					unset($form['profile_follow_ups']['submit']);
@@ -223,26 +223,3 @@ function custom_profile_form_form_alter(&$form, &$form_state, $form_id)
 		unset($form['account']['status']);	
 	}
 }
-
-//drupal_add_js(drupal_get_path('module', 'custom_profile_form') . '/custom_profile_form.js');
-
-/*function custom_profile_form_node_update($node) 
-{	
-	
-	$node = node_load($node->nid);
-
-	$arr = $node->field_users_attending['und'];
-	foreach ($arr as $key => $value) {
-		
-		print_r($value['target_id']);
-		$uid = $value['target_id'];
-		$existing = user_load($uid);
-
-		if(in_array($node->nid, haystack))
-		echo '<pre>';
-		print_r($existing->field_courses_4['und']);
-		echo '</pre>';
-	}
-	
-}
-*/

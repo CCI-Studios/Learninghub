@@ -22,7 +22,7 @@
 
 	 	})
 
-		//show/hide the learner plan sections in Plan Content on click
+	    //show/hide the learner plan sections in Plan Content on click
 	    $('.view-learner-plan .views-row').click(function(e){
 			if(getSelection().toString().length > 0 && e.target.contains(getSelection().anchorNode)) {
 				//if the user selected text inside the plan content

@@ -191,7 +191,7 @@ function render($values) {
 
 				if(isset($values->_field_data['nid']['entity']->field_time['und']))
 				{	
-					if(count($values->_field_data['nid']['entity']->field_time['und']) > 1)
+					if(count($values->_field_data['nid']['entity']->field_time['und']) >= 1)
 					{	
 						$input = '<label>Select class time: </label>';
 						foreach ($values->_field_data['nid']['entity']->field_time['und'] as $key => $value) {
@@ -257,7 +257,7 @@ function render($values) {
 			if($flag>0)
 			{
 				$form = '<span class="selected-time">'.$time_v.'</span><form method="post" id="course-select" action="/course-selection/'.$existingUser.'">
-				<input type="hidden" name ="nid" value="'.$values->nid.'">'.$	.'
+				<input type="hidden" name ="nid" value="'.$values->nid.'">'.$input.'
 				<br/><span class='.$class_button.'></span><input type="submit" name ="buttonValue" value ="'.$button_value.'">
 				</form>';
 			}

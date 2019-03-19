@@ -88,7 +88,9 @@
        <?php print render($page['navigation']); ?>
        <div id="right-block">
          <div id="search-block">
-         <?php  $block_search = module_invoke('search','block_view','form'); 
+         <?php  $block_search = module_invoke('search_api_page','block_view','content');
+         $block_search['content']['keys_1']['#attributes']['placeholder'] = t('Search');
+         print '<!--'.implode(',',array_keys($block_search['content'])).'-->';
          ?>  <?php print render($block_search['content']);
           ?> 
          </div>
@@ -111,7 +113,7 @@
             ?>
           </div>
           <div id="social-block">
-             <?php  $block_social = module_invoke('block','block_view','5'); 
+             <?php  $block_social = module_invoke('block','block_view','5');
            ?>  <?php print render($block_social['content']);
           ?> 
         </div>

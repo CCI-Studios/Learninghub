@@ -1,5 +1,0 @@
-name = Custom empty button
-core = 7.x
-description = Remove users from user attending/user waiting list on selecting remove user button in live course user view.
-package = Views
-version = "7.x-1.0"

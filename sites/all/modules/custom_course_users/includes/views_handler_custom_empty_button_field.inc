@@ -39,98 +39,10 @@ function render($values) {
 			$users_waiting_name = [];
 			$check_attending = '';
 			$check_waiting = '';
-			$time_start_winter = strtotime('01 January');
-			$time_end_winter = strtotime('31 March');
-
-			$time_sec_quarter = strtotime('30 June');
-			$time_third_quarter = strtotime('30 september');
-			$time_fourth_quarter = strtotime('31 december');
-
-			$user_arr = [];
-
-			$quarter = array($time_end_winter,$time_sec_quarter,$time_third_quarter,$time_fourth_quarter);
-
 			if(isset($node->field_users_attending['und']))
-			{	
-				 foreach ($node->field_users_attending['und'] as $k => $v) {
-    	
-			    	$user = user_load($v['target_id']);
-			    
-
-			    	if(!empty($user->field_courses_live['und'])) {
-					   //	print_r($user->field_courses_live['und']);
-
-		    		foreach ($user->field_courses_live['und'] as $key => $value) {
-
-		    		$data = explode(',', $value['value']);
-					$id1 = $data[0];
-				  	$time1 = $data[1];
-				  	//echo $time1;
-				 
-		    		if($values->nid == $id1) {
-					  	$current = date('Y-m-d',time());
-					  	$current_time =  new DateTime($current);
-
-					    $time1 = str_replace('/', '-', $time1);
-						$arr = explode(' ',$time1);
-						//print_r($arr);
-					  	$arr1 = array_reverse(explode('-',$arr[0]));
-					  	$time1 = implode('-',$arr1);
-					  	//echo $time1;
-					    $date1 = date("l dS F Y h:i:s A",strtotime($time1.' '.$arr[1].$arr[2]));
-					  	$date1 = new DateTime($date1);
-					  	//print_r($date1);
-					  	
-					  	$win_month = new DateTime(date('l dS F Y h:i:s A', $time_end_winter));
-					  	$sec_qua_month = new DateTime(date('l dS F Y h:i:s A', $time_sec_quarter));
-					  	$third_qua_month = new DateTime(date('l dS F Y h:i:s A', $time_third_quarter));
-		  				$fourth_qua_month = new DateTime(date('l dS F Y h:i:s A', $time_fourth_quarter));
-
-					  	if($current_time > $win_month && $current_time < $sec_qua_month) 
-				    	{
-				    		$start_time = $win_month;
-				    		$end_time = $sec_qua_month;
-				    	}
-
-			    		if($current_time > $sec_qua_month && $current_time < $third_qua_month) {
-			    			$start_time = $sec_qua_month;
-				    		$end_time = $third_qua_month;
-			    		}
-
-			    		if($current_time > $third_qua_month && $current_time < $fourth_qua_month) {
-			    			$start_time = $third_qua_month;
-				    		$end_time = $fourth_qua_month;
-			    		}
-
-			    		if($current_time < $win_month) {
-			    			$start_time = new DateTime(date('Y-m-d',$time_start_winter));
-				    		$end_time = $win_month;
-			    		}
-			    			
-			    		if($date1 > $start_time && $date1 < $end_time)
-		    			{	
-		    				array_push($user_arr,array(
-		    					'id' => $v['target_id'],
-		    					'time' => $date1,
-		    					)
-    							);
-			    			}
-			    		}
-
-			    	}  
-			    	}
-			    	 
-			    }
-				
-				foreach ($user_arr as $key => $value) {
-					
-					if(isset($value['id'])){
-						$user_id = $value['id'];
-					}
-					else {
-						$user_id = '';
-					}
-
+			{	$arr = $node->field_users_attending['und'];
+				foreach ($arr as $key => $value) {
+					$user_id = $value['target_id'];
 					$profile = profile2_load_by_user($user_id,'learner_profile');
 					if(isset($profile->field_first_name['und'][0]['value']))
 					{
@@ -149,19 +61,8 @@ function render($values) {
 					{
 						$last_name = '';
 					}
-
-					//print_r($profile);
-					if(isset($value['time']->date)){
-						$user_time = $value['time']->date;
-					}
-					else {
-						$user_time = '';
-					}
-					$user_tz = 'Canada/Eastern';
-				    $time = new DateTime($user_time,new DateTimeZone($user_tz));
-				    $time = $time->format('d/m/y h:i');
-
-					$full_name = $first_name.' '.$last_name.' - Time:'.$time;
+				
+					$full_name = $first_name.' '.$last_name;
 					$check_attending .= t('<input type="checkbox" name ="chk_attending_'.$values->nid.'[]" value="'.$user_id.'"> <label>'.$full_name.'</label><br/>');
 					if($check_attending == '')
 					{
@@ -205,10 +106,6 @@ function render($values) {
 			if($check_waiting == '')
 			{
 				$check_waiting = 'Empty';
-			}
-
-			if($check_attending == '') {
-				$check_attending = 'Empty';
 			}
 
 			$users_attending_name = implode('<br>', $users_attending_name);
